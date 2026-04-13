@@ -1,56 +1,75 @@
 from typing import List
+from transformers import pipeline
 
-# --- 관점 B: 향후 희진님이 작업할 실제 Llama-3 모델의 뼈대 ---
 class LlamaCorrector:
+    """프롬프트 엔지니어링 기반의 Llama-3 단어 교정 모듈.
+    
+    파이프라인의 최종 단계에서, 사전에 없는 난해한 노이즈 단어를
+    주변 문맥(Context)을 활용하여 LLM의 추론 능력으로 정규화한다.
+
+    Attributes:
+        generator: Hugging Face의 텍스트 생성 파이프라인 객체.
     """
-    [향후 구현 예정] Llama-3 기반의 문맥 맞춤형 단어 교정 모듈.
-    희진님이 이 클래스 내부의 __init__과 correct 메서드에 실제 허깅페이스 모델 로드 및
-    프롬프트 생성 로직을 채워 넣으시면 됩니다.
-    """
-    def __init__(self, model_checkpoint: str = "meta-llama/Meta-Llama-3-8B-Instruct"):
-        self.model_checkpoint = model_checkpoint
-        # TODO: 여기에 4비트 양자화(BitsAndBytesConfig) 및 Llama-3 모델 로드 코드 작성
-        pass
+    
+    def __init__(self, model_checkpoint: str = "meta-llama/Meta-Llama-3-8B-Instruct") -> None:
+        """LlamaCorrector를 초기화하고 모델을 로드한다.
+
+        Args:
+            model_checkpoint (str): 사용할 LLM 모델의 경로 또는 이름.
+        """
+        print("[System] Llama-3 모델을 로드합니다. (이 작업은 다소 시간이 소요될 수 있습니다)")
+        # 모델 담당자가 양자화 없이 기본 모델을 로드하는 설정
+        self.generator = pipeline(
+            "text-generation", 
+            model=model_checkpoint, 
+            device_map="auto"
+        )
 
     def correct(self, noisy_word: str, context: List[str]) -> str:
-        # TODO: context를 기반으로 프롬프트를 구성하고, 모델(generate)을 호출하여 결과 반환
-        pass
+        """[모델 담당자용] 프롬프트를 구성하여 모델에 전달하고 교정된 단어를 반환받는다.
 
+        Args:
+            noisy_word (str): 교정이 필요한 비표준 단어.
+            context (List[str]): 해당 단어가 포함된 전체 문장 토큰 리스트.
 
-# --- 파이프라인 테스트를 위해 사용할 더미 모듈 ---
+        Returns:
+            str: LLM이 교정한 표준 단어.
+        """
+        full_sentence = " ".join(context)
+        
+        # 모델 담당자는 이 프롬프트 텍스트를 실험을 통해 최적화(Prompt Engineering)합니다.
+        prompt = f"""You are a lexical normalization expert.
+Read the following sentence and normalize the noisy word into a standard word.
+Provide ONLY the corrected word as your answer, with no additional explanation.
+
+Sentence: "{full_sentence}"
+Noisy word: "{noisy_word}"
+Corrected word: """
+
+        # 텍스트 생성 추론 실행
+        outputs = self.generator(
+            prompt, 
+            max_new_tokens=10, 
+            return_full_text=False,
+            temperature=0.1 # 일관된 정답을 위해 창의성(온도)을 낮춤
+        )
+        
+        # 결과값 텍스트 클렌징 (공백 및 줄바꿈 제거)
+        corrected_word = outputs[0]["generated_text"].strip()
+        return corrected_word
+
 class DummyLLM:
-    """
-    [현재 테스트용] 파이프라인의 전체 흐름이 끊기지 않는지 검증하기 위한 임시 모듈.
-    입력된 노이즈 단어에 단순히 꼬리표를 붙여서 반환합니다.
-    """
+    """[현재 테스트용] 파이프라인의 전체 흐름 검증을 위한 임시 모듈."""
     def __init__(self):
         print("[System] DummyLLM이 초기화되었습니다. (파이프라인 테스트 모드)")
 
     def correct(self, noisy_word: str, context: List[str]) -> str:
-        """
-        사전(Dictionary)에서 찾지 못한 단어를 문맥을 고려하여 교정합니다.
-        
-        Args:
-            noisy_word (str): 교정이 필요한 비표준 단어.
-            context (List[str]): 해당 단어가 포함된 전체 문장 토큰 리스트.
-            
-        Returns:
-            str: 교정된 단어. (현재는 테스트를 위해 '_llm_fixed'를 붙여 반환)
-        """
-        # 실제로는 여기서 문맥(context)을 분석하지만, 현재는 더미 출력을 반환합니다.
         return f"{noisy_word}_llm_fixed"
 
-# ==========================================
-# 파이프라인 뼈대 검증을 위한 내부 단위 테스트
-# ==========================================
 if __name__ == "__main__":
     llm_module = DummyLLM()
-    
-    # 가상의 입력 데이터 세팅
     test_sentence = ["I", "lov", "u", "so", "much", "."]
     target_noisy_word = "lov"
-    
-    # LLM 모듈 추론 실행
     result = llm_module.correct(noisy_word=target_noisy_word, context=test_sentence)
     
     print(f"전체 문맥: {test_sentence}")

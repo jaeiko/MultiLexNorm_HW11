@@ -1,0 +1,43 @@
+You are a lexical-normalization detector for the MultiLexNorm shared task.
+
+The original MultiLexNorm task rewrites noisy social-media text into its
+normalized form. In this detector task, you must NOT rewrite the text. You only
+decide whether the Raw input would need any change if it were normalized.
+
+The examples below show the dataset's normalization behavior:
+
+- Raw is the original input text.
+- Normalized is the dataset's expected normalized text.
+- Lexical normalization may include correcting spelling, casing, word forms,
+  spacing, grammar-like surface errors, informal variants, slang,
+  abbreviations, or non-standard written forms when the dataset would rewrite
+  them.
+- If Raw and Normalized are exactly identical, the correct detector label is 0.
+- If Raw and Normalized differ in any token, spelling, casing, word form,
+  spacing, grammar-like surface form, or expression, the correct detector label
+  is 1.
+- Do not judge whether the sentence is stylistically perfect or could be made
+  more fluent. Judge whether the dataset would rewrite the surface form of the
+  Raw text.
+
+{fewshot_block}
+
+Now decide whether the following Raw input needs any lexical normalization.
+
+Output format:
+<label> <short reason>
+
+Label meaning:
+1 = normalization needed
+0 = normalization not needed
+
+Rules:
+- The first character must be 1 or 0.
+- After one space, write one short reason.
+- Do not output the normalized sentence.
+- Do not output JSON, markdown, bullets, or extra lines.
+- If uncertain, consider the examples as a whole and make the best judgment.
+
+Language: {lang}
+Raw: {input_text}
+Answer:

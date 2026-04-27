@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from transformers import AutoTokenizer, AutoModelForTokenClassification, Trainer, TrainingArguments
+from transformers import AutoTokenizer, AutoModelForTokenClassification, Trainer, TrainingArguments, DataCollatorForTokenClassification
 from typing import List, Tuple, Dict, Any
 
 class AnomalyDetector:
@@ -63,13 +63,17 @@ class AnomalyDetector:
         return tokenized_inputs, aligned_labels
 
     def train_model(self, train_dataset, eval_dataset, output_dir: str = "./detection_model"):
-        """[모델 담당자용] 정제된 데이터셋을 이용하여 모델의 가중치를 파인튜닝한다.
+        """ 정제된 데이터셋을 이용하여 모델의 가중치를 파인튜닝한다.
 
         Args:
             train_dataset: 전처리가 완료된 학습용 Hugging Face Dataset 객체.
             eval_dataset: 전처리가 완료된 검증용 Hugging Face Dataset 객체.
             output_dir (str): 학습된 모델 가중치가 저장될 경로.
         """
+        # 1. 메모리 최적화를 위한 동적 패딩 콜레이터 설정
+        data_collator = DataCollatorForTokenClassification(self.tokenizer)
+
+        # 2. 훈련 하이퍼파라미터 설정 (Learning Rate, Epoch, Batch Size)
         training_args = TrainingArguments(
             output_dir=output_dir,
             evaluation_strategy="epoch",
@@ -77,17 +81,19 @@ class AnomalyDetector:
             per_device_train_batch_size=16,
             num_train_epochs=3,
             weight_decay=0.01,
+            save_strategy="epoch", # 매 에폭마다 가중치 저장
         )
 
+        # 3. Trainer 객체 초기화 및 훈련 시작
         trainer = Trainer(
             model=self.model,
             args=training_args,
-            train_dataset=train_dataset,
+            train_dataset=train_dataset, # prepare_data로 전처리된 HuggingFace Dataset 객체
             eval_dataset=eval_dataset,
             tokenizer=self.tokenizer,
+            data_collator=data_collator
         )
         
-        print("[System] XLM-RoBERTa 파인튜닝을 시작합니다...")
         trainer.train()
         trainer.save_model(output_dir)
 

@@ -76,12 +76,13 @@ class AnomalyDetector:
         # 2. 훈련 하이퍼파라미터 설정 (Learning Rate, Epoch, Batch Size)
         training_args = TrainingArguments(
             output_dir=output_dir,
-            evaluation_strategy="epoch",
+            eval_strategy="epoch",
             learning_rate=2e-5,
             per_device_train_batch_size=16,
             num_train_epochs=3,
             weight_decay=0.01,
             save_strategy="epoch", # 매 에폭마다 가중치 저장
+            logging_steps=50,
         )
 
         # 3. Trainer 객체 초기화 및 훈련 시작
@@ -90,7 +91,7 @@ class AnomalyDetector:
             args=training_args,
             train_dataset=train_dataset, # prepare_data로 전처리된 HuggingFace Dataset 객체
             eval_dataset=eval_dataset,
-            tokenizer=self.tokenizer,
+            processing_class=self.tokenizer,
             data_collator=data_collator
         )
         
@@ -106,8 +107,14 @@ class AnomalyDetector:
         Returns:
             List[int]: 단어별 노이즈 판별 결과 (정상 0, 노이즈 1)
         """
+        # 1. 토큰화 진행 및 허깅페이스 객체 생성
         tokenized_inputs = self.tokenizer(sentence_tokens, is_split_into_words=True, return_tensors="pt")
+        
+        # 2. 구조가 바뀌기 전에 word_ids 미리 추출
         word_ids = tokenized_inputs.word_ids()
+
+        # 3. 모델 추론을 위해 텐서들을 GPU/CPU 등 현재 모델이 있는 디바이스로 이동
+        tokenized_inputs = {k: v.to(self.model.device) for k, v in tokenized_inputs.items()}
 
         self.model.eval()
         with torch.no_grad():

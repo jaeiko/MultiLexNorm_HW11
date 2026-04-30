@@ -319,7 +319,7 @@ def call_ollama_chat(model_config, prompt):
     except urllib.error.URLError as exc:
         raise RuntimeError("Ollama API에 연결할 수 없습니다. Ollama가 실행 중인지 확인하세요.") from exc
 
-    return data.get("message", {}).get("content", "").strip()
+    return data.get("message", {}).get("content", "").strip(), data.get("eval_count", 0)
 
 
 def parse_response(response, fallback="1"):
@@ -452,8 +452,9 @@ def write_benchmark_text(path, metrics):
     write_lines(path, lines)
 
 
-def write_summary(path, experiment_dir, model_config, prompt_config, run_config, metrics, parse_failures):
+def write_summary(path, experiment_dir, model_config, prompt_config, run_config, metrics, parse_failures, total_tokens=0, elapsed_seconds=0):
     """실험 내용을 빠르게 훑어볼 수 있는 summary.md를 만든다."""
+    throughput = f"{total_tokens / elapsed_seconds:.1f} tok/s" if elapsed_seconds > 0 else "N/A"
     lines = [
         "# LLM Detection Experiment Summary",
         "",
@@ -477,6 +478,12 @@ def write_summary(path, experiment_dir, model_config, prompt_config, run_config,
         f"- Recall: {metrics['recall']:.4f}",
         f"- F1: {metrics['f1']:.4f}",
         f"- Specificity: {metrics['specificity']:.4f}",
+        "",
+        "## Runtime",
+        "",
+        f"- Total output tokens: {total_tokens}",
+        f"- Elapsed time: {elapsed_seconds:.1f}s ({elapsed_seconds / 60:.1f}min)",
+        f"- Throughput: {throughput}",
     ]
     write_lines(path, lines)
 
@@ -523,6 +530,8 @@ def run_experiment(experiment_dir, dry_run=False):
     answer_labels = []
     debug_records = []
     parse_failures = 0
+    total_tokens = 0
+    experiment_start = time.time()
 
     for position, row in enumerate(rows, start=1):
         fewshot_examples = []
@@ -538,7 +547,8 @@ def run_experiment(experiment_dir, dry_run=False):
         if dry_run:
             response = "1 dry run placeholder"
         else:
-            response = call_ollama_chat(model_config, prompt)
+            response, eval_count = call_ollama_chat(model_config, prompt)
+            total_tokens += eval_count
             if model_config.get("sleep", 0):
                 time.sleep(float(model_config["sleep"]))
 
@@ -564,6 +574,7 @@ def run_experiment(experiment_dir, dry_run=False):
         )
         print(f"[{position}/{len(rows)}] row={row['row_index']} label={label}", flush=True)
 
+    elapsed = time.time() - experiment_start
     metrics = benchmark_metrics(answer_labels, predictions)
 
     write_lines(output_path(experiment_dir, run_config, "predictions"), predictions)
@@ -579,7 +590,14 @@ def run_experiment(experiment_dir, dry_run=False):
         run_config,
         metrics,
         parse_failures,
+        total_tokens=total_tokens,
+        elapsed_seconds=elapsed,
     )
+
+    throughput = f"{total_tokens / elapsed:.1f} tok/s" if elapsed > 0 else "N/A"
+    print(f"\nTotal output tokens : {total_tokens}")
+    print(f"Elapsed time        : {elapsed:.1f}s ({elapsed / 60:.1f}min)")
+    print(f"Throughput          : {throughput}")
 
 
 def main():

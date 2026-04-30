@@ -1,0 +1,10 @@
+{
+  "prompt_template": "prompts/prompt_v1.txt",
+  "fewshot": {
+    "enabled": true,
+    "strategy": "same_lang_normalized_edit_distance_label_balance",
+    "train_dataset": "../../multilexnorm2026-dataset/data/train-00000-of-00001.parquet",
+    "positive_k": 1,
+    "negative_k": 1
+  }
+}

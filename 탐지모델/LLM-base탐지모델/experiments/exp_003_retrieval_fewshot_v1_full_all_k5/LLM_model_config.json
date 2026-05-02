@@ -1,0 +1,10 @@
+{
+  "model": "gemma4:26b",
+  "temperature": 0,
+  "num_ctx": 16384,
+  "num_predict": 1024,
+  "think": false,
+  "timeout": 120,
+  "sleep": 0,
+  "ollama_chat_url": "http://localhost:11434/api/chat"
+}

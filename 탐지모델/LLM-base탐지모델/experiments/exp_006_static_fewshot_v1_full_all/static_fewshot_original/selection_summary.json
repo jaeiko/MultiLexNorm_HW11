@@ -1,0 +1,948 @@
+{
+  "da": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 151,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 187,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 72,
+      "distance": 0.0513
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 188,
+      "distance": 0.0217
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 468,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 218,
+      "distance": 0.0217
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 488,
+      "distance": 0.2727
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 84,
+      "distance": 0.0213
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 97,
+      "distance": 0.7273
+    }
+  ],
+  "de": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 1090,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 1154,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 1163,
+      "distance": 0.0217
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 1398,
+      "distance": 0.0217
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 1504,
+      "distance": 0.0667
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 2294,
+      "distance": 0.0435
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 2140,
+      "distance": 0.5926
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 1763,
+      "distance": 0.5714
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 1212,
+      "distance": 0.2273
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 782,
+      "distance": 0.0208
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 833,
+      "distance": 0.1957
+    }
+  ],
+  "en": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 2884,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 2897,
+      "distance": 0.0
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 3659,
+      "distance": 0.0217
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 3086,
+      "distance": 0.0426
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 3137,
+      "distance": 0.4713
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 3371,
+      "distance": 0.2456
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 3867,
+      "distance": 0.0217
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 3097,
+      "distance": 0.2174
+    }
+  ],
+  "es": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 4862,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 5116,
+      "distance": 0.0
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 4802,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 4927,
+      "distance": 0.0667
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 4830,
+      "distance": 0.0217
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 4884,
+      "distance": 0.2889
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 5053,
+      "distance": 0.0233
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 5102,
+      "distance": 0.2766
+    }
+  ],
+  "hr": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 5311,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 5645,
+      "distance": 0.0
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 5636,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 7550,
+      "distance": 0.0444
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 5757,
+      "distance": 0.0217
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 9103,
+      "distance": 0.6667
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 7705,
+      "distance": 0.4615
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 9221,
+      "distance": 0.2632
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 5538,
+      "distance": 0.0227
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 8523,
+      "distance": 0.1892
+    }
+  ],
+  "id": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 10036,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 10857,
+      "distance": 0.0417
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 11524,
+      "distance": 0.0652
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 12143,
+      "distance": 0.0652
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 10973,
+      "distance": 0.4889
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 10126,
+      "distance": 0.5435
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 11528,
+      "distance": 0.2826
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 12109,
+      "distance": 0.2391
+    }
+  ],
+  "iden": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 13325,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 13058,
+      "distance": 0.0
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 13116,
+      "distance": 0.1429
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 13055,
+      "distance": 0.0476
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 13266,
+      "distance": 0.193
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 13293,
+      "distance": 0.3617
+    }
+  ],
+  "it": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 13910,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 13798,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 13895,
+      "distance": 0.0238
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 13797,
+      "distance": 0.0139
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 14135,
+      "distance": 0.1556
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 13792,
+      "distance": 0.0938
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 13971,
+      "distance": 0.3333
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 13666,
+      "distance": 0.0135
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 13919,
+      "distance": 0.4444
+    }
+  ],
+  "ja": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 16104,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 15703,
+      "distance": 0.0192
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 16040,
+      "distance": 0.0175
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 14175,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 15084,
+      "distance": 0.0222
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 14204,
+      "distance": 0.4667
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 14696,
+      "distance": 0.45
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 14717,
+      "distance": 0.2
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 15577,
+      "distance": 0.0222
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 15120,
+      "distance": 0.3617
+    }
+  ],
+  "ko": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 16517,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 16589,
+      "distance": 0.0
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 16492,
+      "distance": 0.1333
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 16605,
+      "distance": 0.0435
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 17020,
+      "distance": 0.5312
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 17759,
+      "distance": 0.4545
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 16319,
+      "distance": 0.234
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 16339,
+      "distance": 0.0263
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 16899,
+      "distance": 0.4
+    }
+  ],
+  "nl": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 18301,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 18327,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 18286,
+      "distance": 0.0238
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 18306,
+      "distance": 0.0435
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 18097,
+      "distance": 0.1489
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 18277,
+      "distance": 0.2
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 18641,
+      "distance": 0.0182
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 18431,
+      "distance": 0.2157
+    }
+  ],
+  "sl": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 18946,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 19019,
+      "distance": 0.0
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 21737,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 19621,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 20762,
+      "distance": 0.0222
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 19139,
+      "distance": 0.5
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 19697,
+      "distance": 0.6364
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 20469,
+      "distance": 0.2128
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 20327,
+      "distance": 0.0465
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 19249,
+      "distance": 0.3404
+    }
+  ],
+  "sr": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 23631,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 23923,
+      "distance": 0.0
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 25165,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 26325,
+      "distance": 0.0444
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 26848,
+      "distance": 0.0444
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 26165,
+      "distance": 0.8235
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 26384,
+      "distance": 0.75
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 26651,
+      "distance": 0.1905
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 25702,
+      "distance": 0.0196
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 25864,
+      "distance": 0.2174
+    }
+  ],
+  "th": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 27930,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 28581,
+      "distance": 0.0
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 28238,
+      "distance": 0.0031
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 29226,
+      "distance": 0.0096
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 28887,
+      "distance": 0.0095
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 28827,
+      "distance": 0.968
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 29016,
+      "distance": 0.8526
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 28815,
+      "distance": 0.003
+    }
+  ],
+  "tr": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 29492,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 29888,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 29905,
+      "distance": 0.0217
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 29854,
+      "distance": 0.0667
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 29503,
+      "distance": 0.1778
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 29833,
+      "distance": 0.0222
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 29714,
+      "distance": 0.4795
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 29903,
+      "distance": 0.5417
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 29781,
+      "distance": 0.2143
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 29942,
+      "distance": 0.0435
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 30002,
+      "distance": 0.6957
+    }
+  ],
+  "trde": [
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 30213,
+      "distance": 0.0
+    },
+    {
+      "category": "NO_CHANGE",
+      "label": "0",
+      "row_index": 30435,
+      "distance": 0.0
+    },
+    {
+      "category": "CASING",
+      "label": "1",
+      "row_index": 30257,
+      "distance": 0.0222
+    },
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 30110,
+      "distance": 0.0227
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 30723,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 30748,
+      "distance": 0.0625
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 30054,
+      "distance": 0.2381
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 30014,
+      "distance": 0.0667
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 30270,
+      "distance": 0.25
+    }
+  ],
+  "vi": [
+    {
+      "category": "DIACRITIC_OR_SCRIPT",
+      "label": "1",
+      "row_index": 31714,
+      "distance": 0.0217
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 33267,
+      "distance": 0.0222
+    },
+    {
+      "category": "SPELLING_TYPO",
+      "label": "1",
+      "row_index": 33915,
+      "distance": 0.0222
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 38994,
+      "distance": 0.4762
+    },
+    {
+      "category": "INFORMAL_OR_SLANG",
+      "label": "1",
+      "row_index": 32005,
+      "distance": 0.4762
+    },
+    {
+      "category": "MORPHOLOGY_OR_GRAMMAR_SURFACE",
+      "label": "1",
+      "row_index": 38101,
+      "distance": 0.1961
+    },
+    {
+      "category": "SPACING_OR_PUNCT_SYMBOL",
+      "label": "1",
+      "row_index": 36861,
+      "distance": 0.0213
+    },
+    {
+      "category": "MIXED_COMPLEX",
+      "label": "1",
+      "row_index": 30978,
+      "distance": 0.28
+    }
+  ]
+}

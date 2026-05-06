@@ -1,0 +1,28 @@
+Examples from language `it`:
+
+Raw: ho finito la tavola in 15 minuti , kiss my ass .
+Normalized: ho finito la tavola in 15 minuti , kiss my ass .
+
+Raw: Finalmente posso guardarmi " The first time " *w*
+Normalized: Finalmente posso guardarmi " The first time " *w*
+
+Raw: @Pia_queugosto Claro com quem ? e quanto ?
+Normalized: @Pia_queugosto Claro com quem ? E quanto ?
+
+Raw: Seguite tutti @MargheandFior perchè nella sua icon Harry è dolcissimo **
+Normalized: Seguite tutti @MargheandFior perché nella sua icon Harry è dolcissimo **
+
+Raw: @prfzjm wow !!! Cmq anche io sto bn :3
+Normalized: @prfzjm wow !!! Cpmunque anche io sto bene :3
+
+Raw: Mh , dovrei scrivere qualcosa nella bio ma non so cosa lol
+Normalized: Mh , dovrei scrivere qualcosa nella biografia ma non so cosa lol
+
+Raw: Ho aggiunto un video a una playlist di @YouTube : http://t.co/BCVnXruvKu ROMA PRESENTAZIONE LIBRO SVIMEZ SULL' ECONOMIA DEL
+Normalized: Ho aggiunto un video a una playlist di @YouTube : http://t.co/BCVnXruvKu Rome presentazione libro Svimez sull' economia del
+
+Raw: RT @pausinismile : la maggiorparte dei miei tweet parlano del mio idolo .
+Normalized: RT @pausinismile : la maggior parte dei miei tweet parlano del mio idolo .
+
+Raw: Pietro Ichino | I MIEI VOTI SULLA MANOVRA DEL GOVERNO MONTI http://t.co/dxnuWyab
+Normalized: Pietro Ichino | I mmiei voti sulla manovra del governo monti http://t.co/dxnuWyab

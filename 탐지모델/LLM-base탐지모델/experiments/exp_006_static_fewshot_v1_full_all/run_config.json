@@ -1,0 +1,16 @@
+{
+  "dataset": "../../multilexnorm2026-dataset/data/validation-00000-of-00001.parquet",
+  "split": "validation",
+  "lang": null,
+  "limit": null,
+  "offset": 0,
+  "fallback": "1",
+  "output_files": {
+    "predictions": "predictions.txt",
+    "debug": "debug.jsonl",
+    "answer_labels": "answer_labels.txt",
+    "benchmark_json": "benchmark.json",
+    "benchmark_txt": "benchmark.txt",
+    "summary": "summary.md"
+  }
+}

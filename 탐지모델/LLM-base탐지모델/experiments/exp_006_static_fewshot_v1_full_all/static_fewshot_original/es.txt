@@ -1,0 +1,33 @@
+Examples from language `es`:
+
+Type: NO_CHANGE
+Raw: tengo ganas de que llegues ah casa yo mas....
+Normalized: tengo ganas de que llegues ah casa yo mas....
+
+Type: NO_CHANGE
+Raw: voy a coger y no me vais a encontrar mas vaya
+Normalized: voy a coger y no me vais a encontrar mas vaya
+
+Type: DIACRITIC_OR_SCRIPT
+Raw: @nestur9 tendre que ahorrar para ir en tren..
+Normalized: @nestur9 tendré que ahorrar para ir en tren..
+
+Type: SPELLING_TYPO
+Raw: @mariagm1999 jajajajaja que tonnnntica eres l
+Normalized: @mariagm1999 jajajajaja que tontica eres l
+
+Type: SPELLING_TYPO
+Raw: @josedivieso y tu no eres jilipollas a que no?
+Normalized: @josedivieso y tu no eres gilipollas a que no?
+
+Type: MORPHOLOGY_OR_GRAMMAR_SURFACE
+Raw: @mtrin93 lo de angustia sobra jajajajajaajaja
+Normalized: @mtrin93 lo de angustia sobra ja
+
+Type: SPACING_OR_PUNCT_SYMBOL
+Raw: aleluya @sergio_gettin alfin se despierta!
+Normalized: aleluya @sergio_gettin al_fin se despierta!
+
+Type: MIXED_COMPLEX
+Raw: @javicamujavier cuuxamee sii peroo veen yaa eem
+Normalized: @javicamujavier escúchame sí pero ven ya eh

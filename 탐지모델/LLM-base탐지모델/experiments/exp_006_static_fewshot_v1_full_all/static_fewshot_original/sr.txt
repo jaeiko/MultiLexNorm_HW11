@@ -1,0 +1,41 @@
+Examples from language `sr`:
+
+Type: NO_CHANGE
+Raw: @zozast izvini , ali taj termin ne koristim .
+Normalized: @zozast izvini , ali taj termin ne koristim .
+
+Type: NO_CHANGE
+Raw: u paradajzu prodaju ' čaj za dijabetičare ' .
+Normalized: u paradajzu prodaju ' čaj za dijabetičare ' .
+
+Type: DIACRITIC_OR_SCRIPT
+Raw: mada danas medicina resava taj problem 90 % .
+Normalized: mada danas medicina rešava taj problem 90 % .
+
+Type: SPELLING_TYPO
+Raw: zorranah laže da ne bi ispala neinformisana .
+Normalized: zorannah laže da ne bi ispala neinformisana .
+
+Type: SPELLING_TYPO
+Raw: jel se snimak daje pre ili posle uclanjenja ?
+Normalized: je se snimak daje pre ili posle učlanjenja ?
+
+Type: INFORMAL_OR_SLANG
+Raw: aupičkumaterinu .
+Normalized: a .
+
+Type: INFORMAL_OR_SLANG
+Raw: d'izvinete .
+Normalized: da .
+
+Type: MORPHOLOGY_OR_GRAMMAR_SURFACE
+Raw: sad kad je gusto krivi djelic i djindjic .
+Normalized: sad kad je gusto krivi đelić i đinđić .
+
+Type: SPACING_OR_PUNCT_SYMBOL
+Raw: mora sada da se jebu s nekim mnogo ružnim jel da ?
+Normalized: mora sada da se jebu s nekim mnogo ružnim jel' da ?
+
+Type: MIXED_COMPLEX
+Raw: i on kazes toceno ...
+Normalized: i onda kažeš točeno ...

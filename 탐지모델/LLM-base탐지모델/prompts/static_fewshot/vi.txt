@@ -1,0 +1,25 @@
+Examples from language `vi`:
+
+Raw: cúp lúc 1h sáng tới 6h sáng, toi thức thâu đêm
+Normalized: cúp lúc 1h sáng tới 6h sáng, tôi thức thâu đêm
+
+Raw: Đáng iêu quá, chúc 2 bạn hạnh phúc bền lâu ạ.
+Normalized: Đáng yêu quá, chúc 2 bạn hạnh phúc bền lâu ạ.
+
+Raw: Tau còn có cả đoạn ghi âm..chạy đâu cho thoát
+Normalized: Tao còn có cả đoạn ghi âm..chạy đâu cho thoát
+
+Raw: Cái a dz hơn a dz đi qua=)
+Normalized: Cái anh đẹp trai hơn anh đẹp trai đi qua=)
+
+Raw: Ck em đỉnh quá deeeee
+Normalized: Chồng em đỉnh quá đi
+
+Raw: cố gắng 156 tỏi thôi, ko cần 157 như ngta đâu
+Normalized: cố gắng 156 tỉ thôi, không cần 157 như người ta đâu
+
+Raw: Con kia thấy thật đúng đắn khi bỏ cha n.ội này.
+Normalized: Con kia thấy thật đúng đắn khi bỏ cha nội này.
+
+Raw: nhìn thì cũm píc t vs m hướng cái rì ròi=))
+Normalized: nhìn thì cũng biết tao với mày hướng cái gì rồi=))

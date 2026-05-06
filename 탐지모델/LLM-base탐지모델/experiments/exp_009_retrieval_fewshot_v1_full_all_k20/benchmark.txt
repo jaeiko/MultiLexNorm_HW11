@@ -1,0 +1,14 @@
+=== Detection Benchmark ===
+Label meaning: 1 = normalization needed, 0 = normalization not needed
+
+Total: 8408
+TP: 5147
+TN: 2032
+FP: 814
+FN: 415
+
+Accuracy : 0.8538
+Precision: 0.8634
+Recall   : 0.9254
+F1       : 0.8933
+Specificity: 0.7140

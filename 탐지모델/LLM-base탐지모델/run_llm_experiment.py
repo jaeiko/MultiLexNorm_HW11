@@ -267,7 +267,7 @@ def format_fewshot_block(examples):
     return "\n\n".join(blocks)
 
 
-def build_prompt(prompt_template, row, fewshot_examples):
+def build_prompt(prompt_template, row, fewshot_block):
     """프롬프트 템플릿에 few-shot과 현재 입력을 끼워 넣는다.
 
     input:
@@ -277,7 +277,6 @@ def build_prompt(prompt_template, row, fewshot_examples):
     output:
         str: LLM에 넘길 최종 프롬프트
     """
-    fewshot_block = format_fewshot_block(fewshot_examples)
     return prompt_template.format(
         fewshot_block=fewshot_block,
         lang=row["lang"] or "unknown",
@@ -320,6 +319,28 @@ def call_ollama_chat(model_config, prompt):
         raise RuntimeError("Ollama API에 연결할 수 없습니다. Ollama가 실행 중인지 확인하세요.") from exc
 
     return data.get("message", {}).get("content", "").strip(), data.get("eval_count", 0)
+
+
+def load_static_fewshot_block(row, fewshot_config, experiment_dir, project_dir):
+    """언어별 static few-shot 파일을 읽어서 프롬프트 블록으로 반환한다.
+
+    input:
+        row: 현재 평가 입력 row
+        fewshot_config: prompt_config.json의 fewshot 설정
+        experiment_dir: 현재 실험 폴더
+        project_dir: LLM-base탐지모델 폴더
+    output:
+        str: 해당 언어의 static few-shot 텍스트
+    """
+    static_dir = resolve_path(fewshot_config["static_dir"], experiment_dir, project_dir)
+    lang_path = static_dir / f"{row['lang']}.txt"
+    fallback_path = static_dir / "default.txt"
+
+    if lang_path.exists():
+        return read_text(lang_path)
+    if fallback_path.exists():
+        return read_text(fallback_path)
+    return ""
 
 
 def parse_response(response, fallback="1"):
@@ -521,8 +542,9 @@ def run_experiment(experiment_dir, dry_run=False):
     )
 
     fewshot_config = prompt_config.get("fewshot", {})
+    fewshot_strategy = fewshot_config.get("strategy")
     train_examples = []
-    if fewshot_config.get("enabled"):
+    if fewshot_config.get("enabled") and fewshot_strategy == "same_lang_normalized_edit_distance_label_balance":
         train_dataset_path = resolve_path(fewshot_config["train_dataset"], experiment_dir, project_dir)
         train_examples = load_train_examples(train_dataset_path)
 
@@ -535,14 +557,19 @@ def run_experiment(experiment_dir, dry_run=False):
 
     for position, row in enumerate(rows, start=1):
         fewshot_examples = []
-        if fewshot_config.get("enabled"):
+        fewshot_block = ""
+        if fewshot_config.get("enabled") and fewshot_strategy == "same_lang_normalized_edit_distance_label_balance":
             fewshot_examples = retrieve_fewshot_examples(
                 row,
                 train_examples,
                 positive_k=int(fewshot_config.get("positive_k", 3)),
                 negative_k=int(fewshot_config.get("negative_k", 3)),
             )
-        prompt = build_prompt(prompt_template, row, fewshot_examples)
+            fewshot_block = format_fewshot_block(fewshot_examples)
+        elif fewshot_config.get("enabled") and fewshot_strategy == "static_by_lang":
+            fewshot_block = load_static_fewshot_block(row, fewshot_config, experiment_dir, project_dir)
+
+        prompt = build_prompt(prompt_template, row, fewshot_block)
 
         if dry_run:
             response = "1 dry run placeholder"
@@ -570,6 +597,8 @@ def run_experiment(experiment_dir, dry_run=False):
                 "raw_response": response,
                 "strict_parse": strict_parse,
                 "fewshot_examples": fewshot_examples,
+                "fewshot_strategy": fewshot_strategy,
+                "fewshot_block": fewshot_block,
             }
         )
         print(f"[{position}/{len(rows)}] row={row['row_index']} label={label}", flush=True)

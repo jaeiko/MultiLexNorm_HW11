@@ -1,0 +1,25 @@
+Examples from language `iden`:
+
+Type: NO_CHANGE
+Raw: @johnnjaehyun omg . creep . itu instagram dia ?
+Normalized: @johnnjaehyun omg . creep . itu instagram dia ?
+
+Type: NO_CHANGE
+Raw: babi fillet enak not bad lah tapi haram :(
+Normalized: babi fillet enak not bad lah tapi haram :(
+
+Type: SPELLING_TYPO
+Raw: @yutisijw u not alone , bcs ku nonton debat
+Normalized: @yutisijw you not alone , because ku tonton debat
+
+Type: SPELLING_TYPO
+Raw: @arkimo apa bedanya donut sama doughtnut ?
+Normalized: @arkimo apa bedanya donat sama doughnut ?
+
+Type: MORPHOLOGY_OR_GRAMMAR_SURFACE
+Raw: ku dianggap gak becus krn salah mengarahkan . well .
+Normalized: ku dianggap tidak mampu karena salah mengarahkan . well .
+
+Type: MIXED_COMPLEX
+Raw: pengangguran kek w can't relate bbsgddd
+Normalized: pengangguran seperti saya cannot relate bangsat

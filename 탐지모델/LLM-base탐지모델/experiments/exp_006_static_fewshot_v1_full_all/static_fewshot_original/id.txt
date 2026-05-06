@@ -1,0 +1,33 @@
+Examples from language `id`:
+
+Type: NO_CHANGE
+Raw: wow
+Normalized: wow
+
+Type: CASING
+Raw: Amin ya robballallamin??
+Normalized: amin ya robballallamin??
+
+Type: SPELLING_TYPO
+Raw: Hhhh kekel aq guyu hadeh banget mirip nya dul
+Normalized: hhhh kekel aku guyu hadeh banget mirip nya dul
+
+Type: SPELLING_TYPO
+Raw: Meskipun dibentuk apa aja tetep cantik kok :D
+Normalized: meskipun dibentuk apa saja tetap cantik kok :D
+
+Type: INFORMAL_OR_SLANG
+Raw: Lbh cantik waktu kecil @nikitawillyofficial94
+Normalized: lebih cantik waktu kecil [mention]
+
+Type: INFORMAL_OR_SLANG
+Raw: Ini yang gua mauuuuu ?? @raquellyndaf @nisaaxs
+Normalized: ini yang gua mau ?? [mention] [mention]
+
+Type: MORPHOLOGY_OR_GRAMMAR_SURFACE
+Raw: boleh gak adek galau bentar baang~ #jadisedih
+Normalized: boleh enggak adek galau bentar bang~ [hashtag]
+
+Type: MIXED_COMPLEX
+Raw: Alisnya g dicukur kok tetep cantik bangeeettt
+Normalized: alisnya enggak dicukur kok tetap cantik banget

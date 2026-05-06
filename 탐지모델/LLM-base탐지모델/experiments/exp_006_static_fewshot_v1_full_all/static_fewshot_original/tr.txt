@@ -1,0 +1,45 @@
+Examples from language `tr`:
+
+Type: NO_CHANGE
+Raw: Çıkartın sigaraIarı , bu gece hayaI kuracağız …!
+Normalized: Çıkartın sigaraIarı , bu gece hayaI kuracağız …!
+
+Type: NO_CHANGE
+Raw: Sevler günün kutlu olsun bro 💜 @ardagazell
+Normalized: Sevler günün kutlu olsun bro 💜 @ardagazell
+
+Type: CASING
+Raw: Kullanıcı Adım : Kolaco123 Score 1 - Benfica 3
+Normalized: Kullanıcı adım : Kolaco123 Score 1 - Benfica 3
+
+Type: DIACRITIC_OR_SCRIPT
+Raw: @Berkelendiniz Sevgililer gunun mubarek olsun
+Normalized: @Berkelendiniz Sevgililer günün mübarek olsun
+
+Type: SPELLING_TYPO
+Raw: Sen uyuyunca diger flortumu isinmiya yolladim
+Normalized: Sen uyuyunca diğer flörtümü ısınmaya yolladım
+
+Type: SPELLING_TYPO
+Raw: @merveysann Gülme Eyşan çok sinirliyimm . 😡😡😡
+Normalized: @merveysann Gülme Eyşan çok sinirliyim . 😡😡😡
+
+Type: INFORMAL_OR_SLANG
+Raw: SAMSUNG NOTE 5 32 GB HAFIZA 3 GB RAM TEMİZ ÇİZİKSİZ TEL : 05427416677
+Normalized: Samsung Note 5 32 GB hafıza 3 GB RAM temiz çiziksiz telefon : 05427416677
+
+Type: INFORMAL_OR_SLANG
+Raw: EVT 13 / 02 / 2019 TARİHİNDE GROWTOPİANIN İCİNDEN GEÇTİLER WIJSIWJSIJW
+Normalized: Evet 13 / 02 / 2019 tarihinde Growtopia'nın içinden geçtiler WIJSIWJSIJW
+
+Type: MORPHOLOGY_OR_GRAMMAR_SURFACE
+Raw: @dearbluue Bana da 3 - 1 çıktı aq kesin buglı
+Normalized: @dearbluue Bana da 3 - 1 çıktı amına koyayım kesin buglı
+
+Type: SPACING_OR_PUNCT_SYMBOL
+Raw: @seymhill sanmıyorum ama sağol aşkım dkfşdmfs
+Normalized: @seymhill Sanmıyorum ama sağ ol aşkım dkfşdmfs
+
+Type: MIXED_COMPLEX
+Raw: @gukslip HAFTALARDIR HER GUN BEYNIMDE CIKMIYO
+Normalized: @gukslip Haftalardır her gün beynimde çıkmıyor

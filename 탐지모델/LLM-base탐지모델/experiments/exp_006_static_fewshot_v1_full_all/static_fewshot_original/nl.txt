@@ -1,0 +1,33 @@
+Examples from language `nl`:
+
+Type: NO_CHANGE
+Raw: Xje voor mijn mooie meisje !! Mmmwah
+Normalized: Xje voor mijn mooie meisje !! Mmmwah
+
+Type: NO_CHANGE
+Raw: Grrr carnavalidioten in Delft .
+Normalized: Grrr carnavalidioten in Delft .
+
+Type: CASING
+Raw: En ja , zo'n caramelshake is toch wel zoet
+Normalized: En ja , zo'n Caramelshake is toch wel zoet
+
+Type: SPELLING_TYPO
+Raw: Malle babbe ! Niet supa , maar gaat wel ... x
+Normalized: Malle babbe ! Niet super , maar gaat wel ... x
+
+Type: SPELLING_TYPO
+Raw: jaze , zie daje me zou kome stalke knuffie :D
+Normalized: Ja , zie dat je me zou komen stalken knuffie :D
+
+Type: MORPHOLOGY_OR_GRAMMAR_SURFACE
+Raw: Okido . Duur , maar okido .. ik hoor t wel ..
+Normalized: Oké . Duur , maar oké .. Ik hoor het wel ..
+
+Type: SPACING_OR_PUNCT_SYMBOL
+Raw: @cwuijts Heee Hapzoerkool . Ieje ook ? Ikook Hoelaat ?
+Normalized: @cwuijts Heee Hapzoerkool . Ieje ook ? Ik ook Hoelaat ?
+
+Type: MIXED_COMPLEX
+Raw: Ebk nen so terug ? Oeveel_hebk? Oeveel hebk ?
+Normalized: Heb ik het zo terug ? Oeveel_hebk? Hoeveel heb ik ?

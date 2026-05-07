@@ -16,7 +16,7 @@ class LlamaCorrector:
         self.tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
         self.model = AutoModelForCausalLM.from_pretrained(
             model_checkpoint,
-            device_map="auto",
+            device_map={"": 0},
             quantization_config=quantization_config,
         )
         

@@ -3,16 +3,11 @@ from typing import List
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 class LlamaCorrector:
-    """프롬프트 엔지니어링 기반의 Llama-3 단어 교정 모듈.
-    
-    파이프라인의 최종 단계에서, 사전에 없는 난해한 노이즈 단어를
-    주변 문맥(Context)을 활용하여 LLM의 추론 능력으로 정규화한다.
-    """
+    """프롬프트 엔지니어링 기반의 Llama-3/Gemma 단어 교정 모듈."""
     
     def __init__(self, model_checkpoint: str = "meta-llama/Meta-Llama-3-8B-Instruct") -> None:
-        print(f"[System] {model_checkpoint} 모델을 4-bit 양자화로 로드합니다. (VRAM 절약)")
+        print(f"[System] {model_checkpoint} 모델을 로드합니다.")
         
-        # T4 GPU 메모리 초과를 막기 위한 4-bit 양자화 설정 (필수)
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_compute_dtype=torch.float16
@@ -34,21 +29,37 @@ class LlamaCorrector:
     def correct(self, noisy_word: str, context: List[str]) -> str:
         full_sentence = " ".join(context)
         
-        prompt = f"""You are a lexical normalization expert.
-Read the following sentence and normalize the noisy word into a standard word.
-Provide ONLY the corrected word as your answer, with no additional explanation.
-
-Sentence: "{full_sentence}"
-Noisy word: "{noisy_word}"
-Corrected word: """
+        # [핵심] Instruct 모델에 최적화된 시스템 대화 구조(Chat Template)
+        messages = [
+            # 1. 시스템 역할 부여 (절대 규칙)
+            {"role": "system", "content": "You are a strict lexical normalization API. Your ONLY job is to output the normalized word. NO explanations. NO preamble. NO punctuation."},
+            
+            # 2. 퓨샷(Few-shot) 예시 1
+            {"role": "user", "content": "Context: 'yay , und ich hab mir heut früh'\nNoisy word: 'hab'"},
+            {"role": "assistant", "content": "habe"},
+            
+            # 3. 퓨샷(Few-shot) 예시 2
+            {"role": "user", "content": "Context: 'I lov u so much'\nNoisy word: 'lov'"},
+            {"role": "assistant", "content": "love"},
+            
+            # 4. 실제 처리할 데이터
+            {"role": "user", "content": f"Context: '{full_sentence}'\nNoisy word: '{noisy_word}'"}
+        ]
+        
+        # Llama-3/Gemma가 인식하는 특수 토큰 구조(<|system|>, <|user|> 등)로 자동 변환
+        prompt = self.tokenizer.apply_chat_template(
+            messages, 
+            tokenize=False, 
+            add_generation_prompt=True
+        )
 
         outputs = self.generator(
             prompt, 
-            max_new_tokens=10, 
+            max_new_tokens=20, # 토큰 공간을 넉넉히 주어도 대화 패턴에 의해 단어 1개만 출력 후 스스로 종료(EOS)함
             return_full_text=False,
-            temperature=0.1,
-            do_sample=True, # temperature를 사용할 때 필수
-            pad_token_id=self.tokenizer.eos_token_id # 경고 메시지 방지
+            temperature=0.01,
+            do_sample=True,
+            pad_token_id=self.tokenizer.eos_token_id
         )
         
         corrected_word = outputs[0]["generated_text"].strip()

@@ -36,7 +36,7 @@ class MultilingualCorrector:
         full_sentence = " ".join(context)
         lang_hint = f"Language code: {lang}\n" if lang else ""
         
-        # [수정] 수민 님의 프롬프트 전면 적용
+        # 프롬프트 전면 적용
         messages = [
             {
                 "role": "system",

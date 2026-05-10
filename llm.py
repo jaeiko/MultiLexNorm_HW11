@@ -75,7 +75,7 @@ class MultilingualCorrector:
         # =====================================================================
         
         # 방어 1: 단일 단어 절대 규칙 검사 (공백이나 줄바꿈이 있으면 문장을 생성한 것으로 간주)
-        if " " in corrected_word or "\n" in corrected_word:
+        if "\n" in corrected_word or len(corrected_word.split()) > 4:
             return noisy_word
             
         # 방어 2: 시스템/특수 기호 교차 검사

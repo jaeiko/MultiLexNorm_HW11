@@ -19,6 +19,7 @@ MultiLexNorm_HW11/
 │  ├─ LLM-base탐지모델/          # Gemma/Ollama 기반 LLM 탐지 실험 코드
 │  └─ naive_detector/           # naive 탐지 baseline
 ├─ prompt_mfr_dictionary/       # 수민님께 받은 새 prompt + MFR dictionary 패키지
+├─ prompt_mfr_adapter.py        # 새 prompt/MFR 패키지를 full pipeline에 연결
 ├─ notebooks/                   # Colab / 데모 notebook
 ├─ tools/analysis/              # 분석 스크립트
 ├─ reports/                     # validation 실험 요약/분석 결과
@@ -29,7 +30,7 @@ MultiLexNorm_HW11/
 ## 주로 보면 되는 곳
 
 
-- 수민님께 받은 prompt와 MFR dictionary는 `prompt_mfr_dictionary/`에 있습니다.
+- 수민님께 받은 prompt와 MFR dictionary는 `prompt_mfr_dictionary/`에 있고, `prompt_mfr_adapter.py`를 통해 full pipeline에 연결됩니다.
 - 실험 결과 요약은 `reports/`, 실제 예측 출력은 `outputs/`에 둡니다.
 - 임시 코드나 한 번 쓰고 버리는 스크립트는 `bin/`에 두고 push 대상에서 제외합니다.
 
@@ -38,4 +39,3 @@ MultiLexNorm_HW11/
 ```bash
 pip install -r requirements.txt
 ```
-

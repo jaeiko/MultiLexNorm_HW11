@@ -1,0 +1,14 @@
+{
+  "dataset": "../../multilexnorm2026-dataset/data/test-00000-of-00001.parquet",
+  "split": "test",
+  "evaluate": false,
+  "lang": null,
+  "limit": null,
+  "offset": 0,
+  "fallback": "1",
+  "output_files": {
+    "predictions": "predictions.txt",
+    "debug": "debug.jsonl",
+    "summary": "summary.md"
+  }
+}

@@ -1,0 +1,3 @@
+lang,sentences,tokens,changed,ratio,num_high_confidence_pairs,num_review_pairs,num_ambiguous_pairs,val_total_tokens,val_correct_tokens,val_accuracy,val_lai_accuracy,val_err,val_tp,val_fp,val_fn,val_tn,val_gold_changed_tokens,val_pred_changed_tokens
+id,3016,35502,16857,0.474818,912,1000,600,4306,3375,0.78379,0.522294,0.545941,1128,5,929,2247,2057,1133
+iden,495,13949,2055,0.147322,124,12,600,4809,4519,0.939696,0.878353,0.499145,308,16,277,4211,585,324

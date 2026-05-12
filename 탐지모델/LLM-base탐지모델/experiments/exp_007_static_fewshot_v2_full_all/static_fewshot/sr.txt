@@ -1,0 +1,31 @@
+Examples from language `sr`:
+
+Raw: @zozast izvini , ali taj termin ne koristim .
+Normalized: @zozast izvini , ali taj termin ne koristim .
+
+Raw: u paradajzu prodaju ' čaj za dijabetičare ' .
+Normalized: u paradajzu prodaju ' čaj za dijabetičare ' .
+
+Raw: mada danas medicina resava taj problem 90 % .
+Normalized: mada danas medicina rešava taj problem 90 % .
+
+Raw: zorranah laže da ne bi ispala neinformisana .
+Normalized: zorannah laže da ne bi ispala neinformisana .
+
+Raw: jel se snimak daje pre ili posle uclanjenja ?
+Normalized: je se snimak daje pre ili posle učlanjenja ?
+
+Raw: aupičkumaterinu .
+Normalized: a .
+
+Raw: d'izvinete .
+Normalized: da .
+
+Raw: sad kad je gusto krivi djelic i djindjic .
+Normalized: sad kad je gusto krivi đelić i đinđić .
+
+Raw: mora sada da se jebu s nekim mnogo ružnim jel da ?
+Normalized: mora sada da se jebu s nekim mnogo ružnim jel' da ?
+
+Raw: i on kazes toceno ...
+Normalized: i onda kažeš točeno ...

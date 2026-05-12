@@ -1,0 +1,31 @@
+Examples from language `hr`:
+
+Raw: ako da - nominiram ovim putem prijenos alke .
+Normalized: ako da - nominiram ovim putem prijenos alke .
+
+Raw: barcelona je na camp nou pobijedila 2:0 ath .
+Normalized: barcelona je na camp nou pobijedila 2:0 ath .
+
+Raw: pod novo mislim nesto drugo osim svoje šake .
+Normalized: pod novo mislim nešto drugo osim svoje šake .
+
+Raw: sta nas briga , nama je tw momak i djevojka .
+Normalized: što nas briga , nama je tw momak i djevojka .
+
+Raw: malo kasnim .. hvala vam na ljepim željama od
+Normalized: malo kasnim .. hvala vam na lijepim željama od
+
+Raw: fakdisšit :p
+Normalized: fuck :p
+
+Raw: di , di ?
+Normalized: gdje , gdje ?
+
+Raw: msm da ovo netreba objasnjavat hahah .
+Normalized: mislim da ovo ne objašnjavati hahah .
+
+Raw: dobar dokumentarac o shakespeareu na hrtu .
+Normalized: dobar dokumentarac o shakespeareu na hrt-u .
+
+Raw: ko ce za ovi bigfoot ista nač ....
+Normalized: tko će za ovaj bigfoot išta naći ....

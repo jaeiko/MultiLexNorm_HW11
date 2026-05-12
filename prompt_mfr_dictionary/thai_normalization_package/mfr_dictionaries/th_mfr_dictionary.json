@@ -1,0 +1,5945 @@
+{
+  "metadata": {
+    "language": "th",
+    "generated_at_utc": "2026-05-12T02:19:57.724933+00:00",
+    "source": "train-00000-of-00001.parquet, validation-00000-of-00001.parquet, pattern_examples.json, Thai normalization literature",
+    "description": "Thai train-derived MFR dictionary for MultiLexNorm-style lexical normalization.",
+    "automatic_replacement_policy": "Use only high_confidence_pairs for direct replacement. Use review_pairs and ambiguous_pairs only for context-aware prompts/model fallback.",
+    "strategy": "Conservative dictionary-first for empirical high-confidence pairs; repeated-character, tone/vowel, homophonic, and OOV/transliteration cases are selected as candidates rather than blindly rewritten.",
+    "min_count": 3,
+    "high_confidence_threshold": 0.8,
+    "min_change_rate_for_direct": 0.6,
+    "train_sentences_th": 1750,
+    "train_tokens_th": 140423,
+    "train_changed_tokens_th": 5560,
+    "train_changed_ratio_th": 0.039595,
+    "validation_sentences_th": 250,
+    "validation_tokens_th": 19872,
+    "validation_changed_tokens_th": 786,
+    "validation_changed_ratio_th": 0.039553,
+    "num_distinct_changed_raw": 1889,
+    "num_high_confidence_pairs": 214,
+    "num_review_pairs": 87,
+    "num_ambiguous_pairs": 413,
+    "validation_mfr_err": 0.372774,
+    "validation_mfr_tp": 378,
+    "validation_mfr_fp": 85,
+    "validation_mfr_fn": 408,
+    "warning": "Thai misspellings may carry sentiment/stance semantics. Direct normalization should remain data-driven and conservative; unseen expressive misspellings should be resolved by context-aware prompt/model or preserved."
+  },
+  "high_confidence_pairs": {
+    "0600": "06.00",
+    "กรี้ด": "กรี๊ด",
+    "กีต้าร์": "กีตาร์",
+    "กุ": "กู",
+    "ก้": "ก็",
+    "ก้อ": "ก็",
+    "ก๊อป": "ก็อปปี",
+    "ข่ะ": "ค่ะ",
+    "ค.": "คุณ",
+    "ค.คิด": "ความคิด",
+    "ค.รัก": "ความรัก",
+    "ค.สุข": "ความสุข",
+    "คล้ายๆ": "คล้าย ๆ",
+    "คสอ": "เครื่องสำอาง",
+    "คอน": "คอนเสิร์ต",
+    "คอมเมนท์": "คอมเมนต์",
+    "คอมเม้น": "คอมเมนต์",
+    "คับ": "ครับ",
+    "คาแรคเตอร์": "แครักเตอร์",
+    "คูม": "คุณ",
+    "ค้าบ": "ครับ",
+    "งงๆ": "งง ๆ",
+    "งับ": "ครับ",
+    "งี้": "อย่างนี้",
+    "ง่ายๆ": "ง่าย ๆ",
+    "จริงๆ": "จริง ๆ",
+    "จร้า": "จ้ะ",
+    "จีง": "จริง",
+    "จ้า": "จ้ะ",
+    "ช": "ชาย",
+    "ชั้น": "ฉัน",
+    "ชั้ล": "ฉัน",
+    "ชิบหาย": "ฉิบหาย",
+    "ซัก": "สัก",
+    "ซัพพอร์ต": "ซัปพอร์ต",
+    "ซิง": "ซิงเกิล",
+    "ซิงเกิ้ล": "ซิงเกิล",
+    "ซีรีย์": "ซีรีส์",
+    "ซีรี่ย์": "ซีรีส์",
+    "ซีรี่ส์": "ซีรีส์",
+    "ดจีย์": "ดี",
+    "ดรามา": "ดราม่า",
+    "ดีย์": "ดี",
+    "ดีๆ": "ดี ๆ",
+    "ดึกๆ": "ดึก ๆ",
+    "ตจว": "ต่างจังหวัด",
+    "ตั่งต่าง": "ต่างๆ",
+    "ตู": "กู",
+    "ต่างๆ": "ต่าง ๆ",
+    "ทรศ": "โทรศัพท์",
+    "นส": "หนังสือ",
+    "นัง": "นาง",
+    "นั้นแหละ": "นั่นแหละ",
+    "นา": "นะ",
+    "นายก": "นายกรัฐมนตรี",
+    "นิดนึง": "นิดหนึ่ง",
+    "นิ่งๆ": "นิ่ง ๆ",
+    "นึง": "หนึ่ง",
+    "นุ": "หนู",
+    "นู่นนี่": "โน่นนี่",
+    "น้องงงงง": "น้อง",
+    "น้องๆ": "น้อง ๆ",
+    "น้อน": "น้อง",
+    "น้า": "นะ",
+    "น๊า": "นะ",
+    "บลาๆ": "บลา ๆ",
+    "บอท": "บ็อต",
+    "บัตรคอน": "บัตรคอนเสิร์ต",
+    "บับ": "แบบ",
+    "บั้ม": "อัลบั้ม",
+    "ปชช.": "ประชาชน",
+    "ปท.": "ประเทศ",
+    "ปริ้น": "ปรินต์",
+    "ปล.": "ป.ล.",
+    "ปะ": "หรือเปล่า",
+    "ปัย": "ไป",
+    "ปุ้บ": "ปุ๊บ",
+    "ปุ๊ป": "ปุ๊บ",
+    "ป่าว": "เปล่า",
+    "ผช": "ผู้ชาย",
+    "พนง.": "พนักงาน",
+    "พลอต": "พล็อต",
+    "พิ": "พี่",
+    "พิม": "พิมพ์",
+    "ฟค": "แฟนคลับ",
+    "ฟค.": "แฟนคลับ",
+    "ฟอล": "ฟอลโลว์",
+    "ฟิค": "ฟิกชัน",
+    "มบ.": "เมมเบอร์",
+    "มหาลัย": "มหาวิทยาลัย",
+    "มันส์": "มัน",
+    "มั่ง": "บ้าง",
+    "มั่ย": "ไม่",
+    "มั้ย": "ไหม",
+    "มั๊ย": "ไหม",
+    "มากก": "มาก",
+    "มากกก": "มาก",
+    "มากกกก": "มาก",
+    "มากกกกก": "มาก",
+    "มากกกกกก": "มาก",
+    "มากกกกกกกก": "มาก",
+    "มากๆ": "มาก ๆ",
+    "ยัย": "ยาย",
+    "ยุ": "อยู่",
+    "รพ": "โรงพยาบาล",
+    "รว้าย": "ร้าย",
+    "รสชาด": "รสชาติ",
+    "รอบๆ": "รอบ ๆ",
+    "รัวๆ": "รัว ๆ",
+    "รึ": "หรือ",
+    "ลทบ": "ลงทะเบียน",
+    "ลุค": "ลุก",
+    "ล็อค": "ล็อก",
+    "ล้วนๆ": "ล้วน ๆ",
+    "ศลป": "ศิลปิน",
+    "ศลป.": "ศิลปิน",
+    "สกิล": "สกิลล์",
+    "สคริป": "สคริปต์",
+    "สวยๆ": "สวย ๆ",
+    "สัด": "สัตว์",
+    "สัส": "สัตว์",
+    "หรอ": "เหรอ",
+    "หลายๆ": "หลาย ๆ",
+    "อฟช": "ออฟฟิเชียล",
+    "อฟช.": "ออฟฟิเชียล",
+    "อะรัย": "อะไร",
+    "อัพ": "อัป",
+    "อัพเดท": "อัปเดต",
+    "อาร์มี่": "อาร์มี",
+    "อิ": "อี",
+    "อีเว้นท์": "อีเวนต์",
+    "อื่นๆ": "อื่น ๆ",
+    "อ่ะ": "อะ",
+    "อ้ะ": "อะ",
+    "ฮับ": "ครับ",
+    "ฮืออ": "ฮือ",
+    "ฮือออ": "ฮือ",
+    "เกมส์": "เกม",
+    "เค้า": "เขา",
+    "เชค": "เช็ก",
+    "เช็ค": "เช็ก",
+    "เซรามิค": "เซรามิก",
+    "เดบิ้ว": "เดบิวต์",
+    "เดะ": "เดี๋ยว",
+    "เด็กๆ": "เด็ก ๆ",
+    "เด้อออ": "เด้อ",
+    "เทรน": "เทรนด์",
+    "เทอ": "เธอ",
+    "เท่าไหร่": "เท่าไร",
+    "เธีย": "เธียเตอร์",
+    "เนี่ยแหละ": "นี่แหละ",
+    "เน้": "นี้",
+    "เปง": "เป็น",
+    "เปน": "เป็น",
+    "เพิ่ล": "เพื่อน",
+    "เพ้นท์": "เพนต์",
+    "เมนชั่น": "เมนชัน",
+    "เมื่อไหร่": "เมื่อไร",
+    "เย็นๆ": "เย็น ๆ",
+    "เรย": "เลย",
+    "เราๆ": "เรา ๆ",
+    "เรื่อยๆ": "เรื่อย ๆ",
+    "เลยยย": "เลย",
+    "เลยยยยย": "เลย",
+    "เล้ยย": "เลย",
+    "เวอร์ชั่น": "เวอร์ชัน",
+    "เวิร์ค": "เวิร์ก",
+    "เว็บ": "เว็บไซต์",
+    "เว่อ": "เวอร์",
+    "เว่อร์": "เวอร์",
+    "เว้ยยย": "เว้ย",
+    "เสตจ": "สเตจ",
+    "เส้า": "เศร้า",
+    "เอ้ยย": "เอ้ย",
+    "แคปชั่น": "แคปชัน",
+    "แคส": "แคสต์",
+    "แงง": "แง",
+    "แงงง": "แง",
+    "แท๊ก": "แท็ก",
+    "แน่นๆ": "แน่น ๆ",
+    "แน่ๆ": "แน่ ๆ",
+    "แปป": "แป๊บ",
+    "แปลกๆ": "แปลก ๆ",
+    "แพ็คเกจ": "แพ็กเกจ",
+    "แฟนๆ": "แฟน ๆ",
+    "แมร่ง": "แม่ง",
+    "แรกๆ": "แรก ๆ",
+    "แร้ว": "แล้ว",
+    "แล้วว": "แล้ว",
+    "แล้ววว": "แล้ว",
+    "แอพ": "แอปพลิเคชัน",
+    "โคด": "โคตร",
+    "โครต": "โคตร",
+    "โควต้า": "โควตา",
+    "โง่ๆ": "โง่ ๆ",
+    "โปร": "โปรโมชัน",
+    "โปรเจค": "โปรเจกต์",
+    "โปรเจ็ค": "โปรเจกต์",
+    "โปรโมท": "โปรโมต",
+    "โพส": "โพสต์",
+    "โมเม้น": "โมเมนต์",
+    "โว้ยย": "โว้ย",
+    "โว้ยยย": "โว้ย",
+    "โอ้ย": "โอ๊ย",
+    "ใกล้ๆ": "ใกล้ ๆ",
+    "ใหญ่ๆ": "ใหญ่ ๆ",
+    "ใหม่ๆ": "ใหม่ ๆ",
+    "ไกลๆ": "ไกล ๆ",
+    "ไม": "ทำไม",
+    "ไร": "อะไร",
+    "ไลค์": "ไลก์",
+    "ไอ": "ไอ้",
+    "ไอ่": "ไอ้",
+    "ๆๆๆ": "ๆ"
+  },
+  "review_pairs": {
+    "ยังไง": {
+      "top_norm": "อย่างไร",
+      "top_count": 71,
+      "changed_count": 71,
+      "total_count": 121,
+      "confidence": 1.0,
+      "change_rate": 0.586777,
+      "norm_counts": {
+        "อย่างไร": 71
+      }
+    },
+    "ละ": {
+      "top_norm": "แล้ว",
+      "top_count": 66,
+      "changed_count": 74,
+      "total_count": 220,
+      "confidence": 0.891892,
+      "change_rate": 0.336364,
+      "norm_counts": {
+        "แล้ว": 66,
+        "ล่ะ": 6,
+        "แหละ": 2
+      }
+    },
+    "กะ": {
+      "top_norm": "กับ",
+      "top_count": 26,
+      "changed_count": 30,
+      "total_count": 54,
+      "confidence": 0.866667,
+      "change_rate": 0.555556,
+      "norm_counts": {
+        "กับ": 26,
+        "ก็": 3,
+        "กัน": 1
+      }
+    },
+    "ค่า": {
+      "top_norm": "ค่ะ",
+      "top_count": 24,
+      "changed_count": 24,
+      "total_count": 59,
+      "confidence": 1.0,
+      "change_rate": 0.40678,
+      "norm_counts": {
+        "ค่ะ": 24
+      }
+    },
+    "ไง": {
+      "top_norm": "อย่างไร",
+      "top_count": 22,
+      "changed_count": 22,
+      "total_count": 109,
+      "confidence": 1.0,
+      "change_rate": 0.201835,
+      "norm_counts": {
+        "อย่างไร": 22
+      }
+    },
+    "ไรท์": {
+      "top_norm": "ไรต์",
+      "top_count": 21,
+      "changed_count": 27,
+      "total_count": 29,
+      "confidence": 0.777778,
+      "change_rate": 0.931034,
+      "norm_counts": {
+        "ไรต์": 21,
+        "ไรต์เตอร์": 4,
+        "ไรเตอร์": 2
+      }
+    },
+    "เนี่ย": {
+      "top_norm": "นี่",
+      "top_count": 19,
+      "changed_count": 19,
+      "total_count": 37,
+      "confidence": 1.0,
+      "change_rate": 0.513514,
+      "norm_counts": {
+        "นี่": 19
+      }
+    },
+    "งั้น": {
+      "top_norm": "อย่างนั้น",
+      "top_count": 15,
+      "changed_count": 15,
+      "total_count": 26,
+      "confidence": 1.0,
+      "change_rate": 0.576923,
+      "norm_counts": {
+        "อย่างนั้น": 15
+      }
+    },
+    "พึ่ง": {
+      "top_norm": "เพิ่ง",
+      "top_count": 14,
+      "changed_count": 14,
+      "total_count": 30,
+      "confidence": 1.0,
+      "change_rate": 0.466667,
+      "norm_counts": {
+        "เพิ่ง": 14
+      }
+    },
+    "ที": {
+      "top_norm": "ที่",
+      "top_count": 13,
+      "changed_count": 14,
+      "total_count": 140,
+      "confidence": 0.928571,
+      "change_rate": 0.1,
+      "norm_counts": {
+        "ที่": 13,
+        "ทีม": 1
+      }
+    },
+    "ทวิต": {
+      "top_norm": "ทวีต",
+      "top_count": 13,
+      "changed_count": 16,
+      "total_count": 39,
+      "confidence": 0.8125,
+      "change_rate": 0.410256,
+      "norm_counts": {
+        "ทวีต": 13,
+        "ทวิตเตอร์": 3
+      }
+    },
+    "ทุกๆ": {
+      "top_norm": "ทุก ๆ",
+      "top_count": 12,
+      "changed_count": 12,
+      "total_count": 26,
+      "confidence": 1.0,
+      "change_rate": 0.461538,
+      "norm_counts": {
+        "ทุก ๆ": 12
+      }
+    },
+    "นี้": {
+      "top_norm": "นี่",
+      "top_count": 12,
+      "changed_count": 12,
+      "total_count": 1056,
+      "confidence": 1.0,
+      "change_rate": 0.011364,
+      "norm_counts": {
+        "นี่": 12
+      }
+    },
+    "เมมเบอร์": {
+      "top_norm": "เม็มเบอร์",
+      "top_count": 12,
+      "changed_count": 12,
+      "total_count": 39,
+      "confidence": 1.0,
+      "change_rate": 0.307692,
+      "norm_counts": {
+        "เม็มเบอร์": 12
+      }
+    },
+    "เมม": {
+      "top_norm": "เม็มเบอร์",
+      "top_count": 12,
+      "changed_count": 17,
+      "total_count": 30,
+      "confidence": 0.705882,
+      "change_rate": 0.566667,
+      "norm_counts": {
+        "เม็มเบอร์": 12,
+        "เมมเบอร์": 5
+      }
+    },
+    "อะ": {
+      "top_norm": "นะ",
+      "top_count": 11,
+      "changed_count": 13,
+      "total_count": 180,
+      "confidence": 0.846154,
+      "change_rate": 0.072222,
+      "norm_counts": {
+        "นะ": 11,
+        "น่ะ": 1,
+        "อะไร": 1
+      }
+    },
+    "เยอะๆ": {
+      "top_norm": "เยอะ ๆ",
+      "top_count": 9,
+      "changed_count": 9,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.391304,
+      "norm_counts": {
+        "เยอะ ๆ": 9
+      }
+    },
+    "แอค": {
+      "top_norm": "แอกเคานต์",
+      "top_count": 9,
+      "changed_count": 12,
+      "total_count": 19,
+      "confidence": 0.75,
+      "change_rate": 0.631579,
+      "norm_counts": {
+        "แอกเคานต์": 9,
+        "แอคเคานต์": 2,
+        "แอ็กเคานต์": 1
+      }
+    },
+    "นานๆ": {
+      "top_norm": "นาน ๆ",
+      "top_count": 8,
+      "changed_count": 8,
+      "total_count": 20,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "นาน ๆ": 8
+      }
+    },
+    "สุดๆ": {
+      "top_norm": "สุด ๆ",
+      "top_count": 8,
+      "changed_count": 8,
+      "total_count": 29,
+      "confidence": 1.0,
+      "change_rate": 0.275862,
+      "norm_counts": {
+        "สุด ๆ": 8
+      }
+    },
+    "เนอะ": {
+      "top_norm": "นะ",
+      "top_count": 8,
+      "changed_count": 8,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.347826,
+      "norm_counts": {
+        "นะ": 8
+      }
+    },
+    "ดิ": {
+      "top_norm": "สิ",
+      "top_count": 8,
+      "changed_count": 9,
+      "total_count": 27,
+      "confidence": 0.888889,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "สิ": 8,
+        "ซิ": 1
+      }
+    },
+    "ป่ะ": {
+      "top_norm": "หรือเปล่า",
+      "top_count": 8,
+      "changed_count": 15,
+      "total_count": 20,
+      "confidence": 0.533333,
+      "change_rate": 0.75,
+      "norm_counts": {
+        "หรือเปล่า": 8,
+        "เปล่า": 6,
+        "ปะ": 1
+      }
+    },
+    "ค่ะ": {
+      "top_norm": "คะ",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 311,
+      "confidence": 1.0,
+      "change_rate": 0.022508,
+      "norm_counts": {
+        "คะ": 7
+      }
+    },
+    "มั้ง": {
+      "top_norm": "กระมัง",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 20,
+      "confidence": 1.0,
+      "change_rate": 0.35,
+      "norm_counts": {
+        "กระมัง": 7
+      }
+    },
+    "เฉยๆ": {
+      "top_norm": "เฉย ๆ",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 20,
+      "confidence": 1.0,
+      "change_rate": 0.35,
+      "norm_counts": {
+        "เฉย ๆ": 7
+      }
+    },
+    "เบาๆ": {
+      "top_norm": "เบา ๆ",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.538462,
+      "norm_counts": {
+        "เบา ๆ": 7
+      }
+    },
+    "ตัง": {
+      "top_norm": "สตางค์",
+      "top_count": 7,
+      "changed_count": 9,
+      "total_count": 10,
+      "confidence": 0.777778,
+      "change_rate": 0.9,
+      "norm_counts": {
+        "สตางค์": 7,
+        "ตังค์": 2
+      }
+    },
+    "ข้างๆ": {
+      "top_norm": "ข้าง ๆ",
+      "top_count": 6,
+      "changed_count": 6,
+      "total_count": 19,
+      "confidence": 1.0,
+      "change_rate": 0.315789,
+      "norm_counts": {
+        "ข้าง ๆ": 6
+      }
+    },
+    "มีต": {
+      "top_norm": "มีตติง",
+      "top_count": 6,
+      "changed_count": 7,
+      "total_count": 12,
+      "confidence": 0.857143,
+      "change_rate": 0.583333,
+      "norm_counts": {
+        "มีตติง": 6,
+        "มีตติ้ง": 1
+      }
+    },
+    "ผญ": {
+      "top_norm": "ผู้หญิง",
+      "top_count": 6,
+      "changed_count": 9,
+      "total_count": 9,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ผู้หญิง": 6,
+        "ผญ.": 3
+      }
+    },
+    "ยาวๆ": {
+      "top_norm": "ยาว ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 14,
+      "confidence": 1.0,
+      "change_rate": 0.357143,
+      "norm_counts": {
+        "ยาว ๆ": 5
+      }
+    },
+    "สู้ๆ": {
+      "top_norm": "สู้ ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 22,
+      "confidence": 1.0,
+      "change_rate": 0.227273,
+      "norm_counts": {
+        "สู้ ๆ": 5
+      }
+    },
+    "อยู่ๆ": {
+      "top_norm": "อยู่ ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.555556,
+      "norm_counts": {
+        "อยู่ ๆ": 5
+      }
+    },
+    "เหงาๆ": {
+      "top_norm": "เหงา ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.416667,
+      "norm_counts": {
+        "เหงา ๆ": 5
+      }
+    },
+    "ใดๆ": {
+      "top_norm": "ใด ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.454545,
+      "norm_counts": {
+        "ใด ๆ": 5
+      }
+    },
+    "มะ": {
+      "top_norm": "ไหม",
+      "top_count": 5,
+      "changed_count": 8,
+      "total_count": 8,
+      "confidence": 0.625,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ไหม": 5,
+        "ไม่": 3
+      }
+    },
+    "ซะ": {
+      "top_norm": "เสีย",
+      "top_count": 5,
+      "changed_count": 9,
+      "total_count": 20,
+      "confidence": 0.555556,
+      "change_rate": 0.45,
+      "norm_counts": {
+        "เสีย": 5,
+        "สัก": 3,
+        "สะ": 1
+      }
+    },
+    "ชม": {
+      "top_norm": "ชม.",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.173913,
+      "norm_counts": {
+        "ชม.": 4
+      }
+    },
+    "ทั้งๆ": {
+      "top_norm": "ทั้ง ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.571429,
+      "norm_counts": {
+        "ทั้ง ๆ": 4
+      }
+    },
+    "นี่": {
+      "top_norm": "นี้",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 380,
+      "confidence": 1.0,
+      "change_rate": 0.010526,
+      "norm_counts": {
+        "นี้": 4
+      }
+    },
+    "บ่อยๆ": {
+      "top_norm": "บ่อย ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.444444,
+      "norm_counts": {
+        "บ่อย ๆ": 4
+      }
+    },
+    "พี่ๆ": {
+      "top_norm": "พี่ ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "พี่ ๆ": 4
+      }
+    },
+    "ม๊า": {
+      "top_norm": "ม้า",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ม้า": 4
+      }
+    },
+    "เก่าๆ": {
+      "top_norm": "เก่า ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.363636,
+      "norm_counts": {
+        "เก่า ๆ": 4
+      }
+    },
+    "เมะ": {
+      "top_norm": "อนิเมะ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "อนิเมะ": 4
+      }
+    },
+    "เฟส": {
+      "top_norm": "เฟซบุ๊ก",
+      "top_count": 4,
+      "changed_count": 5,
+      "total_count": 10,
+      "confidence": 0.8,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เฟซบุ๊ก": 4,
+        "เฟซ": 1
+      }
+    },
+    "แชท": {
+      "top_norm": "แชต",
+      "top_count": 4,
+      "changed_count": 7,
+      "total_count": 10,
+      "confidence": 0.571429,
+      "change_rate": 0.7,
+      "norm_counts": {
+        "แชต": 4,
+        "แช็ต": 3
+      }
+    },
+    "ล่ะ": {
+      "top_norm": "ละ",
+      "top_count": 4,
+      "changed_count": 10,
+      "total_count": 36,
+      "confidence": 0.4,
+      "change_rate": 0.277778,
+      "norm_counts": {
+        "ละ": 4,
+        "แล้ว": 3,
+        "แหละ": 3
+      }
+    },
+    "1200": {
+      "top_norm": "12.00",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "12.00": 3
+      }
+    },
+    "คนๆ": {
+      "top_norm": "คนคน",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "คนคน": 3
+      }
+    },
+    "ตรงๆ": {
+      "top_norm": "ตรง ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 19,
+      "confidence": 1.0,
+      "change_rate": 0.157895,
+      "norm_counts": {
+        "ตรง ๆ": 3
+      }
+    },
+    "นิดๆ": {
+      "top_norm": "นิด ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "นิด ๆ": 3
+      }
+    },
+    "น่ารักๆ": {
+      "top_norm": "น่ารัก ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "น่ารัก ๆ": 3
+      }
+    },
+    "พรี": {
+      "top_norm": "พรีออเดอร์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "พรีออเดอร์": 3
+      }
+    },
+    "พร้อมๆ": {
+      "top_norm": "พร้อม ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "พร้อม ๆ": 3
+      }
+    },
+    "ม.": {
+      "top_norm": "มัธยม",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 38,
+      "confidence": 1.0,
+      "change_rate": 0.078947,
+      "norm_counts": {
+        "มัธยม": 3
+      }
+    },
+    "ยูทูป": {
+      "top_norm": "ยูทูบ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "ยูทูบ": 3
+      }
+    },
+    "ลทบ.": {
+      "top_norm": "ลงทะเบียน",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ลงทะเบียน": 3
+      }
+    },
+    "วิ": {
+      "top_norm": "วินาที",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "วินาที": 3
+      }
+    },
+    "สั้นๆ": {
+      "top_norm": "สั้น ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "สั้น ๆ": 3
+      }
+    },
+    "ออเดอร์": {
+      "top_norm": "ออร์เดอร์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "ออร์เดอร์": 3
+      }
+    },
+    "เกา": {
+      "top_norm": "เกาหลี",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เกาหลี": 3
+      }
+    },
+    "เซต": {
+      "top_norm": "เซ็ต",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เซ็ต": 3
+      }
+    },
+    "เดิมๆ": {
+      "top_norm": "เดิม ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "เดิม ๆ": 3
+      }
+    },
+    "เดียว": {
+      "top_norm": "เดี๋ยว",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 180,
+      "confidence": 1.0,
+      "change_rate": 0.016667,
+      "norm_counts": {
+        "เดี๋ยว": 3
+      }
+    },
+    "เต็มๆ": {
+      "top_norm": "เต็ม ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "เต็ม ๆ": 3
+      }
+    },
+    "เนาะ": {
+      "top_norm": "นะ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "นะ": 3
+      }
+    },
+    "เพื่อนๆ": {
+      "top_norm": "เพื่อน ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.230769,
+      "norm_counts": {
+        "เพื่อน ๆ": 3
+      }
+    },
+    "เมน": {
+      "top_norm": "เมนต์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 39,
+      "confidence": 1.0,
+      "change_rate": 0.076923,
+      "norm_counts": {
+        "เมนต์": 3
+      }
+    },
+    "เอ้า": {
+      "top_norm": "อ้าว",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.3,
+      "norm_counts": {
+        "อ้าว": 3
+      }
+    },
+    "แอด": {
+      "top_norm": "แอดมิน",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.272727,
+      "norm_counts": {
+        "แอดมิน": 3
+      }
+    },
+    "แอนตี้": {
+      "top_norm": "แอนตี",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "แอนตี": 3
+      }
+    },
+    "โทร": {
+      "top_norm": "โทรศัพท์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.130435,
+      "norm_counts": {
+        "โทรศัพท์": 3
+      }
+    },
+    "โหดๆ": {
+      "top_norm": "โหด ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "โหด ๆ": 3
+      }
+    },
+    "โอ": {
+      "top_norm": "โอเค",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โอเค": 3
+      }
+    },
+    "ใครๆ": {
+      "top_norm": "ใคร ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "ใคร ๆ": 3
+      }
+    },
+    "ป้ะ": {
+      "top_norm": "หรือเปล่า",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 6,
+      "confidence": 0.75,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "หรือเปล่า": 3,
+        "เปล่า": 1
+      }
+    },
+    "ผช.": {
+      "top_norm": "ผู้ชาย",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 6,
+      "confidence": 0.75,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "ผู้ชาย": 3,
+        "ผู้ขาย": 1
+      }
+    },
+    "มากๆๆ": {
+      "top_norm": "มากๆ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มากๆ": 3,
+        "มาก ๆ": 1
+      }
+    },
+    "มากๆๆๆ": {
+      "top_norm": "มากๆ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มากๆ": 3,
+        "มาก ๆ": 1
+      }
+    },
+    "ยูส": {
+      "top_norm": "ยูเซอร์",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ยูเซอร์": 3,
+        "ยูสเซอร์": 1
+      }
+    },
+    "ว่ะ": {
+      "top_norm": "วะ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 27,
+      "confidence": 0.75,
+      "change_rate": 0.148148,
+      "norm_counts": {
+        "วะ": 3,
+        "หว่า": 1
+      }
+    },
+    "หละ": {
+      "top_norm": "ล่ะ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ล่ะ": 3,
+        "แหละ": 1
+      }
+    },
+    "เดี่ยว": {
+      "top_norm": "เดียว",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 13,
+      "confidence": 0.75,
+      "change_rate": 0.307692,
+      "norm_counts": {
+        "เดียว": 3,
+        "เดี๋ยว": 1
+      }
+    },
+    "แมท": {
+      "top_norm": "แมตต์",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 5,
+      "confidence": 0.75,
+      "change_rate": 0.8,
+      "norm_counts": {
+        "แมตต์": 3,
+        "แมช": 1
+      }
+    },
+    "รร": {
+      "top_norm": "รร.",
+      "top_count": 3,
+      "changed_count": 7,
+      "total_count": 7,
+      "confidence": 0.428571,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "รร.": 3,
+        "โรงเรียน": 2,
+        "ร.ร.": 1,
+        "โรงแรม": 1
+      }
+    }
+  },
+  "ambiguous_pairs": {
+    "อ่ะ": {
+      "top_norm": "อะ",
+      "top_count": 137,
+      "changed_count": 152,
+      "total_count": 215,
+      "confidence": 0.901316,
+      "change_rate": 0.706977,
+      "norm_counts": {
+        "อะ": 137,
+        "นะ": 10,
+        "น่ะ": 5
+      }
+    },
+    "จ้า": {
+      "top_norm": "จ้ะ",
+      "top_count": 74,
+      "changed_count": 76,
+      "total_count": 114,
+      "confidence": 0.973684,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "จ้ะ": 74,
+        "จ้าง": 1,
+        "จ๊ะ": 1
+      }
+    },
+    "ยังไง": {
+      "top_norm": "อย่างไร",
+      "top_count": 71,
+      "changed_count": 71,
+      "total_count": 121,
+      "confidence": 1.0,
+      "change_rate": 0.586777,
+      "norm_counts": {
+        "อย่างไร": 71
+      }
+    },
+    "ละ": {
+      "top_norm": "แล้ว",
+      "top_count": 66,
+      "changed_count": 74,
+      "total_count": 220,
+      "confidence": 0.891892,
+      "change_rate": 0.336364,
+      "norm_counts": {
+        "แล้ว": 66,
+        "ล่ะ": 6,
+        "แหละ": 2
+      }
+    },
+    "คอน": {
+      "top_norm": "คอนเสิร์ต",
+      "top_count": 58,
+      "changed_count": 63,
+      "total_count": 67,
+      "confidence": 0.920635,
+      "change_rate": 0.940299,
+      "norm_counts": {
+        "คอนเสิร์ต": 58,
+        "คอนฯ": 3,
+        "คแนเสิร์ต": 1,
+        "ตอนเสิร์ต": 1
+      }
+    },
+    "ไร": {
+      "top_norm": "อะไร",
+      "top_count": 50,
+      "changed_count": 54,
+      "total_count": 86,
+      "confidence": 0.925926,
+      "change_rate": 0.627907,
+      "norm_counts": {
+        "อะไร": 50,
+        "ไหร่": 4
+      }
+    },
+    "หรอ": {
+      "top_norm": "เหรอ",
+      "top_count": 35,
+      "changed_count": 41,
+      "total_count": 62,
+      "confidence": 0.853659,
+      "change_rate": 0.66129,
+      "norm_counts": {
+        "เหรอ": 35,
+        "หรือ": 6
+      }
+    },
+    "กะ": {
+      "top_norm": "กับ",
+      "top_count": 26,
+      "changed_count": 30,
+      "total_count": 54,
+      "confidence": 0.866667,
+      "change_rate": 0.555556,
+      "norm_counts": {
+        "กับ": 26,
+        "ก็": 3,
+        "กัน": 1
+      }
+    },
+    "ค่า": {
+      "top_norm": "ค่ะ",
+      "top_count": 24,
+      "changed_count": 24,
+      "total_count": 59,
+      "confidence": 1.0,
+      "change_rate": 0.40678,
+      "norm_counts": {
+        "ค่ะ": 24
+      }
+    },
+    "ไง": {
+      "top_norm": "อย่างไร",
+      "top_count": 22,
+      "changed_count": 22,
+      "total_count": 109,
+      "confidence": 1.0,
+      "change_rate": 0.201835,
+      "norm_counts": {
+        "อย่างไร": 22
+      }
+    },
+    "ไรท์": {
+      "top_norm": "ไรต์",
+      "top_count": 21,
+      "changed_count": 27,
+      "total_count": 29,
+      "confidence": 0.777778,
+      "change_rate": 0.931034,
+      "norm_counts": {
+        "ไรต์": 21,
+        "ไรต์เตอร์": 4,
+        "ไรเตอร์": 2
+      }
+    },
+    "ซิง": {
+      "top_norm": "ซิงเกิล",
+      "top_count": 20,
+      "changed_count": 21,
+      "total_count": 24,
+      "confidence": 0.952381,
+      "change_rate": 0.875,
+      "norm_counts": {
+        "ซิงเกิล": 20,
+        "ฅิงเกิล": 1
+      }
+    },
+    "เนี่ย": {
+      "top_norm": "นี่",
+      "top_count": 19,
+      "changed_count": 19,
+      "total_count": 37,
+      "confidence": 1.0,
+      "change_rate": 0.513514,
+      "norm_counts": {
+        "นี่": 19
+      }
+    },
+    "มากก": {
+      "top_norm": "มาก",
+      "top_count": 19,
+      "changed_count": 20,
+      "total_count": 20,
+      "confidence": 0.95,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มาก": 19,
+        "มมก": 1
+      }
+    },
+    "ฟิค": {
+      "top_norm": "ฟิกชัน",
+      "top_count": 17,
+      "changed_count": 18,
+      "total_count": 28,
+      "confidence": 0.944444,
+      "change_rate": 0.642857,
+      "norm_counts": {
+        "ฟิกชัน": 17,
+        "ฟิก": 1
+      }
+    },
+    "อัพ": {
+      "top_norm": "อัป",
+      "top_count": 17,
+      "changed_count": 18,
+      "total_count": 25,
+      "confidence": 0.944444,
+      "change_rate": 0.72,
+      "norm_counts": {
+        "อัป": 17,
+        "อัปเดต": 1
+      }
+    },
+    "งั้น": {
+      "top_norm": "อย่างนั้น",
+      "top_count": 15,
+      "changed_count": 15,
+      "total_count": 26,
+      "confidence": 1.0,
+      "change_rate": 0.576923,
+      "norm_counts": {
+        "อย่างนั้น": 15
+      }
+    },
+    "พึ่ง": {
+      "top_norm": "เพิ่ง",
+      "top_count": 14,
+      "changed_count": 14,
+      "total_count": 30,
+      "confidence": 1.0,
+      "change_rate": 0.466667,
+      "norm_counts": {
+        "เพิ่ง": 14
+      }
+    },
+    "อฟช.": {
+      "top_norm": "ออฟฟิเชียล",
+      "top_count": 14,
+      "changed_count": 15,
+      "total_count": 21,
+      "confidence": 0.933333,
+      "change_rate": 0.714286,
+      "norm_counts": {
+        "ออฟฟิเชียล": 14,
+        "ออฟิเชียล": 1
+      }
+    },
+    "ซีรี่ย์": {
+      "top_norm": "ซีรีส์",
+      "top_count": 13,
+      "changed_count": 14,
+      "total_count": 15,
+      "confidence": 0.928571,
+      "change_rate": 0.933333,
+      "norm_counts": {
+        "ซีรีส์": 13,
+        "ซีรี่ส์": 1
+      }
+    },
+    "ที": {
+      "top_norm": "ที่",
+      "top_count": 13,
+      "changed_count": 14,
+      "total_count": 140,
+      "confidence": 0.928571,
+      "change_rate": 0.1,
+      "norm_counts": {
+        "ที่": 13,
+        "ทีม": 1
+      }
+    },
+    "ศลป": {
+      "top_norm": "ศิลปิน",
+      "top_count": 13,
+      "changed_count": 14,
+      "total_count": 15,
+      "confidence": 0.928571,
+      "change_rate": 0.933333,
+      "norm_counts": {
+        "ศิลปิน": 13,
+        "ศิลปะ": 1
+      }
+    },
+    "ทวิต": {
+      "top_norm": "ทวีต",
+      "top_count": 13,
+      "changed_count": 16,
+      "total_count": 39,
+      "confidence": 0.8125,
+      "change_rate": 0.410256,
+      "norm_counts": {
+        "ทวีต": 13,
+        "ทวิตเตอร์": 3
+      }
+    },
+    "ทุกๆ": {
+      "top_norm": "ทุก ๆ",
+      "top_count": 12,
+      "changed_count": 12,
+      "total_count": 26,
+      "confidence": 1.0,
+      "change_rate": 0.461538,
+      "norm_counts": {
+        "ทุก ๆ": 12
+      }
+    },
+    "นี้": {
+      "top_norm": "นี่",
+      "top_count": 12,
+      "changed_count": 12,
+      "total_count": 1056,
+      "confidence": 1.0,
+      "change_rate": 0.011364,
+      "norm_counts": {
+        "นี่": 12
+      }
+    },
+    "เมมเบอร์": {
+      "top_norm": "เม็มเบอร์",
+      "top_count": 12,
+      "changed_count": 12,
+      "total_count": 39,
+      "confidence": 1.0,
+      "change_rate": 0.307692,
+      "norm_counts": {
+        "เม็มเบอร์": 12
+      }
+    },
+    "ผช": {
+      "top_norm": "ผู้ชาย",
+      "top_count": 12,
+      "changed_count": 14,
+      "total_count": 14,
+      "confidence": 0.857143,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ผู้ชาย": 12,
+        "ผช.": 2
+      }
+    },
+    "เมม": {
+      "top_norm": "เม็มเบอร์",
+      "top_count": 12,
+      "changed_count": 17,
+      "total_count": 30,
+      "confidence": 0.705882,
+      "change_rate": 0.566667,
+      "norm_counts": {
+        "เม็มเบอร์": 12,
+        "เมมเบอร์": 5
+      }
+    },
+    "ฟค": {
+      "top_norm": "แฟนคลับ",
+      "top_count": 11,
+      "changed_count": 12,
+      "total_count": 13,
+      "confidence": 0.916667,
+      "change_rate": 0.923077,
+      "norm_counts": {
+        "แฟนคลับ": 11,
+        "ฟค.": 1
+      }
+    },
+    "อะ": {
+      "top_norm": "นะ",
+      "top_count": 11,
+      "changed_count": 13,
+      "total_count": 180,
+      "confidence": 0.846154,
+      "change_rate": 0.072222,
+      "norm_counts": {
+        "นะ": 11,
+        "น่ะ": 1,
+        "อะไร": 1
+      }
+    },
+    "ปะ": {
+      "top_norm": "หรือเปล่า",
+      "top_count": 10,
+      "changed_count": 12,
+      "total_count": 18,
+      "confidence": 0.833333,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "หรือเปล่า": 10,
+        "เปล่า": 2
+      }
+    },
+    "เยอะๆ": {
+      "top_norm": "เยอะ ๆ",
+      "top_count": 9,
+      "changed_count": 9,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.391304,
+      "norm_counts": {
+        "เยอะ ๆ": 9
+      }
+    },
+    "ก้อ": {
+      "top_norm": "ก็",
+      "top_count": 9,
+      "changed_count": 10,
+      "total_count": 10,
+      "confidence": 0.9,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ก็": 9,
+        "ดี": 1
+      }
+    },
+    "แอค": {
+      "top_norm": "แอกเคานต์",
+      "top_count": 9,
+      "changed_count": 12,
+      "total_count": 19,
+      "confidence": 0.75,
+      "change_rate": 0.631579,
+      "norm_counts": {
+        "แอกเคานต์": 9,
+        "แอคเคานต์": 2,
+        "แอ็กเคานต์": 1
+      }
+    },
+    "นานๆ": {
+      "top_norm": "นาน ๆ",
+      "top_count": 8,
+      "changed_count": 8,
+      "total_count": 20,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "นาน ๆ": 8
+      }
+    },
+    "สุดๆ": {
+      "top_norm": "สุด ๆ",
+      "top_count": 8,
+      "changed_count": 8,
+      "total_count": 29,
+      "confidence": 1.0,
+      "change_rate": 0.275862,
+      "norm_counts": {
+        "สุด ๆ": 8
+      }
+    },
+    "เนอะ": {
+      "top_norm": "นะ",
+      "top_count": 8,
+      "changed_count": 8,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.347826,
+      "norm_counts": {
+        "นะ": 8
+      }
+    },
+    "ดิ": {
+      "top_norm": "สิ",
+      "top_count": 8,
+      "changed_count": 9,
+      "total_count": 27,
+      "confidence": 0.888889,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "สิ": 8,
+        "ซิ": 1
+      }
+    },
+    "นิดนึง": {
+      "top_norm": "นิดหนึ่ง",
+      "top_count": 8,
+      "changed_count": 9,
+      "total_count": 11,
+      "confidence": 0.888889,
+      "change_rate": 0.818182,
+      "norm_counts": {
+        "นิดหนึ่ง": 8,
+        "เล็กน้อย": 1
+      }
+    },
+    "ป่าว": {
+      "top_norm": "เปล่า",
+      "top_count": 8,
+      "changed_count": 9,
+      "total_count": 10,
+      "confidence": 0.888889,
+      "change_rate": 0.9,
+      "norm_counts": {
+        "เปล่า": 8,
+        "หรือเปล่า": 1
+      }
+    },
+    "ป่ะ": {
+      "top_norm": "หรือเปล่า",
+      "top_count": 8,
+      "changed_count": 15,
+      "total_count": 20,
+      "confidence": 0.533333,
+      "change_rate": 0.75,
+      "norm_counts": {
+        "หรือเปล่า": 8,
+        "เปล่า": 6,
+        "ปะ": 1
+      }
+    },
+    "ค่ะ": {
+      "top_norm": "คะ",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 311,
+      "confidence": 1.0,
+      "change_rate": 0.022508,
+      "norm_counts": {
+        "คะ": 7
+      }
+    },
+    "มั้ง": {
+      "top_norm": "กระมัง",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 20,
+      "confidence": 1.0,
+      "change_rate": 0.35,
+      "norm_counts": {
+        "กระมัง": 7
+      }
+    },
+    "เฉยๆ": {
+      "top_norm": "เฉย ๆ",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 20,
+      "confidence": 1.0,
+      "change_rate": 0.35,
+      "norm_counts": {
+        "เฉย ๆ": 7
+      }
+    },
+    "เบาๆ": {
+      "top_norm": "เบา ๆ",
+      "top_count": 7,
+      "changed_count": 7,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.538462,
+      "norm_counts": {
+        "เบา ๆ": 7
+      }
+    },
+    "ตัง": {
+      "top_norm": "สตางค์",
+      "top_count": 7,
+      "changed_count": 9,
+      "total_count": 10,
+      "confidence": 0.777778,
+      "change_rate": 0.9,
+      "norm_counts": {
+        "สตางค์": 7,
+        "ตังค์": 2
+      }
+    },
+    "ข้างๆ": {
+      "top_norm": "ข้าง ๆ",
+      "top_count": 6,
+      "changed_count": 6,
+      "total_count": 19,
+      "confidence": 1.0,
+      "change_rate": 0.315789,
+      "norm_counts": {
+        "ข้าง ๆ": 6
+      }
+    },
+    "มีต": {
+      "top_norm": "มีตติง",
+      "top_count": 6,
+      "changed_count": 7,
+      "total_count": 12,
+      "confidence": 0.857143,
+      "change_rate": 0.583333,
+      "norm_counts": {
+        "มีตติง": 6,
+        "มีตติ้ง": 1
+      }
+    },
+    "ฮือออ": {
+      "top_norm": "ฮือ",
+      "top_count": 6,
+      "changed_count": 7,
+      "total_count": 7,
+      "confidence": 0.857143,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ฮือ": 6,
+        "ฮื": 1
+      }
+    },
+    "ผญ": {
+      "top_norm": "ผู้หญิง",
+      "top_count": 6,
+      "changed_count": 9,
+      "total_count": 9,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ผู้หญิง": 6,
+        "ผญ.": 3
+      }
+    },
+    "ยาวๆ": {
+      "top_norm": "ยาว ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 14,
+      "confidence": 1.0,
+      "change_rate": 0.357143,
+      "norm_counts": {
+        "ยาว ๆ": 5
+      }
+    },
+    "สู้ๆ": {
+      "top_norm": "สู้ ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 22,
+      "confidence": 1.0,
+      "change_rate": 0.227273,
+      "norm_counts": {
+        "สู้ ๆ": 5
+      }
+    },
+    "อยู่ๆ": {
+      "top_norm": "อยู่ ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.555556,
+      "norm_counts": {
+        "อยู่ ๆ": 5
+      }
+    },
+    "เหงาๆ": {
+      "top_norm": "เหงา ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.416667,
+      "norm_counts": {
+        "เหงา ๆ": 5
+      }
+    },
+    "ใดๆ": {
+      "top_norm": "ใด ๆ",
+      "top_count": 5,
+      "changed_count": 5,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.454545,
+      "norm_counts": {
+        "ใด ๆ": 5
+      }
+    },
+    "คาแรคเตอร์": {
+      "top_norm": "แครักเตอร์",
+      "top_count": 5,
+      "changed_count": 6,
+      "total_count": 6,
+      "confidence": 0.833333,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "แครักเตอร์": 5,
+        "คาแร็กเตอร์": 1
+      }
+    },
+    "ลทบ": {
+      "top_norm": "ลงทะเบียน",
+      "top_count": 5,
+      "changed_count": 6,
+      "total_count": 7,
+      "confidence": 0.833333,
+      "change_rate": 0.857143,
+      "norm_counts": {
+        "ลงทะเบียน": 5,
+        "ลทบ.": 1
+      }
+    },
+    "มะ": {
+      "top_norm": "ไหม",
+      "top_count": 5,
+      "changed_count": 8,
+      "total_count": 8,
+      "confidence": 0.625,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ไหม": 5,
+        "ไม่": 3
+      }
+    },
+    "ซะ": {
+      "top_norm": "เสีย",
+      "top_count": 5,
+      "changed_count": 9,
+      "total_count": 20,
+      "confidence": 0.555556,
+      "change_rate": 0.45,
+      "norm_counts": {
+        "เสีย": 5,
+        "สัก": 3,
+        "สะ": 1
+      }
+    },
+    "ชม": {
+      "top_norm": "ชม.",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.173913,
+      "norm_counts": {
+        "ชม.": 4
+      }
+    },
+    "ทั้งๆ": {
+      "top_norm": "ทั้ง ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.571429,
+      "norm_counts": {
+        "ทั้ง ๆ": 4
+      }
+    },
+    "นี่": {
+      "top_norm": "นี้",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 380,
+      "confidence": 1.0,
+      "change_rate": 0.010526,
+      "norm_counts": {
+        "นี้": 4
+      }
+    },
+    "บ่อยๆ": {
+      "top_norm": "บ่อย ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.444444,
+      "norm_counts": {
+        "บ่อย ๆ": 4
+      }
+    },
+    "พี่ๆ": {
+      "top_norm": "พี่ ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "พี่ ๆ": 4
+      }
+    },
+    "ม๊า": {
+      "top_norm": "ม้า",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ม้า": 4
+      }
+    },
+    "เก่าๆ": {
+      "top_norm": "เก่า ๆ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.363636,
+      "norm_counts": {
+        "เก่า ๆ": 4
+      }
+    },
+    "เมะ": {
+      "top_norm": "อนิเมะ",
+      "top_count": 4,
+      "changed_count": 4,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "อนิเมะ": 4
+      }
+    },
+    "นายก": {
+      "top_norm": "นายกรัฐมนตรี",
+      "top_count": 4,
+      "changed_count": 5,
+      "total_count": 8,
+      "confidence": 0.8,
+      "change_rate": 0.625,
+      "norm_counts": {
+        "นายกรัฐมนตรี": 4,
+        "นายกฯ": 1
+      }
+    },
+    "เน้": {
+      "top_norm": "นี้",
+      "top_count": 4,
+      "changed_count": 5,
+      "total_count": 5,
+      "confidence": 0.8,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "นี้": 4,
+        "เนี่ย": 1
+      }
+    },
+    "เฟส": {
+      "top_norm": "เฟซบุ๊ก",
+      "top_count": 4,
+      "changed_count": 5,
+      "total_count": 10,
+      "confidence": 0.8,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เฟซบุ๊ก": 4,
+        "เฟซ": 1
+      }
+    },
+    "แปป": {
+      "top_norm": "แป๊บ",
+      "top_count": 4,
+      "changed_count": 5,
+      "total_count": 5,
+      "confidence": 0.8,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "แป๊บ": 4,
+        "แป็บ": 1
+      }
+    },
+    "แชท": {
+      "top_norm": "แชต",
+      "top_count": 4,
+      "changed_count": 7,
+      "total_count": 10,
+      "confidence": 0.571429,
+      "change_rate": 0.7,
+      "norm_counts": {
+        "แชต": 4,
+        "แช็ต": 3
+      }
+    },
+    "ล่ะ": {
+      "top_norm": "ละ",
+      "top_count": 4,
+      "changed_count": 10,
+      "total_count": 36,
+      "confidence": 0.4,
+      "change_rate": 0.277778,
+      "norm_counts": {
+        "ละ": 4,
+        "แล้ว": 3,
+        "แหละ": 3
+      }
+    },
+    "1200": {
+      "top_norm": "12.00",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "12.00": 3
+      }
+    },
+    "คนๆ": {
+      "top_norm": "คนคน",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "คนคน": 3
+      }
+    },
+    "ตรงๆ": {
+      "top_norm": "ตรง ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 19,
+      "confidence": 1.0,
+      "change_rate": 0.157895,
+      "norm_counts": {
+        "ตรง ๆ": 3
+      }
+    },
+    "นิดๆ": {
+      "top_norm": "นิด ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "นิด ๆ": 3
+      }
+    },
+    "น่ารักๆ": {
+      "top_norm": "น่ารัก ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "น่ารัก ๆ": 3
+      }
+    },
+    "พรี": {
+      "top_norm": "พรีออเดอร์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "พรีออเดอร์": 3
+      }
+    },
+    "พร้อมๆ": {
+      "top_norm": "พร้อม ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "พร้อม ๆ": 3
+      }
+    },
+    "ม.": {
+      "top_norm": "มัธยม",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 38,
+      "confidence": 1.0,
+      "change_rate": 0.078947,
+      "norm_counts": {
+        "มัธยม": 3
+      }
+    },
+    "ยูทูป": {
+      "top_norm": "ยูทูบ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "ยูทูบ": 3
+      }
+    },
+    "ลทบ.": {
+      "top_norm": "ลงทะเบียน",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ลงทะเบียน": 3
+      }
+    },
+    "วิ": {
+      "top_norm": "วินาที",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "วินาที": 3
+      }
+    },
+    "สั้นๆ": {
+      "top_norm": "สั้น ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "สั้น ๆ": 3
+      }
+    },
+    "ออเดอร์": {
+      "top_norm": "ออร์เดอร์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "ออร์เดอร์": 3
+      }
+    },
+    "เกา": {
+      "top_norm": "เกาหลี",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เกาหลี": 3
+      }
+    },
+    "เซต": {
+      "top_norm": "เซ็ต",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เซ็ต": 3
+      }
+    },
+    "เดิมๆ": {
+      "top_norm": "เดิม ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "เดิม ๆ": 3
+      }
+    },
+    "เดียว": {
+      "top_norm": "เดี๋ยว",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 180,
+      "confidence": 1.0,
+      "change_rate": 0.016667,
+      "norm_counts": {
+        "เดี๋ยว": 3
+      }
+    },
+    "เต็มๆ": {
+      "top_norm": "เต็ม ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "เต็ม ๆ": 3
+      }
+    },
+    "เนาะ": {
+      "top_norm": "นะ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "นะ": 3
+      }
+    },
+    "เพื่อนๆ": {
+      "top_norm": "เพื่อน ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.230769,
+      "norm_counts": {
+        "เพื่อน ๆ": 3
+      }
+    },
+    "เมน": {
+      "top_norm": "เมนต์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 39,
+      "confidence": 1.0,
+      "change_rate": 0.076923,
+      "norm_counts": {
+        "เมนต์": 3
+      }
+    },
+    "เอ้า": {
+      "top_norm": "อ้าว",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.3,
+      "norm_counts": {
+        "อ้าว": 3
+      }
+    },
+    "แอด": {
+      "top_norm": "แอดมิน",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.272727,
+      "norm_counts": {
+        "แอดมิน": 3
+      }
+    },
+    "แอนตี้": {
+      "top_norm": "แอนตี",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "แอนตี": 3
+      }
+    },
+    "โทร": {
+      "top_norm": "โทรศัพท์",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.130435,
+      "norm_counts": {
+        "โทรศัพท์": 3
+      }
+    },
+    "โหดๆ": {
+      "top_norm": "โหด ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.375,
+      "norm_counts": {
+        "โหด ๆ": 3
+      }
+    },
+    "โอ": {
+      "top_norm": "โอเค",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โอเค": 3
+      }
+    },
+    "ใครๆ": {
+      "top_norm": "ใคร ๆ",
+      "top_count": 3,
+      "changed_count": 3,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.428571,
+      "norm_counts": {
+        "ใคร ๆ": 3
+      }
+    },
+    "ป้ะ": {
+      "top_norm": "หรือเปล่า",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 6,
+      "confidence": 0.75,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "หรือเปล่า": 3,
+        "เปล่า": 1
+      }
+    },
+    "ผช.": {
+      "top_norm": "ผู้ชาย",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 6,
+      "confidence": 0.75,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "ผู้ชาย": 3,
+        "ผู้ขาย": 1
+      }
+    },
+    "มากๆๆ": {
+      "top_norm": "มากๆ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มากๆ": 3,
+        "มาก ๆ": 1
+      }
+    },
+    "มากๆๆๆ": {
+      "top_norm": "มากๆ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มากๆ": 3,
+        "มาก ๆ": 1
+      }
+    },
+    "ยูส": {
+      "top_norm": "ยูเซอร์",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ยูเซอร์": 3,
+        "ยูสเซอร์": 1
+      }
+    },
+    "ว่ะ": {
+      "top_norm": "วะ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 27,
+      "confidence": 0.75,
+      "change_rate": 0.148148,
+      "norm_counts": {
+        "วะ": 3,
+        "หว่า": 1
+      }
+    },
+    "หละ": {
+      "top_norm": "ล่ะ",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 4,
+      "confidence": 0.75,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ล่ะ": 3,
+        "แหละ": 1
+      }
+    },
+    "เดี่ยว": {
+      "top_norm": "เดียว",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 13,
+      "confidence": 0.75,
+      "change_rate": 0.307692,
+      "norm_counts": {
+        "เดียว": 3,
+        "เดี๋ยว": 1
+      }
+    },
+    "แมท": {
+      "top_norm": "แมตต์",
+      "top_count": 3,
+      "changed_count": 4,
+      "total_count": 5,
+      "confidence": 0.75,
+      "change_rate": 0.8,
+      "norm_counts": {
+        "แมตต์": 3,
+        "แมช": 1
+      }
+    },
+    "รร": {
+      "top_norm": "รร.",
+      "top_count": 3,
+      "changed_count": 7,
+      "total_count": 7,
+      "confidence": 0.428571,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "รร.": 3,
+        "โรงเรียน": 2,
+        "ร.ร.": 1,
+        "โรงแรม": 1
+      }
+    },
+    "กว่าๆ": {
+      "top_norm": "กว่า ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "กว่า ๆ": 2
+      }
+    },
+    "ขำๆ": {
+      "top_norm": "ขำ ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "ขำ ๆ": 2
+      }
+    },
+    "ความชุ่มชื้น": {
+      "top_norm": "ความชุ่มชื่น",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ความชุ่มชื่น": 2
+      }
+    },
+    "คอม": {
+      "top_norm": "คอมพิวเตอร์",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "คอมพิวเตอร์": 2
+      }
+    },
+    "ช.": {
+      "top_norm": "ชาย",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "ชาย": 2
+      }
+    },
+    "ชุ่มชื้น": {
+      "top_norm": "ชุ่มชื่น",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "ชุ่มชื่น": 2
+      }
+    },
+    "ซ้ำๆ": {
+      "top_norm": "ซ้ำ ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ซ้ำ ๆ": 2
+      }
+    },
+    "ตปท.": {
+      "top_norm": "ต่างประเทศ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "ต่างประเทศ": 2
+      }
+    },
+    "ตังค์": {
+      "top_norm": "สตางค์",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "สตางค์": 2
+      }
+    },
+    "นั้น": {
+      "top_norm": "นั่น",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 323,
+      "confidence": 1.0,
+      "change_rate": 0.006192,
+      "norm_counts": {
+        "นั่น": 2
+      }
+    },
+    "น่า": {
+      "top_norm": "นะ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 46,
+      "confidence": 1.0,
+      "change_rate": 0.043478,
+      "norm_counts": {
+        "นะ": 2
+      }
+    },
+    "น้ะ": {
+      "top_norm": "นะ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "นะ": 2
+      }
+    },
+    "บอส": {
+      "top_norm": "บอสส์",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.153846,
+      "norm_counts": {
+        "บอสส์": 2
+      }
+    },
+    "ประถม": {
+      "top_norm": "ประถมศึกษา",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 11,
+      "confidence": 1.0,
+      "change_rate": 0.181818,
+      "norm_counts": {
+        "ประถมศึกษา": 2
+      }
+    },
+    "ผ่านๆ": {
+      "top_norm": "ผ่าน ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ผ่าน ๆ": 2
+      }
+    },
+    "พีค": {
+      "top_norm": "พีก",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "พีก": 2
+      }
+    },
+    "มาส์ก": {
+      "top_norm": "มาสก์",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "มาสก์": 2
+      }
+    },
+    "รักๆ": {
+      "top_norm": "รัก ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "รัก ๆ": 2
+      }
+    },
+    "สนุกๆ": {
+      "top_norm": "สนุก ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "สนุก ๆ": 2
+      }
+    },
+    "สปอย": {
+      "top_norm": "สปอยล์",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "สปอยล์": 2
+      }
+    },
+    "สส.": {
+      "top_norm": "ส.ส.",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ส.ส.": 2
+      }
+    },
+    "สาวๆ": {
+      "top_norm": "สาว ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "สาว ๆ": 2
+      }
+    },
+    "หลังๆ": {
+      "top_norm": "หลัง ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "หลัง ๆ": 2
+      }
+    },
+    "อฟซ": {
+      "top_norm": "ออฟฟิเชียล",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ออฟฟิเชียล": 2
+      }
+    },
+    "อิ้ง": {
+      "top_norm": "อิงลิช",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "อิงลิช": 2
+      }
+    },
+    "อ่า": {
+      "top_norm": "อะ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "อะ": 2
+      }
+    },
+    "อ้อ": {
+      "top_norm": "อ๋อ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "อ๋อ": 2
+      }
+    },
+    "เกือบๆ": {
+      "top_norm": "เกือบ ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เกือบ ๆ": 2
+      }
+    },
+    "เมจ": {
+      "top_norm": "อิมเมจ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "อิมเมจ": 2
+      }
+    },
+    "เรท": {
+      "top_norm": "เรต",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เรต": 2
+      }
+    },
+    "เล็กๆ": {
+      "top_norm": "เล็ก ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "เล็ก ๆ": 2
+      }
+    },
+    "เล่นๆ": {
+      "top_norm": "เล่น ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "เล่น ๆ": 2
+      }
+    },
+    "เห้ย": {
+      "top_norm": "เฮ้ย",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.222222,
+      "norm_counts": {
+        "เฮ้ย": 2
+      }
+    },
+    "เอ้ย": {
+      "top_norm": "เอ๊ย",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เอ๊ย": 2
+      }
+    },
+    "แท้ๆ": {
+      "top_norm": "แท้ ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.4,
+      "norm_counts": {
+        "แท้ ๆ": 2
+      }
+    },
+    "แย่ๆ": {
+      "top_norm": "แย่ ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "แย่ ๆ": 2
+      }
+    },
+    "และ": {
+      "top_norm": "แล้ว",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 670,
+      "confidence": 1.0,
+      "change_rate": 0.002985,
+      "norm_counts": {
+        "แล้ว": 2
+      }
+    },
+    "แฮปปี้": {
+      "top_norm": "แฮปปี",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แฮปปี": 2
+      }
+    },
+    "ใช่": {
+      "top_norm": "ใช้",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 216,
+      "confidence": 1.0,
+      "change_rate": 0.009259,
+      "norm_counts": {
+        "ใช้": 2
+      }
+    },
+    "ไหนๆ": {
+      "top_norm": "ไหน ๆ",
+      "top_count": 2,
+      "changed_count": 2,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ไหน ๆ": 2
+      }
+    },
+    "กรุงเทพ": {
+      "top_norm": "กรุงเทพฯ",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 13,
+      "confidence": 0.666667,
+      "change_rate": 0.230769,
+      "norm_counts": {
+        "กรุงเทพฯ": 2,
+        "กรุงเทพมหานคร": 1
+      }
+    },
+    "ง่ะ": {
+      "top_norm": "อะ",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 0.666667,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "อะ": 2,
+        "นะ": 1
+      }
+    },
+    "จิงๆ": {
+      "top_norm": "จริงๆ",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "จริงๆ": 2,
+        "จริง ๆ": 1
+      }
+    },
+    "ตปท": {
+      "top_norm": "ต่างประเทศ",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ต่างประเทศ": 2,
+        "ตปท.": 1
+      }
+    },
+    "บตบก": {
+      "top_norm": "บิวตี้บล็อกเกอร์",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 5,
+      "confidence": 0.666667,
+      "change_rate": 0.6,
+      "norm_counts": {
+        "บิวตี้บล็อกเกอร์": 2,
+        "บิวตีบล็อกเกอร์": 1
+      }
+    },
+    "ประมาน": {
+      "top_norm": "ประมาณ",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ประมาณ": 2,
+        "ปนะมาณ": 1
+      }
+    },
+    "ฟตซ": {
+      "top_norm": "โฟโต้เซ็ต",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 5,
+      "confidence": 0.666667,
+      "change_rate": 0.6,
+      "norm_counts": {
+        "โฟโต้เซ็ต": 2,
+        "โฟโต้เซต": 1
+      }
+    },
+    "ยัง": {
+      "top_norm": "หรือยัง",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 412,
+      "confidence": 0.666667,
+      "change_rate": 0.007282,
+      "norm_counts": {
+        "หรือยัง": 2,
+        "อย่าง": 1
+      }
+    },
+    "เวป": {
+      "top_norm": "เว็บไซต์",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "เว็บไซต์": 2,
+        "เว็บ": 1
+      }
+    },
+    "แระ": {
+      "top_norm": "แล้ว",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "แล้ว": 2,
+        "ละ": 1
+      }
+    },
+    "โอ้ยย": {
+      "top_norm": "โอ๊ย",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "โอ๊ย": 2,
+        "โอ้ย": 1
+      }
+    },
+    "ไร๊": {
+      "top_norm": "อะไร",
+      "top_count": 2,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.666667,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "อะไร": 2,
+        "ไร": 1
+      }
+    },
+    "เนี้ย": {
+      "top_norm": "เนี่ย",
+      "top_count": 2,
+      "changed_count": 4,
+      "total_count": 5,
+      "confidence": 0.5,
+      "change_rate": 0.8,
+      "norm_counts": {
+        "เนี่ย": 2,
+        "นี่": 1,
+        "นี้": 1
+      }
+    },
+    "แบต": {
+      "top_norm": "แบตเตอรี่",
+      "top_count": 2,
+      "changed_count": 4,
+      "total_count": 5,
+      "confidence": 0.5,
+      "change_rate": 0.8,
+      "norm_counts": {
+        "แบตเตอรี่": 2,
+        "แบตเตอร์รี": 1,
+        "แบตเตอร์รี่": 1
+      }
+    },
+    "#บตบก": {
+      "top_norm": "#บิวตีบลอกเกอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "#บิวตีบลอกเกอร์": 1
+      }
+    },
+    "1700": {
+      "top_norm": "17.00",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "17.00": 1
+      }
+    },
+    "EP": {
+      "top_norm": "EP.",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "EP.": 1
+      }
+    },
+    "กฏ": {
+      "top_norm": "กฎ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "กฎ": 1
+      }
+    },
+    "กพ": {
+      "top_norm": "ก.พ.",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ก.พ.": 1
+      }
+    },
+    "กลับ": {
+      "top_norm": "กับ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 172,
+      "confidence": 1.0,
+      "change_rate": 0.005814,
+      "norm_counts": {
+        "กับ": 1
+      }
+    },
+    "กัน": {
+      "top_norm": "กับ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 649,
+      "confidence": 1.0,
+      "change_rate": 0.001541,
+      "norm_counts": {
+        "กับ": 1
+      }
+    },
+    "กับ": {
+      "top_norm": "กลับ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 676,
+      "confidence": 1.0,
+      "change_rate": 0.001479,
+      "norm_counts": {
+        "กลับ": 1
+      }
+    },
+    "กู": {
+      "top_norm": "หู",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 213,
+      "confidence": 1.0,
+      "change_rate": 0.004695,
+      "norm_counts": {
+        "หู": 1
+      }
+    },
+    "กู๊ด": {
+      "top_norm": "กูด",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "กูด": 1
+      }
+    },
+    "ก่อนๆ": {
+      "top_norm": "ก่อน ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "ก่อน ๆ": 1
+      }
+    },
+    "ขอ": {
+      "top_norm": "ข้อ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 189,
+      "confidence": 1.0,
+      "change_rate": 0.005291,
+      "norm_counts": {
+        "ข้อ": 1
+      }
+    },
+    "ขาว": {
+      "top_norm": "ขวา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 23,
+      "confidence": 1.0,
+      "change_rate": 0.043478,
+      "norm_counts": {
+        "ขวา": 1
+      }
+    },
+    "ขำ": {
+      "top_norm": "คำ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 19,
+      "confidence": 1.0,
+      "change_rate": 0.052632,
+      "norm_counts": {
+        "คำ": 1
+      }
+    },
+    "คสอ.": {
+      "top_norm": "เครื่องสำอาง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เครื่องสำอาง": 1
+      }
+    },
+    "คอ": {
+      "top_norm": "คือ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.111111,
+      "norm_counts": {
+        "คือ": 1
+      }
+    },
+    "คะ": {
+      "top_norm": "ค่ะ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 182,
+      "confidence": 1.0,
+      "change_rate": 0.005495,
+      "norm_counts": {
+        "ค่ะ": 1
+      }
+    },
+    "คัท": {
+      "top_norm": "คัต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "คัต": 1
+      }
+    },
+    "คา": {
+      "top_norm": "แครักเตอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แครักเตอร์": 1
+      }
+    },
+    "คาบ": {
+      "top_norm": "คราบ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "คราบ": 1
+      }
+    },
+    "คิดๆ": {
+      "top_norm": "คิด ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "คิด ๆ": 1
+      }
+    },
+    "คีพ": {
+      "top_norm": "คีป",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "คีป": 1
+      }
+    },
+    "คุม": {
+      "top_norm": "คุณ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.1,
+      "norm_counts": {
+        "คุณ": 1
+      }
+    },
+    "จอนอ": {
+      "top_norm": "เจนนิส",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "เจนนิส": 1
+      }
+    },
+    "จ้อง": {
+      "top_norm": "ต้อง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "ต้อง": 1
+      }
+    },
+    "จ๊ะ": {
+      "top_norm": "จะ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "จะ": 1
+      }
+    },
+    "ฉุด": {
+      "top_norm": "ฉุก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ฉุก": 1
+      }
+    },
+    "ฉ่ำๆ": {
+      "top_norm": "ฉ่ำ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ฉ่ำ ๆ": 1
+      }
+    },
+    "ชอต": {
+      "top_norm": "ช็อต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ช็อต": 1
+      }
+    },
+    "ชุดพละ": {
+      "top_norm": "ชุดพลศึกษา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ชุดพลศึกษา": 1
+      }
+    },
+    "ช็อค": {
+      "top_norm": "ช็อก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ช็อก": 1
+      }
+    },
+    "ช็อป": {
+      "top_norm": "ชอปปิง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ชอปปิง": 1
+      }
+    },
+    "ช็อปปิ้ง": {
+      "top_norm": "ชอปปิ้ง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ชอปปิ้ง": 1
+      }
+    },
+    "ช้ะ": {
+      "top_norm": "ใช่หรือเปล่า",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ใช่หรือเปล่า": 1
+      }
+    },
+    "ซร": {
+      "top_norm": "ซีรีส์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ซีรีส์": 1
+      }
+    },
+    "ซับ": {
+      "top_norm": "ซับไตเติ้ล",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "ซับไตเติ้ล": 1
+      }
+    },
+    "ซี": {
+      "top_norm": "ซีเรียส",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "ซีเรียส": 1
+      }
+    },
+    "ซีซัน": {
+      "top_norm": "ซีซั่น",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ซีซั่น": 1
+      }
+    },
+    "ซึ้ง": {
+      "top_norm": "ซึ่ง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.111111,
+      "norm_counts": {
+        "ซึ่ง": 1
+      }
+    },
+    "ญป.": {
+      "top_norm": "ญี่ปุ่น",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ญี่ปุ่น": 1
+      }
+    },
+    "ดราม่า": {
+      "top_norm": "ดรามา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 40,
+      "confidence": 1.0,
+      "change_rate": 0.025,
+      "norm_counts": {
+        "ดรามา": 1
+      }
+    },
+    "ดังๆ": {
+      "top_norm": "ดัง ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "ดัง ๆ": 1
+      }
+    },
+    "ดาวิ": {
+      "top_norm": "ดาวิกา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ดาวิกา": 1
+      }
+    },
+    "ดาเมจ": {
+      "top_norm": "แดเมจ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แดเมจ": 1
+      }
+    },
+    "ดิสนี่ย์": {
+      "top_norm": "ดิสนีย์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ดิสนีย์": 1
+      }
+    },
+    "ดีนี่": {
+      "top_norm": "ดีนี",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ดีนี": 1
+      }
+    },
+    "ดื้อๆ": {
+      "top_norm": "ดื้อ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ดื้อ ๆ": 1
+      }
+    },
+    "ด่าๆ": {
+      "top_norm": "ด่า ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ด่า ๆ": 1
+      }
+    },
+    "ด้อม": {
+      "top_norm": "แฟนด้อม",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 43,
+      "confidence": 1.0,
+      "change_rate": 0.023256,
+      "norm_counts": {
+        "แฟนด้อม": 1
+      }
+    },
+    "ติด": {
+      "top_norm": "คิด",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 93,
+      "confidence": 1.0,
+      "change_rate": 0.010753,
+      "norm_counts": {
+        "คิด": 1
+      }
+    },
+    "ตุ่นๆ": {
+      "top_norm": "ตุ่น ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ตุ่น ๆ": 1
+      }
+    },
+    "ต่ำๆ": {
+      "top_norm": "ต่ำ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ต่ำ ๆ": 1
+      }
+    },
+    "ถถถ": {
+      "top_norm": "โธ่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "โธ่": 1
+      }
+    },
+    "ถูก": {
+      "top_norm": "ทุก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 100,
+      "confidence": 1.0,
+      "change_rate": 0.01,
+      "norm_counts": {
+        "ทุก": 1
+      }
+    },
+    "ถูกๆ": {
+      "top_norm": "ถูก ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ถูก ๆ": 1
+      }
+    },
+    "ทั้งๆที่": {
+      "top_norm": "ทั้ง ๆ ที่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.076923,
+      "norm_counts": {
+        "ทั้ง ๆ ที่": 1
+      }
+    },
+    "ทาน": {
+      "top_norm": "รับประทาน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.142857,
+      "norm_counts": {
+        "รับประทาน": 1
+      }
+    },
+    "ท็อป": {
+      "top_norm": "ท๊อป",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "ท๊อป": 1
+      }
+    },
+    "นะ": {
+      "top_norm": "น่ะ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 843,
+      "confidence": 1.0,
+      "change_rate": 0.001186,
+      "norm_counts": {
+        "น่ะ": 1
+      }
+    },
+    "นัก": {
+      "top_norm": "หนัก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.076923,
+      "norm_counts": {
+        "หนัก": 1
+      }
+    },
+    "นัย": {
+      "top_norm": "นับ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "นับ": 1
+      }
+    },
+    "นั่น": {
+      "top_norm": "นั้น",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 26,
+      "confidence": 1.0,
+      "change_rate": 0.038462,
+      "norm_counts": {
+        "นั้น": 1
+      }
+    },
+    "นั้นๆ": {
+      "top_norm": "นั้น ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "นั้น ๆ": 1
+      }
+    },
+    "นายกฯ": {
+      "top_norm": "นายกรัฐมนตรี",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "นายกรัฐมนตรี": 1
+      }
+    },
+    "นึก": {
+      "top_norm": "หนึ่ง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 56,
+      "confidence": 1.0,
+      "change_rate": 0.017857,
+      "norm_counts": {
+        "หนึ่ง": 1
+      }
+    },
+    "นู่นนี่นั่น": {
+      "top_norm": "โน่นนี่นั่น",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โน่นนี่นั่น": 1
+      }
+    },
+    "น่ะ": {
+      "top_norm": "นะ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 25,
+      "confidence": 1.0,
+      "change_rate": 0.04,
+      "norm_counts": {
+        "นะ": 1
+      }
+    },
+    "น้อยๆ": {
+      "top_norm": "น้อย ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "น้อย ๆ": 1
+      }
+    },
+    "บ.": {
+      "top_norm": "บริษัท",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "บริษัท": 1
+      }
+    },
+    "บริการ": {
+      "top_norm": "บริหาร",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.083333,
+      "norm_counts": {
+        "บริหาร": 1
+      }
+    },
+    "บางๆ": {
+      "top_norm": "บาง ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "บาง ๆ": 1
+      }
+    },
+    "ป.": {
+      "top_norm": "ประถม",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 14,
+      "confidence": 1.0,
+      "change_rate": 0.071429,
+      "norm_counts": {
+        "ประถม": 1
+      }
+    },
+    "ปจบ.": {
+      "top_norm": "ปัจจุบัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ปัจจุบัน": 1
+      }
+    },
+    "ปรากฎ": {
+      "top_norm": "ปรากฏ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ปรากฏ": 1
+      }
+    },
+    "ปล": {
+      "top_norm": "ป.ล.",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ป.ล.": 1
+      }
+    },
+    "ผญ.": {
+      "top_norm": "ผู้หญิง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "ผู้หญิง": 1
+      }
+    },
+    "ผีๆ": {
+      "top_norm": "ผี ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ผี ๆ": 1
+      }
+    },
+    "ผู้": {
+      "top_norm": "ผู้ชาย",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 24,
+      "confidence": 1.0,
+      "change_rate": 0.041667,
+      "norm_counts": {
+        "ผู้ชาย": 1
+      }
+    },
+    "พท.": {
+      "top_norm": "พื้นที่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "พื้นที่": 1
+      }
+    },
+    "พรุ่ง": {
+      "top_norm": "พุ่ง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "พุ่ง": 1
+      }
+    },
+    "พอร์ต": {
+      "top_norm": "พล็อต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "พล็อต": 1
+      }
+    },
+    "พอๆ": {
+      "top_norm": "พอ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "พอ ๆ": 1
+      }
+    },
+    "พาร์ท": {
+      "top_norm": "พาร์ต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "พาร์ต": 1
+      }
+    },
+    "ฟตซ.": {
+      "top_norm": "โฟโตเซต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โฟโตเซต": 1
+      }
+    },
+    "ฟิล": {
+      "top_norm": "ฟีล",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ฟีล": 1
+      }
+    },
+    "ฟีดแบค": {
+      "top_norm": "ฟีดแบ็ก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ฟีดแบ็ก": 1
+      }
+    },
+    "ฟีล": {
+      "top_norm": "ฟิล",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "ฟิล": 1
+      }
+    },
+    "ฟ่า": {
+      "top_norm": "กว่า",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "กว่า": 1
+      }
+    },
+    "ม": {
+      "top_norm": "มา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "มา": 1
+      }
+    },
+    "มสก": {
+      "top_norm": "มาก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "มาก": 1
+      }
+    },
+    "มัน": {
+      "top_norm": "มั่น",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 871,
+      "confidence": 1.0,
+      "change_rate": 0.001148,
+      "norm_counts": {
+        "มั่น": 1
+      }
+    },
+    "มา": {
+      "top_norm": "มาก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 1650,
+      "confidence": 1.0,
+      "change_rate": 0.000606,
+      "norm_counts": {
+        "มาก": 1
+      }
+    },
+    "มาก": {
+      "top_norm": "มา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 909,
+      "confidence": 1.0,
+      "change_rate": 0.0011,
+      "norm_counts": {
+        "มา": 1
+      }
+    },
+    "มาร์ก": {
+      "top_norm": "มาส์ก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "มาส์ก": 1
+      }
+    },
+    "มาส": {
+      "top_norm": "มาสเตอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "มาสเตอร์": 1
+      }
+    },
+    "มาๆ": {
+      "top_norm": "มา ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "มา ๆ": 1
+      }
+    },
+    "มุก": {
+      "top_norm": "มุกตลก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.083333,
+      "norm_counts": {
+        "มุกตลก": 1
+      }
+    },
+    "ยังใง": {
+      "top_norm": "อย่างไร",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "อย่างไร": 1
+      }
+    },
+    "ยั่วๆ": {
+      "top_norm": "ยั่ว ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ยั่ว ๆ": 1
+      }
+    },
+    "ยาก": {
+      "top_norm": "อยาก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 55,
+      "confidence": 1.0,
+      "change_rate": 0.018182,
+      "norm_counts": {
+        "อยาก": 1
+      }
+    },
+    "รร.": {
+      "top_norm": "โรงเรียน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 12,
+      "confidence": 1.0,
+      "change_rate": 0.083333,
+      "norm_counts": {
+        "โรงเรียน": 1
+      }
+    },
+    "รั่ว": {
+      "top_norm": "รั้ว",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "รั้ว": 1
+      }
+    },
+    "รีด": {
+      "top_norm": "รีดเดอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "รีดเดอร์": 1
+      }
+    },
+    "รีวิวว": {
+      "top_norm": "รีวิว",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "รีวิว": 1
+      }
+    },
+    "รีสอร์ท": {
+      "top_norm": "รีสอร์ต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "รีสอร์ต": 1
+      }
+    },
+    "รู": {
+      "top_norm": "รู้",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "รู้": 1
+      }
+    },
+    "ร้อยยิ้ม": {
+      "top_norm": "รอยยิ้ม",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "รอยยิ้ม": 1
+      }
+    },
+    "ลอง": {
+      "top_norm": "รอง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 79,
+      "confidence": 1.0,
+      "change_rate": 0.012658,
+      "norm_counts": {
+        "รอง": 1
+      }
+    },
+    "ลอยๆ": {
+      "top_norm": "ลอย ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ลอย ๆ": 1
+      }
+    },
+    "ละกัน": {
+      "top_norm": "แล้วกัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "แล้วกัน": 1
+      }
+    },
+    "ละมุนๆ": {
+      "top_norm": "ละมุน ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ละมุน ๆ": 1
+      }
+    },
+    "ลึก": {
+      "top_norm": "ลีก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "ลีก": 1
+      }
+    },
+    "ลึกๆ": {
+      "top_norm": "ลึก ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "ลึก ๆ": 1
+      }
+    },
+    "ล่า": {
+      "top_norm": "ล่าสุด",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 10,
+      "confidence": 1.0,
+      "change_rate": 0.1,
+      "norm_counts": {
+        "ล่าสุด": 1
+      }
+    },
+    "วนว": {
+      "top_norm": "วันนาวัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "วันนาวัน": 1
+      }
+    },
+    "วันๆ": {
+      "top_norm": "วัน ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "วัน ๆ": 1
+      }
+    },
+    "วีค": {
+      "top_norm": "วีก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "วีก": 1
+      }
+    },
+    "สตรีมมิ่ง": {
+      "top_norm": "สตรีมมิง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "สตรีมมิง": 1
+      }
+    },
+    "สตอรี่": {
+      "top_norm": "สตอรี",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "สตอรี": 1
+      }
+    },
+    "สตาฟ": {
+      "top_norm": "สตาฟฟ์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "สตาฟฟ์": 1
+      }
+    },
+    "สอน": {
+      "top_norm": "สอง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 27,
+      "confidence": 1.0,
+      "change_rate": 0.037037,
+      "norm_counts": {
+        "สอง": 1
+      }
+    },
+    "สังเกตุ": {
+      "top_norm": "สังเกต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "สังเกต": 1
+      }
+    },
+    "สิทธิ": {
+      "top_norm": "สิทธิ์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "สิทธิ์": 1
+      }
+    },
+    "ส่องๆ": {
+      "top_norm": "ส่อง ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ส่อง ๆ": 1
+      }
+    },
+    "หน่อยๆ": {
+      "top_norm": "หน่อย ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "หน่อย ๆ": 1
+      }
+    },
+    "หมุด": {
+      "top_norm": "หมุน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "หมุน": 1
+      }
+    },
+    "หลอก": {
+      "top_norm": "หรอก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "หรอก": 1
+      }
+    },
+    "หลัว": {
+      "top_norm": "ผัว",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ผัว": 1
+      }
+    },
+    "หล่ะ": {
+      "top_norm": "ล่ะ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ล่ะ": 1
+      }
+    },
+    "หวง": {
+      "top_norm": "ห่วง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "ห่วง": 1
+      }
+    },
+    "หอมๆ": {
+      "top_norm": "หอม ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "หอม ๆ": 1
+      }
+    },
+    "อยาก": {
+      "top_norm": "ยาก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 475,
+      "confidence": 1.0,
+      "change_rate": 0.002105,
+      "norm_counts": {
+        "ยาก": 1
+      }
+    },
+    "อลัง": {
+      "top_norm": "อลังการ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "อลังการ": 1
+      }
+    },
+    "ออ": {
+      "top_norm": "ออดิชัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ออดิชัน": 1
+      }
+    },
+    "ออร่า": {
+      "top_norm": "ออรา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ออรา": 1
+      }
+    },
+    "อีเวนท์": {
+      "top_norm": "อีเวนต์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "อีเวนต์": 1
+      }
+    },
+    "อ่อนๆ": {
+      "top_norm": "อ่อน ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "อ่อน ๆ": 1
+      }
+    },
+    "อ่านๆ": {
+      "top_norm": "อ่าน ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "อ่าน ๆ": 1
+      }
+    },
+    "อ้อมๆ": {
+      "top_norm": "อ้อม ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "อ้อม ๆ": 1
+      }
+    },
+    "ฮรือ": {
+      "top_norm": "ฮือ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ฮือ": 1
+      }
+    },
+    "ฮอล": {
+      "top_norm": "ฮอลล์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ฮอลล์": 1
+      }
+    },
+    "ฮุค": {
+      "top_norm": "ฮุก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ฮุก": 1
+      }
+    },
+    "เกี่ยว": {
+      "top_norm": "เกี่ยวกับ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.111111,
+      "norm_counts": {
+        "เกี่ยวกับ": 1
+      }
+    },
+    "เครื่อง": {
+      "top_norm": "เครื่องบิน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 14,
+      "confidence": 1.0,
+      "change_rate": 0.071429,
+      "norm_counts": {
+        "เครื่องบิน": 1
+      }
+    },
+    "เคาท์เตอร์": {
+      "top_norm": "เคาน์เตอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เคาน์เตอร์": 1
+      }
+    },
+    "เช็คอิน": {
+      "top_norm": "เช็กอิน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เช็กอิน": 1
+      }
+    },
+    "เซม": {
+      "top_norm": "เซมบัตสึ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "เซมบัตสึ": 1
+      }
+    },
+    "เซรั่ม": {
+      "top_norm": "เซรัม",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เซรัม": 1
+      }
+    },
+    "เซอร์วิส": {
+      "top_norm": "เซอร์วิซ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "เซอร์วิซ": 1
+      }
+    },
+    "เซ็นเตอร์": {
+      "top_norm": "เซนเตอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 7,
+      "confidence": 1.0,
+      "change_rate": 0.142857,
+      "norm_counts": {
+        "เซนเตอร์": 1
+      }
+    },
+    "เด": {
+      "top_norm": "เดบิวต์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เดบิวต์": 1
+      }
+    },
+    "เดอะเบส": {
+      "top_norm": "เดอะเบสต์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เดอะเบสต์": 1
+      }
+    },
+    "เต็น": {
+      "top_norm": "เต้น",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เต้น": 1
+      }
+    },
+    "เทคนิค": {
+      "top_norm": "เทกนิก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เทกนิก": 1
+      }
+    },
+    "เท่ห์": {
+      "top_norm": "เท่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เท่": 1
+      }
+    },
+    "เท่าไร": {
+      "top_norm": "เท่าไหร่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "เท่าไหร่": 1
+      }
+    },
+    "เท่าๆ": {
+      "top_norm": "เท่า ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เท่า ๆ": 1
+      }
+    },
+    "เธียร์เตอร์": {
+      "top_norm": "เธียเตอร์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เธียเตอร์": 1
+      }
+    },
+    "เบอร์": {
+      "top_norm": "เบอร์โทรศัพท์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 24,
+      "confidence": 1.0,
+      "change_rate": 0.041667,
+      "norm_counts": {
+        "เบอร์โทรศัพท์": 1
+      }
+    },
+    "เป็นๆ": {
+      "top_norm": "เป็น ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เป็น ๆ": 1
+      }
+    },
+    "เพนกิ้น": {
+      "top_norm": "เพนกวิน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เพนกวิน": 1
+      }
+    },
+    "เพื่อน": {
+      "top_norm": "เพื่อ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 247,
+      "confidence": 1.0,
+      "change_rate": 0.004049,
+      "norm_counts": {
+        "เพื่อ": 1
+      }
+    },
+    "เฟรน": {
+      "top_norm": "เฟรนด์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เฟรนด์": 1
+      }
+    },
+    "เฟรนด์ลี่": {
+      "top_norm": "เฟรนด์ลี",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เฟรนด์ลี": 1
+      }
+    },
+    "เมคอัพ": {
+      "top_norm": "เม้กอั้ป",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เม้กอั้ป": 1
+      }
+    },
+    "เรียบๆ": {
+      "top_norm": "เรียบ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เรียบ ๆ": 1
+      }
+    },
+    "เรียล": {
+      "top_norm": "เรียน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เรียน": 1
+      }
+    },
+    "เรื่อย": {
+      "top_norm": "เรื่อง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 8,
+      "confidence": 1.0,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "เรื่อง": 1
+      }
+    },
+    "เลน": {
+      "top_norm": "เลนส์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 9,
+      "confidence": 1.0,
+      "change_rate": 0.111111,
+      "norm_counts": {
+        "เลนส์": 1
+      }
+    },
+    "เลย": {
+      "top_norm": "เคย",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 1131,
+      "confidence": 1.0,
+      "change_rate": 0.000884,
+      "norm_counts": {
+        "เคย": 1
+      }
+    },
+    "เลยย": {
+      "top_norm": "เลย",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เลย": 1
+      }
+    },
+    "เวอร์": {
+      "top_norm": "เวอร์ชัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "เวอร์ชัน": 1
+      }
+    },
+    "เศษๆ": {
+      "top_norm": "เศษ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เศษ ๆ": 1
+      }
+    },
+    "เหงา": {
+      "top_norm": "เงา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 133,
+      "confidence": 1.0,
+      "change_rate": 0.007519,
+      "norm_counts": {
+        "เงา": 1
+      }
+    },
+    "เหี้ยๆ": {
+      "top_norm": "เหี้ย ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "เหี้ย ๆ": 1
+      }
+    },
+    "เออ": {
+      "top_norm": "เอ้อ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 32,
+      "confidence": 1.0,
+      "change_rate": 0.03125,
+      "norm_counts": {
+        "เอ้อ": 1
+      }
+    },
+    "เอาจริงๆ": {
+      "top_norm": "เอาจริง ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "เอาจริง ๆ": 1
+      }
+    },
+    "เอ้อ": {
+      "top_norm": "เออ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 6,
+      "confidence": 1.0,
+      "change_rate": 0.166667,
+      "norm_counts": {
+        "เออ": 1
+      }
+    },
+    "แก": {
+      "top_norm": "แก่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 70,
+      "confidence": 1.0,
+      "change_rate": 0.014286,
+      "norm_counts": {
+        "แก่": 1
+      }
+    },
+    "แกรด": {
+      "top_norm": "แกรท",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 13,
+      "confidence": 1.0,
+      "change_rate": 0.076923,
+      "norm_counts": {
+        "แกรท": 1
+      }
+    },
+    "แต": {
+      "top_norm": "แต่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "แต่": 1
+      }
+    },
+    "แต่": {
+      "top_norm": "แค่",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 1266,
+      "confidence": 1.0,
+      "change_rate": 0.00079,
+      "norm_counts": {
+        "แค่": 1
+      }
+    },
+    "แทค": {
+      "top_norm": "แท็ก",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "แท็ก": 1
+      }
+    },
+    "แท้ง": {
+      "top_norm": "แท่ง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แท่ง": 1
+      }
+    },
+    "แบด": {
+      "top_norm": "แบดมินตัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "แบดมินตัน": 1
+      }
+    },
+    "แพชชั่น": {
+      "top_norm": "แพชชัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "แพชชัน": 1
+      }
+    },
+    "แพลน": {
+      "top_norm": "แปลน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "แปลน": 1
+      }
+    },
+    "แฟชั่น": {
+      "top_norm": "แฟชัน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แฟชัน": 1
+      }
+    },
+    "แมส": {
+      "top_norm": "แมสส์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "แมสส์": 1
+      }
+    },
+    "แม่ม": {
+      "top_norm": "แม่ง",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แม่ง": 1
+      }
+    },
+    "แหล่ะ": {
+      "top_norm": "แหละ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แหละ": 1
+      }
+    },
+    "แหะๆ": {
+      "top_norm": "แหะ ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "แหะ ๆ": 1
+      }
+    },
+    "แอร์": {
+      "top_norm": "แอร์โฮสเตส",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "แอร์โฮสเตส": 1
+      }
+    },
+    "โดเนท": {
+      "top_norm": "โดเนต",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 5,
+      "confidence": 1.0,
+      "change_rate": 0.2,
+      "norm_counts": {
+        "โดเนต": 1
+      }
+    },
+    "โตๆ": {
+      "top_norm": "โต ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โต ๆ": 1
+      }
+    },
+    "โปรไฟล์": {
+      "top_norm": "โพรไฟล์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "โพรไฟล์": 1
+      }
+    },
+    "โมเม้นท์": {
+      "top_norm": "โมเมนต์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โมเมนต์": 1
+      }
+    },
+    "โร้ดโชว์": {
+      "top_norm": "โรดโชว์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โรดโชว์": 1
+      }
+    },
+    "โหลด": {
+      "top_norm": "ดาวน์โหลด",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ดาวน์โหลด": 1
+      }
+    },
+    "โอเมก้า": {
+      "top_norm": "โอเมกา",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "โอเมกา": 1
+      }
+    },
+    "ใย": {
+      "top_norm": "เยื่อใย",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "เยื่อใย": 1
+      }
+    },
+    "ใสๆ": {
+      "top_norm": "ใส ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 4,
+      "confidence": 1.0,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "ใส ๆ": 1
+      }
+    },
+    "ไซต์": {
+      "top_norm": "ไซซ์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ไซซ์": 1
+      }
+    },
+    "ไซส์": {
+      "top_norm": "ไซซ์",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ไซซ์": 1
+      }
+    },
+    "ไว": {
+      "top_norm": "ไว้",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 17,
+      "confidence": 1.0,
+      "change_rate": 0.058824,
+      "norm_counts": {
+        "ไว้": 1
+      }
+    },
+    "ไวๆ": {
+      "top_norm": "ไว ๆ",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 2,
+      "confidence": 1.0,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "ไว ๆ": 1
+      }
+    },
+    "ไว้": {
+      "top_norm": "ไว",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 159,
+      "confidence": 1.0,
+      "change_rate": 0.006289,
+      "norm_counts": {
+        "ไว": 1
+      }
+    },
+    "ไอเท็ม": {
+      "top_norm": "ไอเทม",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 3,
+      "confidence": 1.0,
+      "change_rate": 0.333333,
+      "norm_counts": {
+        "ไอเทม": 1
+      }
+    },
+    "ๆ": {
+      "top_norm": "คน",
+      "top_count": 1,
+      "changed_count": 1,
+      "total_count": 51,
+      "confidence": 1.0,
+      "change_rate": 0.019608,
+      "norm_counts": {
+        "คน": 1
+      }
+    },
+    "คน": {
+      "top_norm": "คง",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 1429,
+      "confidence": 0.5,
+      "change_rate": 0.0014,
+      "norm_counts": {
+        "คง": 1,
+        "ขน": 1
+      }
+    },
+    "ค่อยๆ": {
+      "top_norm": "ค่แย ๆ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 16,
+      "confidence": 0.5,
+      "change_rate": 0.125,
+      "norm_counts": {
+        "ค่แย ๆ": 1,
+        "ค่อย ๆ": 1
+      }
+    },
+    "ง่า": {
+      "top_norm": "อะ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "อะ": 1,
+        "ว่า": 1
+      }
+    },
+    "จย้า": {
+      "top_norm": "จ้า",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "จ้า": 1,
+        "จ้ะ": 1
+      }
+    },
+    "จริงๆๆ": {
+      "top_norm": "จริง ๆ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "จริง ๆ": 1,
+        "จริงๆ": 1
+      }
+    },
+    "ชม.": {
+      "top_norm": "ชั่วโมง",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 14,
+      "confidence": 0.5,
+      "change_rate": 0.142857,
+      "norm_counts": {
+        "ชั่วโมง": 1,
+        "เชียงใหม่": 1
+      }
+    },
+    "ชิว": {
+      "top_norm": "ชิล",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 3,
+      "confidence": 0.5,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "ชิล": 1,
+        "ชิลล์": 1
+      }
+    },
+    "นู้น": {
+      "top_norm": "โน่น",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 0.5,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "โน่น": 1,
+        "โน้น": 1
+      }
+    },
+    "บตบก.": {
+      "top_norm": "บิวตี้บล็อกเกอร์",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 3,
+      "confidence": 0.5,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "บิวตี้บล็อกเกอร์": 1,
+        "บิวตีบลอกเกอร์": 1
+      }
+    },
+    "บุคลิค": {
+      "top_norm": "บุคลิกภาพ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "บุคลิกภาพ": 1,
+        "บุคลิก": 1
+      }
+    },
+    "ปย.": {
+      "top_norm": "ประโยค",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ประโยค": 1,
+        "ประโยชน์": 1
+      }
+    },
+    "ปั้ม": {
+      "top_norm": "ปั๊ม",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ปั๊ม": 1,
+        "ปัมป์": 1
+      }
+    },
+    "ผกก": {
+      "top_norm": "ผู้กำกับ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ผู้กำกับ": 1,
+        "ผกก.": 1
+      }
+    },
+    "มัย": {
+      "top_norm": "มัน",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มัน": 1,
+        "ทำไม": 1
+      }
+    },
+    "มากๆๆๆๆ": {
+      "top_norm": "มาก ๆ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มาก ๆ": 1,
+        "มากๆ": 1
+      }
+    },
+    "ม่ะ": {
+      "top_norm": "มะ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มะ": 1,
+        "ไหม": 1
+      }
+    },
+    "ยพท.": {
+      "top_norm": "ยืมพื้นที่",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ยืมพื้นที่": 1,
+        "ยึดพื้นที่": 1
+      }
+    },
+    "ราชบัณฑิตฯ": {
+      "top_norm": "ราชบัณฑิตยสถานฯ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ราชบัณฑิตยสถานฯ": 1,
+        "ราชบัณฑิตยสถาน": 1
+      }
+    },
+    "วะ": {
+      "top_norm": "ว่ะ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 55,
+      "confidence": 0.5,
+      "change_rate": 0.036364,
+      "norm_counts": {
+        "ว่ะ": 1,
+        "นะ": 1
+      }
+    },
+    "สต๊าฟ": {
+      "top_norm": "สตาฟฟ์",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "สตาฟฟ์": 1,
+        "สตาฟ": 1
+      }
+    },
+    "หนิ": {
+      "top_norm": "นี่",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "นี่": 1,
+        "นะ": 1
+      }
+    },
+    "หลายหลาย": {
+      "top_norm": "หลาย ๆ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "หลาย ๆ": 1,
+        "หลายๆ": 1
+      }
+    },
+    "อ": {
+      "top_norm": "อี",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "อี": 1,
+        "เหรอ": 1
+      }
+    },
+    "อห": {
+      "top_norm": "โอ้โห",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "โอ้โห": 1,
+        "อีเหี้ย": 1
+      }
+    },
+    "อีเว้น": {
+      "top_norm": "อีเว้นต์",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "อีเว้นต์": 1,
+        "อีเวนต์": 1
+      }
+    },
+    "อุแงงง": {
+      "top_norm": "อุแง",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "อุแง": 1,
+        "อุแงง": 1
+      }
+    },
+    "อ่ะค่ะ": {
+      "top_norm": "ค่ะ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "ค่ะ": 1,
+        "นะคะ": 1
+      }
+    },
+    "เม้น": {
+      "top_norm": "เมนต์",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 7,
+      "confidence": 0.5,
+      "change_rate": 0.285714,
+      "norm_counts": {
+        "เมนต์": 1,
+        "คอมเมนต์": 1
+      }
+    },
+    "เรอะ": {
+      "top_norm": "หรอ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "หรอ": 1,
+        "เหรอ": 1
+      }
+    },
+    "เล้ยยย": {
+      "top_norm": "เลย",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "เลย": 1,
+        "เล้ย": 1
+      }
+    },
+    "เวล": {
+      "top_norm": "เวลา",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 3,
+      "confidence": 0.5,
+      "change_rate": 0.666667,
+      "norm_counts": {
+        "เวลา": 1,
+        "เลเวล": 1
+      }
+    },
+    "เวิร์คช็อป": {
+      "top_norm": "เวิร์กชอป",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "เวิร์กชอป": 1,
+        "เวิร์หชอป": 1
+      }
+    },
+    "เอนเตอร์เทรน": {
+      "top_norm": "เอนเตอร์เทน",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "เอนเตอร์เทน": 1,
+        "เอ็นเตอร์เทน": 1
+      }
+    },
+    "แอคทีฟ": {
+      "top_norm": "แอ็กทีฟ",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "แอ็กทีฟ": 1,
+        "แอกทีฟ": 1
+      }
+    },
+    "โอ่ย": {
+      "top_norm": "โอย",
+      "top_count": 1,
+      "changed_count": 2,
+      "total_count": 2,
+      "confidence": 0.5,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "โอย": 1,
+        "โอ๊ย": 1
+      }
+    },
+    "ค": {
+      "top_norm": "คะ",
+      "top_count": 1,
+      "changed_count": 3,
+      "total_count": 6,
+      "confidence": 0.333333,
+      "change_rate": 0.5,
+      "norm_counts": {
+        "คะ": 1,
+        "คุณ": 1,
+        "คง": 1
+      }
+    },
+    "จา": {
+      "top_norm": "จ๊ะ",
+      "top_count": 1,
+      "changed_count": 3,
+      "total_count": 4,
+      "confidence": 0.333333,
+      "change_rate": 0.75,
+      "norm_counts": {
+        "จ๊ะ": 1,
+        "จ้ะ": 1,
+        "จะ": 1
+      }
+    },
+    "มีท": {
+      "top_norm": "มีตติง",
+      "top_count": 1,
+      "changed_count": 3,
+      "total_count": 3,
+      "confidence": 0.333333,
+      "change_rate": 1.0,
+      "norm_counts": {
+        "มีตติง": 1,
+        "มีต": 1,
+        "มีตติ้ง": 1
+      }
+    },
+    "อ่อ": {
+      "top_norm": "อ๋อ",
+      "top_count": 1,
+      "changed_count": 3,
+      "total_count": 12,
+      "confidence": 0.333333,
+      "change_rate": 0.25,
+      "norm_counts": {
+        "อ๋อ": 1,
+        "อ้อ": 1,
+        "ออ": 1
+      }
+    }
+  },
+  "paper_seed_pairs": {
+    "จริงๆ": "จริง ๆ",
+    "มากๆ": "มาก ๆ",
+    "เค้า": "เขา",
+    "นึง": "หนึ่ง",
+    "มั้ย": "ไหม",
+    "ก้": "ก็",
+    "กุ": "กู",
+    "คับ": "ครับ",
+    "เปน": "เป็น",
+    "จิง": "จริง",
+    "มากกก": "มาก",
+    "โว้ยย": "โว้ย",
+    "ฮือออ": "ฮือ",
+    "แงงง": "แง",
+    "คอน": "คอนเสิร์ต",
+    "ไร": "อะไร",
+    "หรอ": "เหรอ",
+    "เว็บ": "เว็บไซต์",
+    "มือ2": "มือสอง",
+    "กางเกง5ส่วน": "กางเกงห้าส่วน"
+  },
+  "do_not_direct_replace_examples": [
+    "#hashtag",
+    "555",
+    "5555",
+    "55555",
+    "@mention",
+    "URL",
+    "ๆ",
+    "๕๕๕"
+  ]
+}

@@ -1,0 +1,4 @@
+language,split,mode,dictionary_size,TP,FP,FN,ERR,precision,recall,changed_tokens,tokens
+da,internal_dev,LAI,0,0,0,146,0.0,0.0,0.0,146,1755
+da,internal_dev,conservative,134,29,3,117,0.178082,0.90625,0.19863,146,1755
+da,internal_dev,balanced,746,64,21,82,0.294521,0.752941,0.438356,146,1755

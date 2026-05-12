@@ -1,0 +1,4 @@
+language,mode,dictionary_size,TP,FP,FN,ERR,precision,recall,changed_tokens,tokens
+en,LAI,0,0,0,633,0.0,0.0,0.0,633,9169
+en,conservative,127,228,15,402,0.338095,0.938272,0.361905,633,9169
+en,balanced,232,272,29,355,0.38756,0.903654,0.433812,633,9169

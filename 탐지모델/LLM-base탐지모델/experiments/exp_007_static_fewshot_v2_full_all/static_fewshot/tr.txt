@@ -1,0 +1,34 @@
+Examples from language `tr`:
+
+Raw: Eyvah ! Yaralarım ruhumu hissizleştirdi . Furuğ Ferruhzad
+Normalized: Eyvah ! Yaralarım ruhumu hissizleştirdi . Furuğ Ferruhzad
+
+Raw: Seni gıdıltana kadar bayıklarım
+Normalized: Seni gıdıltana kadar bayıklarım
+
+Raw: Kullanıcı Adım : Kolaco123 Score 1 - Benfica 3
+Normalized: Kullanıcı adım : Kolaco123 Score 1 - Benfica 3
+
+Raw: @Berkelendiniz Sevgililer gunun mubarek olsun
+Normalized: @Berkelendiniz Sevgililer günün mübarek olsun
+
+Raw: Sen uyuyunca diger flortumu isinmiya yolladim
+Normalized: Sen uyuyunca diğer flörtümü ısınmaya yolladım
+
+Raw: @merveysann Gülme Eyşan çok sinirliyimm . 😡😡😡
+Normalized: @merveysann Gülme Eyşan çok sinirliyim . 😡😡😡
+
+Raw: SAMSUNG NOTE 5 32 GB HAFIZA 3 GB RAM TEMİZ ÇİZİKSİZ TEL : 05427416677
+Normalized: Samsung Note 5 32 GB hafıza 3 GB RAM temiz çiziksiz telefon : 05427416677
+
+Raw: EVT 13 / 02 / 2019 TARİHİNDE GROWTOPİANIN İCİNDEN GEÇTİLER WIJSIWJSIJW
+Normalized: Evet 13 / 02 / 2019 tarihinde Growtopia'nın içinden geçtiler WIJSIWJSIJW
+
+Raw: @dearbluue Bana da 3 - 1 çıktı aq kesin buglı
+Normalized: @dearbluue Bana da 3 - 1 çıktı amına koyayım kesin buglı
+
+Raw: @seymhill sanmıyorum ama sağol aşkım dkfşdmfs
+Normalized: @seymhill Sanmıyorum ama sağ ol aşkım dkfşdmfs
+
+Raw: @gukslip HAFTALARDIR HER GUN BEYNIMDE CIKMIYO
+Normalized: @gukslip Haftalardır her gün beynimde çıkmıyor

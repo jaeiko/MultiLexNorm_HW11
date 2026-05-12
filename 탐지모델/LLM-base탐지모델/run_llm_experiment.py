@@ -473,7 +473,18 @@ def write_benchmark_text(path, metrics):
     write_lines(path, lines)
 
 
-def write_summary(path, experiment_dir, model_config, prompt_config, run_config, metrics, parse_failures, total_tokens=0, elapsed_seconds=0):
+def write_summary(
+    path,
+    experiment_dir,
+    model_config,
+    prompt_config,
+    run_config,
+    metrics,
+    parse_failures,
+    total_tokens=0,
+    elapsed_seconds=0,
+    total_predictions=None,
+):
     """실험 내용을 빠르게 훑어볼 수 있는 summary.md를 만든다."""
     throughput = f"{total_tokens / elapsed_seconds:.1f} tok/s" if elapsed_seconds > 0 else "N/A"
     lines = [
@@ -486,26 +497,48 @@ def write_summary(path, experiment_dir, model_config, prompt_config, run_config,
         f"- Language: `{run_config.get('lang')}`",
         f"- Limit: `{run_config.get('limit')}`",
         f"- Parse failures: `{parse_failures}`",
-        "",
-        "## Metrics",
-        "",
-        f"- Total: {metrics['total']}",
-        f"- TP: {metrics['TP']}",
-        f"- TN: {metrics['TN']}",
-        f"- FP: {metrics['FP']}",
-        f"- FN: {metrics['FN']}",
-        f"- Accuracy: {metrics['accuracy']:.4f}",
-        f"- Precision: {metrics['precision']:.4f}",
-        f"- Recall: {metrics['recall']:.4f}",
-        f"- F1: {metrics['f1']:.4f}",
-        f"- Specificity: {metrics['specificity']:.4f}",
-        "",
-        "## Runtime",
-        "",
-        f"- Total output tokens: {total_tokens}",
-        f"- Elapsed time: {elapsed_seconds:.1f}s ({elapsed_seconds / 60:.1f}min)",
-        f"- Throughput: {throughput}",
     ]
+
+    if metrics is None:
+        lines.extend(
+            [
+                "",
+                "## Metrics",
+                "",
+                "- Evaluation: disabled",
+                "- Reason: test split does not provide usable answer labels",
+                f"- Predictions: {total_predictions if total_predictions is not None else 'N/A'}",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "",
+                "## Metrics",
+                "",
+                f"- Total: {metrics['total']}",
+                f"- TP: {metrics['TP']}",
+                f"- TN: {metrics['TN']}",
+                f"- FP: {metrics['FP']}",
+                f"- FN: {metrics['FN']}",
+                f"- Accuracy: {metrics['accuracy']:.4f}",
+                f"- Precision: {metrics['precision']:.4f}",
+                f"- Recall: {metrics['recall']:.4f}",
+                f"- F1: {metrics['f1']:.4f}",
+                f"- Specificity: {metrics['specificity']:.4f}",
+            ]
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Runtime",
+            "",
+            f"- Total output tokens: {total_tokens}",
+            f"- Elapsed time: {elapsed_seconds:.1f}s ({elapsed_seconds / 60:.1f}min)",
+            f"- Throughput: {throughput}",
+        ]
+    )
     write_lines(path, lines)
 
 
@@ -529,6 +562,7 @@ def run_experiment(experiment_dir, dry_run=False):
     model_config = read_json(experiment_dir / CONFIG_MODEL)
     prompt_config = read_json(experiment_dir / CONFIG_PROMPT)
     run_config = read_json(experiment_dir / CONFIG_RUN)
+    should_evaluate = bool(run_config.get("evaluate", run_config.get("split") != "test"))
 
     dataset_path = resolve_path(run_config["dataset"], experiment_dir, project_dir)
     prompt_path = resolve_path(prompt_config["prompt_template"], experiment_dir, project_dir)
@@ -584,7 +618,8 @@ def run_experiment(experiment_dir, dry_run=False):
             parse_failures += 1
 
         predictions.append(label)
-        answer_labels.append(row["answer_label"])
+        if should_evaluate:
+            answer_labels.append(row["answer_label"])
         debug_records.append(
             {
                 "position": position,
@@ -604,13 +639,14 @@ def run_experiment(experiment_dir, dry_run=False):
         print(f"[{position}/{len(rows)}] row={row['row_index']} label={label}", flush=True)
 
     elapsed = time.time() - experiment_start
-    metrics = benchmark_metrics(answer_labels, predictions)
+    metrics = benchmark_metrics(answer_labels, predictions) if should_evaluate else None
 
     write_lines(output_path(experiment_dir, run_config, "predictions"), predictions)
-    write_lines(output_path(experiment_dir, run_config, "answer_labels"), answer_labels)
     write_jsonl(output_path(experiment_dir, run_config, "debug"), debug_records)
-    write_json(output_path(experiment_dir, run_config, "benchmark_json"), metrics)
-    write_benchmark_text(output_path(experiment_dir, run_config, "benchmark_txt"), metrics)
+    if should_evaluate:
+        write_lines(output_path(experiment_dir, run_config, "answer_labels"), answer_labels)
+        write_json(output_path(experiment_dir, run_config, "benchmark_json"), metrics)
+        write_benchmark_text(output_path(experiment_dir, run_config, "benchmark_txt"), metrics)
     write_summary(
         output_path(experiment_dir, run_config, "summary"),
         experiment_dir,
@@ -621,6 +657,7 @@ def run_experiment(experiment_dir, dry_run=False):
         parse_failures,
         total_tokens=total_tokens,
         elapsed_seconds=elapsed,
+        total_predictions=len(predictions),
     )
 
     throughput = f"{total_tokens / elapsed:.1f} tok/s" if elapsed > 0 else "N/A"

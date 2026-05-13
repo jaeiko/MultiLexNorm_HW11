@@ -17,6 +17,10 @@ class LexicalNormalizationPipeline:
         run_target_detection: bool = False,
         detection_max_new_tokens: int = 16,
         normalization_max_new_tokens: int = 64,
+        fallback_strategy: str = "whole_sentence",
+        fallback_min_mfr_confidence: float = 0.30,
+        fallback_max_candidates: int | None = 3,
+        record_debug: bool = False,
     ):
         self.detector = detector
         self.dictionary = dictionary
@@ -25,6 +29,11 @@ class LexicalNormalizationPipeline:
         self.run_target_detection = run_target_detection
         self.detection_max_new_tokens = detection_max_new_tokens
         self.normalization_max_new_tokens = normalization_max_new_tokens
+        self.fallback_strategy = fallback_strategy
+        self.fallback_min_mfr_confidence = fallback_min_mfr_confidence
+        self.fallback_max_candidates = fallback_max_candidates
+        self.record_debug = record_debug
+        self.debug_records: list[dict] = []
         self.prompt_mfr_resources = (
             prompt_mfr_resources
             if prompt_mfr_resources is not None
@@ -87,12 +96,22 @@ class LexicalNormalizationPipeline:
         detector_candidates = {
             idx for idx, flag in enumerate(xlmr_flags) if int(flag) == 1
         }
-        candidate_indices = self._prediction_txt_candidates(
+        candidate_indices, candidate_source = self._select_candidate_indices(
             raw_tokens=raw_tokens,
+            lang=lang,
             gemma_flag=gemma_flag,
             detector_candidates=detector_candidates,
         )
         candidate_indices.difference_update(protected_indices)
+        self._record_debug(
+            raw_tokens=raw_tokens,
+            lang=lang,
+            gemma_flag=gemma_flag,
+            xlmr_flags=xlmr_flags,
+            protected_indices=protected_indices,
+            candidate_indices=candidate_indices,
+            candidate_source=candidate_source,
+        )
 
         for idx in sorted(candidate_indices):
             raw_token = raw_tokens[idx]
@@ -117,6 +136,35 @@ class LexicalNormalizationPipeline:
         if len(corrected_tokens) != len(raw_tokens):
             return raw_tokens
         return corrected_tokens
+
+    def _select_candidate_indices(
+        self,
+        *,
+        raw_tokens: Sequence[str],
+        lang: str,
+        gemma_flag: int,
+        detector_candidates: set[int],
+    ) -> tuple[set[int], str]:
+        if detector_candidates:
+            return set(detector_candidates), "xlmr"
+
+        if int(gemma_flag) != 1:
+            return set(), "none"
+
+        if self.fallback_strategy == "whole_sentence":
+            return set(range(len(raw_tokens))), "gemma_whole_sentence"
+
+        if self.fallback_strategy in {"mfr_gated", "mfr_suspicious"}:
+            indices = self.prompt_mfr_resources.mfr_fallback_candidate_indices(
+                raw_tokens,
+                lang,
+            )
+            return set(indices), "mfr_suspicious"
+
+        if self.fallback_strategy == "none":
+            return set(), "none"
+
+        raise ValueError(f"Unknown fallback_strategy: {self.fallback_strategy}")
 
     @staticmethod
     def _prediction_txt_candidates(
@@ -189,6 +237,35 @@ class LexicalNormalizationPipeline:
             return [0] * len(tokens)
 
         return [1 if int(flag) == 1 else 0 for flag in flags]
+
+    def _record_debug(
+        self,
+        *,
+        raw_tokens: Sequence[str],
+        lang: str,
+        gemma_flag: int,
+        xlmr_flags: Sequence[int],
+        protected_indices: set[int],
+        candidate_indices: set[int],
+        candidate_source: str,
+    ) -> None:
+        if not self.record_debug:
+            return
+
+        self.debug_records.append(
+            {
+                "lang": lang,
+                "gemma_flag": int(gemma_flag),
+                "xlmr_flags": [int(flag) for flag in xlmr_flags],
+                "xlmr_candidate_indices": [
+                    idx for idx, flag in enumerate(xlmr_flags) if int(flag) == 1
+                ],
+                "protected_indices": sorted(protected_indices),
+                "candidate_source": candidate_source,
+                "candidate_indices": sorted(candidate_indices),
+                "raw_tokens": list(raw_tokens),
+            }
+        )
 
     def _process_sentence_legacy(
         self,

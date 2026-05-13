@@ -192,9 +192,30 @@ def _iter_pair_items(value: Any) -> Iterable[tuple[str, Any]]:
 def _candidate_summary(value: Any) -> dict[str, Any]:
     if isinstance(value, dict):
         summary: dict[str, Any] = {}
-        for key in ("norm", "normalized", "count", "confidence", "change_ratio", "raw_count"):
+        for key in (
+            "norm",
+            "normalized",
+            "top_norm",
+            "count",
+            "best_count",
+            "top_count",
+            "changed_count",
+            "changed_total",
+            "raw_total",
+            "total_count",
+            "confidence",
+            "changed_confidence",
+            "raw_confidence",
+            "top_confidence_among_changed",
+            "change_ratio",
+            "change_rate",
+            "raw_count",
+        ):
             if key in value:
                 summary[key] = value[key]
+        norm = _norm_from_value(value)
+        if norm is not None:
+            summary["norm"] = norm
         candidates = value.get("candidates") or value.get("variants")
         if candidates is not None:
             summary["candidates"] = candidates
@@ -379,6 +400,28 @@ class PromptMFRResources:
                 candidates.add(idx)
 
         return sorted(i for i in candidates if 0 <= i < len(tokens))
+
+    def mfr_fallback_candidate_indices(
+        self,
+        tokens: Sequence[str],
+        lang: str | None,
+        *,
+        min_confidence: float = 0.30,
+        max_candidates: int | None = 3,
+    ) -> list[int]:
+        """Return suspicious token indices using MFR package candidate logic.
+
+        This is intentionally used only when sentence-level LLM detection says
+        "change needed" but XLM-R finds no token. It narrows the old full-sentence
+        fallback to tokens selected by language rules and prompt hints.
+
+        min_confidence and max_candidates are kept only for compatibility with
+        older experiment configs. Suspicious candidates are not confidence-gated
+        because the prompt_mfr_dictionary packages use mixed schemas across
+        languages, and many useful ambiguous tokens do not expose a confidence key.
+        """
+        _ = (min_confidence, max_candidates)
+        return self.candidate_indices(tokens, lang)
 
     def build_detection_prompt(self, tokens: Sequence[str], target_index: int, lang: str | None) -> str:
         return self._build_prompt(tokens, target_index, lang, prompt_type="detection")

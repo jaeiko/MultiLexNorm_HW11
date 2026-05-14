@@ -70,24 +70,50 @@ class MultilingualCorrector:
         """Backward-compatible alias used by some notebooks."""
         return self.generate(prompt, max_new_tokens=max_new_tokens)
 
+# llm.py 내부의 correct 메서드를 아래 코드로 교체하십시오.
+
     def correct(self, noisy_word: str, context: List[str], lang: str | None = None) -> str:
-        """Legacy one-token correction API.
-
-        New code should prefer prompt_mfr_adapter + generate(). This method is
-        kept so older notebook cells can still run.
-        """
         full_sentence = " ".join(context)
-        lang_hint = f"Language code: {lang}\n" if lang else ""
-        prompt = f"""
-You are a multilingual lexical normalization API.
+        
+        system_instruction = (
+            "You are a STRICT and CONSERVATIVE Lexical Normalizer for social media text.\n"
+            "Your ONLY task is to normalize severe internet slang, abbreviations, or typos into standard words.\n\n"
+            "CRITICAL RULES FOR DOUBLE-CHECKING:\n"
+            "The target token has been flagged as a potential error by an automated system, but it MIGHT BE A FALSE ALARM.\n"
+            "1. EVALUATE FIRST: Double-check if the target token is already a valid standard word. If it is, output it EXACTLY as is (e.g., 'went' MUST remain 'went'). DO NOT forcibly change it.\n"
+            "2. DO NOT touch punctuation, symbols, or emojis: If the token is '.', '?', '!', 'ㅋㅋ', output it EXACTLY as is.\n"
+            "3. DO NOT translate: Keep the output in the original language.\n"
+            "Output ONLY the final normalized token. No explanations, no quotes."
+        )
 
-Normalize only the noisy target token. Do not translate, paraphrase, or rewrite
-the full sentence. Return only the normalized target token, with no explanation.
+        few_shot_examples = {
+            "en": (
+                "Example 1 (Slang): Input: 'im', Output: i'm\n"
+                "Example 2 (Standard - DO NOT TOUCH): Input: 'went', Output: went\n"
+                "Example 3 (Punctuation - DO NOT TOUCH): Input: '.', Output: .\n"
+                "Example 4 (Abbreviation): Input: 'tmrw', Output: tomorrow\n"
+                "Example 5 (Standard - DO NOT TOUCH): Input: 'apple', Output: apple"
+            ),
+            "ko": (
+                "Example 1 (Slang): Input: '글구', Output: 그리고\n"
+                "Example 2 (Standard - DO NOT TOUCH): Input: '학교에', Output: 학교에\n"
+                "Example 3 (Punctuation - DO NOT TOUCH): Input: '!!', Output: !!\n"
+                "Example 4 (Consonants - DO NOT TOUCH): Input: 'ㅋㅋ', Output: ㅋㅋ\n"
+                "Example 5 (Standard - DO NOT TOUCH): Input: '갔다', Output: 갔다"
+            ),
+            "default": (
+                "Example 1 (Standard - DO NOT TOUCH): Input: 'apple', Output: apple\n"
+                "Example 2 (Slang): Input: 'u', Output: you\n"
+                "Example 3 (Punctuation - DO NOT TOUCH): Input: '?', Output: ?\n"
+                "Example 4 (Standard - DO NOT TOUCH): Input: 'went', Output: went"
+            )
+        }
 
-{lang_hint}Context: {full_sentence}
-Noisy target token: {noisy_word}
-Answer:
-""".strip()
+        lang_code = lang if lang in few_shot_examples else "default"
+        examples = few_shot_examples[lang_code]
+
+        prompt = f"{system_instruction}\n\n[Language: {lang} Examples]\n{examples}\n\nContext: {full_sentence}\nTarget token: {noisy_word}\nAnswer:"
+
         corrected_word = self.generate(prompt, max_new_tokens=32)
         return self._legacy_safety_filter(noisy_word, full_sentence, corrected_word)
 

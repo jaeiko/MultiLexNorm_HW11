@@ -1,4 +1,4 @@
-import torch
+import torch.nn.functional as F
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForTokenClassification, Trainer, TrainingArguments, DataCollatorForTokenClassification
 from typing import List, Tuple, Dict, Any
@@ -98,43 +98,41 @@ class AnomalyDetector:
         trainer.train()
         trainer.save_model(output_dir)
 
-    def predict(self, sentence_tokens: List[str]) -> List[int]:
-        """[파이프라인 추론용] 학습된 완성 모델을 통해 실전 문장의 노이즈 여부를 판별한다.
+    def predict_proba(self, sentence_tokens: List[str]) -> List[float]:
+        """[파이프라인 추론용] 문장 내 각 단어가 노이즈(비표준어)일 확률(0.0~1.0)을 반환한다.
 
         Args:
             sentence_tokens (List[str]): 띄어쓰기 단위로 분리된 원본 텍스트 리스트.
 
         Returns:
-            List[int]: 단어별 노이즈 판별 결과 (정상 0, 노이즈 1)
+            List[float]: 단어별 노이즈(클래스 1) 예측 확률 리스트
         """
-        # 1. 토큰화 진행 및 허깅페이스 객체 생성
         tokenized_inputs = self.tokenizer(sentence_tokens, is_split_into_words=True, return_tensors="pt")
-        
-        # 2. 구조가 바뀌기 전에 word_ids 미리 추출
         word_ids = tokenized_inputs.word_ids()
-
-        # 3. 모델 추론을 위해 텐서들을 GPU/CPU 등 현재 모델이 있는 디바이스로 이동
         tokenized_inputs = {k: v.to(self.model.device) for k, v in tokenized_inputs.items()}
 
         self.model.eval()
         with torch.no_grad():
             outputs = self.model(**tokenized_inputs)
-        
-        predictions = torch.argmax(outputs.logits, dim=-1).squeeze().tolist()
 
-        # 서브워드로 쪼개진 예측값을 다시 원본 단어 길이로 병합 (Detokenization)
-        word_predictions = []
+        # 1. argmax 대신 softmax를 적용하여 0.0 ~ 1.0 사이의 확률 분포 획득
+        probs = F.softmax(outputs.logits, dim=-1).squeeze()
+
+        if probs.dim() == 1:
+            probs = probs.unsqueeze(0)
+
+        # 2. 클래스 1(비표준어/노이즈)의 확률만 추출
+        noise_probs = probs[:, 1].tolist()
+
+        # 3. 서브워드 확률을 원본 단어 단위로 병합
+        word_probabilities = []
         current_word = None
         
-        # predictions가 단일 값일 경우 리스트로 래핑
-        if not isinstance(predictions, list):
-            predictions = [predictions]
-
         for idx, word_id in enumerate(word_ids):
             if word_id is None:
                 continue
             if word_id != current_word:
-                word_predictions.append(predictions[idx])
+                word_probabilities.append(noise_probs[idx]) # 첫 번째 서브워드의 확률을 해당 단어의 확률로 채택
                 current_word = word_id
                 
-        return word_predictions
+        return word_probabilities

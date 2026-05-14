@@ -1,3 +1,4 @@
+import torch
 import torch.nn.functional as F
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForTokenClassification, Trainer, TrainingArguments, DataCollatorForTokenClassification

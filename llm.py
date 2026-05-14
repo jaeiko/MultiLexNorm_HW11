@@ -86,7 +86,7 @@ class MultilingualCorrector:
             "Output ONLY the final normalized token. No explanations, no quotes."
         )
 
-        few_shot_examples = {
+                few_shot_examples = {
             "en": (
                 "Example 1 (Slang): Input: 'im', Output: i'm\n"
                 "Example 2 (Standard - DO NOT TOUCH): Input: 'went', Output: went\n"
@@ -101,6 +101,22 @@ class MultilingualCorrector:
                 "Example 4 (Consonants - DO NOT TOUCH): Input: 'ㅋㅋ', Output: ㅋㅋ\n"
                 "Example 5 (Standard - DO NOT TOUCH): Input: '갔다', Output: 갔다"
             ),
+            "nl": (
+                "Example 1 (Standard - DO NOT TOUCH): Input: 'vrouw', Output: vrouw\n"
+                "Example 2 (Slang): Input: 'ff', Output: even\n"
+                "Example 3 (Punctuation - DO NOT TOUCH): Input: ':p', Output: :p"
+            ),
+            "ja": (
+                "Example 1 (Standard - DO NOT TOUCH): Input: '行く', Output: 行く\n"
+                "Example 2 (Slang): Input: 'りょ', Output: 了解\n"
+                "Example 3 (Punctuation - DO NOT TOUCH): Input: '。', Output: 。"
+            ),
+            "id": (
+                "Example 1 (Standard - DO NOT TOUCH): Input: 'makan', Output: makan\n"
+                "Example 2 (Slang): Input: 'yg', Output: yang\n"
+                "Example 3 (Punctuation - DO NOT TOUCH): Input: ',', Output: ,"
+            ),
+            # 예시가 없는 언어를 위한 기본 방어 예시
             "default": (
                 "Example 1 (Standard - DO NOT TOUCH): Input: 'apple', Output: apple\n"
                 "Example 2 (Slang): Input: 'u', Output: you\n"

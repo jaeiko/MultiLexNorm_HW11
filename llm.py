@@ -86,7 +86,7 @@ class MultilingualCorrector:
             "Output ONLY the final normalized token. No explanations, no quotes."
         )
 
-                few_shot_examples = {
+        few_shot_examples = {
             "en": (
                 "Example 1 (Slang): Input: 'im', Output: i'm\n"
                 "Example 2 (Standard - DO NOT TOUCH): Input: 'went', Output: went\n"

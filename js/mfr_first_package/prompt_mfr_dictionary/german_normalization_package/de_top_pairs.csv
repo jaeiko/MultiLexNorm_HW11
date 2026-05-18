@@ -1,0 +1,301 @@
+raw,norm,count,raw_total,pattern
+ich,Ich,66,347,case_change
+ne,eine,55,64,other_substitution
+grad,gerade,37,37,other_substitution
+nich,nicht,33,35,other_substitution
+hab,habe,30,48,other_substitution
+nix,nichts,24,25,expansion_or_abbreviation_restore
+fuer,für,23,23,other_substitution
+is,ist,22,25,other_substitution
+gibts,gibt es,17,18,whitespace_change
+'s,es,17,20,other_substitution
+das,Das,17,147,case_change
+nen,einen,15,19,other_substitution
+gehts,geht es,15,15,whitespace_change
+aber,Aber,15,86,case_change
+nem,einem,14,14,other_substitution
+wär,wäre,14,16,other_substitution
+wettendass,"Wetten, dass",14,15,whitespace_change
+wie,Wie,13,43,case_change
+find,finde,13,13,other_substitution
+heut,heute,13,14,other_substitution
+grade,gerade,12,13,other_substitution
+würd,würde,12,12,other_substitution
+werd,werde,11,12,other_substitution
+das,dass,11,147,other_substitution
+ja,Ja,11,55,case_change
+net,nicht,11,12,other_substitution
+zuhause,zu Hause,11,11,whitespace_change
+was,etwas,9,55,other_substitution
+die,Die,9,193,case_change
+kenn,kenne,9,10,other_substitution
+geh,gehe,9,9,other_substitution
+und,Und,9,201,case_change
+freu,freue,9,11,other_substitution
+eh,eher,8,8,other_substitution
+ach,Ach,8,8,case_change
+ned,nicht,7,8,other_substitution
+glaub,glaube,7,10,other_substitution
+rum,herum,7,8,other_substitution
+nacht,Nacht,6,6,case_change
+hab,Habe,6,48,other_substitution
+vllt,vielleicht,6,7,expansion_or_abbreviation_restore
+der,Der,6,150,case_change
+',eine,5,28,expansion_or_abbreviation_restore
+un,und,5,5,other_substitution
+Achso,Ach so,5,5,whitespace_change
+drüber,darüber,5,5,other_substitution
+Find,Finde,5,5,other_substitution
+fur,für,5,5,other_substitution
+scheiss,Scheisse,5,5,other_substitution
+les,lese,5,5,other_substitution
+iwie,irgendwie,5,5,expansion_or_abbreviation_restore
+Scheiss,Scheisse,5,5,other_substitution
+Ick,Ich,5,5,other_substitution
+ok,Ok,5,8,case_change
+weiss,Weiss,5,26,case_change
+Hab,Habe,5,7,other_substitution
+soo,so,4,5,other_substitution
+schaun,schauen,4,5,other_substitution
+ma,mal,4,5,other_substitution
+Naja,Na ja,4,4,whitespace_change
+jz,jetzt,4,4,expansion_or_abbreviation_restore
+gute,Gute,4,6,case_change
+oh,Oh,4,7,case_change
+wars,war es,4,4,whitespace_change
+nun,Nun,4,12,case_change
+garnicht,gar nicht,4,4,whitespace_change
+also,Also,4,14,case_change
+Jaa,Ja,4,4,other_substitution
+Ne,Nein,4,4,other_substitution
+moechte,möchte,4,5,other_substitution
+nen,ein,4,19,other_substitution
+aufm,auf dem,4,4,whitespace_change
+ner,einer,4,5,other_substitution
+sry,Sorry,4,6,other_substitution
+bekomm,bekomme,4,4,other_substitution
+weg,Weg,4,14,case_change
+wa,wir,4,6,other_substitution
+jaaaa,Ja,4,4,repeated_char_reduction
+drauf,darauf,4,7,other_substitution
+mach,mache,4,10,other_substitution
+du,Du,4,62,case_change
+ne,nein,4,64,other_substitution
+jetz,jetzt,4,4,other_substitution
+handy,Handy,4,4,case_change
+gaaaanz,ganz,3,3,repeated_char_reduction
+habs,habe es,3,4,whitespace_change
+habn,haben,3,3,other_substitution
+na,Na,3,5,case_change
+schau,schaue,3,3,other_substitution
+Werd,Werde,3,3,other_substitution
+twitter,Twitter,3,4,case_change
+warum,Warum,3,6,case_change
+ang,angekündigt,3,4,expansion_or_abbreviation_restore
+n8,Nacht,3,3,digit_related_change
+fussball,Fussball,3,3,case_change
+hätt,hätte,3,3,other_substitution
+lust,Lust,3,3,case_change
+tja,Tja,3,3,case_change
+naja,Na ja,3,5,whitespace_change
+wärs,wäre es,3,3,whitespace_change
+welt,Welt,3,3,case_change
+seh,sehe,3,4,other_substitution
+sooo,so,3,3,repeated_char_reduction
+ehm,Ehm,3,3,case_change
+ichs,ich es,3,3,whitespace_change
+scho,schon,3,3,other_substitution
+zuviele,zu viele,3,3,whitespace_change
+Nachti,Nacht,3,3,other_substitution
+jaa,Ja,3,5,other_substitution
+danke,Danke,3,3,case_change
+typ,Typ,3,3,case_change
+achso,Ach so,3,3,whitespace_change
+man,Mann,3,37,other_substitution
+wenns,wenn es,3,4,whitespace_change
+riesenehre,Riesenehre,3,3,case_change
+tommys,Tommys,3,3,case_change
+sendung,Sendung,3,4,case_change
+duerfen,dürfen,3,3,other_substitution
+wirds,wird es,3,3,whitespace_change
+ne,Nein,3,64,other_substitution
+is,Ist,3,25,other_substitution
+rauf,herauf,3,3,other_substitution
+bitte,Bitte,3,11,case_change
+träum,träume,3,3,other_substitution
+für,Für,3,65,case_change
+wenn,Wenn,3,33,case_change
+es,Es,3,56,case_change
+rein,herein,3,3,other_substitution
+was,Was,3,55,case_change
+zeit,Zeit,3,5,case_change
+waere,wäre,3,3,other_substitution
+aso,Also,3,3,other_substitution
+Freu,Freue,3,3,other_substitution
+JA,Ja,3,3,case_change
+u,und,3,7,other_substitution
+vor,Vor,2,21,case_change
+weils,weil es,2,2,whitespace_change
+tag,Tag,2,2,case_change
+oooh,Oooh,2,3,case_change
+nurnoch,nur noch,2,2,whitespace_change
+seeeehr,sehr,2,2,repeated_char_reduction
+oda,oder,2,2,other_substitution
+dran,daran,2,2,other_substitution
+goettingen,Göttingen,2,2,other_substitution
+ohh,Ohh,2,2,case_change
+nciht,nicht,2,2,other_substitution
+fü,für,2,2,other_substitution
+Tach,Tag,2,2,other_substitution
+stunde,Stunde,2,2,case_change
+zum,Zum,2,18,case_change
+keine,Keine,2,7,case_change
+stehts,stets,2,3,other_substitution
+sry,sorry,2,6,other_substitution
+uber,über,2,2,other_substitution
+stunden,Stunden,2,3,case_change
+Kannste,Kannst du,2,2,whitespace_change
+draus,daraus,2,2,other_substitution
+pack,packe,2,2,other_substitution
+leute,Leute,2,2,case_change
+kamel,Kamel,2,2,case_change
+ve,verstehe,2,2,expansion_or_abbreviation_restore
+vaillant,Vaillant,2,2,case_change
+therme,Therme,2,2,case_change
+jahre,Jahre,2,4,case_change
+Was,Was für,2,10,whitespace_change
+holzfäller,Holzfäller,2,2,case_change
+simulator,Simulator,2,2,case_change
+hätts,hätte es,2,2,whitespace_change
+NICHT,nicht,2,4,case_change
+tisch,Tisch,2,2,case_change
+spass,Spass,2,2,case_change
+Sry,Sorry,2,2,other_substitution
+war,War,2,27,case_change
+gangbang,Gangbang,2,2,case_change
+erotik,Erotik,2,2,case_change
+tagen,Tagen,2,2,case_change
+Suesser,Süsser,2,2,other_substitution
+wünsch,wünsche,2,2,other_substitution
+vergess,vergesse,2,2,other_substitution
+musik,Musik,2,2,case_change
+eine,Eine,2,26,case_change
+film,Film,2,2,case_change
+laeuft,läuft,2,2,other_substitution
+Adventsk,Adventskalender,2,2,expansion_or_abbreviation_restore
+biin,bin,2,2,other_substitution
+cih,ich,2,2,other_substitution
+glück,Glück,2,2,case_change
+tage,Tage,2,2,case_change
+dacht,dachte,2,3,other_substitution
+Koble,Koblenz,2,2,other_substitution
+jaa,ja,2,5,other_substitution
+mach,Mach,2,10,case_change
+I,Ich,2,3,other_substitution
+Wenns,Wenn es,2,2,whitespace_change
+erinner,erinnere,2,2,other_substitution
+'s,das,2,20,other_substitution
+ihrs,ihr es,2,2,whitespace_change
+hab,Hab,2,48,case_change
+bei,Bei,2,50,case_change
+dad,Dad,2,2,case_change
+hats,hat es,2,3,whitespace_change
+naja,na ja,2,5,whitespace_change
+zuviel,zu viel,2,2,whitespace_change
+isch,ist,2,3,other_substitution
+u.,und,2,2,other_substitution
+japp,Japp,2,2,case_change
+wech,weg,2,2,other_substitution
+darf,Darf,2,8,case_change
+besonderes,Besonderes,2,2,case_change
+dennen,denen,2,2,other_substitution
+sag,Sag,2,6,case_change
+w,W,2,2,case_change
+gehn,gehen,2,2,other_substitution
+scheisse,Scheisse,2,3,case_change
+Traume,Träume,2,2,other_substitution
+movie,Movie,2,2,case_change
+download,Download,2,2,case_change
+baum,Baum,2,2,case_change
+park,Park,2,2,case_change
+schliess,schliesse,2,2,other_substitution
+daaa,da,2,2,repeated_char_reduction
+glaub,Glaube,2,10,other_substitution
+wir,Wir,2,32,case_change
+n,einen,2,5,expansion_or_abbreviation_restore
+ic,ich,2,2,other_substitution
+gerad,gerade,2,2,other_substitution
+met,mit,2,3,other_substitution
+wär,Wäre,2,16,other_substitution
+buch,Buch,2,2,case_change
+ihr,Ihr,2,23,case_change
+isses,ist es,2,2,whitespace_change
+wa,war,2,6,other_substitution
+böse,Böse,2,4,case_change
+Put,Putin,2,2,other_substitution
+oder,Oder,2,28,case_change
+schule,Schule,2,3,case_change
+f,für,2,2,other_substitution
+ess,esse,2,2,other_substitution
+hoff,hoffe,2,2,other_substitution
+Deu,Deutsch,2,2,expansion_or_abbreviation_restore
+RNK-VERLAG,RNK-Verlag,2,2,case_change
+son,so ein,2,3,whitespace_change
+',einer,2,28,expansion_or_abbreviation_restore
+ham,haben,2,2,other_substitution
+friedrichshafen,Friedrichshafen,2,3,case_change
+wetten,Wetten,2,5,case_change
+Hilfeeee,Hilfe,2,2,repeated_char_reduction
+geb,gebe,2,2,other_substitution
+party,Party,2,2,case_change
+kanns,kann es,2,2,whitespace_change
+SEH,THE,2,2,other_substitution
+bild,Bild,2,2,case_change
+schlaf,schlafe,2,4,other_substitution
+süsse,Süsse,2,2,case_change
+kannste,kannst du,2,2,whitespace_change
+hilfe,Hilfe,2,2,case_change
+vo,von,2,3,other_substitution
+bella,Bella,2,2,case_change
+Dikka,Dicker,2,2,other_substitution
+fan,Fan,2,2,case_change
+morgen,Morgen,2,16,case_change
+dun,dann,2,2,other_substitution
+rauskommen,herauskommen,2,2,other_substitution
+Les,lese,2,2,other_substitution
+beste,Beste,2,4,case_change
+dann,Dann,2,49,case_change
+geld,Geld,2,4,case_change
+umarm,umarme,2,2,other_substitution
+andrea,Andrea,2,2,case_change
+Ga,Geh,2,2,other_substitution
+Nix,Nichts,2,2,expansion_or_abbreviation_restore
+sitz,sitze,2,3,other_substitution
+alls,alles,2,2,other_substitution
+spaeter,später,2,2,other_substitution
+iwelche,irgendwelche,2,2,expansion_or_abbreviation_restore
+nee,Nein,2,3,other_substitution
+alverde,Alverde,2,4,case_change
+Schatzchen,Schätzchen,2,2,other_substitution
+genau,Genau,2,8,case_change
+Wissenschafter,Wissenschaftler,2,2,other_substitution
+Forsc,Forscher,2,2,expansion_or_abbreviation_restore
+F,F.,2,2,other_substitution
+Lookslikelink,Looks like link,2,2,whitespace_change
+mitn,mit einem,2,2,whitespace_change
+er,Er,2,15,case_change
+erinnerungen,Erinnerungen,2,2,case_change
+kopf,Kopf,2,2,case_change
+dallas,Dallas,2,2,case_change
+so,So,2,96,case_change
+spast,spasst,2,2,other_substitution
+Zubehoer,Zubehör,2,2,other_substitution
+Vorallem,Vor allem,2,2,whitespace_change
+immernoch,immer noch,2,2,whitespace_change
+be,betrinken,2,2,expansion_or_abbreviation_restore
+bock,Bock,2,2,case_change
+TL,Timeline,2,2,expansion_or_abbreviation_restore
+videos,Videos,2,2,case_change
+sol,solche,2,2,expansion_or_abbreviation_restore
+nummer,Nummer,2,2,case_change
+abend,Abend,2,2,case_change

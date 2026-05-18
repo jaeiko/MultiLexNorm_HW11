@@ -1,0 +1,101 @@
+raw,top_norm,top_count,raw_count,changed_count,top_conf,change_ratio,num_candidates
+bi,bir,51,52,52,0.9807692307692307,1.0,2
+cok,çok,17,19,19,0.8947368421052632,1.0,2
+tl,TL,14,14,14,1.0,1.0,1
+a,,12,15,15,0.8,1.0,2
+aq,amına koyayım,11,12,12,0.9166666666666666,1.0,2
+amk,amına koyayım,11,11,11,1.0,1.0,1
+artik,artık,10,10,10,1.0,1.0,1
+guzel,güzel,9,9,9,1.0,1.0,1
+degil,değil,9,9,9,1.0,1.0,1
+icin,için,9,9,9,1.0,1.0,1
+mi,mı,9,31,9,1.0,0.2903225806451613,1
+boyle,böyle,8,8,8,1.0,1.0,1
+sey,şey,7,7,7,1.0,1.0,1
+İ,,7,7,7,1.0,1.0,1
+hic,hiç,6,6,6,1.0,1.0,1
+nasil,nasıl,6,6,6,1.0,1.0,1
+sevgililer,Sevgililer,6,7,6,1.0,0.8571428571428571,1
+gercekten,gerçekten,5,5,5,1.0,1.0,1
+t,,5,5,5,1.0,1.0,1
+allah,Allah,4,5,5,0.8,1.0,2
+bide,bir de,4,4,4,1.0,1.0,1
+vardi,vardı,4,4,4,1.0,1.0,1
+MaliyeAtama,Maliye atama,4,4,4,1.0,1.0,1
+SırasıTarımda,sırası tarımda,4,4,4,1.0,1.0,1
+lutfen,lütfen,4,5,4,1.0,0.8,1
+ben,Ben,4,21,4,1.0,0.19047619047619047,1
+ne,Ne,4,31,5,0.8,0.16129032258064516,2
+allahın,Allah'ın,3,3,3,1.0,1.0,1
+oldugu,olduğu,3,3,3,1.0,1.0,1
+bugun,bugün,3,4,4,0.75,1.0,2
+burda,burada,3,3,3,1.0,1.0,1
+Rasûlullah,Resulullah,3,3,3,1.0,1.0,1
+uzerinde,üzerinde,3,3,3,1.0,1.0,1
+oyle,öyle,3,3,3,1.0,1.0,1
+dogru,doğru,3,3,3,1.0,1.0,1
+gunu,Günü,3,6,6,0.5,1.0,2
+NE,ne,3,3,3,1.0,1.0,1
+olmus,olmuş,3,3,3,1.0,1.0,1
+nolur,ne olur,3,3,3,1.0,1.0,1
+Valla,Vallahi,3,3,3,1.0,1.0,1
+bı,bir,3,3,3,1.0,1.0,1
+tt,TT,3,3,3,1.0,1.0,1
+valla,vallahi,3,3,3,1.0,1.0,1
+m,,3,3,3,1.0,1.0,1
+i,,3,4,4,0.75,1.0,2
+iste,işte,3,3,3,1.0,1.0,1
+baska,başka,3,3,3,1.0,1.0,1
+Cok,Çok,3,3,3,1.0,1.0,1
+yuzden,yüzden,3,3,3,1.0,1.0,1
+oç,orospu çocuğu,3,3,3,1.0,1.0,1
+yemege,yemeğe,3,3,3,1.0,1.0,1
+suan,şu an,3,3,3,1.0,1.0,1
+chp,CHP,3,3,3,1.0,1.0,1
+Yuksek,Yüksek,3,3,3,1.0,1.0,1
+borclarin,borçların,3,3,3,1.0,1.0,1
+odenmesi,ödenmesi,3,3,3,1.0,1.0,1
+odeme,ödeme,3,3,3,1.0,1.0,1
+planinin,planının,3,3,3,1.0,1.0,1
+olmasini,olmasını,3,3,3,1.0,1.0,1
+reisssss,reis,3,3,3,1.0,1.0,1
+ı,,3,6,5,0.6,0.8333333333333334,3
+e,,3,4,3,1.0,0.75,1
+bende,ben de,3,4,3,1.0,0.75,1
+de,,3,20,3,1.0,0.15,1
+alip,alıp,2,2,2,1.0,1.0,1
+olsaydi,olsaydı,2,2,2,1.0,1.0,1
+yazmıs,yazmış,2,2,2,1.0,1.0,1
+Gibi,gibi,2,2,2,1.0,1.0,1
+yokmu,yok mu,2,2,2,1.0,1.0,1
+âşık,aşık,2,2,2,1.0,1.0,1
+istanbul,İstanbul,2,2,2,1.0,1.0,1
+yaninda,yanında,2,2,2,1.0,1.0,1
+olmasi,olması,2,2,2,1.0,1.0,1
+Alâ,ala,2,2,2,1.0,1.0,1
+ciktik,çıktık,2,2,2,1.0,1.0,1
+tarafindan,tarafından,2,2,2,1.0,1.0,1
+seye,şeye,2,2,2,1.0,1.0,1
+li,,2,2,2,1.0,1.0,1
+su,Şu,2,4,4,0.5,1.0,3
+yapiyo,yapıyor,2,2,2,1.0,1.0,1
+İnstagram,Instagram,2,2,2,1.0,1.0,1
+bizene,bize ne,2,2,2,1.0,1.0,1
+GUN,gün,2,2,2,1.0,1.0,1
+BIZ,biz,2,2,2,1.0,1.0,1
+COK,çok,2,2,2,1.0,1.0,1
+duâ,dua,2,2,2,1.0,1.0,1
+Allahım,Allah'ım,2,2,2,1.0,1.0,1
+ayaga,ayağa,2,2,2,1.0,1.0,1
+kalkip,kalkıp,2,2,2,1.0,1.0,1
+kiz,kız,2,2,2,1.0,1.0,1
+arkadasimla,arkadaşımla,2,2,2,1.0,1.0,1
+sanirim,sanırım,2,2,2,1.0,1.0,1
+ahlâkı,ahlakı,2,2,2,1.0,1.0,1
+cınım,canım,2,2,2,1.0,1.0,1
+bangtana,Bangtan'a,2,2,2,1.0,1.0,1
+αcı,acı,2,2,2,1.0,1.0,1
+usta,Usta,2,2,2,1.0,1.0,1
+corel,Corel,2,2,2,1.0,1.0,1
+dk,dakika,2,2,2,1.0,1.0,1
+butun,bütün,2,2,2,1.0,1.0,1

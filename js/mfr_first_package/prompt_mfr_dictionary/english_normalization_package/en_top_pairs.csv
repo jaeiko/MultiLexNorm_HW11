@@ -1,0 +1,301 @@
+raw,norm,count,raw_total,changed_confidence,raw_confidence,pattern
+u,you,266,273,0.9815,0.9744,expansion_or_abbreviation_restore
+im,i'm,147,148,0.9932,0.9932,apostrophe_or_contraction_change
+dont,don't,72,72,1.0,1.0,apostrophe_or_contraction_change
+nigga,nigger,49,49,1.0,1.0,other_substitution
+niggas,niggers,45,45,1.0,1.0,other_substitution
+n,and,39,47,0.9512,0.8298,expansion_or_abbreviation_restore
+pls,please,35,35,1.0,1.0,expansion_or_abbreviation_restore
+lil,little,32,32,1.0,1.0,expansion_or_abbreviation_restore
+thats,that's,30,30,1.0,1.0,apostrophe_or_contraction_change
+rt,retweet,27,776,1.0,0.0348,expansion_or_abbreviation_restore
+bruh,brother,26,26,1.0,1.0,expansion_or_abbreviation_restore
+aint,ain't,25,25,1.0,1.0,apostrophe_or_contraction_change
+ur,your,25,35,0.7143,0.7143,expansion_or_abbreviation_restore
+ppl,people,23,23,1.0,1.0,expansion_or_abbreviation_restore
+gonna,going to,22,22,1.0,1.0,whitespace_change
+ima,i'm going to,21,21,1.0,1.0,whitespace_change
+r,are,19,32,0.9048,0.5938,expansion_or_abbreviation_restore
+bout,about,17,17,1.0,1.0,other_substitution
+yall,y'all,17,17,1.0,1.0,apostrophe_or_contraction_change
+cuz,because,17,17,1.0,1.0,expansion_or_abbreviation_restore
+imma,i'm going to,17,17,1.0,1.0,whitespace_change
+gon,gonna,15,15,1.0,1.0,expansion_or_abbreviation_restore
+d,the,15,24,1.0,0.625,expansion_or_abbreviation_restore
+didnt,didn't,14,14,1.0,1.0,apostrophe_or_contraction_change
+cause,because,14,14,1.0,1.0,expansion_or_abbreviation_restore
+b,be,14,35,0.9333,0.4,other_substitution
+ive,i've,14,14,1.0,1.0,apostrophe_or_contraction_change
+tryna,trying to,14,14,1.0,1.0,whitespace_change
+bc,because,13,14,1.0,0.9286,expansion_or_abbreviation_restore
+dat,that,12,12,1.0,1.0,other_substitution
+favourite,favorite,12,12,1.0,1.0,other_substitution
+fav,favorite,12,17,0.8,0.7059,expansion_or_abbreviation_restore
+goin,going,12,12,1.0,1.0,other_substitution
+tho,though,12,15,1.0,0.8,expansion_or_abbreviation_restore
+2,to,11,45,1.0,0.2444,digit_related_change
+kno,know,11,11,1.0,1.0,other_substitution
+pic,picture,11,12,1.0,0.9167,expansion_or_abbreviation_restore
+cant,can't,11,11,1.0,1.0,apostrophe_or_contraction_change
+da,the,11,12,1.0,0.9167,other_substitution
+tha,the,11,11,1.0,1.0,other_substitution
+ya,you,11,17,1.0,0.6471,other_substitution
+finna,going to,10,10,1.0,1.0,whitespace_change
+dm,direct message,9,9,1.0,1.0,whitespace_change
+yo,you,9,15,0.6429,0.6,other_substitution
+wit,with,9,9,1.0,1.0,other_substitution
+fuckin,fucking,9,9,1.0,1.0,other_substitution
+ur,you're,9,35,0.2571,0.2571,expansion_or_abbreviation_restore
+wanna,want to,8,8,1.0,1.0,whitespace_change
+theyre,they're,8,8,1.0,1.0,apostrophe_or_contraction_change
+tf,the fuck,8,8,1.0,1.0,whitespace_change
+congrats,congratulations,8,8,1.0,1.0,expansion_or_abbreviation_restore
+dis,this,8,8,1.0,1.0,other_substitution
+em,them,8,9,1.0,0.8889,expansion_or_abbreviation_restore
+w,with,8,18,0.8889,0.4444,expansion_or_abbreviation_restore
+yea,yeah,7,7,1.0,1.0,other_substitution
+wat,what,7,7,1.0,1.0,other_substitution
+dressin,dressing,7,7,1.0,1.0,other_substitution
+soo,so,7,8,1.0,0.875,other_substitution
+naw,now,7,8,0.875,0.875,other_substitution
+ill,i'll,6,8,1.0,0.75,apostrophe_or_contraction_change
+af,as fuck,6,10,1.0,0.6,whitespace_change
+its,it's,6,28,1.0,0.2143,apostrophe_or_contraction_change
+nd,and,6,8,1.0,0.75,other_substitution
+bro,brother,6,9,1.0,0.6667,expansion_or_abbreviation_restore
+plz,please,6,6,1.0,1.0,expansion_or_abbreviation_restore
+doin,doing,6,6,1.0,1.0,other_substitution
+isnt,isn't,6,6,1.0,1.0,apostrophe_or_contraction_change
+4,for,6,22,1.0,0.2727,digit_related_change
+rn,right now,6,9,1.0,0.6667,whitespace_change
+yu,you,6,6,1.0,1.0,other_substitution
+doesnt,doesn't,5,5,1.0,1.0,apostrophe_or_contraction_change
+feelin,feeling,5,5,1.0,1.0,other_substitution
+hes,he's,5,5,1.0,1.0,apostrophe_or_contraction_change
+knw,know,5,5,1.0,1.0,other_substitution
+talkin,talking,5,5,1.0,1.0,other_substitution
+gettin,getting,5,5,1.0,1.0,other_substitution
+vid,video,5,5,1.0,1.0,expansion_or_abbreviation_restore
+tht,that,5,5,1.0,1.0,other_substitution
+whos,who's,5,5,1.0,1.0,apostrophe_or_contraction_change
+theres,there's,5,5,1.0,1.0,apostrophe_or_contraction_change
+yo,your,5,15,0.3571,0.3333,expansion_or_abbreviation_restore
+alot,a lot,5,6,1.0,0.8333,whitespace_change
+ig,instagram,5,5,1.0,1.0,expansion_or_abbreviation_restore
+lookin,looking,5,5,1.0,1.0,other_substitution
+txt,text,5,5,1.0,1.0,other_substitution
+dnt,don't,5,5,1.0,1.0,expansion_or_abbreviation_restore
+hella,hell of a lot of,5,7,1.0,0.7143,whitespace_change
+sayin,saying,5,5,1.0,1.0,other_substitution
+hve,have,5,5,1.0,1.0,other_substitution
+woulda,would have,4,4,1.0,1.0,whitespace_change
+arent,aren't,4,4,1.0,1.0,apostrophe_or_contraction_change
+youu,you,4,4,1.0,1.0,other_substitution
+dats,that's,4,4,1.0,1.0,expansion_or_abbreviation_restore
+cus,because,4,4,1.0,1.0,expansion_or_abbreviation_restore
+b4,before,4,4,1.0,1.0,digit_related_change
+dms,direct messages,4,4,1.0,1.0,whitespace_change
+wasnt,wasn't,4,4,1.0,1.0,apostrophe_or_contraction_change
+favs,favorites,4,4,1.0,1.0,expansion_or_abbreviation_restore
+havent,haven't,4,4,1.0,1.0,apostrophe_or_contraction_change
+followback,follow back,4,4,1.0,1.0,whitespace_change
+thx,thanks,4,5,0.8,0.8,expansion_or_abbreviation_restore
+ma,my,4,7,1.0,0.5714,other_substitution
+watchin,watching,4,4,1.0,1.0,other_substitution
+learnt,learned,4,4,1.0,1.0,other_substitution
+wouldnt,wouldn't,4,4,1.0,1.0,apostrophe_or_contraction_change
+y,why,4,16,0.6667,0.25,expansion_or_abbreviation_restore
+bday,birthday,4,4,1.0,1.0,expansion_or_abbreviation_restore
+srsly,seriously,4,4,1.0,1.0,expansion_or_abbreviation_restore
+bbm,blackberry messenger,4,4,1.0,1.0,whitespace_change
+playin,playing,4,4,1.0,1.0,other_substitution
+gona,gonna,4,4,1.0,1.0,other_substitution
+nothin,nothing,4,4,1.0,1.0,other_substitution
+luv,love,4,4,1.0,1.0,other_substitution
+rockin,rocking,3,3,1.0,1.0,other_substitution
+gurl,girl,3,3,1.0,1.0,other_substitution
+labour,labor,3,3,1.0,1.0,other_substitution
+nah,no,3,8,0.6,0.375,other_substitution
+momma,mama,3,3,1.0,1.0,other_substitution
+tweetin,tweeting,3,3,1.0,1.0,other_substitution
+jst,just,3,3,1.0,1.0,other_substitution
+bck,back,3,3,1.0,1.0,other_substitution
+layin,laying,3,3,1.0,1.0,other_substitution
+nvm,never mind,3,3,1.0,1.0,whitespace_change
+chillin,chilling,3,3,1.0,1.0,other_substitution
+couldnt,couldn't,3,3,1.0,1.0,apostrophe_or_contraction_change
+colour,color,3,3,1.0,1.0,other_substitution
+urself,yourself,3,3,1.0,1.0,expansion_or_abbreviation_restore
+fuk,fuck,3,3,1.0,1.0,other_substitution
+holdin,holding,3,3,1.0,1.0,other_substitution
+soooo,so,3,3,1.0,1.0,repeated_char_reduction
+thru,through,3,3,1.0,1.0,expansion_or_abbreviation_restore
+whats,what's,3,4,1.0,0.75,apostrophe_or_contraction_change
+bf,boyfriend,3,3,1.0,1.0,expansion_or_abbreviation_restore
+u,your,3,273,0.0111,0.011,expansion_or_abbreviation_restore
+coz,because,3,3,1.0,1.0,expansion_or_abbreviation_restore
+wut,what,3,3,1.0,1.0,other_substitution
+na,no,3,28,1.0,0.1071,other_substitution
+thinkin,thinking,3,3,1.0,1.0,other_substitution
+wid,with,3,3,1.0,1.0,other_substitution
+jk,just kidding,3,3,1.0,1.0,whitespace_change
+juss,just,3,3,1.0,1.0,other_substitution
+mfs,mother fuckers,3,3,1.0,1.0,whitespace_change
+wht,what,3,3,1.0,1.0,other_substitution
+peewee,pee wee,3,3,1.0,1.0,whitespace_change
+longway,long way,3,3,1.0,1.0,whitespace_change
+dem,them,3,4,1.0,0.75,other_substitution
+nxt,next,3,3,1.0,1.0,other_substitution
+soff,soft,3,3,1.0,1.0,other_substitution
+jus,just,3,3,1.0,1.0,other_substitution
+pics,pictures,3,3,1.0,1.0,expansion_or_abbreviation_restore
+fxck,fuck,3,3,1.0,1.0,other_substitution
+nighas,niggers,3,3,1.0,1.0,other_substitution
+justunfollow,just unfollow,3,3,1.0,1.0,whitespace_change
+wen,when,3,4,1.0,0.75,other_substitution
+lik,like,3,3,1.0,1.0,other_substitution
+fone,phone,3,3,1.0,1.0,other_substitution
+whut,what,3,3,1.0,1.0,other_substitution
+smth,something,3,3,1.0,1.0,expansion_or_abbreviation_restore
+brah,brother,2,3,1.0,0.6667,expansion_or_abbreviation_restore
+tl,timeline,2,6,1.0,0.3333,expansion_or_abbreviation_restore
+ight,alright,2,2,1.0,1.0,expansion_or_abbreviation_restore
+infact,in fact,2,2,1.0,1.0,whitespace_change
+fuckn,fucking,2,2,1.0,1.0,expansion_or_abbreviation_restore
+takin,taking,2,2,1.0,1.0,other_substitution
+spirite,spirit,2,2,1.0,1.0,other_substitution
+fallin,falling,2,2,1.0,1.0,other_substitution
+tmrw,tomorrow,2,2,1.0,1.0,expansion_or_abbreviation_restore
+sum1,someone,2,2,1.0,1.0,digit_related_change
+shld,should,2,2,1.0,1.0,expansion_or_abbreviation_restore
+u,you're,2,273,0.0074,0.0073,expansion_or_abbreviation_restore
+savin,saving,2,2,1.0,1.0,other_substitution
+leavin,leaving,2,2,1.0,1.0,other_substitution
+gud,good,2,2,1.0,1.0,other_substitution
+asap,as soon as possible,2,2,1.0,1.0,whitespace_change
+abt,about,2,2,1.0,1.0,expansion_or_abbreviation_restore
+hatin,hating,2,2,1.0,1.0,other_substitution
+nyt,new york times,2,2,1.0,1.0,whitespace_change
+tommorow,tomorrow,2,2,1.0,1.0,other_substitution
+tryin,trying,2,2,1.0,1.0,other_substitution
+dey,they,2,4,0.6667,0.5,other_substitution
+drugz,drugs,2,2,1.0,1.0,other_substitution
+badass,bad ass,2,2,1.0,1.0,whitespace_change
+theatre,theater,2,2,1.0,1.0,other_substitution
+dumbass,dumb ass,2,3,1.0,0.6667,whitespace_change
+wth,with,2,4,1.0,0.5,other_substitution
+lyk,like,2,2,1.0,1.0,other_substitution
+dam,damn,2,2,1.0,1.0,other_substitution
+hw,homework,2,4,1.0,0.5,expansion_or_abbreviation_restore
+whn,when,2,2,1.0,1.0,other_substitution
+awks,awkwards,2,2,1.0,1.0,expansion_or_abbreviation_restore
+pik,pick,2,2,1.0,1.0,other_substitution
+swimmin,swimming,2,2,1.0,1.0,other_substitution
+forreal,for real,2,2,1.0,1.0,whitespace_change
+nomore,no more,2,2,1.0,1.0,whitespace_change
+mlb,major league baseball,2,2,1.0,1.0,whitespace_change
+yesss,yes,2,2,1.0,1.0,repeated_char_reduction
+goodmorning,good morning,2,2,1.0,1.0,whitespace_change
+fangirl,fan girl,2,2,1.0,1.0,whitespace_change
+dosent,doesn't,2,2,1.0,1.0,apostrophe_or_contraction_change
+fux,fuck,2,2,1.0,1.0,other_substitution
+fu,fuck,2,2,1.0,1.0,expansion_or_abbreviation_restore
+wont,won't,2,3,1.0,0.6667,apostrophe_or_contraction_change
+mf,mother fucker,2,3,0.6667,0.6667,whitespace_change
+runnin,running,2,2,1.0,1.0,other_substitution
+fck,fuck,2,2,1.0,1.0,other_substitution
+babe,baby,2,6,1.0,0.3333,other_substitution
+bt,but,2,2,1.0,1.0,other_substitution
+mins,minutes,2,2,1.0,1.0,expansion_or_abbreviation_restore
+mi,me,2,8,0.5,0.25,other_substitution
+rumours,rumors,2,2,1.0,1.0,other_substitution
+tix,ticket,2,2,1.0,1.0,expansion_or_abbreviation_restore
+neighbour,neighbor,2,2,1.0,1.0,other_substitution
+sittin,sitting,2,2,1.0,1.0,other_substitution
+r,rest,2,32,0.0952,0.0625,expansion_or_abbreviation_restore
+i,in,2,512,1.0,0.0039,other_substitution
+p,peace,2,8,1.0,0.25,expansion_or_abbreviation_restore
+fb,facebook,2,2,1.0,1.0,expansion_or_abbreviation_restore
+whippin,whipping,2,2,1.0,1.0,other_substitution
+whatchu,what you,2,2,1.0,1.0,whitespace_change
+dieing,dying,2,2,1.0,1.0,other_substitution
+programme,program,2,2,1.0,1.0,other_substitution
+smokin,smoking,2,2,1.0,1.0,other_substitution
+thts,that's,2,2,1.0,1.0,expansion_or_abbreviation_restore
+m,am,2,7,0.6667,0.2857,other_substitution
+ayebody,anybody,2,2,1.0,1.0,other_substitution
+mee,me,2,2,1.0,1.0,other_substitution
+poppin,popping,2,2,1.0,1.0,other_substitution
+ol,old,2,2,1.0,1.0,other_substitution
+dun,don't,2,2,1.0,1.0,expansion_or_abbreviation_restore
+lastnight,last night,2,2,1.0,1.0,whitespace_change
+youuu,you,2,2,1.0,1.0,repeated_char_reduction
+bouta,about to,2,2,1.0,1.0,whitespace_change
+bestfriends,best friends,2,2,1.0,1.0,whitespace_change
+choco,chocolate,2,2,1.0,1.0,expansion_or_abbreviation_restore
+livin,living,2,2,1.0,1.0,other_substitution
+bein,being,2,2,1.0,1.0,other_substitution
+follback,follow back,2,2,1.0,1.0,whitespace_change
+sumn,something,2,2,1.0,1.0,expansion_or_abbreviation_restore
+boutta,about to,2,2,1.0,1.0,whitespace_change
+askin,asking,2,2,1.0,1.0,other_substitution
+convo,conversation,2,2,1.0,1.0,expansion_or_abbreviation_restore
+lic,license,2,2,1.0,1.0,expansion_or_abbreviation_restore
+bxtch,bitch,2,2,1.0,1.0,other_substitution
+cum,come,2,2,1.0,1.0,other_substitution
+childrens,children,2,2,1.0,1.0,other_substitution
+decor,decoration,2,2,1.0,1.0,expansion_or_abbreviation_restore
+fak,fuck,2,2,1.0,1.0,other_substitution
+t,,2,23,0.6667,0.087,other_substitution
+bcz,because,2,2,1.0,1.0,expansion_or_abbreviation_restore
+nt,not,2,3,1.0,0.6667,other_substitution
+mep,map,2,4,1.0,0.5,other_substitution
+nah,now,2,8,0.4,0.25,other_substitution
+ik,i know,2,2,1.0,1.0,whitespace_change
+vids,videos,2,2,1.0,1.0,expansion_or_abbreviation_restore
+comin,coming,2,2,1.0,1.0,other_substitution
+yr,you're,2,2,1.0,1.0,expansion_or_abbreviation_restore
+youre,you're,2,2,1.0,1.0,apostrophe_or_contraction_change
+droppin,dropping,2,2,1.0,1.0,other_substitution
+allways,always,2,2,1.0,1.0,other_substitution
+dd,did,2,3,1.0,0.6667,other_substitution
+fav,favor,2,17,0.1333,0.1176,expansion_or_abbreviation_restore
+perf,perfect,2,2,1.0,1.0,expansion_or_abbreviation_restore
+wrk,work,2,2,1.0,1.0,other_substitution
+kys,kill youself,2,2,1.0,1.0,whitespace_change
+mi,my,2,8,0.5,0.25,other_substitution
+your,you're,2,80,1.0,0.025,expansion_or_abbreviation_restore
+txted,texted,2,2,1.0,1.0,other_substitution
+wif,with,1,1,1.0,1.0,other_substitution
+marvellous,marvelous,1,1,1.0,1.0,other_substitution
+obvi,obviously,1,1,1.0,1.0,expansion_or_abbreviation_restore
+ony,only,1,1,1.0,1.0,other_substitution
+usa,use,1,4,1.0,0.25,other_substitution
+custa,custand,1,1,1.0,1.0,expansion_or_abbreviation_restore
+thanku,thank you,1,1,1.0,1.0,whitespace_change
+c,see,1,20,1.0,0.05,expansion_or_abbreviation_restore
+sekret,secret,1,1,1.0,1.0,other_substitution
+mesage,message,1,1,1.0,1.0,other_substitution
+auchhh,ouch,1,1,1.0,1.0,repeated_char_reduction
+shoo,so,1,1,1.0,1.0,other_substitution
+fuhh,fuck,1,1,1.0,1.0,other_substitution
+thattt,that,1,1,1.0,1.0,repeated_char_reduction
+oll,old,1,1,1.0,1.0,other_substitution
+dogg,dog,1,2,1.0,0.5,other_substitution
+good'o,good,1,1,1.0,1.0,apostrophe_or_contraction_change
+whiteboy,white boy,1,1,1.0,1.0,whitespace_change
+pullin,pulling,1,1,1.0,1.0,other_substitution
+woah,wow,1,2,1.0,0.5,other_substitution
+goodluck,good luck,1,1,1.0,1.0,whitespace_change
+rehersal,rehearsal,1,1,1.0,1.0,other_substitution
+textin,texting,1,1,1.0,1.0,other_substitution
+dafuq,the fuck,1,1,1.0,1.0,whitespace_change
+niggah,nigger,1,1,1.0,1.0,other_substitution
+bfs,best friends,1,1,1.0,1.0,whitespace_change
+showin,showing,1,1,1.0,1.0,other_substitution
+needto,need to,1,1,1.0,1.0,whitespace_change
+neva,never,1,1,1.0,1.0,other_substitution
+posible,possible,1,1,1.0,1.0,other_substitution
+throwg,throw,1,1,1.0,1.0,other_substitution
+ppls,people's,1,1,1.0,1.0,expansion_or_abbreviation_restore
+camps,campus,1,1,1.0,1.0,other_substitution

@@ -1,0 +1,16 @@
+metric,value
+train_sentences,1701
+train_tokens,13130
+train_changed_tokens,958
+train_changed_ratio,0.07296268088347296
+validation_sentences,212
+validation_tokens,1880
+validation_changed_tokens,166
+validation_changed_ratio,0.08829787234042553
+high_confidence_pairs,24
+review_pairs,745
+ambiguous_pairs,63
+validation_ERR_mfr_only,0.10240963855421686
+validation_TP,21
+validation_FP,4
+validation_FN,145

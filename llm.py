@@ -1,9 +1,6 @@
 from __future__ import annotations
-
-import re
 import warnings
 from typing import List
-
 import torch
 from transformers import (
     AutoModelForCausalLM,
@@ -12,25 +9,18 @@ from transformers import (
     pipeline,
 )
 
-
 warnings.filterwarnings("ignore")
 
-
 class MultilingualCorrector:
-    """Thin Hugging Face generation wrapper for lexical normalization prompts.
-
-    The current full pipeline builds prompts outside this class with
-    prompt_mfr_dictionary. This class is intentionally responsible only for
-    loading the model and generating text.
-    """
-
     def __init__(
         self,
+        mfr_adapter,  # [핵심] 외부에서 만능 어댑터 객체를 주입받습니다.
         model_checkpoint: str = "Qwen/Qwen2.5-7B-Instruct",
         *,
         load_in_4bit: bool = True,
         use_chat_template: bool = True,
     ) -> None:
+        self.mfr_adapter = mfr_adapter
         self.model_checkpoint = model_checkpoint
         self.use_chat_template = use_chat_template
 
@@ -54,8 +44,7 @@ class MultilingualCorrector:
             tokenizer=self.tokenizer,
         )
 
-    def generate(self, prompt: str, *, max_new_tokens: int = 64) -> str:
-        """Generate raw model output for a fully-built prompt."""
+    def generate(self, prompt: str, *, max_new_tokens: int = 128) -> str:
         model_input = self._format_prompt(prompt)
         outputs = self.generator(
             model_input,
@@ -66,80 +55,40 @@ class MultilingualCorrector:
         )
         return str(outputs[0]["generated_text"]).strip()
 
-    def correct_from_prompt(self, prompt: str, *, max_new_tokens: int = 64) -> str:
-        """Backward-compatible alias used by some notebooks."""
-        return self.generate(prompt, max_new_tokens=max_new_tokens)
+    def correct(self, noisy_word: str, context: List[str], lang: str | None = None, target_index: int | None = None) -> str:
+        if target_index is None:
+            try:
+                target_index = context.index(noisy_word)
+            except ValueError:
+                target_index = 0
 
-# llm.py 내부의 correct 메서드를 아래 코드로 교체하십시오.
+        lang_code = lang or "en"
 
-    def correct(self, noisy_word: str, context: List[str], lang: str | None = None) -> str:
-        full_sentence = " ".join(context)
+        try:
+            # 1. 어댑터에게 프롬프트 생성을 완벽하게 위임 (언어별 퓨샷 자동 매핑)
+            prompt = self.mfr_adapter.build_normalization_prompt(context, target_index, lang_code)
+        except Exception as e:
+            print(f"[Warning] 프롬프트 생성 실패 ({lang_code}): {e}")
+            return noisy_word
+
+        # 2. LLM 생성
+        raw_output = self.generate(prompt, max_new_tokens=64)
+
+        # 3. 어댑터에게 JSON 파싱 및 안전 필터링 위임
+        parsed_json = self.mfr_adapter.parse_normalization_output(raw_output)
         
-        system_instruction = (
-            "You are a STRICT and CONSERVATIVE Lexical Normalizer for social media text.\n"
-            "Your ONLY task is to normalize severe internet slang, abbreviations, or typos into standard words.\n\n"
-            "CRITICAL RULES FOR DOUBLE-CHECKING:\n"
-            "The target token has been flagged as a potential error by an automated system, but it MIGHT BE A FALSE ALARM.\n"
-            "1. EVALUATE FIRST: Double-check if the target token is already a valid standard word. If it is, output it EXACTLY as is (e.g., 'went' MUST remain 'went'). DO NOT forcibly change it.\n"
-            "2. DO NOT touch punctuation, symbols, or emojis: If the token is '.', '?', '!', 'ㅋㅋ', output it EXACTLY as is.\n"
-            "3. DO NOT translate: Keep the output in the original language.\n"
-            "Output ONLY the final normalized token. No explanations, no quotes."
-        )
+        if parsed_json and "normalized" in parsed_json:
+            corrected_word = str(parsed_json["normalized"])
+        else:
+            corrected_word = noisy_word
 
-        few_shot_examples = {
-            "en": (
-                "Example 1 (Slang): Input: 'im', Output: i'm\n"
-                "Example 2 (Standard - DO NOT TOUCH): Input: 'went', Output: went\n"
-                "Example 3 (Punctuation - DO NOT TOUCH): Input: '.', Output: .\n"
-                "Example 4 (Abbreviation): Input: 'tmrw', Output: tomorrow\n"
-                "Example 5 (Standard - DO NOT TOUCH): Input: 'apple', Output: apple"
-            ),
-            "ko": (
-                "Example 1 (Slang): Input: '글구', Output: 그리고\n"
-                "Example 2 (Standard - DO NOT TOUCH): Input: '학교에', Output: 학교에\n"
-                "Example 3 (Punctuation - DO NOT TOUCH): Input: '!!', Output: !!\n"
-                "Example 4 (Consonants - DO NOT TOUCH): Input: 'ㅋㅋ', Output: ㅋㅋ\n"
-                "Example 5 (Standard - DO NOT TOUCH): Input: '갔다', Output: 갔다"
-            ),
-            "nl": (
-                "Example 1 (Standard - DO NOT TOUCH): Input: 'vrouw', Output: vrouw\n"
-                "Example 2 (Slang): Input: 'ff', Output: even\n"
-                "Example 3 (Punctuation - DO NOT TOUCH): Input: ':p', Output: :p"
-            ),
-            "ja": (
-                "Example 1 (Standard - DO NOT TOUCH): Input: '行く', Output: 行く\n"
-                "Example 2 (Slang): Input: 'りょ', Output: 了解\n"
-                "Example 3 (Punctuation - DO NOT TOUCH): Input: '。', Output: 。"
-            ),
-            "id": (
-                "Example 1 (Standard - DO NOT TOUCH): Input: 'makan', Output: makan\n"
-                "Example 2 (Slang): Input: 'yg', Output: yang\n"
-                "Example 3 (Punctuation - DO NOT TOUCH): Input: ',', Output: ,"
-            ),
-            # 예시가 없는 언어를 위한 기본 방어 예시
-            "default": (
-                "Example 1 (Standard - DO NOT TOUCH): Input: 'apple', Output: apple\n"
-                "Example 2 (Slang): Input: 'u', Output: you\n"
-                "Example 3 (Punctuation - DO NOT TOUCH): Input: '?', Output: ?\n"
-                "Example 4 (Standard - DO NOT TOUCH): Input: 'went', Output: went"
-            )
-        }
-
-        lang_code = lang if lang in few_shot_examples else "default"
-        examples = few_shot_examples[lang_code]
-
-        prompt = f"{system_instruction}\n\n[Language: {lang} Examples]\n{examples}\n\nContext: {full_sentence}\nTarget token: {noisy_word}\nAnswer:"
-
-        corrected_word = self.generate(prompt, max_new_tokens=32)
-        return self._legacy_safety_filter(noisy_word, full_sentence, corrected_word)
+        # 이모지, 기호 등이 망가지지 않도록 최종 안전 보호
+        final_word = self.mfr_adapter.safe_normalization_result(noisy_word, corrected_word)
+        return final_word
 
     def _format_prompt(self, prompt: str) -> str:
-        if not self.use_chat_template:
+        if not self.use_chat_template or not hasattr(self.tokenizer, "apply_chat_template"):
             return prompt
-
-        if not hasattr(self.tokenizer, "apply_chat_template"):
-            return prompt
-
         try:
             return self.tokenizer.apply_chat_template(
                 [{"role": "user", "content": prompt}],

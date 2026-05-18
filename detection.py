@@ -22,7 +22,8 @@ class AnomalyDetector:
             model_checkpoint (str): 허깅페이스 허브에 등록된 모델 식별자. 기본값은 'xlm-roberta-base'.
         """
         self.tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
-        self.model = AutoModelForTokenClassification.from_pretrained(model_checkpoint, num_labels=2)
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = AutoModelForTokenClassification.from_pretrained(model_checkpoint, num_labels=2).to(device)
 
     def align_labels_with_tokens(self, labels: List[int], word_ids: List[int]) -> List[int]:
         """[모델 담당자용] 서브워드 분할로 인해 틀어진 토큰과 레이블의 길이를 동기화한다.

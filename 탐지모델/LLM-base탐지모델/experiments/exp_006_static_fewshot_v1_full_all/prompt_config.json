@@ -1,8 +1,0 @@
-{
-  "prompt_template": "prompts/prompt_v1.txt",
-  "fewshot": {
-    "enabled": true,
-    "strategy": "static_by_lang",
-    "static_dir": "prompts/static_fewshot"
-  }
-}

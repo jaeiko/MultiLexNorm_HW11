@@ -1,4 +1,0 @@
-language,split,mode,dictionary_size,TP,FP,FN,ERR,precision,recall,changed_tokens,tokens
-it,internal_dev,LAI,0,0,0,87,0.0,0.0,0.0,87,1269
-it,internal_dev,conservative,27,7,2,80,0.057471,0.777778,0.08046,87,1269
-it,internal_dev,balanced,535,24,9,63,0.172414,0.727273,0.275862,87,1269

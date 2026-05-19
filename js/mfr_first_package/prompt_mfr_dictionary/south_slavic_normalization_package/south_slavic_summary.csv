@@ -1,4 +1,0 @@
-train_sentences,train_tokens,train_changed_tokens,train_changed_ratio,validation_sentences,validation_tokens,validation_changed_tokens,validation_changed_ratio,high_confidence_count,review_count,ambiguous_count,known_context_sensitive_tokens,balanced_ERR,balanced_TP,balanced_FP,balanced_FN,balanced_TN,conservative_ERR,conservative_TP,conservative_FP,conservative_FN,conservative_TN,lang
-4138,56823,4232,0.074477,1379,17796,1361,0.076478,415,106,9,"['bi', 'dal', 'jel', ""k'o"", 'ko', 'kʼo', 'k’o', 'l', ""l'"", 'nebi']",0.34313,481,14,880,16425,0.330639,464,14,897,16425,sr
-4760,54416,3570,0.065606,1588,18941,1683,0.088855,343,123,7,"['bi', 'dal', 'jel', 'kaj', 'ko', 'nebi', 'nezz', 'sta', 'šta']",0.288176,521,36,1162,17235,0.254308,455,27,1228,17236,hr
-4670,44944,6634,0.147606,1557,15311,2391,0.156162,516,134,26,"['k', 'ma', 'sam', 'se', 'si', 'sm']",0.475951,1204,66,1187,12885,0.433292,1090,54,1301,12895,sl

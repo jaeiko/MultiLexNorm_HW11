@@ -68,13 +68,13 @@ LANGUAGE_PACKAGES: dict[str, LanguagePackageConfig] = {
         "it",
     ),
     "ja": LanguagePackageConfig(
-        "japanese_normalization_package",
+        "japanese_normalization_v2_package",
         "language_rules/ja.py",
         "mfr_dictionaries/ja_mfr_dictionary.json",
         "ja",
     ),
     "ko": LanguagePackageConfig(
-        "korean_normalization_package",
+        "korean_normalization_v2_package",
         "language_rules/ko.py",
         "mfr_dictionaries/ko_mfr_dictionary.json",
         "ko",

@@ -1,0 +1,64 @@
+source,pattern,raw,norm,count
+pattern_examples,other_substitution,존나,매우,43
+pattern_examples,other_substitution,ㄹㅇ,진짜,33
+pattern_examples,other_substitution,시발,이런,30
+pattern_examples,other_substitution,새끼들,친구들,15
+pattern_examples,other_substitution,ㅅㅂ,이런,11
+pattern_examples,other_substitution,걍,그냥,11
+pattern_examples,other_substitution,병신,바보,10
+pattern_examples,other_substitution,씨발,이런,9
+pattern_examples,other_substitution,한녀,한국여자,8
+pattern_examples,other_substitution,짱깨,중국,7
+pattern_examples,whitespace_change,개소리,이상한 소리,2
+pattern_examples,whitespace_change,씹고퀄,퀄리티가 많이 좋은,1
+pattern_examples,whitespace_change,개고수네,매우 전문가네,1
+pattern_examples,whitespace_change,개씹,        엄청,1
+pattern_examples,whitespace_change,존잘,매우 잘생겼다,1
+pattern_examples,whitespace_change,개삽질,어색한 행동,1
+pattern_examples,whitespace_change,병신이니,어려운 사람이니,1
+pattern_examples,whitespace_change,간호년들,간호사 여자들,1
+pattern_examples,whitespace_change,퍼먹는거,먹는 것,1
+pattern_examples,whitespace_change,못참겠다,참기 힘들다,1
+pattern_examples,shortening_or_deletion,586이 ,586이,1
+pattern_examples,shortening_or_deletion,쳐먹으려고,먹으려고,1
+pattern_examples,shortening_or_deletion,쌉가능,가능,1
+pattern_examples,shortening_or_deletion,머리통,머리,1
+pattern_examples,shortening_or_deletion,홍어새끼들,홍어,1
+pattern_examples,shortening_or_deletion,깡시골,시골,1
+pattern_examples,shortening_or_deletion,킹치만,킹치,1
+pattern_examples,shortening_or_deletion,몸매바리,몸매,1
+pattern_examples,shortening_or_deletion,전범풀,전범,1
+pattern_examples,shortening_or_deletion,비국민,국민,1
+pattern_examples,expansion_or_abbreviation_restore,작성,작성하기,1
+pattern_examples,expansion_or_abbreviation_restore,비추,비추천,1
+pattern_examples,expansion_or_abbreviation_restore,남,남자,1
+pattern_examples,expansion_or_abbreviation_restore,분신,분신술,1
+pattern_examples,expansion_or_abbreviation_restore,조지라고,조지라고요,1
+pattern_examples,expansion_or_abbreviation_restore,선동에,선동에 대해,1
+pattern_examples,digit_related_change,영포티햄,젊은40대,1
+pattern_examples,digit_related_change,존1나,매우,1
+pattern_examples,repeated_char_reduction,ㅅㅂㅋㅋㅋ,이런ㅋㅋㅋ,1
+high_confidence_pairs,mfr_high,ㄹㅇ,진짜,
+high_confidence_pairs,mfr_high,시발,이런,
+high_confidence_pairs,mfr_high,새끼들,친구들,
+high_confidence_pairs,mfr_high,ㅅㅂ,이런,
+high_confidence_pairs,mfr_high,병신,바보,
+high_confidence_pairs,mfr_high,한녀,한국여자,
+high_confidence_pairs,mfr_high,씨발,이런,
+high_confidence_pairs,mfr_high,짱깨,중국,
+high_confidence_pairs,mfr_high,놈,사람,
+high_confidence_pairs,mfr_high,ㅆㅂ,이런,
+high_confidence_pairs,mfr_high,ㅇㅈㄹ,이행동,
+high_confidence_pairs,mfr_high,ㅈㄴ,매우,
+high_confidence_pairs,mfr_high,병신들,바보들,
+high_confidence_pairs,mfr_high,이새끼,이친구,
+high_confidence_pairs,mfr_high,중딩,중학생,
+high_confidence_pairs,mfr_high,ㅆㅅㅌㅊ,매우좋다,
+high_confidence_pairs,mfr_high,ㅇㅈㄹ하는데,이행동하는데,
+high_confidence_pairs,mfr_high,개꼴려,너무좋아,
+high_confidence_pairs,mfr_high,꼬우면,싫으면,
+high_confidence_pairs,mfr_high,병신같은,바보같은,
+high_confidence_pairs,mfr_high,빵댕이,엉덩이,
+high_confidence_pairs,mfr_high,씹,이런,
+high_confidence_pairs,mfr_high,조센징,한국인,
+high_confidence_pairs,mfr_high,틀딱,어르신,

@@ -1,0 +1,15 @@
+metric,value,note
+train_sentences,2132,Existing Japanese data analysis
+train_tokens,61903,Existing Japanese data analysis
+train_changed_tokens,4565,Existing Japanese data analysis
+train_changed_ratio,0.0737,changed/train tokens
+validation_sentences,305,Existing Japanese data analysis
+validation_tokens,10919,Existing Japanese data analysis
+validation_changed_tokens,683,Existing Japanese data analysis
+validation_changed_ratio,0.0626,changed/validation tokens
+old_high_conf_ERR,0.060029,Prior high-confidence MFR only
+old_high_conf_TP,41,Prior high-confidence MFR only
+old_high_conf_FP,0,Prior high-confidence MFR only
+v2_high_confidence_pairs,48,Conservative production MFR
+v2_balanced_pairs_for_analysis,88,Ablation only
+v2_context_sensitive_tokens,345,Prompt/model fallback

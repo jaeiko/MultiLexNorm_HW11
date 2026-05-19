@@ -1,0 +1,79 @@
+raw,norm,bucket,count,confidence,notes
+やっぱり,やはり,high_confidence_pairs,,,production conservative MFR
+んで,ので,high_confidence_pairs,,,production conservative MFR
+っていう,という,high_confidence_pairs,,,production conservative MFR
+やっぱ,やはり,high_confidence_pairs,,,production conservative MFR
+かっこ,格好,high_confidence_pairs,,,production conservative MFR
+ぐらい,くらい,high_confidence_pairs,,,production conservative MFR
+ツイッター,Twitter,high_confidence_pairs,,,production conservative MFR
+あんまり,あまり,high_confidence_pairs,,,production conservative MFR
+ちゃっ,て しまっ,high_confidence_pairs,,,production conservative MFR
+食っ,食べ,high_confidence_pairs,,,production conservative MFR
+RT,リツイート,high_confidence_pairs,,,production conservative MFR
+とっても,とても,high_confidence_pairs,,,production conservative MFR
+どっか,どこか,high_confidence_pairs,,,production conservative MFR
+ばっかり,ばかり,high_confidence_pairs,,,production conservative MFR
+まぁ,まあ,high_confidence_pairs,,,production conservative MFR
+スマホ,スマートフォン,high_confidence_pairs,,,production conservative MFR
+バイト,アルバイト,high_confidence_pairs,,,production conservative MFR
+ホント,本当に,high_confidence_pairs,,,production conservative MFR
+土日,土曜日 と 日曜日,high_confidence_pairs,,,production conservative MFR
+学祭,学園祭,high_confidence_pairs,,,production conservative MFR
+月曜,月曜日,high_confidence_pairs,,,production conservative MFR
+DM,個別 メッセージ,high_confidence_pairs,,,production conservative MFR
+TL,タイムライン,high_confidence_pairs,,,production conservative MFR
+えっ,え,high_confidence_pairs,,,production conservative MFR
+ほんとに,本当に,high_confidence_pairs,,,production conservative MFR
+めっさ,めちゃくちゃ,high_confidence_pairs,,,production conservative MFR
+卒論,卒業論文,high_confidence_pairs,,,production conservative MFR
+就活,就職活動,high_confidence_pairs,,,production conservative MFR
+見れ,見 られ,high_confidence_pairs,,,production conservative MFR
+食い,食べ,high_confidence_pairs,,,production conservative MFR
+twitter,Twitter,high_confidence_pairs,,,production conservative MFR
+〆切,締め切り,high_confidence_pairs,,,production conservative MFR
+あぁ,ああ,high_confidence_pairs,,,production conservative MFR
+かっこいい,格好いい,high_confidence_pairs,,,production conservative MFR
+そういや,そう いえ ば,high_confidence_pairs,,,production conservative MFR
+そしたら,そうしたら,high_confidence_pairs,,,production conservative MFR
+てか,と いう より も,high_confidence_pairs,,,production conservative MFR
+てん,て いる,high_confidence_pairs,,,production conservative MFR
+とりま,とりあえず 、 まあ,high_confidence_pairs,,,production conservative MFR
+ばっか,ばかり,high_confidence_pairs,,,production conservative MFR
+やぱ,やはり,high_confidence_pairs,,,production conservative MFR
+コミケ,コミックマーケット,high_confidence_pairs,,,production conservative MFR
+ペンタブ,ペンタブレット,high_confidence_pairs,,,production conservative MFR
+リプ,返信,high_confidence_pairs,,,production conservative MFR
+ググっ,検索し,high_confidence_pairs,,,production conservative MFR
+ググったら,検索する と,high_confidence_pairs,,,production conservative MFR
+ネット,インターネット,high_confidence_pairs,,,production conservative MFR
+コロナ,新型コロナウイルス感染症,high_confidence_pairs,,,production conservative MFR
+やっぱり,やはり,validation_top_tp,13,,from previous validation diagnosis
+TL,タイムライン,validation_top_tp,5,,from previous validation diagnosis
+かっこ,格好,validation_top_tp,4,,from previous validation diagnosis
+RT,リツイート,validation_top_tp,4,,from previous validation diagnosis
+見れ,見 られ,validation_top_tp,2,,from previous validation diagnosis
+っていう,という,validation_top_tp,2,,from previous validation diagnosis
+あぁ,ああ,validation_top_tp,2,,from previous validation diagnosis
+間違っ,間違え,validation_top_tp,1,,from previous validation diagnosis
+月曜,月曜日,validation_top_tp,1,,from previous validation diagnosis
+スマホ,スマートフォン,validation_top_tp,1,,from previous validation diagnosis
+まぁ,まあ,validation_top_tp,1,,from previous validation diagnosis
+DM,個別 メッセージ,validation_top_tp,1,,from previous validation diagnosis
+あんまり,あまり,validation_top_tp,1,,from previous validation diagnosis
+土日,土曜日 と 日曜日,validation_top_tp,1,,from previous validation diagnosis
+そういや,そう いえ ば,validation_top_tp,1,,from previous validation diagnosis
+そ,そう,validation_top_tp,1,,from previous validation diagnosis
+てる,て いる,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+でる,で いる,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+じゃ,で は,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+じゃなくて,で は なく て,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+なきゃ,なけれ ば / ない と,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+ちゃう,て しまう / で は ない,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+ワロタ,笑っ た,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+カワイイ,かわいい / 可愛い,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+大きぃ,大きい,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+おいしーい,おいしい,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+すげえ,すごい,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+っす,です,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+ついった,ツイッター,paper_seed_context_sensitive,,,use candidate prompt/model fallback
+だぁりん,ダーリン,paper_seed_context_sensitive,,,use candidate prompt/model fallback

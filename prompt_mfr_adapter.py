@@ -1,3 +1,9 @@
+"""LLM correction prompt 빌더 어댑터 — 최종 파이프라인의 prompt 단계.
+
+PromptMFRResources: prompt_mfr_dictionary의 17개 언어 패키지를 로드하고
+build_normalization_prompt()로 LLM user prompt(언어별 본체 + MFR hint +
+dynamic fewshot 블록)를 조립한다. llm_correct_local.py가 사용.
+"""
 from __future__ import annotations
 
 import importlib.util
@@ -426,8 +432,21 @@ class PromptMFRResources:
     def build_detection_prompt(self, tokens: Sequence[str], target_index: int, lang: str | None) -> str:
         return self._build_prompt(tokens, target_index, lang, prompt_type="detection")
 
-    def build_normalization_prompt(self, tokens: Sequence[str], target_index: int, lang: str | None) -> str:
-        return self._build_prompt(tokens, target_index, lang, prompt_type="normalization")
+    def build_normalization_prompt(
+        self,
+        tokens: Sequence[str],
+        target_index: int,
+        lang: str | None,
+        *,
+        dynamic_fewshot_pairs: dict[str, list[dict[str, Any]]] | None = None,
+    ) -> str:
+        return self._build_prompt(
+            tokens,
+            target_index,
+            lang,
+            prompt_type="normalization",
+            dynamic_fewshot_pairs=dynamic_fewshot_pairs,
+        )
 
     def _build_prompt(
         self,
@@ -436,6 +455,7 @@ class PromptMFRResources:
         lang: str | None,
         *,
         prompt_type: str,
+        dynamic_fewshot_pairs: dict[str, list[dict[str, Any]]] | None = None,
     ) -> str:
         normalized_lang = self.normalize_lang(lang)
         module = self.rule_modules.get(normalized_lang)
@@ -473,7 +493,38 @@ class PromptMFRResources:
                 f"{prompt}\n\n{hint_block}\n\n"
                 "Return only the valid JSON object requested above."
             )
+
+        dyn_block = self._format_dynamic_fewshot_block(dynamic_fewshot_pairs)
+        if dyn_block:
+            prompt = (
+                f"{prompt}\n\n{dyn_block}\n\n"
+                "Use these similar cases as soft evidence. "
+                "Return only the valid JSON object requested above."
+            )
         return prompt
+
+    @staticmethod
+    def _format_dynamic_fewshot_block(
+        pairs: dict[str, list[dict[str, Any]]] | None,
+    ) -> str:
+        if not pairs:
+            return ""
+
+        positive = pairs.get("positive") or []
+        negative = pairs.get("negative") or []
+        if not positive and not negative:
+            return ""
+
+        lines = ["Similar cases from training data:"]
+        if positive:
+            lines.append("  Positive (these tokens were normalized):")
+            for pair in positive:
+                lines.append("    " + json.dumps(pair, ensure_ascii=False))
+        if negative:
+            lines.append("  Negative (these tokens were preserved as-is, raw == norm):")
+            for pair in negative:
+                lines.append("    " + json.dumps(pair, ensure_ascii=False))
+        return "\n".join(lines)
 
     def _format_prompt_hint(self, token: str, lang: str) -> str:
         hints = self.prompt_hints.get(lang, {}).get(token)

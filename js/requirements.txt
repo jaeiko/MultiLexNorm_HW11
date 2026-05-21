@@ -1,7 +1,0 @@
-pyarrow==14.0.2
-numpy<2.0
-pandas<2.0
-torch>=2.0
-transformers>=4.40
-rapidfuzz>=3.0
-openai>=1.40

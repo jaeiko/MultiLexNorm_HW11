@@ -1,66 +1,28 @@
-# Korean Normalization Package
+# Korean Normalization v2 Package
 
-This package contains a Korean-specific lexical normalization module for MultiLexNorm-style data.
+This package improves the Korean module using the uploaded Korean noisy-text,
+K-MT tokenizer, and KOLD papers.
 
 ## Files
 
-```text
-korean_normalization_package/
-  language_rules/
-    ko.py
-  mfr_dictionaries/
-    ko_mfr_dictionary.json
-    ko_mfr.py
-  ko_summary.csv
-  README.md
-```
+- `prompts/common_prompt.py`: common target-only prompt and protected-token guards.
+- `language_rules/ko.py`: Korean-specific rule block, few-shot examples, and candidate selector.
+- `mfr_dictionaries/ko_mfr_dictionary.json`: train-derived Korean MFR dictionary with paper-informed metadata.
+- `mfr_dictionaries/ko_mfr.py`: Korean MFR loader and guarded application utility.
+- `ko_v2_summary.csv`: Korean data and dictionary statistics.
+- `ko_v2_top_pairs.csv`: project pattern examples and high-confidence pairs.
 
-## Strategy
+## Recommended pipeline
 
-Korean social-media text contains intentional text gaming, memes, profanity avoidance, compatibility-jamo abbreviations, leetspeak-like digit/Latin mixing, and expressive particles. This package therefore uses a conservative hybrid pipeline:
+1. Protect tokens with `common_prompt.find_protected_indices`.
+2. Apply `apply_ko_mfr_to_tokens(..., mode="conservative")` only to high-confidence pairs.
+3. Run `language_rules.ko.candidate_indices()` on remaining tokens.
+4. For each candidate, use target-only detection and normalization prompts.
+5. Use `common_prompt.safe_normalization_result()` after parsing LLM output.
 
-```text
-Korean input tokens
-→ strict high-confidence MFR lookup
-→ Korean-specific candidate detection
-→ context-aware target-token prompt/model fallback
-→ uncertain cases preserve original token
-```
+## Key policy
 
-## Validation summary
-
-```text
-Train tokens: 13130
-Train changed tokens: 958
-Train changed ratio: 0.072963
-Validation tokens: 1880
-Validation changed tokens: 166
-Validation changed ratio: 0.088298
-High-confidence MFR pairs: 24
-Validation ERR with high-confidence MFR only: 0.102410
-TP / FP / FN: 21 / 4 / 145
-```
-
-## Usage
-
-```python
-from mfr_dictionaries.ko_mfr import load_ko_mfr_dictionary, apply_ko_mfr_to_tokens
-from language_rules.ko import candidate_indices, build_ko_target_prompt
-
-ko_dict = load_ko_mfr_dictionary("mfr_dictionaries/ko_mfr_dictionary.json")
-tokens = ["ㄹㅇ", "존나", "귀엽다", "ㅋㅋ"]
-first_pass = apply_ko_mfr_to_tokens(tokens, ko_dict)
-# ["진짜", "존나", "귀엽다", "ㅋㅋ"]
-# 존나 is intentionally not direct-replaced because it is context-dependent in train data.
-
-cands = candidate_indices(tokens)
-prompt = build_ko_target_prompt(tokens, cands[0])
-```
-
-## Important notes
-
-- Apply only `high_confidence_pairs` automatically.
-- Do not automatically rewrite `review_pairs` or `ambiguous_pairs`.
-- Preserve laughter/emotion tokens such as `ㅋㅋ`, `ㅎㅎ`, `ㅠㅠ`, `ㅜㅜ` by default.
-- Treat intensifiers such as `존나`, `개`, `씹`, `좆` as context-dependent candidates rather than direct replacements.
-- Compatibility-jamo abbreviations such as `ㄹㅇ`, `ㅅㅂ`, `ㅈㄴ`, `ㅇㅈㄹ` are high-value candidates, but output should follow the exact project annotation style.
+Korean noisy-looking text should not be blindly normalized. Preserve laughter,
+emotion/backchannel compatibility-jamo tokens, hashtags, mentions, proper nouns,
+coinages, named entities, and community terms unless project-data evidence and
+local context support a target-level normalization.

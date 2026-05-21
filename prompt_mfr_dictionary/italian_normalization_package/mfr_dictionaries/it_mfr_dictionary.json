@@ -1,6 +1,7 @@
 {
   "language": "it",
-  "description": "Italian train-derived MFR dictionary for MultiLexNorm-style lexical normalization. Use high_confidence_pairs for automatic replacement; send review/ambiguous/context-sensitive pairs to target-token prompt/model fallback.",
+  "version": "v2_paper_guided",
+  "description": "Italian paper-guided and data-driven MFR dictionary for MultiLexNorm-style lexical normalization. Use high_confidence_pairs for production automatic replacement. Use accent_apostrophe_pairs and abbreviation_pairs for candidate injection / optional ablation. Do not automatically apply review, ambiguous, entity-sensitive, or phrasal-abbreviation pairs without context.",
   "source": "train-00000-of-00001.parquet",
   "train_stats": {
     "sentences": 593,
@@ -40,40 +41,181 @@
     "apostrophe_or_symbol_change": 9,
     "shortening_or_deletion": 2
   },
-  "thresholds": {
-    "high_confidence_pairs": "top_count>=2, top_norm_confidence>=0.85, top_norm/raw_total>=0.50, protected tokens excluded, case-only proper/entity-like pairs excluded, stable accent/apostrophe/abbreviation forms allowed",
-    "balanced_pairs_for_analysis": "high-confidence plus count>=1, top_norm_confidence>=0.75, top_norm/raw_total>=0.30; analysis/ablation only"
+  "paper_guidance_summary": {
+    "NormIt": [
+      "Correct diacritics and apostrophe-based accent variants.",
+      "Correct capitalization but keep the original when capitalization is ambiguous.",
+      "Keep hashtags and usernames as-is.",
+      "Exclude phrasal abbreviations and non-words/interjections from automatic expansion.",
+      "Keep Italian clitics and preposition contractions as standard forms."
+    ],
+    "TweetNorm": [
+      "Use language-independent rules for repeated characters, spelling distortions, and Twitter-specific tokens.",
+      "Treat abbreviation/acronym expansion as language-dependent and context-sensitive.",
+      "Use whitelists to avoid unwanted named entity modifications."
+    ],
+    "MoNoise": [
+      "Separate candidate generation and ranking.",
+      "Keep the original token as a candidate.",
+      "Tune aggressiveness: conservative behavior avoids over-normalization."
+    ]
+  },
+  "recommended_usage": {
+    "production_mode": "high_confidence_pairs only, with protected-token and context-sensitive guards",
+    "candidate_injection": [
+      "accent_apostrophe_pairs",
+      "abbreviation_pairs",
+      "repetition_candidates",
+      "span_candidates"
+    ],
+    "llm_fallback": [
+      "ambiguous_pairs",
+      "context_sensitive_tokens",
+      "case_entity_sensitive_pairs",
+      "phrasal_abbreviations_preserve_by_default"
+    ]
   },
   "high_confidence_pairs": {
+    "AD": "ad",
     "AL": "al",
+    "APP": "app",
+    "AUGURIIIIIIIII": "auguri",
     "Beppeee": "Beppe",
     "CHE": "che",
+    "CMQ": "comunque",
+    "CN": "con",
     "COME": "come",
+    "CON": "con",
+    "Cmq": "Comunque",
     "DEI": "dei",
     "DEL": "del",
     "DELLA": "della",
+    "E'": "È",
+    "E’": "È",
     "HANNO": "hanno",
     "IN": "in",
+    "KE": "che",
+    "Ke": "Che",
     "MALE": "male",
+    "NN": "non",
     "NON": "non",
     "PER": "per",
     "SUL": "sul",
     "SULLA": "sulla",
-    "Si": "Sì",
     "UN": "un",
+    "citta": "città",
+    "cmnq": "comunque",
+    "cmq": "comunque",
+    "cn": "con",
     "cosi": "così",
     "dx": "destra",
     "e'": "è",
+    "e’": "è",
     "gia": "già",
+    "info": "informazioni",
     "ke": "che",
     "nn": "non",
     "nov": "novembre",
+    "perche": "perché",
     "perche'": "perché",
+    "perche’": "perché",
     "perchè": "perché",
+    "pero": "però",
     "pero'": "però",
+    "pero’": "però",
+    "piu": "più",
+    "po'": "po'",
+    "po’": "po'",
+    "puo": "può",
     "puo'": "può",
+    "puo’": "può",
+    "sx": "sinistra",
     "transloco": "trasloco",
     "é": "è"
+  },
+  "accent_apostrophe_pairs": {
+    "E'": "È",
+    "E’": "È",
+    "citta": "città",
+    "cosi": "così",
+    "e'": "è",
+    "e’": "è",
+    "gia": "già",
+    "perche": "perché",
+    "perche'": "perché",
+    "perche’": "perché",
+    "perchè": "perché",
+    "pero": "però",
+    "pero'": "però",
+    "pero’": "però",
+    "piu": "più",
+    "po'": "po'",
+    "po’": "po'",
+    "puo": "può",
+    "puo'": "può",
+    "puo’": "può",
+    "é": "è"
+  },
+  "abbreviation_pairs": {
+    "CMQ": "comunque",
+    "CN": "con",
+    "Cmq": "Comunque",
+    "KE": "che",
+    "Ke": "Che",
+    "NN": "non",
+    "Xke": "Perché",
+    "Xké": "Perché",
+    "cmnq": "comunque",
+    "cmq": "comunque",
+    "cn": "con",
+    "dx": "destra",
+    "info": "informazioni",
+    "ke": "che",
+    "nn": "non",
+    "nnt": "niente",
+    "nov": "novembre",
+    "qlc": "qualcuno",
+    "qlcn": "qualcuno",
+    "qlcs": "qualcosa",
+    "qnd": "quando",
+    "qst": "questo",
+    "qsta": "questa",
+    "qste": "queste",
+    "qsti": "questi",
+    "qsto": "questo",
+    "sx": "sinistra",
+    "xche": "perché",
+    "xchè": "perché",
+    "xk": "perché",
+    "xke": "perché",
+    "xké": "perché"
+  },
+  "case_safe_pairs": {
+    "A": "a",
+    "AD": "ad",
+    "AL": "al",
+    "APP": "app",
+    "CHE": "che",
+    "COME": "come",
+    "CON": "con",
+    "DEI": "dei",
+    "DEL": "del",
+    "DELLA": "della",
+    "E": "e",
+    "HANNO": "hanno",
+    "IN": "in",
+    "MALE": "male",
+    "NON": "non",
+    "O": "o",
+    "PER": "per",
+    "SUL": "sul",
+    "SULLA": "sulla",
+    "UN": "un"
+  },
+  "repetition_pairs": {
+    "AUGURIIIIIIIII": "auguri",
+    "Beppeee": "Beppe",
+    "CAZZOOO": "cazzo"
   },
   "balanced_pairs_for_analysis": {
     "+": "più",
@@ -83,6 +225,7 @@
     "ALL'": "all'",
     "ALLA": "alla",
     "ANCORA": "ancora",
+    "APP": "app",
     "APPREZZI": "apprezzi",
     "APRILE": "aprile",
     "AUGURI": "auguri",
@@ -121,11 +264,14 @@
     "CI": "ci",
     "CLERICO": "clerico",
     "CLOSED": "closed",
+    "CMQ": "comunque",
+    "CN": "con",
     "COL": "col",
     "COME": "come",
     "COMPANY": "company",
     "COMPLETAMENTO": "completamento",
     "COMUNIONE": "Comunione",
+    "CON": "con",
     "CONTO": "conto",
     "CONTRO": "contro",
     "CONTRO-RIVOLUZIONE": "controrivoluzione",
@@ -139,6 +285,7 @@
     "Chiedendo": "chiedendo",
     "Cimitero": "cimitero",
     "Cisl": "CISL",
+    "Cmq": "Comunque",
     "Conflitto": "conflitto",
     "Consiglio": "consiglio",
     "CorSera": "Corriere della Sera",
@@ -161,6 +308,7 @@
     "Dall'": "dall'",
     "Deboli": "deboli",
     "E": "e",
+    "E'": "È",
     "ECCO": "Ecco",
     "ECONOMIA": "economia",
     "ED": "ed",
@@ -174,6 +322,7 @@
     "Er": "Il",
     "Euro": "Europa",
     "EuroBANCA": "Eurobanca",
+    "E’": "È",
     "FARE": "fare",
     "FATE": "fate",
     "FATEVI": "fatevi",
@@ -225,6 +374,8 @@
     "Istituzioni": "istituzioni",
     "Italiani": "italiani",
     "Iva": "IVA",
+    "KE": "che",
+    "Ke": "Che",
     "LARINO": "Larino",
     "LE": "le",
     "LEGO": "Lego",
@@ -385,6 +536,8 @@
     "WhoWantsToLiveForever": "Who Wants To Live Forever",
     "X": "Per",
     "Xchè": "perché",
+    "Xke": "Perché",
+    "Xké": "Perché",
     "ZARATE": "Zarate",
     "ZERRIE": "Zerrie",
     "abiamo": "abbiamo",
@@ -415,6 +568,8 @@
     "cioppoo": "Cioppoo",
     "cioé": "Cioè",
     "ciro": "giro",
+    "citta": "città",
+    "cmnq": "comunque",
     "cmq": "comunque",
     "cn": "con",
     "concord.": "concordare",
@@ -452,6 +607,7 @@
     "e'quello": "è quello",
     "elez": "elezioni",
     "es": "esempio",
+    "e’": "è",
     "facebook": "Facebook",
     "far": "fare",
     "fla": "Flavia",
@@ -530,6 +686,7 @@
     "niall": "Niall",
     "niruana": "nirvana",
     "nn": "non",
+    "nnt": "niente",
     "nominato": "Nominato",
     "noooo": "no",
     "noooooo": "no",
@@ -553,10 +710,14 @@
     "passera": "Passera",
     "pensavo": "Pensavo",
     "pepe": "Pepe",
+    "perche": "perché",
     "perche'": "perché",
+    "perche’": "perché",
     "perchè": "perché",
     "permet.": "permettono",
+    "pero": "però",
     "pero'": "però",
+    "pero’": "però",
     "piete": "piede",
     "piicccina": "piccina",
     "pippa": "sega",
@@ -566,18 +727,31 @@
     "piu’": "più",
     "pmi": "PMI",
     "po": "po'",
+    "po'": "po'",
     "politca": "politica",
+    "po’": "po'",
     "prefetto": "perfetto",
     "pregooo": "prego",
     "prentento": "prendendo",
     "priorita'": "priorità",
     "pross": "prossime",
     "pubblicita'": "pubblicità",
+    "puo": "può",
     "puo'": "può",
+    "puo’": "può",
     "pò": "po'",
+    "qlc": "qualcuno",
+    "qlcn": "qualcuno",
+    "qlcs": "qualcosa",
+    "qnd": "quando",
     "qndo": "quando",
     "qnti": "quanti",
     "qs": "questo",
+    "qst": "questo",
+    "qsta": "questa",
+    "qste": "queste",
+    "qsti": "questi",
+    "qsto": "questo",
     "quierooo": "quiero",
     "raffrettoren": "raffreddore",
     "rass": "rassegna",
@@ -623,6 +797,7 @@
     "suelacrime": "sue lacrime",
     "suosorriso": "suo sorriso",
     "superera'": "supererà",
+    "sx": "sinistra",
     "t'": "ti",
     "tener": "tenere",
     "tg": "TG",
@@ -649,7 +824,10 @@
     "vuol": "vuole",
     "whazza": "WhatsApp",
     "x": "per",
+    "xche": "perché",
     "xchè": "perché",
+    "xk": "perché",
+    "xke": "perché",
     "xké": "perché",
     "youtubers": "youtuber",
     "zeman": "Zeman",
@@ -660,15 +838,400 @@
     "é": "è"
   },
   "review_pairs": {
-    "è": {
-      "top_norm": "È",
-      "top_count": 3,
-      "raw_total": 128,
-      "changed_total": 3,
+    "#Buonotte": "buonanotte",
+    "#mammamia": "Mamma mia",
+    "#photoshop": "photoshop",
+    "10cent": {
+      "top_norm": "10 centesimi",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.0234,
+      "raw_confidence": 1.0,
       "candidates": {
-        "È": 3
+        "10 centesimi": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "1mo": {
+      "top_norm": "primo",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "primo": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "20": {
+      "top_norm": "20:00",
+      "top_count": 1,
+      "raw_total": 5,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2,
+      "candidates": {
+        "20:00": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "20mila": {
+      "top_norm": "20 mila",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "20 mila": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "21enni": {
+      "top_norm": "ventunenni",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "ventunenni": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "30mila": {
+      "top_norm": "30 mila",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "30 mila": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "3mld": {
+      "top_norm": "tre miliardi",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tre miliardi": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "4mila": {
+      "top_norm": "quattromila",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "quattromila": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "6": "sei",
+    "B.": {
+      "top_norm": "Berlusconi",
+      "top_count": 1,
+      "raw_total": 6,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "Berlusconi": 1
+      },
+      "pattern": "expansion_or_abbreviation_restore"
+    },
+    "BEATLES": "Beatles",
+    "BERLUSCONI": "Berlusconi",
+    "BR": "Braccialetti Rossi",
+    "Barça": "Barcellona",
+    "Bce": "BCE",
+    "CERVETERI": "Cerveteri",
+    "Cataniaaa": "Catania",
+    "Cav": "Cavaliere",
+    "Cav.": "Cavaliere",
+    "Cgil": "CGIL",
+    "Che": {
+      "top_norm": "che",
+      "top_count": 2,
+      "raw_total": 14,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1429,
+      "candidates": {
+        "che": 2
+      },
+      "pattern": "case_change"
+    },
+    "Cisl": "CISL",
+    "Da": {
+      "top_norm": "da",
+      "top_count": 1,
+      "raw_total": 6,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "da": 1
+      },
+      "pattern": "case_change"
+    },
+    "Della": {
+      "top_norm": "della",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "della": 1
+      },
+      "pattern": "case_change"
+    },
+    "Direction": "Direction",
+    "Governo": {
+      "top_norm": "governo",
+      "top_count": 12,
+      "raw_total": 54,
+      "changed_total": 12,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2222,
+      "candidates": {
+        "governo": 12
+      },
+      "pattern": "case_change"
+    },
+    "Grazie": {
+      "top_norm": "grazie",
+      "top_count": 1,
+      "raw_total": 6,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "grazie": 1
+      },
+      "pattern": "case_change"
+    },
+    "ITALIA": "Italia",
+    "Il": {
+      "top_norm": "il",
+      "top_count": 1,
+      "raw_total": 44,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0227,
+      "candidates": {
+        "il": 1
+      },
+      "pattern": "case_change"
+    },
+    "In": {
+      "top_norm": "in",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "in": 1
+      },
+      "pattern": "case_change"
+    },
+    "L'": {
+      "top_norm": "l'",
+      "top_count": 2,
+      "raw_total": 12,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "l'": 2
+      },
+      "pattern": "case_change"
+    },
+    "La": {
+      "top_norm": "la",
+      "top_count": 4,
+      "raw_total": 39,
+      "changed_total": 4,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1026,
+      "candidates": {
+        "la": 4
+      },
+      "pattern": "case_change"
+    },
+    "La7": {
+      "top_norm": "LA7",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "LA7": 1
+      },
+      "pattern": "case_change"
+    },
+    "MARIO": "Mario",
+    "MONTI": "Monti",
+    "Ma": {
+      "top_norm": "ma",
+      "top_count": 1,
+      "raw_total": 23,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0435,
+      "candidates": {
+        "ma": 1
+      },
+      "pattern": "case_change"
+    },
+    "No": {
+      "top_norm": "no",
+      "top_count": 1,
+      "raw_total": 7,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1429,
+      "candidates": {
+        "no": 1
+      },
+      "pattern": "case_change"
+    },
+    "Non": {
+      "top_norm": "non",
+      "top_count": 1,
+      "raw_total": 15,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0667,
+      "candidates": {
+        "non": 1
+      },
+      "pattern": "case_change"
+    },
+    "One": "One",
+    "Paese": {
+      "top_norm": "paese",
+      "top_count": 2,
+      "raw_total": 7,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2857,
+      "candidates": {
+        "paese": 2
+      },
+      "pattern": "case_change"
+    },
+    "Pd": "PD",
+    "Premier": {
+      "top_norm": "premier",
+      "top_count": 1,
+      "raw_total": 5,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2,
+      "candidates": {
+        "premier": 1
+      },
+      "pattern": "case_change"
+    },
+    "ROMA": "Roma",
+    "Rai": "RAI",
+    "Scarica": {
+      "top_norm": "scarica",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "scarica": 1
+      },
+      "pattern": "case_change"
+    },
+    "Tg1": {
+      "top_norm": "TG1",
+      "top_count": 2,
+      "raw_total": 2,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "TG1": 2
+      },
+      "pattern": "case_change"
+    },
+    "Tg24": {
+      "top_norm": "TG24",
+      "top_count": 2,
+      "raw_total": 2,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "TG24": 2
+      },
+      "pattern": "case_change"
+    },
+    "Uil": "UIL",
+    "Xke": "Perché",
+    "a": {
+      "top_norm": "al",
+      "top_count": 1,
+      "raw_total": 139,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0072,
+      "candidates": {
+        "al": 1
+      },
+      "pattern": "other_substitution"
+    },
+    "al": {
+      "top_norm": "all'",
+      "top_count": 1,
+      "raw_total": 78,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0128,
+      "candidates": {
+        "all'": 1
+      },
+      "pattern": "apostrophe_or_symbol_change"
+    },
+    "ancora": {
+      "top_norm": "àncora",
+      "top_count": 1,
+      "raw_total": 9,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1111,
+      "candidates": {
+        "àncora": 1
+      },
+      "pattern": "accent_or_apostrophe_restore"
+    },
+    "c'": {
+      "top_norm": "C'",
+      "top_count": 1,
+      "raw_total": 12,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0833,
+      "candidates": {
+        "C'": 1
       },
       "pattern": "case_change"
     },
@@ -696,137 +1259,30 @@
       },
       "pattern": "case_change"
     },
-    "profumo": {
-      "top_norm": "Profumo",
+    "di": {
+      "top_norm": "Di",
+      "top_count": 1,
+      "raw_total": 212,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0047,
+      "candidates": {
+        "Di": 1
+      },
+      "pattern": "case_change"
+    },
+    "domaaani": "domani",
+    "domani": {
+      "top_norm": "Domani",
       "top_count": 1,
       "raw_total": 4,
       "changed_total": 1,
       "changed_confidence": 1.0,
       "raw_confidence": 0.25,
       "candidates": {
-        "Profumo": 1
+        "Domani": 1
       },
       "pattern": "case_change"
-    },
-    "La": {
-      "top_norm": "la",
-      "top_count": 4,
-      "raw_total": 39,
-      "changed_total": 4,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1026,
-      "candidates": {
-        "la": 4
-      },
-      "pattern": "case_change"
-    },
-    "l'": {
-      "top_norm": "L'",
-      "top_count": 1,
-      "raw_total": 67,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0149,
-      "candidates": {
-        "L'": 1
-      },
-      "pattern": "case_change"
-    },
-    "nella": {
-      "top_norm": "nela",
-      "top_count": 1,
-      "raw_total": 11,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0909,
-      "candidates": {
-        "nela": 1
-      },
-      "pattern": "other_substitution"
-    },
-    "1mo": {
-      "top_norm": "primo",
-      "top_count": 1,
-      "raw_total": 1,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "primo": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "Governo": {
-      "top_norm": "governo",
-      "top_count": 12,
-      "raw_total": 54,
-      "changed_total": 12,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.2222,
-      "candidates": {
-        "governo": 12
-      },
-      "pattern": "case_change"
-    },
-    "21enni": {
-      "top_norm": "ventunenni",
-      "top_count": 1,
-      "raw_total": 1,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "ventunenni": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "ancora": {
-      "top_norm": "àncora",
-      "top_count": 1,
-      "raw_total": 9,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1111,
-      "candidates": {
-        "àncora": 1
-      },
-      "pattern": "accent_or_apostrophe_restore"
-    },
-    "Da": {
-      "top_norm": "da",
-      "top_count": 1,
-      "raw_total": 6,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1667,
-      "candidates": {
-        "da": 1
-      },
-      "pattern": "case_change"
-    },
-    "ma": {
-      "top_norm": "Ma",
-      "top_count": 1,
-      "raw_total": 51,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0196,
-      "candidates": {
-        "Ma": 1
-      },
-      "pattern": "case_change"
-    },
-    "sto": {
-      "top_norm": "questo",
-      "top_count": 1,
-      "raw_total": 10,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1,
-      "candidates": {
-        "questo": 1
-      },
-      "pattern": "expansion_or_abbreviation_restore"
     },
     "fosse": {
       "top_norm": "Fosse",
@@ -840,183 +1296,16 @@
       },
       "pattern": "case_change"
     },
-    "Paese": {
-      "top_norm": "paese",
+    "giooornaaata": "giornata",
+    "governo": {
+      "top_norm": "Governo",
       "top_count": 2,
-      "raw_total": 7,
+      "raw_total": 154,
       "changed_total": 2,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.2857,
+      "raw_confidence": 0.013,
       "candidates": {
-        "paese": 2
-      },
-      "pattern": "case_change"
-    },
-    "un": {
-      "top_norm": "un'",
-      "top_count": 1,
-      "raw_total": 75,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0133,
-      "candidates": {
-        "un'": 1
-      },
-      "pattern": "apostrophe_or_symbol_change"
-    },
-    "Che": {
-      "top_norm": "che",
-      "top_count": 2,
-      "raw_total": 14,
-      "changed_total": 2,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1429,
-      "candidates": {
-        "che": 2
-      },
-      "pattern": "case_change"
-    },
-    "al": {
-      "top_norm": "all'",
-      "top_count": 1,
-      "raw_total": 78,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0128,
-      "candidates": {
-        "all'": 1
-      },
-      "pattern": "apostrophe_or_symbol_change"
-    },
-    "Tg24": {
-      "top_norm": "TG24",
-      "top_count": 2,
-      "raw_total": 2,
-      "changed_total": 2,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "TG24": 2
-      },
-      "pattern": "case_change"
-    },
-    "Premier": {
-      "top_norm": "premier",
-      "top_count": 1,
-      "raw_total": 5,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.2,
-      "candidates": {
-        "premier": 1
-      },
-      "pattern": "case_change"
-    },
-    "domani": {
-      "top_norm": "Domani",
-      "top_count": 1,
-      "raw_total": 4,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.25,
-      "candidates": {
-        "Domani": 1
-      },
-      "pattern": "case_change"
-    },
-    "Il": {
-      "top_norm": "il",
-      "top_count": 1,
-      "raw_total": 44,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0227,
-      "candidates": {
-        "il": 1
-      },
-      "pattern": "case_change"
-    },
-    "Grazie": {
-      "top_norm": "grazie",
-      "top_count": 1,
-      "raw_total": 6,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1667,
-      "candidates": {
-        "grazie": 1
-      },
-      "pattern": "case_change"
-    },
-    "È": {
-      "top_norm": "è",
-      "top_count": 1,
-      "raw_total": 8,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.125,
-      "candidates": {
-        "è": 1
-      },
-      "pattern": "case_change"
-    },
-    "Della": {
-      "top_norm": "della",
-      "top_count": 1,
-      "raw_total": 4,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.25,
-      "candidates": {
-        "della": 1
-      },
-      "pattern": "case_change"
-    },
-    "io": {
-      "top_norm": "Io",
-      "top_count": 1,
-      "raw_total": 19,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0526,
-      "candidates": {
-        "Io": 1
-      },
-      "pattern": "case_change"
-    },
-    "a": {
-      "top_norm": "al",
-      "top_count": 1,
-      "raw_total": 139,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0072,
-      "candidates": {
-        "al": 1
-      },
-      "pattern": "other_substitution"
-    },
-    "La7": {
-      "top_norm": "LA7",
-      "top_count": 1,
-      "raw_total": 2,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.5,
-      "candidates": {
-        "LA7": 1
-      },
-      "pattern": "case_change"
-    },
-    "In": {
-      "top_norm": "in",
-      "top_count": 1,
-      "raw_total": 4,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.25,
-      "candidates": {
-        "in": 1
+        "Governo": 2
       },
       "pattern": "case_change"
     },
@@ -1032,42 +1321,47 @@
       },
       "pattern": "case_change"
     },
-    "Tg1": {
-      "top_norm": "TG1",
-      "top_count": 2,
-      "raw_total": 2,
-      "changed_total": 2,
+    "io": {
+      "top_norm": "Io",
+      "top_count": 1,
+      "raw_total": 19,
+      "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
+      "raw_confidence": 0.0526,
       "candidates": {
-        "TG1": 2
+        "Io": 1
       },
       "pattern": "case_change"
     },
-    "20mila": {
-      "top_norm": "20 mila",
+    "iphone": "iPhone",
+    "italia": "Italia",
+    "l'": {
+      "top_norm": "L'",
       "top_count": 1,
-      "raw_total": 1,
+      "raw_total": 67,
       "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
+      "raw_confidence": 0.0149,
       "candidates": {
-        "20 mila": 1
+        "L'": 1
       },
-      "pattern": "digit_related_change"
+      "pattern": "case_change"
     },
-    "30mila": {
-      "top_norm": "30 mila",
+    "luuuuuuunga": "lunga",
+    "ma": {
+      "top_norm": "Ma",
       "top_count": 1,
-      "raw_total": 1,
+      "raw_total": 51,
       "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
+      "raw_confidence": 0.0196,
       "candidates": {
-        "30 mila": 1
+        "Ma": 1
       },
-      "pattern": "digit_related_change"
+      "pattern": "case_change"
     },
+    "mario": "Mario",
+    "monti": "Monti",
     "ne": {
       "top_norm": "né",
       "top_count": 2,
@@ -1080,171 +1374,29 @@
       },
       "pattern": "accent_or_apostrophe_restore"
     },
-    "puoi": {
-      "top_norm": "Puoi",
+    "nella": {
+      "top_norm": "nela",
       "top_count": 1,
-      "raw_total": 5,
+      "raw_total": 11,
       "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.2,
+      "raw_confidence": 0.0909,
       "candidates": {
-        "Puoi": 1
+        "nela": 1
       },
-      "pattern": "case_change"
+      "pattern": "other_substitution"
     },
-    "sta": {
-      "top_norm": "questa",
-      "top_count": 2,
-      "raw_total": 12,
-      "changed_total": 2,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1667,
-      "candidates": {
-        "questa": 2
-      },
-      "pattern": "expansion_or_abbreviation_restore"
-    },
-    "L'": {
-      "top_norm": "l'",
-      "top_count": 2,
-      "raw_total": 12,
-      "changed_total": 2,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1667,
-      "candidates": {
-        "l'": 2
-      },
-      "pattern": "case_change"
-    },
-    "Scarica": {
-      "top_norm": "scarica",
+    "niall": "Niall",
+    "nnt": "niente",
+    "per": {
+      "top_norm": "Per",
       "top_count": 1,
-      "raw_total": 4,
+      "raw_total": 80,
       "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.25,
+      "raw_confidence": 0.0125,
       "candidates": {
-        "scarica": 1
-      },
-      "pattern": "case_change"
-    },
-    "Non": {
-      "top_norm": "non",
-      "top_count": 1,
-      "raw_total": 15,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0667,
-      "candidates": {
-        "non": 1
-      },
-      "pattern": "case_change"
-    },
-    "4mila": {
-      "top_norm": "quattromila",
-      "top_count": 1,
-      "raw_total": 1,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "quattromila": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "3mld": {
-      "top_norm": "tre miliardi",
-      "top_count": 1,
-      "raw_total": 1,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "tre miliardi": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "rai1": {
-      "top_norm": "Rai 1",
-      "top_count": 1,
-      "raw_total": 1,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "Rai 1": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "c'": {
-      "top_norm": "C'",
-      "top_count": 1,
-      "raw_total": 12,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0833,
-      "candidates": {
-        "C'": 1
-      },
-      "pattern": "case_change"
-    },
-    "sembra": {
-      "top_norm": "Sembra",
-      "top_count": 1,
-      "raw_total": 6,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1667,
-      "candidates": {
-        "Sembra": 1
-      },
-      "pattern": "case_change"
-    },
-    "20": {
-      "top_norm": "20:00",
-      "top_count": 1,
-      "raw_total": 5,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.2,
-      "candidates": {
-        "20:00": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "tg5": {
-      "top_norm": "TG5",
-      "top_count": 1,
-      "raw_total": 1,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
-      "candidates": {
-        "TG5": 1
-      },
-      "pattern": "case_change"
-    },
-    "B.": {
-      "top_norm": "Berlusconi",
-      "top_count": 1,
-      "raw_total": 6,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.1667,
-      "candidates": {
-        "Berlusconi": 1
-      },
-      "pattern": "expansion_or_abbreviation_restore"
-    },
-    "se": {
-      "top_norm": "Se",
-      "top_count": 1,
-      "raw_total": 32,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0312,
-      "candidates": {
-        "Se": 1
+        "Per": 1
       },
       "pattern": "case_change"
     },
@@ -1260,30 +1412,6 @@
       },
       "pattern": "case_change"
     },
-    "presidente": {
-      "top_norm": "Presidente",
-      "top_count": 1,
-      "raw_total": 4,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.25,
-      "candidates": {
-        "Presidente": 1
-      },
-      "pattern": "case_change"
-    },
-    "per": {
-      "top_norm": "Per",
-      "top_count": 1,
-      "raw_total": 80,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0125,
-      "candidates": {
-        "Per": 1
-      },
-      "pattern": "case_change"
-    },
     "premier": {
       "top_norm": "Premier",
       "top_count": 1,
@@ -1296,29 +1424,134 @@
       },
       "pattern": "case_change"
     },
-    "governo": {
-      "top_norm": "Governo",
-      "top_count": 2,
-      "raw_total": 154,
-      "changed_total": 2,
+    "presidente": {
+      "top_norm": "Presidente",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.013,
+      "raw_confidence": 0.25,
       "candidates": {
-        "Governo": 2
+        "Presidente": 1
       },
       "pattern": "case_change"
     },
-    "No": {
-      "top_norm": "no",
+    "profumo": {
+      "top_norm": "Profumo",
       "top_count": 1,
-      "raw_total": 7,
+      "raw_total": 4,
       "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.1429,
+      "raw_confidence": 0.25,
       "candidates": {
-        "no": 1
+        "Profumo": 1
       },
       "pattern": "case_change"
+    },
+    "puoi": {
+      "top_norm": "Puoi",
+      "top_count": 1,
+      "raw_total": 5,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2,
+      "candidates": {
+        "Puoi": 1
+      },
+      "pattern": "case_change"
+    },
+    "qlcn": "qualcuno",
+    "qlcs": "qualcosa",
+    "qnd": "quando",
+    "qst": "questo",
+    "qsta": "questa",
+    "qsto": "questo",
+    "rai1": {
+      "top_norm": "Rai 1",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "Rai 1": 1
+      },
+      "pattern": "digit_related_change"
+    },
+    "roma": "Roma",
+    "se": {
+      "top_norm": "Se",
+      "top_count": 1,
+      "raw_total": 32,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0312,
+      "candidates": {
+        "Se": 1
+      },
+      "pattern": "case_change"
+    },
+    "sembra": {
+      "top_norm": "Sembra",
+      "top_count": 1,
+      "raw_total": 6,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "Sembra": 1
+      },
+      "pattern": "case_change"
+    },
+    "sta": {
+      "top_norm": "questa",
+      "top_count": 2,
+      "raw_total": 12,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "questa": 2
+      },
+      "pattern": "expansion_or_abbreviation_restore"
+    },
+    "sto": {
+      "top_norm": "questo",
+      "top_count": 1,
+      "raw_total": 10,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1,
+      "candidates": {
+        "questo": 1
+      },
+      "pattern": "expansion_or_abbreviation_restore"
+    },
+    "taaaanti": "tanto",
+    "tg5": {
+      "top_norm": "TG5",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "TG5": 1
+      },
+      "pattern": "case_change"
+    },
+    "tvtb": "ti voglio tanto bene",
+    "un": {
+      "top_norm": "un'",
+      "top_count": 1,
+      "raw_total": 75,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0133,
+      "candidates": {
+        "un'": 1
+      },
+      "pattern": "apostrophe_or_symbol_change"
     },
     "uomo": {
       "top_norm": "Uomo",
@@ -1332,39 +1565,29 @@
       },
       "pattern": "case_change"
     },
-    "10cent": {
-      "top_norm": "10 centesimi",
+    "x": "per",
+    "xke": "perché",
+    "È": {
+      "top_norm": "è",
       "top_count": 1,
-      "raw_total": 1,
+      "raw_total": 8,
       "changed_total": 1,
       "changed_confidence": 1.0,
-      "raw_confidence": 1.0,
+      "raw_confidence": 0.125,
       "candidates": {
-        "10 centesimi": 1
-      },
-      "pattern": "digit_related_change"
-    },
-    "di": {
-      "top_norm": "Di",
-      "top_count": 1,
-      "raw_total": 212,
-      "changed_total": 1,
-      "changed_confidence": 1.0,
-      "raw_confidence": 0.0047,
-      "candidates": {
-        "Di": 1
+        "è": 1
       },
       "pattern": "case_change"
     },
-    "Ma": {
-      "top_norm": "ma",
-      "top_count": 1,
-      "raw_total": 23,
-      "changed_total": 1,
+    "è": {
+      "top_norm": "È",
+      "top_count": 3,
+      "raw_total": 128,
+      "changed_total": 3,
       "changed_confidence": 1.0,
-      "raw_confidence": 0.0435,
+      "raw_confidence": 0.0234,
       "candidates": {
-        "ma": 1
+        "È": 3
       },
       "pattern": "case_change"
     }
@@ -1581,133 +1804,201 @@
         "Gente": 1
       },
       "pattern": "case_change"
-    }
+    },
+    "ne": [
+      "ne",
+      "né"
+    ],
+    "x": [
+      "x",
+      "per"
+    ],
+    "6": [
+      "6",
+      "sei"
+    ],
+    "tvb": [
+      "tvb",
+      "ti voglio bene"
+    ],
+    "tvtb": [
+      "tvtb",
+      "ti voglio tanto bene"
+    ],
+    "un": [
+      "un",
+      "un'"
+    ]
   },
   "context_sensitive_tokens": [
+    "+",
+    "Bhe",
+    "CGIL",
+    "CISL",
+    "Ci",
+    "De",
+    "E",
+    "Governo",
+    "I",
+    "Il",
+    "Italia",
+    "La",
+    "Lo",
+    "Ma",
+    "Mario",
+    "Mi",
+    "Monti",
+    "Ne",
+    "Né",
+    "O",
+    "PD",
+    "Pd",
+    "Per",
+    "RAI",
+    "Roma",
+    "Si",
+    "Sì",
+    "UIL",
+    "Un",
+    "Un'",
+    "Una",
+    "Vi",
+    "X",
     "a",
-    "al",
-    "app",
-    "beppe",
-    "berlusconi",
+    "ad",
+    "ahah",
+    "ahahah",
+    "alla",
+    "arrendermi",
+    "bhe",
     "cgil",
-    "che",
+    "ci",
     "cisl",
-    "cmq",
-    "con",
-    "consiglio",
-    "d",
     "da",
     "de",
-    "dei",
     "del",
+    "dell'",
     "della",
     "di",
-    "direction",
-    "dx",
     "e",
-    "e'",
-    "eurobanca",
-    "gli",
     "governo",
     "i",
     "il",
-    "in",
-    "info",
-    "iphone",
     "italia",
-    "k",
-    "ke",
-    "l",
     "l'",
     "la",
-    "le",
     "lo",
+    "lol",
     "ma",
     "mario",
+    "mi",
     "monti",
-    "n",
-    "niall",
-    "nn",
-    "non",
-    "nov",
-    "one",
+    "mouverci",
+    "ne",
+    "né",
+    "o",
+    "omg",
     "pd",
     "per",
-    "presidente",
-    "renascer",
-    "restart",
+    "qst",
+    "qsta",
+    "qste",
+    "qsti",
+    "qsto",
+    "rai",
     "roma",
     "si",
-    "sky",
-    "sul",
-    "sull",
     "sull'",
-    "sulla",
-    "sx",
     "sì",
+    "tvb",
+    "tvtb",
     "uil",
     "un",
+    "un'",
     "una",
-    "uno",
+    "vi",
     "x",
+    "xche",
+    "xchè",
+    "xk",
+    "xke",
+    "È",
     "è",
     "é"
   ],
-  "case_entity_like_tokens": [
-    "App",
-    "BERLUSCONI",
-    "Beppeee",
-    "Cgil",
-    "Cisl",
-    "EuroBANCA",
-    "Gol",
-    "ITALIA",
-    "MARIO",
-    "MONTI",
-    "Pd",
-    "RENASCER",
-    "RESTART",
-    "ROMA",
-    "SKY",
-    "Serie",
-    "Uil",
-    "Vinci",
-    "direction",
-    "iphone",
-    "italia",
-    "mario",
-    "monti",
-    "niall",
-    "one"
+  "case_entity_sensitive_pairs": {
+    "monti": "Monti",
+    "MONTI": "Monti",
+    "ROMA": "Roma",
+    "roma": "Roma",
+    "ITALIA": "Italia",
+    "italia": "Italia",
+    "MARIO": "Mario",
+    "mario": "Mario",
+    "Cgil": "CGIL",
+    "Cisl": "CISL",
+    "Uil": "UIL",
+    "Pd": "PD",
+    "Bce": "BCE",
+    "Rai": "RAI",
+    "Tg1": "TG1",
+    "iphone": "iPhone",
+    "niall": "Niall",
+    "BERLUSCONI": "Berlusconi",
+    "BEATLES": "Beatles",
+    "Barça": "Barcellona",
+    "BR": "Braccialetti Rossi",
+    "Cav": "Cavaliere",
+    "Cav.": "Cavaliere",
+    "CERVETERI": "Cerveteri",
+    "Cataniaaa": "Catania",
+    "One": "One",
+    "Direction": "Direction"
+  },
+  "phrasal_abbreviations_preserve_by_default": [
+    "lol",
+    "LOL",
+    "omg",
+    "OMG",
+    "ahahah",
+    "ahah",
+    "Bhe",
+    "bhe",
+    "tvtb",
+    "tvb",
+    "xoxo"
   ],
+  "hashtags_usernames_policy": "Preserve hashtags and usernames. Do not split or remove them in MultiLexNorm-style alignment unless the gold format explicitly requires it.",
+  "non_words_interjections_policy": "Preserve laughter, interjections, emoticons, and non-words by default.",
   "paper_seed_pairs": {
-    "nn": "non",
-    "ke": "che",
+    "Xke": "Perché",
+    "xke": "perché",
+    "6": "sei",
+    "tvtb": "ti voglio tanto bene",
+    "domaaani": "domani",
+    "luuuuuuunga": "lunga",
+    "giooornaaata": "giornata",
     "x": "per",
+    "#Buonotte": "buonanotte",
+    "#photoshop": "photoshop",
+    "#mammamia": "Mamma mia",
+    "taaaanti": "tanto",
     "cmq": "comunque",
-    "Cmq": "Comunque",
+    "nn": "non",
     "e'": "è",
-    "E'": "È",
-    "é": "è",
-    "perche'": "perché",
-    "perchè": "perché",
-    "perche": "perché",
-    "puo'": "può",
-    "puo": "può",
-    "pero'": "però",
-    "pero": "però",
-    "gia": "già",
-    "cosi": "così",
-    "piu": "più",
-    "dx": "destra",
-    "sx": "sinistra",
-    "nov": "novembre",
-    "info": "informazioni"
+    "nnt": "niente",
+    "ke": "che",
+    "qnd": "quando",
+    "qlcs": "qualcosa",
+    "qlcn": "qualcuno",
+    "qst": "questo",
+    "qsto": "questo",
+    "qsta": "questa"
   },
   "notes": [
-    "Italian official validation rows are absent in the provided validation split; use internal-dev or cross-validation for ablation.",
-    "Accent/apostrophe restoration is important: e'→è, perche'→perché, puo'→può, pero'→però.",
-    "Case changes are frequent, but many are sentence-initial, all-caps emphasis, or named-entity corrections; avoid global capitalization/lowercasing unless data evidence is strong.",
-    "Do not translate or rewrite; preserve hashtags, mentions, URLs, numbers, emojis, product names, party names, and social-media entities."
+    "Norm It corrects capitalization, but its own guidelines say to keep the original word when capitalization is doubtful. Therefore entity-like casing is moved to review/fallback rather than direct MFR.",
+    "TweetNorm removes or normalizes some Twitter tags for readability, but this package follows the project-level protected-token policy and preserves hashtags/usernames by default.",
+    "Digit shorthand such as 6→sei is in paper_seed_pairs only; direct automatic conversion is disabled because numbers are generally protected in the shared prompt.",
+    "Italian official validation rows are absent in the provided split; old metrics are internal-dev diagnostics only."
   ]
 }

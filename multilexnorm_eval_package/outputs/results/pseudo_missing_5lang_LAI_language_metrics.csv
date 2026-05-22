@@ -1,0 +1,6 @@
+dataset_name,model_name,lang,num_sentences,accuracy,lai_accuracy,err,total_tokens,correct_tokens,lai_correct_tokens,gold_changed_tokens,pred_changed_tokens,tp,fp,fn,tn,detection_precision,detection_recall,detection_f1,overnormalization_rate,undernormalization_rate
+pseudo_missing_5lang,LAI,da,143,0.908422,0.908422,0.0,3396,3085,3085,311,0,0,0,311,3085,0.0,0.0,0.0,0.0,0.091578
+pseudo_missing_5lang,LAI,es,113,0.932078,0.932078,0.0,1487,1386,1386,101,0,0,0,101,1386,0.0,0.0,0.0,0.0,0.067922
+pseudo_missing_5lang,LAI,it,118,0.92677,0.92677,0.0,2458,2278,2278,180,0,0,0,180,2278,0.0,0.0,0.0,0.0,0.07323
+pseudo_missing_5lang,LAI,tr,114,0.620385,0.620385,0.0,1246,773,773,473,0,0,0,473,773,0.0,0.0,0.0,0.0,0.379615
+pseudo_missing_5lang,LAI,trde,160,0.741393,0.741393,0.0,2498,1852,1852,646,0,0,0,646,1852,0.0,0.0,0.0,0.0,0.258607

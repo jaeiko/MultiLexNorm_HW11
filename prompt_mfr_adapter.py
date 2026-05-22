@@ -241,6 +241,15 @@ class PromptMFRResources:
     """
 
     def __init__(self, base_dir: str | Path | None = None) -> None:
+        """Initializes the PromptMFRResources adapter.
+
+        Args:
+            base_dir: Path to the prompt_mfr_dictionary directory. If None, it
+                resolves to the directory of this script.
+
+        Raises:
+            FileNotFoundError: If the prompt_mfr_dictionary directory does not exist.
+        """
         repo_root = Path(__file__).resolve().parent
         self.base_dir = Path(base_dir) if base_dir is not None else repo_root / "prompt_mfr_dictionary"
         if not self.base_dir.exists():
@@ -354,6 +363,14 @@ class PromptMFRResources:
         return hints
 
     def find_protected_indices(self, tokens: Sequence[str]) -> list[int]:
+        """Finds indices of protected tokens in the given list of tokens.
+
+        Args:
+            tokens: Sequence of token strings.
+
+        Returns:
+            A list of 0-based token indices that are protected from MFR normalization.
+        """
         return list(self.common_prompt.find_protected_indices(tokens))
 
     def apply_high_confidence_mfr(
@@ -363,6 +380,18 @@ class PromptMFRResources:
         *,
         protected_indices: Iterable[int] | None = None,
     ) -> tuple[list[str], list[int]]:
+        """Applies high confidence MFR replacements on the token list.
+
+        Args:
+            tokens: Sequence of token strings.
+            lang: Language identifier.
+            protected_indices: Iterable of token indices that are protected.
+
+        Returns:
+            A tuple containing:
+                - The list of normalized tokens.
+                - The list of indices that were modified.
+        """
         normalized_lang = self.normalize_lang(lang)
         pairs = self.high_confidence_pairs.get(normalized_lang, {})
         protected = set(protected_indices or [])
@@ -387,6 +416,15 @@ class PromptMFRResources:
         return self.high_confidence_pairs.get(normalized_lang, {}).get(str(token))
 
     def candidate_indices(self, tokens: Sequence[str], lang: str | None) -> list[int]:
+        """Identifies candidate indices for LLM-based normalizations.
+
+        Args:
+            tokens: Sequence of token strings.
+            lang: Language identifier.
+
+        Returns:
+            Sorted list of 0-based token indices that are normalization candidates.
+        """
         normalized_lang = self.normalize_lang(lang)
         module = self.rule_modules.get(normalized_lang)
         candidates: set[int] = set()
@@ -429,8 +467,7 @@ class PromptMFRResources:
         _ = (min_confidence, max_candidates)
         return self.candidate_indices(tokens, lang)
 
-    def build_detection_prompt(self, tokens: Sequence[str], target_index: int, lang: str | None) -> str:
-        return self._build_prompt(tokens, target_index, lang, prompt_type="detection")
+
 
     def build_normalization_prompt(
         self,
@@ -440,6 +477,18 @@ class PromptMFRResources:
         *,
         dynamic_fewshot_pairs: dict[str, list[dict[str, Any]]] | None = None,
     ) -> str:
+        """Constructs a normalization prompt for the LLM.
+
+        Args:
+            tokens: Sequence of token strings.
+            target_index: Index of the target token to normalize.
+            lang: Language identifier.
+            dynamic_fewshot_pairs: Dictionary of positive and negative few-shot
+                examples.
+
+        Returns:
+            The complete prompt string ready for LLM generation.
+        """
         return self._build_prompt(
             tokens,
             target_index,
@@ -539,17 +588,11 @@ class PromptMFRResources:
             f"- Candidate evidence: {compact}"
         )
 
-    def parse_detection_output(self, text: str) -> int | None:
-        return self.common_prompt.parse_detection_output(text)
+
 
     def parse_normalization_output(self, text: str) -> dict[str, Any] | None:
         return self.common_prompt.parse_normalization_output(text)
 
-    def safe_normalization_result(self, raw_token: str, normalized: str | None) -> str:
-        return self.common_prompt.safe_normalization_result(
-            raw_target=raw_token,
-            normalized=normalized,
-        )
 
-    def supports_language(self, lang: str | None) -> bool:
-        return self.normalize_lang(lang) in LANGUAGE_PACKAGES
+
+

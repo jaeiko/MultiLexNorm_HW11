@@ -1,29 +1,28 @@
-"""Edit-distance based dynamic fewshot retrieval for normalization prompts.
+"""Edit-distance based dynamic few-shot retrieval for normalization prompts.
 
-학습셋(parquet)에서 (raw, norm) 페어를 언어별로 인덱싱하고,
-런타임에 target token과 가장 비슷한 사례 K개를 positive/negative로 나누어
-검색해 normalization prompt에 끼워 넣는다.
-
-- positive: 그 train row에서 raw != norm인 changed token 중 target과
-  edit distance가 가장 작은 위치 → "이 토큰은 정규화됐다"는 시그널.
-- negative: 그 train row에서 raw == norm인 unchanged token 중 target과
-  edit distance가 가장 작은 위치 → "이 토큰은 그대로 둬도 된다"는 시그널.
-
-랭킹 기준:
-  1. token-level edit distance (target_token vs train의 후보 token)
-  2. sentence-level normalized edit distance (tie-break: 문맥 유사도)
+Indexes pairs of (raw, norm) tokens by language from a training set (parquet),
+and at runtime retrieves the top K positive/negative examples closest to a
+target token based on edit distance.
 """
+
 from __future__ import annotations
 
 import ast
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Sequence, Dict, List, Tuple, Union
 
 import pandas as pd
 
 
 def _to_tokens(value: Any) -> list[str]:
-    """raw/norm 컬럼이 list, numpy array, str repr 어느 형태든 토큰 리스트로 변환."""
+    """Converts raw/norm sequence column values into list of token strings.
+
+    Args:
+        value: Token sequence in raw list, array, or string format.
+
+    Returns:
+        list[str]: Standard list of token strings.
+    """
     if hasattr(value, "tolist"):
         value = value.tolist()
     if isinstance(value, (list, tuple)):
@@ -46,6 +45,15 @@ try:
         return _rf_lev.distance(a, b)
 except ImportError:
     def _levenshtein(a: str, b: str) -> int:
+        """Pure-python fallback Levenshtein distance calculation.
+
+        Args:
+            a: First string sequence.
+            b: Second string sequence.
+
+        Returns:
+            int: Edit distance between a and b.
+        """
         if a == b:
             return 0
         if not a:
@@ -66,21 +74,26 @@ except ImportError:
 
 
 def _normalized_edit(a: str, b: str) -> float:
+    """Calculates normalized edit distance (edit distance / max length).
+
+    Args:
+        a: First string sentence.
+        b: Second string sentence.
+
+    Returns:
+        float: Normalized edit distance.
+    """
     denom = max(len(a), len(b), 1)
     return _levenshtein(a, b) / denom
 
 
 class NormalizationFewshot:
-    """언어별 train 인덱스 + target-token 기반 positive/negative retrieval.
+    """Retrieves context-sensitive positive/negative dynamic few-shot examples.
 
-    페어 형식: {"raw": [...], "target_token": "...", "norm": [...]}
-
-    Args:
-        train_dataset_path: train parquet 경로 (lang/raw/norm 컬럼 필요).
-        default_positive_k: 기본 positive 페어 개수.
-        default_negative_k: 기본 negative 페어 개수.
-        lang_overrides: 언어별 K 오버라이드.
-            예: {"th": {"positive_k": 2, "negative_k": 2}}
+    Attributes:
+        default_positive_k (int): Number of positive templates to return.
+        default_negative_k (int): Number of negative templates to return.
+        lang_overrides (dict): Language-specific K configurations.
     """
 
     def __init__(
@@ -91,6 +104,14 @@ class NormalizationFewshot:
         default_negative_k: int = 5,
         lang_overrides: dict[str, dict[str, int]] | None = None,
     ) -> None:
+        """Initializes the NormalizationFewshot indexing.
+
+        Args:
+            train_dataset_path: Path to the parquet training set.
+            default_positive_k: Default count of positive items to retrieve.
+            default_negative_k: Default count of negative items to retrieve.
+            lang_overrides: Custom dictionary overriding default positive/negative K by language.
+        """
         self.default_positive_k = int(default_positive_k)
         self.default_negative_k = int(default_negative_k)
         self.lang_overrides = dict(lang_overrides or {})
@@ -98,6 +119,11 @@ class NormalizationFewshot:
         self._load(Path(train_dataset_path))
 
     def _load(self, path: Path) -> None:
+        """Loads and indexes the train parquet dataset items.
+
+        Args:
+            path: Absolute path to train parquet.
+        """
         df = pd.read_parquet(path)
         if not {"lang", "raw", "norm"}.issubset(df.columns):
             raise ValueError(f"train dataset missing required columns: {path}")
@@ -121,7 +147,14 @@ class NormalizationFewshot:
             self._by_lang[str(lang)] = pool
 
     def k_for_lang(self, lang: str | None) -> tuple[int, int]:
-        """언어별 (positive_k, negative_k)를 반환한다."""
+        """Gets positive and negative K values configured for a language.
+
+        Args:
+            lang: Language code identifier.
+
+        Returns:
+            tuple[int, int]: (positive_k, negative_k) values.
+        """
         if lang is None:
             return self.default_positive_k, self.default_negative_k
         override = self.lang_overrides.get(str(lang), {})
@@ -137,8 +170,18 @@ class NormalizationFewshot:
         full_sentence_text: str,
         k: int,
     ) -> list[dict[str, Any]]:
-        """pool에서 각 sentence의 index_key 위치 중 target과 가장 가까운 토큰을
-        골라 점수를 매기고 상위 k개를 페어 형태로 반환한다."""
+        """Ranks and extracts the best K candidate sentences matching target criteria.
+
+        Args:
+            pool: List of indexed training instances.
+            target_token: The string token under comparison.
+            index_key: Key indicator ('changed_indices' or 'unchanged_indices').
+            full_sentence_text: Concatenated string of the current context sentence.
+            k: Maximum candidates to extract.
+
+        Returns:
+            list[dict[str, Any]]: List of top K retrieved few-shot item dictionaries.
+        """
         if k <= 0 or not pool:
             return []
 
@@ -186,10 +229,17 @@ class NormalizationFewshot:
         negative_k: int | None = None,
         full_sentence_tokens: Sequence[str] | None = None,
     ) -> dict[str, list[dict[str, Any]]]:
-        """target_token에 가까운 positive/negative 페어를 검색해 dict로 반환.
+        """Retrieves dynamic matching positive and negative few-shot examples.
+
+        Args:
+            target_token: Token requesting few-shots context.
+            lang: Target language code string.
+            positive_k: Override for number of positive items.
+            negative_k: Override for number of negative items.
+            full_sentence_tokens: Word token context of the target sentence.
 
         Returns:
-            {"positive": [pair, ...], "negative": [pair, ...]}
+            dict: Mapping {"positive": list[pairs], "negative": list[pairs]}
         """
         default_pos, default_neg = self.k_for_lang(lang)
         pos_k = default_pos if positive_k is None else int(positive_k)

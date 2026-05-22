@@ -1,13 +1,12 @@
-#!/usr/bin/env python3
-"""
-LLM correction via local ollama (OpenAI-compatible endpoint).
-Reuses the OLD Stage-3 prompt builder.
+"""LLM Correction Pipeline Stage via local Ollama.
 
-Usage:
-  python llm_correct_local.py --model gemma4:4b --output llm_corrections_gemma4_4b.jsonl
-  python llm_correct_local.py --model qwen2.5:7b-instruct --output llm_corrections_qwen25_7b.jsonl
-  python llm_correct_local.py --model gemma4:26b --output llm_corrections_gemma4_26b.jsonl
+This module acts as Stage 3 of our lexical normalization pipeline.
+It extracts target tokens flagged as hard cases, queries a local Ollama
+instance (compatible with OpenAI's Chat Completion API), and generates
+candidate normalization updates using dynamic few-shot template prompting.
 """
+
+from __future__ import annotations
 
 import argparse
 import sys
@@ -16,25 +15,43 @@ import json
 import time
 from pathlib import Path
 import concurrent.futures
+from typing import Any, Dict, List, Tuple, Set
 
-try:
-    sys.stdout.reconfigure(encoding='utf-8')
-except Exception:
-    pass
+# Centralized paths configuration
+import paths_config
+paths_config.setup_imports()
 
-_HERE = Path(__file__).parent   # = MultiLexNorm_HW11 루트 (평탄화 후)
-sys.path.insert(0, str(_HERE))
-
-from prompt_mfr_adapter import PromptMFRResources  # noqa
-sys.path.insert(0, str(_HERE / "prompt_mfr_dictionary" / "common_prompt_v2_package" / "prompts"))
-from common_prompt import extract_first_json_object  # noqa
+from prompt_mfr_adapter import PromptMFRResources
+from common_prompt import extract_first_json_object
 
 
-def call_ollama(client, model, system, user, max_retries=3, use_json_format=True, disable_thinking=True):
+def call_ollama(
+    client: Any,
+    model: str,
+    system: str,
+    user: str,
+    max_retries: int = 3,
+    use_json_format: bool = True,
+    disable_thinking: bool = True,
+) -> str:
+    """Queries the local Ollama instance with retry loops and thinking filters.
+
+    Args:
+        client: OpenAI API compatible client object.
+        model: Name of the Ollama model.
+        system: System instructions prompt string.
+        user: User message prompt string.
+        max_retries: Number of request attempts before raising error.
+        use_json_format: Set to True to enforce json response structure.
+        disable_thinking: Set to True to filter out model internal thinking tags.
+
+    Returns:
+        str: Response message content from the model.
+    """
     last_err = None
     for attempt in range(max_retries):
         try:
-            kwargs = {
+            kwargs: Dict[str, Any] = {
                 'model': model,
                 'messages': [
                     {'role': 'system', 'content': system},
@@ -44,35 +61,44 @@ def call_ollama(client, model, system, user, max_retries=3, use_json_format=True
             if use_json_format:
                 kwargs['response_format'] = {'type': 'json_object'}
             if disable_thinking:
-                # ollama-specific: turn off Gemma/Qwen3 thinking mode
                 kwargs['extra_body'] = {'think': False}
+                
             resp = client.chat.completions.create(**kwargs)
-            return resp.choices[0].message.content
+            return str(resp.choices[0].message.content)
         except Exception as e:
             last_err = e
             time.sleep(1 + attempt * 2)
     raise last_err
 
 
-def process_one(args):
+def process_one(args: Tuple[Any, str, str, str, Dict[str, Any], bool]) -> Tuple[Dict[str, Any], str | None, str | None]:
+    """Processes a single target token prediction asynchronously.
+
+    Args:
+        args: A tuple package containing (client, model, system, user, meta_dict, use_json_bool).
+
+    Returns:
+        Tuple[Dict[str, Any], str | None, str | None]: (meta, content, error_msg).
+    """
     client, model, system, user, meta, use_json = args
     try:
         content = call_ollama(client, model, system, user, use_json_format=use_json)
+        return meta, content, None
     except Exception as e:
         return meta, None, str(e)
-    return meta, content, None
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--model', required=True, help='ollama model name')
-    ap.add_argument('--output', required=True, help='output jsonl filename (under outputs/)')
+def main() -> int:
+    """Executes the LLM Correction Stage via command line."""
+    ap = argparse.ArgumentParser(description="LLM Correction Stage via local Ollama endpoint.")
+    ap.add_argument('--model', required=True, help='Ollama model identifier name')
+    ap.add_argument('--output', required=True, help='Output JSONL filename under outputs/')
     ap.add_argument('--base-url', default='http://localhost:11434/v1')
-    ap.add_argument('--workers', type=int, default=2, help='concurrent request workers')
-    ap.add_argument('--no-json-format', action='store_true', help='omit response_format json_object (if model rejects)')
-    ap.add_argument('--fewshot', action='store_true', help='enable dynamic retrieve-based few-shot pairs')
-    ap.add_argument('--pos-k', type=int, default=5, help='positive (changed) fewshot k')
-    ap.add_argument('--neg-k', type=int, default=5, help='negative (unchanged) fewshot k')
+    ap.add_argument('--workers', type=int, default=2, help='Concurrent worker threads count')
+    ap.add_argument('--no-json-format', action='store_true', help='Omit json response enforcement')
+    ap.add_argument('--fewshot', action='store_true', help='Enable dynamic similarity-based few-shot retrieval')
+    ap.add_argument('--pos-k', type=int, default=5, help='Count of positive few-shot items')
+    ap.add_argument('--neg-k', type=int, default=5, help='Count of negative few-shot items')
     args = ap.parse_args()
 
     print(f"[LLM correction LOCAL] model={args.model} workers={args.workers}")
@@ -81,82 +107,90 @@ def main():
     try:
         from openai import OpenAI
     except ImportError:
-        print("ERROR: openai package missing"); return 1
+        print("ERROR: openai library is missing in this environment.")
+        return 1
+        
     client = OpenAI(base_url=args.base_url, api_key='ollama')
 
-    # Prompt resources (평탄화 후 절대경로 사용 — os.chdir 불필요)
-    resources = PromptMFRResources(str(_HERE / "prompt_mfr_dictionary"))
+    # Load prompt resources using paths_config
+    resources = PromptMFRResources(str(paths_config.PROMPT_MFR_DICT_DIR))
     fewshot_obj = None
     if args.fewshot:
         from normalization_fewshot import NormalizationFewshot
+        train_path = paths_config.DATASET_17LANG / "data" / "train-00000-of-00001.parquet"
         fewshot_obj = NormalizationFewshot(
-            str(_HERE / "multilexnorm2026-dataset" / "internal_v1" / "data" / "train-00000-of-00001.parquet"),
+            train_path,
             default_positive_k=args.pos_k,
             default_negative_k=args.neg_k,
             lang_overrides={
-                # th: 긴 fewshot 블록이 gemma JSON 출력을 깨뜨림 → pos=1 neg=0으로 축소
                 'th': {'positive_k': 1, 'negative_k': 0},
             },
         )
-        print(f"  fewshot loaded (pos={args.pos_k} neg={args.neg_k})")
-    print(f"  prompt resources loaded")
+        print(f"  Dynamic few-shot statistics loaded from {train_path.name}")
+    print(f"  Prompt resources loaded successfully from {paths_config.PROMPT_MFR_DICT_DIR.name}")
 
+    # Load mined hard cases
     hc_filename = os.environ.get("HARD_CASES_FILE", "hard_cases_dev.jsonl")
-    hc_path = _HERE / "outputs" / hc_filename
-    print(f"  hard cases input: {hc_filename}")
-    hard = [json.loads(l) for l in hc_path.read_text(encoding='utf-8').splitlines() if l.strip()]
-    print(f"  hard cases: {len(hard)}")
+    hc_path = paths_config.ROOT_DIR / "outputs" / hc_filename
+    print(f"  Mined hard cases file: {hc_path.name}")
+    if not hc_path.exists():
+        print(f"ERROR: Hard cases file does not exist at {hc_path}. Run mine_hard_cases_dev.py first.")
+        return 1
+        
+    hard = [json.loads(line) for line in hc_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+    print(f"  Total hard cases to process: {len(hard)}")
 
-    out_path = _HERE / "outputs" / args.output
-    done_keys = set()
+    out_path = paths_config.ROOT_DIR / "outputs" / args.output
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    done_keys: Set[Tuple[int, int]] = set()
     if out_path.exists():
         for line in out_path.read_text(encoding='utf-8').splitlines():
             try:
                 obj = json.loads(line)
-                done_keys.add((obj['dev_row_idx'], obj['tok_idx']))
+                done_keys.add((int(obj['dev_row_idx']), int(obj['tok_idx'])))
             except Exception:
                 pass
-        print(f"  resume: {len(done_keys)} already done")
+        print(f"  Resuming prediction: {len(done_keys)} items already processed.")
 
-    todo = [r for r in hard if (r['dev_row_idx'], r['tok_idx']) not in done_keys]
-    print(f"  to process: {len(todo)}")
+    todo = [r for r in hard if (int(r['dev_row_idx']), int(r['tok_idx'])) not in done_keys]
+    print(f"  Remaining items to process: {len(todo)}")
 
     SYSTEM = ("You are a careful lexical normalization model. "
               "Reply DIRECTLY with the requested JSON object — do not output any reasoning, thinking, explanation, or extra text. "
               "Output exactly one JSON object as instructed.")
     USE_JSON = not args.no_json_format
 
-    def build_prompt_for(r):
+    def build_prompt_for(r: Dict[str, Any]) -> str:
         fs_pairs = None
         if fewshot_obj is not None:
             fs_pairs = fewshot_obj.retrieve(
                 target_token=r['token'], lang=r['lang'],
                 full_sentence_tokens=r['raw_sentence']
             )
-        return resources.build_normalization_prompt(
+        return str(resources.build_normalization_prompt(
             tokens=r['raw_sentence'], target_index=r['tok_idx'], lang=r['lang'],
             dynamic_fewshot_pairs=fs_pairs,
-        )
+        ))
 
-    # Sanity check 1 call before bulk
+    # Performs a quick 1-call sanity check to verify Ollama status and formatting
     if todo:
         r = todo[0]
         user = build_prompt_for(r)
         try:
             content = call_ollama(client, args.model, SYSTEM, user, use_json_format=USE_JSON)
             obj = extract_first_json_object(content)
-            print(f"  sanity OK. response head: {(content or '')[:200]!r}")
-            print(f"  parsed: {obj}")
+            print(f"  Sanity check OK. response prefix: {(content or '')[:200]!r}")
+            print(f"  Parsed JSON object: {obj}")
         except Exception as e:
-            print(f"  sanity FAIL ({type(e).__name__}): {e}")
+            print(f"  Sanity check FAILED ({type(e).__name__}): {e}")
             if USE_JSON:
-                print("  retrying without response_format ...")
+                print("  Retrying request without strict JSON formatting...")
                 USE_JSON = False
                 try:
                     content = call_ollama(client, args.model, SYSTEM, user, use_json_format=False)
-                    print(f"  sanity OK (no json fmt). head: {(content or '')[:200]!r}")
+                    print(f"  Sanity check OK (no JSON constraint). prefix: {(content or '')[:200]!r}")
                 except Exception as e2:
-                    print(f"  sanity FAIL again: {e2}")
+                    print(f"  Critical check FAILED again: {e2}")
                     return 1
             else:
                 return 1
@@ -165,6 +199,7 @@ def main():
     n_err = 0
     n_parse_fail = 0
     t_loop = time.time()
+    
     with open(out_path, "a", encoding='utf-8') as fout, \
          concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as ex:
         futures = []
@@ -178,6 +213,7 @@ def main():
                     'raw_response': None, 'normalized': None, 'error': f'build_failed: {e}',
                 }, ensure_ascii=False) + "\n")
                 continue
+                
             meta = {
                 'dev_row_idx': r['dev_row_idx'], 'tok_idx': r['tok_idx'],
                 'lang': r['lang'], 'token': r['token'], 'gt': r['gt'], 'cat': r['cat'],
@@ -191,6 +227,7 @@ def main():
                 fout.write(json.dumps({**meta, 'raw_response': None, 'normalized': None, 'error': err}, ensure_ascii=False) + "\n")
                 fout.flush()
                 continue
+                
             obj = extract_first_json_object(content)
             norm = None
             if obj is not None:
@@ -199,17 +236,19 @@ def main():
                     norm = None
             if norm is None:
                 n_parse_fail += 1
+                
             n_done += 1
             fout.write(json.dumps({**meta, 'raw_response': content, 'normalized': norm}, ensure_ascii=False) + "\n")
             fout.flush()
+            
             if (i + 1) % 20 == 0:
                 el = time.time() - t_loop
                 eta = el / (i + 1) * (len(futures) - i - 1)
-                print(f"  [{i+1}/{len(futures)}] elapsed={el:.1f}s ETA={eta:.1f}s done={n_done} err={n_err} parse_fail={n_parse_fail}")
+                print(f"  [{i+1}/{len(futures)}] elapsed={el:.1f}s ETA={eta:.1f}s processed={n_done} errors={n_err} parse_fails={n_parse_fail}")
 
-    print(f"\n[done] done={n_done} err={n_err} parse_fail={n_parse_fail}")
-    print(f"  saved → {out_path}")
-    print(f"Total: {time.time()-t0:.1f}s")
+    print(f"\n[LLM Correction Completed] processed={n_done} errors={n_err} parse_fails={n_parse_fail}")
+    print(f"  Results saved -> {out_path}")
+    print(f"  Execution completed in {time.time() - t0:.1f}s")
     return 0
 
 

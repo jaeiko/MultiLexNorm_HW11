@@ -29,8 +29,18 @@ BOS = '<BOS>'
 EOS = '<EOS>'
 
 
-def _best_from_counter(counter, total, conf_min, min_total):
-    """Return top_norm if it passes thresholds, else None."""
+def _best_from_counter(counter, total: int, conf_min: float, min_total: int):
+    """Returns the top normalization token if it passes thresholds.
+
+    Args:
+        counter: Counter object containing normalization counts.
+        total: Total count of occurrences.
+        conf_min: Minimum confidence threshold.
+        min_total: Minimum total count.
+
+    Returns:
+        The normalized token string if thresholds are met; otherwise, None.
+    """
     if total < min_total:
         return None
     top_norm, top_count = counter.most_common(1)[0]
@@ -39,8 +49,18 @@ def _best_from_counter(counter, total, conf_min, min_total):
     return top_norm
 
 
-def _lookup_level(level_dict, key, conf_min, min_total):
-    """Lookup a single level (tri/biL/biR), return (norm, count_total) or (None, 0)."""
+def _lookup_level(level_dict, key, conf_min: float, min_total: int):
+    """Look up a single context level (tri/biL/biR) to find the best candidate.
+
+    Args:
+        level_dict: Count dictionary for the level.
+        key: Context key tuple.
+        conf_min: Minimum confidence threshold.
+        min_total: Minimum total count.
+
+    Returns:
+        A tuple of (normalized_token_or_None, total_occurrences).
+    """
     counter = level_dict.get(key)
     if counter is None:
         return None, 0
@@ -51,7 +71,23 @@ def _lookup_level(level_dict, key, conf_min, min_total):
     return norm, total
 
 
-def predict_trigram(samples, stats, config):
+def predict_trigram(samples, stats, config) -> tuple[list[list[str]], dict[str, int]]:
+    """Executes trigram and bigram fallback-chain predictions.
+
+    Args:
+        samples: A list of sample dicts containing raw sentence tokens and language metadata.
+        stats: Precomputed trigram, left-bigram, and right-bigram counts.
+        config: Configurations dictionary:
+            - 'variant' (str): One of 'pure', 'tri_biL', 'tri_biR', or 'tri_bi_both'.
+            - 'conf_min' (float): Minimum confidence threshold.
+            - 'min_total' (int): Minimum count of occurrences required.
+            - 'use_protect' (bool): Whether to protect certain tokens from modification.
+
+    Returns:
+        A tuple containing:
+            - list[list[str]]: Padded/normalized token predictions matching the input shape.
+            - dict[str, int]: Coverage and hit counters for analysis.
+    """
     variant = config.get('variant', 'pure')
     conf_min = float(config.get('conf_min', 0.8))
     min_total = int(config.get('min_total', 2))

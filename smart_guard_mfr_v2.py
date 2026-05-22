@@ -14,9 +14,11 @@ from pathlib import Path
 
 
 def find_protected_indices_simple(tokens):
-    """약한 protect — @/#/URL/순수기호/숫자포함 토큰만 보호. trigram override 전용.
+    """Return indices of tokens that should be *weakly* protected.
 
-    trigram은 강한 protect를 쓰면 성능이 떨어져 의도적으로 이 약한 버전을 쓴다.
+    Weak protection includes tokens that start with ``@`` or ``#``, URLs, pure
+    punctuation symbols, or any token containing a digit. This is used by the
+    trigram fallback where strong protection would hurt recall.
     """
     protected = []
     for i, tok in enumerate(tokens):
@@ -148,7 +150,26 @@ def predict_smart_guarded_mfr_v2(
     japanese_punct_threshold=0.95,
     digit_suffix_threshold=0.5,
     time_threshold=0.5,
-):
+) -> list[list[str]]:
+    """Predicts token-level normalizations using MFR statistics while protecting
+    language‑specific sensitive tokens.
+
+    Args:
+        samples: List of dictionaries each containing ``raw`` token list and
+            ``lang`` identifier.
+        mfr_stats: Mapping from language codes to per‑token MFR statistics.
+        protected_threshold: Minimum confidence to apply MFR on *protected*
+            tokens.
+        normal_threshold: Minimum confidence to apply MFR on regular tokens.
+        japanese_punct_threshold: Confidence required for Japanese punctuation
+            tokens.
+        digit_suffix_threshold: Confidence required for South‑Slavic digit suffixes.
+        time_threshold: Confidence required for time‑like tokens.
+
+    Returns:
+        A list of token lists with normalized tokens applied according to the
+        thresholds. The pipeline preserves the original token order.
+    """
     preds = []
 
     for sample in samples:

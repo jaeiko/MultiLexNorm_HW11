@@ -30,7 +30,7 @@
 | `mfr_stats.pkl.gz` | MFR 통계 (lang별 token→norm 빈도). smart_guard_mfr_v2가 사용 |
 | `outputs/trigram_stats_internal_v1.pkl.gz` | trigram/bigram/unigram 통계 (12MB) |
 | `prompt_mfr_dictionary/` | 17개 언어 prompt 패키지 + common_prompt. ko/ja/it는 **v2 prompt** 반영됨 |
-| `multilexnorm2026-dataset/` | train/validation/test parquet (internal_v1). `internal_v1/data/train-00000-of-00001.parquet`는 dynamic fewshot retrieve 풀로도 사용 |
+| `multilexnorm2026-dataset/` | train/validation/test parquet (dataset_17lang). `dataset_17lang/data/train-00000-of-00001.parquet`는 dynamic fewshot retrieve 풀로도 사용 |
 | `../xlmr_finetuned_colab/` | fine-tuned XLM-RoBERTa detection 모델 (1.1GB). **MultiLexNorm_HW11 밖 부모 폴더**. 다른 경로면 `XLMR_MODEL_PATH` 환경변수 |
 | `outputs/submission_dev/predictions.json` | codabench dev sample — dev 5972행 raw/lang 단일 소스 (mine 입력) |
 | `outputs/hard_cases_dev.jsonl` | Stage 1 산출물 (~4065) — Stage 2 입력 |

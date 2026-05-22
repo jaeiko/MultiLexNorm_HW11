@@ -1,5 +1,5 @@
 {
-  "source_path": "multilexnorm2026-dataset/data/validation-00000-of-00001.parquet",
+  "source_path": "multilexnorm2026-dataset/dataset_12lang/validation-00000-of-00001.parquet",
   "output_path": "multilexnorm2026-dataset/mini_validation/validation_mini_1of8_seed42.parquet",
   "seed": 42,
   "target_total": 1050,

@@ -1,0 +1,13 @@
+dataset_name,model_name,lang,num_sentences,accuracy,lai_accuracy,err,total_tokens,correct_tokens,lai_correct_tokens,gold_changed_tokens,pred_changed_tokens,tp,fp,fn,tn,detection_precision,detection_recall,detection_f1,overnormalization_rate,undernormalization_rate
+official_validation,LAI,de,573,0.82037,0.82037,0.0,4860,3987,3987,873,0,0,0,873,3987,0.0,0.0,0.0,0.0,0.17963
+official_validation,LAI,en,590,0.930963,0.930963,0.0,9169,8536,8536,633,0,0,0,633,8536,0.0,0.0,0.0,0.0,0.069037
+official_validation,LAI,hr,1588,0.911145,0.911145,0.0,18941,17258,17258,1683,0,0,0,1683,17258,0.0,0.0,0.0,0.0,0.088855
+official_validation,LAI,id,431,0.522294,0.522294,0.0,4306,2249,2249,2057,0,0,0,2057,2249,0.0,0.0,0.0,0.0,0.477706
+official_validation,LAI,iden,165,0.878353,0.878353,0.0,4809,4224,4224,585,0,0,0,585,4224,0.0,0.0,0.0,0.0,0.121647
+official_validation,LAI,ja,305,0.937448,0.937448,0.0,10919,10236,10236,683,0,0,0,683,10236,0.0,0.0,0.0,0.0,0.062552
+official_validation,LAI,ko,212,0.911702,0.911702,0.0,1880,1714,1714,166,0,0,0,166,1714,0.0,0.0,0.0,0.0,0.088298
+official_validation,LAI,nl,308,0.717059,0.717059,0.0,3863,2770,2770,1093,0,0,0,1093,2770,0.0,0.0,0.0,0.0,0.282941
+official_validation,LAI,sl,1557,0.843838,0.843838,0.0,15311,12920,12920,2391,0,0,0,2391,12920,0.0,0.0,0.0,0.0,0.156162
+official_validation,LAI,sr,1379,0.923522,0.923522,0.0,17796,16435,16435,1361,0,0,0,1361,16435,0.0,0.0,0.0,0.0,0.076478
+official_validation,LAI,th,250,0.960447,0.960447,0.0,19872,19086,19086,786,0,0,0,786,19086,0.0,0.0,0.0,0.0,0.039553
+official_validation,LAI,vi,1050,0.843748,0.843748,0.0,13651,11518,11518,2133,0,0,0,2133,11518,0.0,0.0,0.0,0.0,0.156252

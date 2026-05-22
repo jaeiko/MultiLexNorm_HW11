@@ -1,11 +1,27 @@
+"""Leave-As-Is (LAI) Baseline Corrector.
+
+This baseline corrector performs no actual lexical normalization or spelling
+correction. It returns the raw token sequence exactly as inputted, serving as
+the fundamental lower-bound performance metric for evaluations.
+"""
+
 from typing import List
 
+
 class LAIBaseline:
-    """아무런 교정을 수행하지 않고 원본을 반환하는 기본 베이스라인."""
-    
-    def __init__(self):
-        print("[System] LAI Baseline 초기화 완료.")
+    """Standard Leave-As-Is baseline model that copies input tokens directly to output."""
+
+    def __init__(self) -> None:
+        """Initializes the LAIBaseline model and prints status logs."""
+        print("[System] LAI Baseline initialized successfully.")
 
     def predict(self, sentence_tokens: List[str]) -> List[str]:
-        # 입력된 리스트를 변경 없이 그대로 반환
-        return sentence_tokens
+        """Predicts corrected tokens for a sentence (returns unchanged tokens).
+
+        Args:
+            sentence_tokens: List of original token strings.
+
+        Returns:
+            List[str]: Unchanged list of original token strings.
+        """
+        return list(sentence_tokens)

@@ -1,0 +1,6 @@
+dataset_name,model_name,lang,num_sentences,accuracy,lai_accuracy,err,total_tokens,correct_tokens,lai_correct_tokens,gold_changed_tokens,pred_changed_tokens,tp,fp,fn,tn,detection_precision,detection_recall,detection_f1,overnormalization_rate,undernormalization_rate
+pseudo_missing_5lang,MFR,da,143,0.945524,0.908422,0.398714,3396,3211,3085,311,154,139,15,172,3072,0.902597,0.446945,0.597849,0.004417,0.050648
+pseudo_missing_5lang,MFR,es,113,0.9462,0.932078,0.188119,1487,1407,1386,101,27,23,4,78,1384,0.851852,0.227723,0.359375,0.00269,0.052455
+pseudo_missing_5lang,MFR,it,118,0.936941,0.92677,0.127778,2458,2303,2278,180,67,45,22,135,2258,0.671642,0.25,0.364372,0.00895,0.054923
+pseudo_missing_5lang,MFR,tr,114,0.670144,0.620385,0.107822,1246,835,773,473,103,77,26,396,758,0.747573,0.162791,0.267361,0.020867,0.317817
+pseudo_missing_5lang,MFR,trde,160,0.791833,0.741393,0.157895,2498,1978,1852,646,206,154,52,492,1824,0.747573,0.23839,0.361502,0.020817,0.196958

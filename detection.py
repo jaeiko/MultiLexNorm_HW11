@@ -24,22 +24,23 @@ from typing import List, Tuple, Dict, Any, Sequence, Union
 # Language-specific token detection thresholds.
 # Optima resolved via mini-validation grid search or linguistic categories.
 LANG_DETECTION_THRESHOLDS: Dict[str, float] = {
-    "ko": 0.55,
-    "en": 0.85,
-    "iden": 0.90,
-    "ja": 0.85,
-    "tr": 0.85,
-    "zh": 0.85,
-    "hr": 0.75,
-    "sr": 0.75,
-    "da": 0.75,
-    "bs": 0.75,
-    "ru": 0.75,
-    "es": 0.60,
-    "it": 0.60,
-    "de": 0.60,
+    "ko": 0.5,
+    "en": 0.5,
+    "iden": 0.5,
+    "ja": 0.5,
+    "tr": 0.5,
+    "zh": 0.5,
+    "hr": 0.5,
+    "sr": 0.5,
+    "da": 0.5,
+    "bs": 0.5,
+    "ru": 0.5,
+    "es": 0.5,
+    "it": 0.5,
+    "de": 0.5,
 }
-DEFAULT_DETECTION_THRESHOLD: float = 0.60
+DEFAULT_DETECTION_THRESHOLD: float = 0.5
+
 
 
 def get_lang_threshold(lang: str) -> float:

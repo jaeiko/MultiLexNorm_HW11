@@ -130,7 +130,7 @@ def main() -> int:
     print(f"  Prompt resources loaded successfully from {paths_config.PROMPT_MFR_DICT_DIR.name}")
 
     # Load mined hard cases
-    hc_filename = os.environ.get("HARD_CASES_FILE", "hard_cases_dev.jsonl")
+    hc_filename = os.environ.get("HARD_CASES_FILE", "hard_cases_val.jsonl")
     hc_path = paths_config.ROOT_DIR / "outputs" / hc_filename
     print(f"  Mined hard cases file: {hc_path.name}")
     if not hc_path.exists():

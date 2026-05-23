@@ -21,8 +21,8 @@ from transformers import (
 )
 from typing import List, Tuple, Dict, Any, Sequence, Union
 
-# Language-specific token detection thresholds.
-# Optima resolved via mini-validation grid search or linguistic categories.
+# Per-language token detection threshold — all 0.5 (= argmax).
+# Lang-specific tuning was tested and rejected (no stable gain).
 LANG_DETECTION_THRESHOLDS: Dict[str, float] = {
     "ko": 0.5,
     "en": 0.5,

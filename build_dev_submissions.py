@@ -30,7 +30,7 @@ def build_submission() -> int:
     t0 = time.time()
 
     # 1. Load baseline prediction outputs (from Stage 1)
-    baseline_path: Path = paths_config.ROOT_DIR / "outputs" / "baseline_dev.json"
+    baseline_path: Path = paths_config.ROOT_DIR / "outputs" / "baseline_val.json"
     if not baseline_path.exists():
         print(f"  ERROR: Baseline prediction not found at {baseline_path}. Execute mine_hard_cases_dev.py first.")
         return 1
@@ -39,7 +39,7 @@ def build_submission() -> int:
     print(f"  Loaded baseline rows: {len(baseline)}")
 
     # 2. Load hard cases index mapping (from Stage 1)
-    hard_path: Path = paths_config.ROOT_DIR / "outputs" / "hard_cases_dev.jsonl"
+    hard_path: Path = paths_config.ROOT_DIR / "outputs" / "hard_cases_val.jsonl"
     if not hard_path.exists():
         print(f"  ERROR: Hard cases file not found at {hard_path}. Execute mine_hard_cases_dev.py first.")
         return 1
@@ -51,7 +51,7 @@ def build_submission() -> int:
     print(f"  Indexed hard cases: {len(hard_set)}")
 
     # 3. Load LLM corrections (from Stage 2)
-    llm_filename: str = os.environ.get("LLM_OUTPUT_JSONL", "llm_corrections_dev_fewshot3.jsonl")
+    llm_filename: str = os.environ.get("LLM_OUTPUT_JSONL", "llm_corrections_val_p1.jsonl")
     llm_path: Path = paths_config.ROOT_DIR / "outputs" / llm_filename
     if not llm_path.exists():
         print(f"  ERROR: LLM corrections file not found at {llm_path}. Execute llm_correct_local.py first.")

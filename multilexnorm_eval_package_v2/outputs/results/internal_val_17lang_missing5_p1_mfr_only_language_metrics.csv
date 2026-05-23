@@ -1,0 +1,6 @@
+dataset_name,eval_group,model_name,lang,num_sentences,accuracy,lai_accuracy,err,total_tokens,correct_tokens,lai_correct_tokens,gold_changed_tokens,pred_changed_tokens,tp,fp,fn,tn,detection_precision,detection_recall,detection_f1,overnormalization_rate,undernormalization_rate
+internal_val_17lang_missing5,missing5,p1_mfr_only,da,143,0.989694,0.908422,0.881029,3396,3361,3085,311,322,298,24,13,3063,0.925466,0.958199,0.941548,0.007067,0.003828
+internal_val_17lang_missing5,missing5,p1_mfr_only,es,113,0.993948,0.932078,0.881188,1487,1478,1386,101,107,98,9,3,1380,0.915888,0.970297,0.942308,0.006052,0.002017
+internal_val_17lang_missing5,missing5,p1_mfr_only,it,118,0.980472,0.92677,0.716667,2458,2410,2278,180,173,151,22,29,2259,0.872832,0.838889,0.855524,0.00895,0.011798
+internal_val_17lang_missing5,missing5,p1_mfr_only,tr,114,0.966292,0.620385,0.89852,1246,1204,773,473,463,444,19,29,760,0.958963,0.938689,0.948718,0.015249,0.023274
+internal_val_17lang_missing5,missing5,p1_mfr_only,trde,160,0.96197,0.741393,0.825077,2498,2403,1852,646,625,579,46,67,1824,0.9264,0.896285,0.911094,0.018415,0.026821

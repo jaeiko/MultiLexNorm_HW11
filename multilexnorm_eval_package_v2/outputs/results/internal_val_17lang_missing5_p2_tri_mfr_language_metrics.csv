@@ -1,0 +1,6 @@
+dataset_name,eval_group,model_name,lang,num_sentences,accuracy,lai_accuracy,err,total_tokens,correct_tokens,lai_correct_tokens,gold_changed_tokens,pred_changed_tokens,tp,fp,fn,tn,detection_precision,detection_recall,detection_f1,overnormalization_rate,undernormalization_rate
+internal_val_17lang_missing5,missing5,p2_tri_all_langs,da,143,0.989399,0.908422,0.881029,3396,3360,3085,311,324,299,25,12,3061,0.92284,0.961415,0.941732,0.007362,0.003534
+internal_val_17lang_missing5,missing5,p2_tri_all_langs,es,113,0.993275,0.932078,0.871287,1487,1477,1386,101,108,98,10,3,1379,0.907407,0.970297,0.937799,0.006725,0.002017
+internal_val_17lang_missing5,missing5,p2_tri_all_langs,it,118,0.979251,0.92677,0.694444,2458,2407,2278,180,175,150,25,30,2257,0.857143,0.833333,0.84507,0.010171,0.012205
+internal_val_17lang_missing5,missing5,p2_tri_all_langs,tr,114,0.966292,0.620385,0.896406,1246,1204,773,473,464,444,20,29,760,0.956897,0.938689,0.947705,0.016051,0.023274
+internal_val_17lang_missing5,missing5,p2_tri_all_langs,trde,160,0.961569,0.741393,0.820433,2498,2402,1852,646,630,580,50,66,1822,0.920635,0.897833,0.909091,0.020016,0.026421

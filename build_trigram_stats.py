@@ -107,7 +107,7 @@ def report_size(stats):
 
 def main():
     repo = Path(__file__).parent.resolve()  # MultiLexNorm_HW11
-    train_path = repo / "multilexnorm2026-dataset" / "dataset_12lang" / "train-00000-of-00001.parquet"
+    train_path = repo / "multilexnorm2026-dataset" / "train-00000-of-00001.parquet"
 
     print(f"[Build trigram stats] reading {train_path}")
     train_df = pd.read_parquet(train_path)

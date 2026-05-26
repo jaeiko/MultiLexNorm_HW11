@@ -119,7 +119,7 @@ def main() -> int:
     fewshot_obj = None
     if args.fewshot:
         from normalization_fewshot import NormalizationFewshot
-        train_path = paths_config.DATASET_12LANG / "train-00000-of-00001.parquet"
+        train_path = paths_config.DATASET_DIR / "train-00000-of-00001.parquet"
         fewshot_obj = NormalizationFewshot(
             train_path,
             default_positive_k=args.pos_k,

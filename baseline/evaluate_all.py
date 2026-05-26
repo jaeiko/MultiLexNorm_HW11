@@ -77,8 +77,8 @@ def main() -> None:
     args = parser.parse_args()
 
     # 1. Resolve Dataset Paths
-    val_path = paths_config.DATASET_12LANG / "validation-00000-of-00001.parquet"
-    train_path = paths_config.DATASET_12LANG / "train-00000-of-00001.parquet"
+    val_path = paths_config.DATASET_DIR / "validation-00000-of-00001.parquet"
+    train_path = paths_config.DATASET_DIR / "train-00000-of-00001.parquet"
 
     print(f"\n[Dashboard] Starting Unified Baseline Evaluation")
     print(f"  Validation Dataset: {val_path}")

@@ -19,7 +19,6 @@ ROOT_DIR: Path = Path(__file__).parent.resolve()
 
 # 2. Key Directories and Resource Paths
 DATASET_DIR: Path = ROOT_DIR / "multilexnorm2026-dataset"
-DATASET_12LANG: Path = DATASET_DIR / "dataset_12lang"
 MFR_STATS_PATH: Path = ROOT_DIR / "mfr_stats.pkl.gz"
 TRIGRAM_STATS_PATH: Path = ROOT_DIR / "outputs" / "trigram_stats.pkl.gz"
 PROMPT_MFR_DICT_DIR: Path = ROOT_DIR / "prompt_mfr_dictionary"

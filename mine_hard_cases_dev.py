@@ -52,7 +52,7 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     xlmr_threshold_str: str | None = os.environ.get("XLMR_THRESHOLD")
 
     # 1. Load raw tokens and language arrays from validation parquet
-    val_parquet_path: Path = paths_config.DATASET_17LANG / "data" / "validation-00000-of-00001.parquet"
+    val_parquet_path: Path = paths_config.DATASET_12LANG / "validation-00000-of-00001.parquet"
     if not val_parquet_path.exists():
         print(f"  ERROR: Validation parquet missing at {val_parquet_path}")
         return 1
@@ -107,7 +107,7 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
             'variant': 'tri_bi_both', 'conf_min': 0.70, 'min_total': 1, 'use_protect': True
         })
 
-    # Languages that are skipped for trigram-level updates
+    # Single unified module composition: trigram applied to ALL languages
     blocked_langs: Set[str] = set()
 
     # 5. Extract hard cases where baseline remains unchanged but XLM-R flags error

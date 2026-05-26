@@ -57,6 +57,8 @@ def call_ollama(
                     {'role': 'system', 'content': system},
                     {'role': 'user', 'content': user},
                 ],
+                'temperature': 0,
+                'seed': 42,
             }
             if use_json_format:
                 kwargs['response_format'] = {'type': 'json_object'}
@@ -117,14 +119,11 @@ def main() -> int:
     fewshot_obj = None
     if args.fewshot:
         from normalization_fewshot import NormalizationFewshot
-        train_path = paths_config.DATASET_17LANG / "data" / "train-00000-of-00001.parquet"
+        train_path = paths_config.DATASET_12LANG / "train-00000-of-00001.parquet"
         fewshot_obj = NormalizationFewshot(
             train_path,
             default_positive_k=args.pos_k,
             default_negative_k=args.neg_k,
-            lang_overrides={
-                'th': {'positive_k': 1, 'negative_k': 0},
-            },
         )
         print(f"  Dynamic few-shot statistics loaded from {train_path.name}")
     print(f"  Prompt resources loaded successfully from {paths_config.PROMPT_MFR_DICT_DIR.name}")

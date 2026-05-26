@@ -71,22 +71,14 @@ def main() -> None:
         description="Unified baseline evaluation dashboard for MultiLexNorm2026."
     )
     parser.add_argument(
-        "--dataset", "-d", choices=["official", "internal"], default="official",
-        help="Select validation split to evaluate on (default: official)"
-    )
-    parser.add_argument(
         "--limit", "-l", type=int, default=100,
         help="Limit number of sentences to evaluate to ensure fast execution (default: 100, use -1 for all)"
     )
     args = parser.parse_args()
 
     # 1. Resolve Dataset Paths
-    if args.dataset == "official":
-        val_path = paths_config.DATASET_12LANG / "validation-00000-of-00001.parquet"
-        train_path = paths_config.DATASET_12LANG / "train-00000-of-00001.parquet"
-    else:
-        val_path = paths_config.DATASET_17LANG / "data" / "validation-00000-of-00001.parquet"
-        train_path = paths_config.DATASET_17LANG / "data" / "train-00000-of-00001.parquet"
+    val_path = paths_config.DATASET_12LANG / "validation-00000-of-00001.parquet"
+    train_path = paths_config.DATASET_12LANG / "train-00000-of-00001.parquet"
 
     print(f"\n[Dashboard] Starting Unified Baseline Evaluation")
     print(f"  Validation Dataset: {val_path}")

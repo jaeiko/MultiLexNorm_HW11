@@ -48,7 +48,6 @@ def run_pipeline_experiment() -> None:
     # 2. Target validation datasets configuration
     datasets: Dict[str, Path] = {
         "official_val": paths_config.DATASET_12LANG / "validation-00000-of-00001.parquet",
-        "internal_val": paths_config.DATASET_17LANG / "data" / "validation-00000-of-00001.parquet"
     }
     
     for name, path in datasets.items():

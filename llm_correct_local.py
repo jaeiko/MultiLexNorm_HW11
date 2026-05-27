@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-import os
 import json
 import time
 from pathlib import Path
@@ -94,7 +93,6 @@ def main() -> int:
     """Executes the LLM Correction Stage via command line."""
     ap = argparse.ArgumentParser(description="LLM Correction Stage via local Ollama endpoint.")
     ap.add_argument('--model', required=True, help='Ollama model identifier name')
-    ap.add_argument('--output', required=True, help='Output JSONL filename under outputs/')
     ap.add_argument('--base-url', default='http://localhost:11434/v1')
     ap.add_argument('--workers', type=int, default=2, help='Concurrent worker threads count')
     ap.add_argument('--no-json-format', action='store_true', help='Omit json response enforcement')
@@ -129,17 +127,16 @@ def main() -> int:
     print(f"  Prompt resources loaded successfully from {paths_config.PROMPT_MFR_DICT_DIR.name}")
 
     # Load mined hard cases
-    hc_filename = os.environ.get("HARD_CASES_FILE", "hard_cases_val.jsonl")
-    hc_path = paths_config.ROOT_DIR / "outputs" / hc_filename
-    print(f"  Mined hard cases file: {hc_path.name}")
+    hc_path = paths_config.HARD_CASES_PATH
+    print(f"  Mined hard cases file: {hc_path}")
     if not hc_path.exists():
         print(f"ERROR: Hard cases file does not exist at {hc_path}. Run mine_hard_cases_dev.py first.")
         return 1
-        
+
     hard = [json.loads(line) for line in hc_path.read_text(encoding='utf-8').splitlines() if line.strip()]
     print(f"  Total hard cases to process: {len(hard)}")
 
-    out_path = paths_config.ROOT_DIR / "outputs" / args.output
+    out_path = paths_config.LLM_OUTPUT_PATH
     out_path.parent.mkdir(parents=True, exist_ok=True)
     done_keys: Set[Tuple[int, int]] = set()
     if out_path.exists():

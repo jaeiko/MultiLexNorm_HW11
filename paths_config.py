@@ -24,6 +24,15 @@ TRIGRAM_STATS_PATH: Path = ROOT_DIR / "outputs" / "trigram_stats.pkl.gz"
 PROMPT_MFR_DICT_DIR: Path = ROOT_DIR / "prompt_mfr_dictionary"
 COMMON_PROMPT_DIR: Path = PROMPT_MFR_DICT_DIR / "common_prompt_v2_package" / "prompts"
 
+# XLM-R fine-tuned model path
+XLMR_MODEL_PATH: Path = ROOT_DIR.parent / "checkpoint-7347"
+
+# Pipeline I/O paths (edit per experiment — referenced by mine/llm/build)
+HARD_CASES_PATH: Path = ROOT_DIR / "outputs" / "hard_cases_val.jsonl"
+BASELINE_PATH: Path = ROOT_DIR / "outputs" / "baseline_val.json"
+LLM_OUTPUT_PATH: Path = ROOT_DIR / "outputs" / "llm_corrections_val.jsonl"
+SUBMISSION_DIR: Path = ROOT_DIR / "outputs" / "submissions_val"
+
 
 def setup_imports() -> None:
     """Configures system paths to support modular project imports dynamically.

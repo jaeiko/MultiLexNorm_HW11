@@ -44,11 +44,18 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
         int: System exit code status (0 for success).
     """
     use_trigram: bool = args.use_trigram
-    tag = "pipeline2 (tri+mfr)" if use_trigram else "pipeline1 (mfr-only)"
-    print(f"[mine val] Starting validation hard case mining — {tag} ...")
+    use_mfr: bool = args.use_mfr
+    if not use_trigram and not use_mfr:
+        print("ERROR: at least one baseline must be enabled (cannot pass both --no-trigram and --no-mfr).")
+        return 1
+    parts = []
+    if use_trigram: parts.append("tri")
+    if use_mfr: parts.append("mfr")
+    tag = "+".join(parts)
+    print(f"[mine val] Starting validation hard case mining — baseline={tag} ...")
     t0 = time.time()
 
-    xlmr_path: str = os.environ.get("XLMR_MODEL_PATH", str(paths_config.ROOT_DIR.parent / "xlmr_finetuned_colab"))
+    xlmr_path: str = os.environ.get("XLMR_MODEL_PATH", str(paths_config.XLMR_MODEL_PATH))
     xlmr_threshold_str: str | None = os.environ.get("XLMR_THRESHOLD")
 
     # 1. Load raw tokens and language arrays from validation parquet
@@ -77,10 +84,11 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     with gzip.open(paths_config.MFR_STATS_PATH, "rb") as f:
         mfr_stats: Dict[str, Dict[str, Any]] = pickle.load(f)
 
+    tri_stats: Dict[str, Any] | None = None
     if use_trigram:
         print(f"  Loading Trigram Statistics: {paths_config.TRIGRAM_STATS_PATH.name}")
         with gzip.open(paths_config.TRIGRAM_STATS_PATH, "rb") as f:
-            tri_stats: Dict[str, Any] = pickle.load(f)
+            tri_stats = pickle.load(f)
 
     # 3. Perform XLM-R Token classification inference
     threshold: float = 0.5 if xlmr_threshold_str is None else float(xlmr_threshold_str)
@@ -97,18 +105,17 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     print("  XLM-R token classification phase complete. GPU context released.")
 
     # 4. Perform MFR and (optionally) Trigram corrections
-    print("  Calculating MFR baseline predictions...")
-    mfr_preds: List[List[str]] = predict_smart_guarded_mfr_v2(samples, mfr_stats)
+    mfr_preds: List[List[str]] | None = None
+    if use_mfr:
+        print("  Calculating MFR baseline predictions...")
+        mfr_preds = predict_smart_guarded_mfr_v2(samples, mfr_stats)
 
+    tri_preds: List[List[str]] | None = None
     if use_trigram:
         print("  Calculating Trigram baseline predictions...")
-        tri_preds: List[List[str]]
         tri_preds, _ = predict_trigram(samples, tri_stats, {
             'variant': 'tri_bi_both', 'conf_min': 0.70, 'min_total': 1, 'use_protect': True
         })
-
-    # Single unified module composition: trigram applied to ALL languages
-    blocked_langs: Set[str] = set()
 
     # 5. Extract hard cases where baseline remains unchanged but XLM-R flags error
     hard_records: List[Dict[str, Any]] = []
@@ -117,17 +124,17 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
 
     for row_idx, raw in enumerate(raw_per_row):
         lang = lang_per_row[row_idx]
-        mfr_row = mfr_preds[row_idx]
+        mfr_row = mfr_preds[row_idx] if use_mfr else None
         xlmr_row = xlmr_preds[row_idx]
         tri_row = tri_preds[row_idx] if use_trigram else None
         protected_indices: Set[int] = set(find_protected_indices(raw))
 
         baseline_row: List[str] = []
         for i, tok in enumerate(raw):
-            # Select best predictor: Trigram (if enabled and not blocked) -> MFR -> Leave-As-Is
-            if use_trigram and lang not in blocked_langs and tri_row[i] != tok:
+            # Select best predictor: Trigram (if enabled) -> MFR (if enabled) -> Leave-As-Is
+            if use_trigram and tri_row[i] != tok:
                 baseline_pred = tri_row[i]
-            elif mfr_row[i] != tok:
+            elif use_mfr and mfr_row[i] != tok:
                 baseline_pred = mfr_row[i]
             else:
                 baseline_pred = tok
@@ -174,14 +181,14 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
         baseline_per_row.append(baseline_row)
 
     # 6. Save Stage 2 input files (hard cases JSONL)
-    hc_path: Path = paths_config.ROOT_DIR / "outputs" / "hard_cases_val.jsonl"
+    hc_path: Path = paths_config.HARD_CASES_PATH
     hc_path.parent.mkdir(parents=True, exist_ok=True)
     with open(hc_path, "w", encoding="utf-8") as f:
         for record in hard_records:
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
     # 7. Save Stage 3 input files (entire baseline predictions)
-    baseline_path: Path = paths_config.ROOT_DIR / "outputs" / "baseline_val.json"
+    baseline_path: Path = paths_config.BASELINE_PATH
     baseline_out = [
         {
             'raw': raw_per_row[ri],
@@ -207,10 +214,14 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Mine hard cases from 17-lang validation set for LLM correction."
+        description="Mine hard cases from 12-lang validation set for LLM correction."
     )
     parser.add_argument(
         '--no-trigram', dest='use_trigram', action='store_false', default=True,
-        help="Disable trigram step — Pipeline 1 (MFR-only baseline). Default: trigram enabled (Pipeline 2)."
+        help="Disable trigram baseline step."
+    )
+    parser.add_argument(
+        '--no-mfr', dest='use_mfr', action='store_false', default=True,
+        help="Disable MFR baseline step."
     )
     sys.exit(mine_hard_cases(parser.parse_args()))

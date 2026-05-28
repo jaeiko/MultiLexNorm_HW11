@@ -48,7 +48,6 @@ def build_stats(train_df):
         'tri': defaultdict(Counter),
         'biL': defaultdict(Counter),
         'biR': defaultdict(Counter),
-        'uni': defaultdict(Counter),
     })
 
     n_rows = len(train_df)
@@ -76,7 +75,6 @@ def build_stats(train_df):
             d['tri'][(prev, tok, nxt)][nrm] += 1
             d['biL'][(prev, tok)][nrm] += 1
             d['biR'][(tok, nxt)][nrm] += 1
-            d['uni'][tok][nrm] += 1
             n_tokens += 1
 
         if (idx + 1) % 5000 == 0:
@@ -92,17 +90,16 @@ def build_stats(train_df):
             'tri': dict(d['tri']),
             'biL': dict(d['biL']),
             'biR': dict(d['biR']),
-            'uni': dict(d['uni']),
         }
     return stats_out
 
 
 def report_size(stats):
     print("\n=== Per-language stats summary ===")
-    print(f"{'lang':<6} {'tri':>10} {'biL':>10} {'biR':>10} {'uni':>10}")
+    print(f"{'lang':<6} {'tri':>10} {'biL':>10} {'biR':>10}")
     for lang in sorted(stats.keys()):
         d = stats[lang]
-        print(f"{lang:<6} {len(d['tri']):>10,} {len(d['biL']):>10,} {len(d['biR']):>10,} {len(d['uni']):>10,}")
+        print(f"{lang:<6} {len(d['tri']):>10,} {len(d['biL']):>10,} {len(d['biR']):>10,}")
 
 
 def main():

@@ -45,12 +45,17 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     """
     use_trigram: bool = args.use_trigram
     use_mfr: bool = args.use_mfr
+    mfr_first: bool = args.mfr_first
     if not use_trigram and not use_mfr:
         print("ERROR: at least one baseline must be enabled (cannot pass both --no-trigram and --no-mfr).")
         return 1
     parts = []
-    if use_trigram: parts.append("tri")
-    if use_mfr: parts.append("mfr")
+    if mfr_first:
+        if use_mfr: parts.append("mfr")
+        if use_trigram: parts.append("tri")
+    else:
+        if use_trigram: parts.append("tri")
+        if use_mfr: parts.append("mfr")
     tag = "+".join(parts)
     print(f"[mine val] Starting validation hard case mining — baseline={tag} ...")
     t0 = time.time()
@@ -114,7 +119,7 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     if use_trigram:
         print("  Calculating Trigram baseline predictions...")
         tri_preds, _ = predict_trigram(samples, tri_stats, {
-            'variant': 'tri_bi_both', 'conf_min': 0.70, 'min_total': 1, 'use_protect': True
+            'variant': 'tri_bi_both', 'conf_min': 0.70, 'protect': 'none'
         })
 
     # 5. Extract hard cases where baseline remains unchanged but XLM-R flags error
@@ -131,8 +136,15 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
 
         baseline_row: List[str] = []
         for i, tok in enumerate(raw):
-            # Select best predictor: Trigram (if enabled) -> MFR (if enabled) -> Leave-As-Is
-            if use_trigram and tri_row[i] != tok:
+            # Priority order: --mfr-first reverses default Trigram -> MFR -> Leave-As-Is
+            if mfr_first:
+                if use_mfr and mfr_row[i] != tok:
+                    baseline_pred = mfr_row[i]
+                elif use_trigram and tri_row[i] != tok:
+                    baseline_pred = tri_row[i]
+                else:
+                    baseline_pred = tok
+            elif use_trigram and tri_row[i] != tok:
                 baseline_pred = tri_row[i]
             elif use_mfr and mfr_row[i] != tok:
                 baseline_pred = mfr_row[i]
@@ -223,5 +235,9 @@ if __name__ == "__main__":
     parser.add_argument(
         '--no-mfr', dest='use_mfr', action='store_false', default=True,
         help="Disable MFR baseline step."
+    )
+    parser.add_argument(
+        '--mfr-first', dest='mfr_first', action='store_true', default=False,
+        help="Apply MFR before trigram (default: trigram first)."
     )
     sys.exit(mine_hard_cases(parser.parse_args()))

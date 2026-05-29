@@ -63,24 +63,38 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     xlmr_path: str = os.environ.get("XLMR_MODEL_PATH", str(paths_config.XLMR_MODEL_PATH))
     xlmr_threshold_str: str | None = os.environ.get("XLMR_THRESHOLD")
 
-    # 1. Load raw tokens and language arrays from validation parquet
-    val_parquet_path: Path = paths_config.DATASET_DIR / "validation-00000-of-00001.parquet"
-    if not val_parquet_path.exists():
-        print(f"  ERROR: Validation parquet missing at {val_parquet_path}")
+    # 1. Load raw tokens and language arrays from input source (parquet or json)
+    input_path: Path = paths_config.MINE_INPUT_PATH
+    if not input_path.exists():
+        print(f"  ERROR: Mine input source missing at {input_path}")
         return 1
-
-    df = pd.read_parquet(val_parquet_path)
-    print(f"  Loaded validation rows: {len(df)}")
+    print(f"  Mine input: {input_path}")
 
     raw_per_row: List[List[str]] = []
     lang_per_row: List[str] = []
     samples: List[Dict[str, Any]] = []
-    for _, row in df.iterrows():
-        raw_tokens = [str(x) for x in row['raw']]
-        lang_str = str(row['lang'])
-        raw_per_row.append(raw_tokens)
-        lang_per_row.append(lang_str)
-        samples.append({'lang': lang_str, 'raw': raw_tokens})
+    if input_path.suffix == '.parquet':
+        df = pd.read_parquet(input_path)
+        print(f"  Loaded rows: {len(df)}")
+        for _, row in df.iterrows():
+            raw_tokens = [str(x) for x in row['raw']]
+            lang_str = str(row['lang'])
+            raw_per_row.append(raw_tokens)
+            lang_per_row.append(lang_str)
+            samples.append({'lang': lang_str, 'raw': raw_tokens})
+    elif input_path.suffix == '.json':
+        with open(input_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        print(f"  Loaded rows: {len(data)}")
+        for r in data:
+            raw_tokens = [str(x) for x in r['raw']]
+            lang_str = str(r['lang'])
+            raw_per_row.append(raw_tokens)
+            lang_per_row.append(lang_str)
+            samples.append({'lang': lang_str, 'raw': raw_tokens})
+    else:
+        print(f"  ERROR: Unsupported input suffix {input_path.suffix!r}")
+        return 1
 
     print(f"  Total tokens across validation set: {sum(len(r) for r in raw_per_row):,}")
 
@@ -119,7 +133,7 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
     if use_trigram:
         print("  Calculating Trigram baseline predictions...")
         tri_preds, _ = predict_trigram(samples, tri_stats, {
-            'variant': 'tri_bi_both', 'conf_min': 0.70, 'protect': 'none'
+            'variant': 'tri_bi_both', 'conf_min': 0.70, 'protect': 'non_protect'
         })
 
     # 5. Extract hard cases where baseline remains unchanged but XLM-R flags error

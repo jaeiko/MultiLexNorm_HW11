@@ -7,7 +7,7 @@ Trigram fallback-chain predictor.
 config:
     variant   : 'pure' | 'tri_biL' | 'tri_biR' | 'tri_bi_both'
     conf_min  : float (default 0.8)
-    protect   : 'none' | 'simple' | 'strong'  (default 'simple')
+    protect   : 'non_protect' | 'protect'  (default 'non_protect')
 
 Output:
     preds      : list[list[str]] — same shape as samples' raw
@@ -20,10 +20,7 @@ from pathlib import Path
 _PKG_DIR = Path(__file__).parent
 if str(_PKG_DIR) not in sys.path:
     sys.path.insert(0, str(_PKG_DIR))
-from smart_guard_mfr_v2 import (
-    find_protected_indices_simple,
-    find_protected_indices,
-)  # noqa: E402
+from smart_guard_mfr_v2 import find_protected_indices  # noqa: E402
 
 BOS = '<BOS>'
 EOS = '<EOS>'
@@ -51,11 +48,9 @@ def _lookup_level(level_dict, key, conf_min: float):
 
 def _get_protected(raw, mode: str):
     """Resolves protect indices according to mode."""
-    if mode == 'none':
+    if mode == 'non_protect':
         return set()
-    if mode == 'simple':
-        return set(find_protected_indices_simple(raw))
-    if mode == 'strong':
+    if mode == 'protect':
         return set(find_protected_indices(raw))
     raise ValueError(f"Unknown protect mode: {mode!r}")
 
@@ -69,14 +64,14 @@ def predict_trigram(samples, stats, config) -> tuple[list[list[str]], dict[str, 
         config: Configurations dictionary:
             - 'variant' (str): 'pure', 'tri_biL', 'tri_biR', or 'tri_bi_both'.
             - 'conf_min' (float): Minimum confidence threshold.
-            - 'protect' (str): 'none', 'simple', or 'strong'.
+            - 'protect' (str): 'non_protect' or 'protect'.
 
     Returns:
         A tuple of (predictions, hit-stats dict).
     """
     variant = config.get('variant', 'pure')
     conf_min = float(config.get('conf_min', 0.8))
-    protect_mode = str(config.get('protect', 'simple'))
+    protect_mode = str(config.get('protect', 'non_protect'))
 
     use_biL = variant in ('tri_biL', 'tri_bi_both')
     use_biR = variant in ('tri_biR', 'tri_bi_both')

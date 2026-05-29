@@ -22,7 +22,7 @@ if str(_ROOT) not in sys.path:
 import paths_config
 paths_config.setup_imports()
 
-from multilexnorm_eval_package import multilexnorm_evaluator
+from multilexnorm_eval_package_v2 import multilexnorm_evaluator_v2 as multilexnorm_evaluator
 
 
 def _to_tokens(value: Any) -> List[str]:

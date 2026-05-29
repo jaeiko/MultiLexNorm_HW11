@@ -1,2 +1,0 @@
-model_name,dataset_name,accuracy,lai_accuracy,err,total_tokens,correct_tokens,lai_correct_tokens,gold_changed_tokens,pred_changed_tokens,tp,fp,fn,tn,detection_precision,detection_recall,detection_f1,overnormalization_rate,undernormalization_rate,macro_accuracy,macro_lai_accuracy,macro_err,macro_detection_precision,macro_detection_recall,macro_detection_f1,num_languages,notes,created_at_utc
-LAI,official_validation,0.884795,0.884795,0.0,125377,110933,110933,14444,0,0,0,14444,110933,0.0,0.0,0.0,0.0,0.115205,0.850074,0.850074,0.0,0.0,0.0,0.0,12,,2026-05-21T03:06:39.799428+00:00

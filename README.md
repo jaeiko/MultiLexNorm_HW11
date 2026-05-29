@@ -32,8 +32,9 @@ graph TD
 
 ### 현재 채택 설정
 
-- **N-gram**: `variant=tri_bi_both`, `conf_min=0.70`, `protect=non_protect` (ablation으로 선정 — `ablation_trigram.py`로 재현)
-- **XLM-R**: `../checkpoint-7347` (fine-tuned), threshold 0.5
+- **N-gram**: `variant=tri_bi_both`, `conf_min=0.70`, `protect=non_protect` 
+(ablation으로 선정 — `ablation_trigram.py`로 재현)
+- **XLM-R**: [여기 깃허브나 드라이브경로 올려야함] threshold 0.5
 - **LLM**: `gemma4:latest` (Gemma4 : E4B, Q4_K_M), `--fewshot --pos-k 3 --neg-k 0`, temperature=0 / seed=42, workers=2
 
 ---
@@ -43,7 +44,7 @@ graph TD
 > [!IMPORTANT]
 > LLM 단계는 로컬 **Ollama 데몬**(또는 OpenAI 호환 LLM 서버)이 실행 중이어야 합니다.
 
-입출력 경로는 CLI 인자가 아니라 **`paths_config.py` 상단 상수**로 지정합니다. 실험을 바꿀 때는 아래 상수만 편집하세요.
+입출력 경로는 CLI 인자가 아니라 **`paths_config.py` 상단 상수**로 지정합니다. 실험을 바꿀 때는 아래 상수만 편집하고 돌립니다. 
 
 ```python
 # paths_config.py
@@ -65,7 +66,7 @@ python mine_hard_cases_dev.py --mfr-first    # MFR 우선순위
 - 입력: `MINE_INPUT_PATH`
 - 출력: `HARD_CASES_PATH`, `BASELINE_PATH`
 
-### Stage 2 — 로컬 LLM 교정 (`llm_correct_local.py`)
+### Stage 2 — LLM 교정 (`llm_correct_local.py`)
 ```bash
 python llm_correct_local.py --model gemma4:latest --fewshot --pos-k 3 --neg-k 0
 ```

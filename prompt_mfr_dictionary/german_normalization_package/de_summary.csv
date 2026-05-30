@@ -1,0 +1,4 @@
+mode,dictionary_size,validation_tokens,validation_changed_tokens,TP,FP,FN,TN,ERR,precision,recall
+LAI,0,4860,873,0,0,873,3987,0.0,0.0,0.0
+balanced,230,4860,873,221,48,652,3974,0.198167,0.821561,0.25315
+conservative,75,4860,873,108,13,765,3982,0.10882,0.892562,0.123711

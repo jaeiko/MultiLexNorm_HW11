@@ -206,3 +206,17 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 datasets
+
+# Project-local one-off scripts and scratch files
+bin/
+**/tmp_*.txt
+
+# Noisy experiment artifacts
+**/debug.jsonl
+**/benchmark.json
+**/benchmark.txt
+**/predictions_full_backup*.json
+
+# Root-level full-pipeline dumps should be moved under reports/ when curated.
+/predictions_validation_full*.json
+/predictions_full_backup*.json

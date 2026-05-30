@@ -1,0 +1,7273 @@
+{
+  "language": "hr",
+  "description": "hr MFR dictionary generated from MultiLexNorm train split. Use high_confidence_pairs for direct lookup; review/ambiguous pairs are for prompt/model context only.",
+  "thresholds": {
+    "min_top_count": 2,
+    "min_confidence": 0.65,
+    "min_change_ratio": 0.5,
+    "protected_tokens_excluded": true
+  },
+  "statistics": {
+    "train_sentences": 4760,
+    "train_tokens": 54416,
+    "train_changed_tokens": 3570,
+    "train_changed_ratio": 0.065606,
+    "validation_sentences": 1588,
+    "validation_tokens": 18941,
+    "validation_changed_tokens": 1683,
+    "validation_changed_ratio": 0.088855,
+    "high_confidence_count": 343,
+    "review_count": 123,
+    "ambiguous_count": 7,
+    "known_context_sensitive_tokens": [
+      "bi",
+      "dal",
+      "jel",
+      "kaj",
+      "ko",
+      "nebi",
+      "nezz",
+      "sta",
+      "šta"
+    ]
+  },
+  "validation_mfr_balanced": {
+    "ERR": 0.288176,
+    "TP": 521,
+    "FP": 36,
+    "FN": 1162,
+    "TN": 17235
+  },
+  "validation_mfr_conservative_skip_context_sensitive": {
+    "ERR": 0.254308,
+    "TP": 455,
+    "FP": 27,
+    "FN": 1228,
+    "TN": 17236
+  },
+  "high_confidence_pairs": [
+    {
+      "raw": "ko",
+      "norm": "kao",
+      "count": 56,
+      "raw_total": 79,
+      "confidence": 0.7089,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kao",
+          "count": 56
+        },
+        {
+          "norm": "tko",
+          "count": 23
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "sto",
+      "norm": "što",
+      "count": 48,
+      "raw_total": 49,
+      "confidence": 0.9796,
+      "change_ratio": 0.9796,
+      "candidates": [
+        {
+          "norm": "što",
+          "count": 48
+        },
+        {
+          "norm": "sto",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "šta",
+      "norm": "što",
+      "count": 47,
+      "raw_total": 51,
+      "confidence": 0.9216,
+      "change_ratio": 0.9216,
+      "candidates": [
+        {
+          "norm": "što",
+          "count": 47
+        },
+        {
+          "norm": "šta",
+          "count": 4
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "jel",
+      "norm": "je",
+      "count": 46,
+      "raw_total": 46,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "je",
+          "count": 46
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "sta",
+      "norm": "što",
+      "count": 35,
+      "raw_total": 35,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "što",
+          "count": 35
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "al",
+      "norm": "ali",
+      "count": 32,
+      "raw_total": 34,
+      "confidence": 0.9412,
+      "change_ratio": 0.9706,
+      "candidates": [
+        {
+          "norm": "ali",
+          "count": 32
+        },
+        {
+          "norm": "al",
+          "count": 1
+        },
+        {
+          "norm": "kaida",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "di",
+      "norm": "gdje",
+      "count": 30,
+      "raw_total": 31,
+      "confidence": 0.9677,
+      "change_ratio": 0.9677,
+      "candidates": [
+        {
+          "norm": "gdje",
+          "count": 30
+        },
+        {
+          "norm": "di",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cu",
+      "norm": "ću",
+      "count": 24,
+      "raw_total": 24,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ću",
+          "count": 24
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "vise",
+      "norm": "više",
+      "count": 23,
+      "raw_total": 23,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "više",
+          "count": 23
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ce",
+      "norm": "će",
+      "count": 22,
+      "raw_total": 22,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "će",
+          "count": 22
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jos",
+      "norm": "još",
+      "count": 22,
+      "raw_total": 22,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "još",
+          "count": 22
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kaj",
+      "norm": "što",
+      "count": 19,
+      "raw_total": 21,
+      "confidence": 0.9048,
+      "change_ratio": 0.9048,
+      "candidates": [
+        {
+          "norm": "što",
+          "count": 19
+        },
+        {
+          "norm": "kaj",
+          "count": 2
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "san",
+      "norm": "sam",
+      "count": 17,
+      "raw_total": 21,
+      "confidence": 0.8095,
+      "change_ratio": 0.8095,
+      "candidates": [
+        {
+          "norm": "sam",
+          "count": 17
+        },
+        {
+          "norm": "san",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kak",
+      "norm": "kako",
+      "count": 16,
+      "raw_total": 16,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kako",
+          "count": 16
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ak",
+      "norm": "ako",
+      "count": 15,
+      "raw_total": 15,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ako",
+          "count": 15
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "moze",
+      "norm": "može",
+      "count": 15,
+      "raw_total": 15,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "može",
+          "count": 15
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "il",
+      "norm": "ili",
+      "count": 13,
+      "raw_total": 13,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ili",
+          "count": 13
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "neko",
+      "norm": "netko",
+      "count": 13,
+      "raw_total": 19,
+      "confidence": 0.6842,
+      "change_ratio": 0.6842,
+      "candidates": [
+        {
+          "norm": "netko",
+          "count": 13
+        },
+        {
+          "norm": "neko",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zasto",
+      "norm": "zašto",
+      "count": 13,
+      "raw_total": 13,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "zašto",
+          "count": 13
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "uvik",
+      "norm": "uvijek",
+      "count": 12,
+      "raw_total": 12,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "uvijek",
+          "count": 12
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bas",
+      "norm": "baš",
+      "count": 11,
+      "raw_total": 11,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "baš",
+          "count": 11
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nece",
+      "norm": "neće",
+      "count": 11,
+      "raw_total": 11,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "neće",
+          "count": 11
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nesto",
+      "norm": "nešto",
+      "count": 11,
+      "raw_total": 11,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nešto",
+          "count": 11
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cemo",
+      "norm": "ćemo",
+      "count": 10,
+      "raw_total": 10,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ćemo",
+          "count": 10
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dal",
+      "norm": "da",
+      "count": 10,
+      "raw_total": 10,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "da",
+          "count": 10
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "ka",
+      "norm": "kao",
+      "count": 10,
+      "raw_total": 12,
+      "confidence": 0.8333,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kao",
+          "count": 10
+        },
+        {
+          "norm": "ja",
+          "count": 1
+        },
+        {
+          "norm": "kad",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mozda",
+      "norm": "možda",
+      "count": 10,
+      "raw_total": 10,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "možda",
+          "count": 10
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tak",
+      "norm": "tako",
+      "count": 10,
+      "raw_total": 10,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "tako",
+          "count": 10
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zivotu",
+      "norm": "životu",
+      "count": 10,
+      "raw_total": 10,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "životu",
+          "count": 10
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ajde",
+      "norm": "hajde",
+      "count": 9,
+      "raw_total": 9,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hajde",
+          "count": 9
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "gledat",
+      "norm": "gledati",
+      "count": 9,
+      "raw_total": 9,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "gledati",
+          "count": 9
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kaze",
+      "norm": "kaže",
+      "count": 9,
+      "raw_total": 9,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kaže",
+          "count": 9
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nek",
+      "norm": "neka",
+      "count": 9,
+      "raw_total": 10,
+      "confidence": 0.9,
+      "change_ratio": 0.9,
+      "candidates": [
+        {
+          "norm": "neka",
+          "count": 9
+        },
+        {
+          "norm": "nek",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "aj",
+      "norm": "hajde",
+      "count": 8,
+      "raw_total": 10,
+      "confidence": 0.8,
+      "change_ratio": 0.8,
+      "candidates": [
+        {
+          "norm": "hajde",
+          "count": 8
+        },
+        {
+          "norm": "aj",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ajmo",
+      "norm": "hajmo",
+      "count": 8,
+      "raw_total": 9,
+      "confidence": 0.8889,
+      "change_ratio": 0.8889,
+      "candidates": [
+        {
+          "norm": "hajmo",
+          "count": 8
+        },
+        {
+          "norm": "ajmo",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jucer",
+      "norm": "jučer",
+      "count": 8,
+      "raw_total": 8,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jučer",
+          "count": 8
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "k'o",
+      "norm": "kao",
+      "count": 8,
+      "raw_total": 8,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kao",
+          "count": 8
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nista",
+      "norm": "ništa",
+      "count": 8,
+      "raw_total": 8,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ništa",
+          "count": 8
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "neg",
+      "norm": "nego",
+      "count": 7,
+      "raw_total": 7,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nego",
+          "count": 7
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zivot",
+      "norm": "život",
+      "count": 7,
+      "raw_total": 7,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "život",
+          "count": 7
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "hoce",
+      "norm": "hoće",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hoće",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kazu",
+      "norm": "kažu",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kažu",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "npr",
+      "norm": "npr.",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "npr.",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "oće",
+      "norm": "hoće",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hoće",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pise",
+      "norm": "piše",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "piše",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "previse",
+      "norm": "previše",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "previše",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "spavat",
+      "norm": "spavati",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "spavati",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "vec",
+      "norm": "već",
+      "count": 6,
+      "raw_total": 6,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "već",
+          "count": 6
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ajd",
+      "norm": "hajde",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hajde",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "hocu",
+      "norm": "hoću",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hoću",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "imas",
+      "norm": "imaš",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "imaš",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "inace",
+      "norm": "inače",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "inače",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jebote",
+      "norm": "jebao",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jebao",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ki",
+      "norm": "kao",
+      "count": 5,
+      "raw_total": 6,
+      "confidence": 0.8333,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kao",
+          "count": 5
+        },
+        {
+          "norm": "koji",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "min",
+      "norm": "min.",
+      "count": 5,
+      "raw_total": 7,
+      "confidence": 0.7143,
+      "change_ratio": 0.7143,
+      "candidates": [
+        {
+          "norm": "min.",
+          "count": 5
+        },
+        {
+          "norm": "min",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nebi",
+      "norm": "ne",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 5
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "necu",
+      "norm": "neću",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "neću",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "noc",
+      "norm": "noć",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "noć",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "onak",
+      "norm": "onako",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "onako",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ostat",
+      "norm": "ostati",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ostati",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "postat",
+      "norm": "postati",
+      "count": 5,
+      "raw_total": 6,
+      "confidence": 0.8333,
+      "change_ratio": 0.8333,
+      "candidates": [
+        {
+          "norm": "postati",
+          "count": 5
+        },
+        {
+          "norm": "postat",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tviter",
+      "norm": "twitter",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "twitter",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "vidila",
+      "norm": "vidjela",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "vidjela",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "znaci",
+      "norm": "znači",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "znači",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ča",
+      "norm": "što",
+      "count": 5,
+      "raw_total": 5,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "što",
+          "count": 5
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "al'",
+      "norm": "ali",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ali",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bija",
+      "norm": "bio",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "bio",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ces",
+      "norm": "ćeš",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ćeš",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dns",
+      "norm": "danas",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "danas",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "hodat",
+      "norm": "hodati",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hodati",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ic",
+      "norm": "ići",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ići",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "imat",
+      "norm": "imati",
+      "count": 4,
+      "raw_total": 5,
+      "confidence": 0.8,
+      "change_ratio": 0.8,
+      "candidates": [
+        {
+          "norm": "imati",
+          "count": 4
+        },
+        {
+          "norm": "imat",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kisa",
+      "norm": "kiša",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kiša",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "moras",
+      "norm": "moraš",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "moraš",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mozes",
+      "norm": "možeš",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "možeš",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nać",
+      "norm": "naći",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "naći",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "neda",
+      "norm": "ne",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nemas",
+      "norm": "nemaš",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nemaš",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nigdi",
+      "norm": "nigdje",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nigdje",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nis",
+      "norm": "ništa",
+      "count": 4,
+      "raw_total": 5,
+      "confidence": 0.8,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ništa",
+          "count": 4
+        },
+        {
+          "norm": "nisam",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ocu",
+      "norm": "hoću",
+      "count": 4,
+      "raw_total": 5,
+      "confidence": 0.8,
+      "change_ratio": 0.8,
+      "candidates": [
+        {
+          "norm": "hoću",
+          "count": 4
+        },
+        {
+          "norm": "ocu",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "odma",
+      "norm": "odmah",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "odmah",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "primjetio",
+      "norm": "primijetio",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "primijetio",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "radit",
+      "norm": "raditi",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "raditi",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "sinoc",
+      "norm": "sinoć",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sinoć",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tj",
+      "norm": "tj.",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "tj.",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "uopce",
+      "norm": "uopće",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "uopće",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "veceras",
+      "norm": "večeras",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "večeras",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zakaj",
+      "norm": "zašto",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "zašto",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zeli",
+      "norm": "želi",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "želi",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zelim",
+      "norm": "želim",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "želim",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "znas",
+      "norm": "znaš",
+      "count": 4,
+      "raw_total": 4,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "znaš",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bacit",
+      "norm": "baciti",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "baciti",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cast",
+      "norm": "čast",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čast",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cim",
+      "norm": "čim",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čim",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cokolade",
+      "norm": "čokolade",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čokolade",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cuju",
+      "norm": "čuju",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čuju",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dablju",
+      "norm": "double",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "double",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dite",
+      "norm": "dijete",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dijete",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dize",
+      "norm": "diže",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "diže",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dosla",
+      "norm": "došla",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "došla",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dve",
+      "norm": "dvije",
+      "count": 3,
+      "raw_total": 4,
+      "confidence": 0.75,
+      "change_ratio": 0.75,
+      "candidates": [
+        {
+          "norm": "dvije",
+          "count": 3
+        },
+        {
+          "norm": "dve",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "fala",
+      "norm": "hvala",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hvala",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "fejv",
+      "norm": "fave",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "fave",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "izmedju",
+      "norm": "između",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "između",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "izmedu",
+      "norm": "između",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "između",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ić",
+      "norm": "ići",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ići",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jabolkom",
+      "norm": "jabukom",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jabukom",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jebiga",
+      "norm": "jebi",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jebi",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jeli",
+      "norm": "je",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "je",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jesan",
+      "norm": "jesam",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jesam",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kazem",
+      "norm": "kažem",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kažem",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "konacno",
+      "norm": "konačno",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "konačno",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kupit",
+      "norm": "kupiti",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kupiti",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "laz",
+      "norm": "laž",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "laž",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "lose",
+      "norm": "loše",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "loše",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mislin",
+      "norm": "mislim",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mislim",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "moga",
+      "norm": "mogao",
+      "count": 3,
+      "raw_total": 4,
+      "confidence": 0.75,
+      "change_ratio": 0.75,
+      "candidates": [
+        {
+          "norm": "mogao",
+          "count": 3
+        },
+        {
+          "norm": "moga",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "najvise",
+      "norm": "najviše",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "najviše",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "napravit",
+      "norm": "napraviti",
+      "count": 3,
+      "raw_total": 4,
+      "confidence": 0.75,
+      "change_ratio": 0.75,
+      "candidates": [
+        {
+          "norm": "napraviti",
+          "count": 3
+        },
+        {
+          "norm": "napravit",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nase",
+      "norm": "naše",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "naše",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nekaj",
+      "norm": "nešto",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nešto",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nemogu",
+      "norm": "ne",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nemoš",
+      "norm": "ne",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nemrem",
+      "norm": "ne",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "niš",
+      "norm": "ništa",
+      "count": 3,
+      "raw_total": 4,
+      "confidence": 0.75,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ništa",
+          "count": 3
+        },
+        {
+          "norm": "koristi",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "otić",
+      "norm": "otići",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "otići",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pisu",
+      "norm": "pišu",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pišu",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pit",
+      "norm": "piti",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "piti",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pitat",
+      "norm": "pitati",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pitati",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "povrce",
+      "norm": "povrće",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "povrće",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pricaju",
+      "norm": "pričaju",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pričaju",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "radiu",
+      "norm": "radiju",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "radiju",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "rec",
+      "norm": "reći",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "reći",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "rozi",
+      "norm": "roza",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "roza",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "sljedecih",
+      "norm": "sljedećih",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sljedećih",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "slusam",
+      "norm": "slušam",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "slušam",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "smijat",
+      "norm": "smijati",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "smijati",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "sreca",
+      "norm": "sreća",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sreća",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "srece",
+      "norm": "sreće",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sreće",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "svit",
+      "norm": "svijet",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "svijet",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tam",
+      "norm": "tamo",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "tamo",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tesko",
+      "norm": "teško",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "teško",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "trebas",
+      "norm": "trebaš",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "trebaš",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "umisto",
+      "norm": "umjesto",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "umjesto",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "unda",
+      "norm": "onda",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "onda",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "uzas",
+      "norm": "užas",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "užas",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "veci",
+      "norm": "veći",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "veći",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "vidis",
+      "norm": "vidiš",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "vidiš",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "voce",
+      "norm": "voće",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "voće",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "vrime",
+      "norm": "vrijeme",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "vrijeme",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "wanna",
+      "norm": "want to",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "want to",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zelite",
+      "norm": "želite",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "želite",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zena",
+      "norm": "žena",
+      "count": 3,
+      "raw_total": 3,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "žena",
+          "count": 3
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "'ebe",
+      "norm": "jebe",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jebe",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bezveze",
+      "norm": "bez",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "bez",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bia",
+      "norm": "bio",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "bio",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "biciklo",
+      "norm": "bicikl",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "bicikl",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bozic",
+      "norm": "božić",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "božić",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bu",
+      "norm": "bude",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "bude",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "budjenje",
+      "norm": "buđenje",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "buđenje",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "bum",
+      "norm": "budem",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "budem",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cak",
+      "norm": "čak",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čak",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cda",
+      "norm": "cd-a",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "cd-a",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cekam",
+      "norm": "čekam",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čekam",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cekaonice",
+      "norm": "čekaonice",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čekaonice",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cekat",
+      "norm": "čekati",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čekati",
+          "count": 2
+        },
+        {
+          "norm": "čekat",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cemu",
+      "norm": "čemu",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čemu",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cesce",
+      "norm": "češće",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "češće",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cesto",
+      "norm": "često",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "često",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cila",
+      "norm": "cijela",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "cijela",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cili",
+      "norm": "cijeli",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "cijeli",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "citam",
+      "norm": "čitam",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čitam",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cudno",
+      "norm": "čudno",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čudno",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cujem",
+      "norm": "čujem",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čujem",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cula",
+      "norm": "čula",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čula",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cuo",
+      "norm": "čuo",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čuo",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "cuti",
+      "norm": "čuti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čuti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dat",
+      "norm": "dati",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "dati",
+          "count": 2
+        },
+        {
+          "norm": "dat",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "decka",
+      "norm": "dečka",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dečka",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dode",
+      "norm": "dođe",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dođe",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dodje",
+      "norm": "dođe",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dođe",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dodjite",
+      "norm": "dođite",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dođite",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dodju",
+      "norm": "dođu",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dođu",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "donit",
+      "norm": "donijeti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "donijeti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dorucak",
+      "norm": "doručak",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "doručak",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dozivjeti",
+      "norm": "doživjeti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "doživjeti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "doć",
+      "norm": "doći",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "doći",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "doživila",
+      "norm": "doživjela",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "doživjela",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "drustvenim",
+      "norm": "društvenim",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "društvenim",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ducana",
+      "norm": "dućana",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dućana",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "duze",
+      "norm": "duže",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "duže",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dvi",
+      "norm": "dvije",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "dvije",
+          "count": 2
+        },
+        {
+          "norm": "dva",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ekselans",
+      "norm": "excellence",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "excellence",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "eo",
+      "norm": "evo",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "evo",
+          "count": 2
+        },
+        {
+          "norm": "eo",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "falija",
+      "norm": "falio",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "falio",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "far",
+      "norm": "fa'",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "fa'",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "fax",
+      "norm": "faks",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "faks",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "faxa",
+      "norm": "faksa",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "faksa",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "gace",
+      "norm": "gaće",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "gaće",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "godisnji",
+      "norm": "godišnji",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "godišnji",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "goude",
+      "norm": "gaude",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "gaude",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "grcki",
+      "norm": "grčki",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "grčki",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "greske",
+      "norm": "greške",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "greške",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "haos",
+      "norm": "kaos",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kaos",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "hihihi",
+      "norm": "hihi",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hihi",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ici",
+      "norm": "ići",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ići",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "igrat",
+      "norm": "igrati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "igrati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "il'",
+      "norm": "ili",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ili",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "instalirat",
+      "norm": "instalirati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "instalirati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "iosu",
+      "norm": "ios-u",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "ios-u",
+          "count": 2
+        },
+        {
+          "norm": "iosu",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "isao",
+      "norm": "išao",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "išao",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "isprid",
+      "norm": "ispred",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ispred",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "itd",
+      "norm": "itd.",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "itd.",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "izaša",
+      "norm": "izašao",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "izašao",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "izbacit",
+      "norm": "izbaciti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "izbaciti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "izvanskolsko",
+      "norm": "izvanškolsko",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "izvanškolsko",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jebat",
+      "norm": "jebati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jebati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jebla",
+      "norm": "jebala",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "jebala",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jebo",
+      "norm": "jebao",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "jebao",
+          "count": 2
+        },
+        {
+          "norm": "jebo",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "jel'",
+      "norm": "je",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "je",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kak'",
+      "norm": "kako",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kako",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kazes",
+      "norm": "kažeš",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kažeš",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "koj",
+      "norm": "koji",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "koji",
+          "count": 2
+        },
+        {
+          "norm": "koja",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kolko",
+      "norm": "koliko",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "koliko",
+          "count": 2
+        },
+        {
+          "norm": "kolko",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kopat",
+      "norm": "kopati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kopati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "krepat",
+      "norm": "krepati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "krepati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kuzim",
+      "norm": "kužim",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kužim",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "lakse",
+      "norm": "lakše",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "lakše",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "leptirica",
+      "norm": "leptirića",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "leptirića",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "linic",
+      "norm": "linić",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "linić",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "lvl",
+      "norm": "lvl.",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "lvl.",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mejl",
+      "norm": "mail",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mail",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "milanovic",
+      "norm": "milanović",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "milanović",
+          "count": 2
+        },
+        {
+          "norm": "milanovic",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "minut",
+      "norm": "minutu",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "minutu",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "misto",
+      "norm": "mjesto",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mjesto",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mliko",
+      "norm": "mlijeko",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mlijeko",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mogel",
+      "norm": "mogao",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mogao",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "molimvas",
+      "norm": "molim",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "molim",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "moran",
+      "norm": "moram",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "moram",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "moš'",
+      "norm": "možeš",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "možeš",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "mrezama",
+      "norm": "mrežama",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mrežama",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "msm",
+      "norm": "mislim",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "mislim",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nacin",
+      "norm": "način",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "način",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "najjaci",
+      "norm": "najjači",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "najjači",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "najrađe",
+      "norm": "najradije",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "najradije",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "najveci",
+      "norm": "najveći",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "najveći",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "napravia",
+      "norm": "napravio",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "napravio",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nasli",
+      "norm": "našli",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "našli",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nastavit",
+      "norm": "nastaviti",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "nastaviti",
+          "count": 2
+        },
+        {
+          "norm": "nastavit",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nazvat",
+      "norm": "nazvati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nazvati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "neceg",
+      "norm": "nečeg",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nečeg",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "negdi",
+      "norm": "negdje",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "negdje",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nemre",
+      "norm": "ne",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nepriatelj",
+      "norm": "neprijatelj",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "neprijatelj",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nesrece",
+      "norm": "nesreće",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nesreće",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nezz",
+      "norm": "ne",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ne",
+          "count": 2
+        }
+      ],
+      "context_sensitive": true
+    },
+    {
+      "raw": "nidje",
+      "norm": "nigdje",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nigdje",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nikak",
+      "norm": "nikako",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nikako",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "niko",
+      "norm": "nitko",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nitko",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nisan",
+      "norm": "nisam",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nisam",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nuzno",
+      "norm": "nužno",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nužno",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "obecanje",
+      "norm": "obećanje",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "obećanje",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "obicno",
+      "norm": "obično",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "obično",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "objasnit",
+      "norm": "objasniti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "objasniti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "obozavam",
+      "norm": "obožavam",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "obožavam",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "obuć",
+      "norm": "obući",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "obući",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "oci",
+      "norm": "oči",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "oči",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ocito",
+      "norm": "očito",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "očito",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "odbrane",
+      "norm": "obrane",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "obrane",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "osjecaj",
+      "norm": "osjećaj",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "osjećaj",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "osjecam",
+      "norm": "osjećam",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "osjećam",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "otisa",
+      "norm": "otišao",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "otišao",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "oću",
+      "norm": "hoću",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "hoću",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "očistit",
+      "norm": "očistiti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "očistiti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ošo",
+      "norm": "otišao",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "otišao",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pisme",
+      "norm": "pjesme",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pjesme",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "piđin",
+      "norm": "pigeon",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pigeon",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pjevac",
+      "norm": "pjevač",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pjevač",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "place",
+      "norm": "plaće",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "plaće",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "poceo",
+      "norm": "počeo",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "počeo",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "podsjeca",
+      "norm": "podsjeća",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "podsjeća",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pogledat",
+      "norm": "pogledati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pogledati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pojest",
+      "norm": "pojesti",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "pojesti",
+          "count": 2
+        },
+        {
+          "norm": "pojest",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pokusala",
+      "norm": "pokušala",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pokušala",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "poslat",
+      "norm": "poslati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "poslati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pozdravit",
+      "norm": "pozdraviti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pozdraviti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "počet",
+      "norm": "početi",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "početi",
+          "count": 2
+        },
+        {
+          "norm": "počet",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "preporučit",
+      "norm": "preporučiti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "preporučiti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "preseravat",
+      "norm": "preseravati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "preseravati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "presmijesno",
+      "norm": "presmiješno",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "presmiješno",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "prica",
+      "norm": "priča",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "priča",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pricati",
+      "norm": "pričati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pričati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "primat",
+      "norm": "primati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "primati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "priznat",
+      "norm": "priznati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "priznati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "prof",
+      "norm": "prof.",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "prof.",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "proracuna",
+      "norm": "proračuna",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "proračuna",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "prosle",
+      "norm": "prošle",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "prošle",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "proć",
+      "norm": "proći",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "proći",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "pustit",
+      "norm": "pustiti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pustiti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "radija",
+      "norm": "radio",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "radio",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "razumin",
+      "norm": "razumijem",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "razumijem",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "rađe",
+      "norm": "radije",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "radije",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "reko",
+      "norm": "rekoh",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "rekoh",
+          "count": 2
+        },
+        {
+          "norm": "rekao",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "seljacina",
+      "norm": "seljačina",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "seljačina",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "shvacam",
+      "norm": "shvaćam",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "shvaćam",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "skupljat",
+      "norm": "skupljati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "skupljati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "slikat",
+      "norm": "slikati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "slikati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "slozit",
+      "norm": "složiti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "složiti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "snizenjima",
+      "norm": "sniženjima",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sniženjima",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "sprajt",
+      "norm": "sprite",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sprite",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "srat",
+      "norm": "srati",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "srati",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "stavija",
+      "norm": "stavio",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "stavio",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "stikle",
+      "norm": "štikle",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "štikle",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "strasno",
+      "norm": "strašno",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "strašno",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "sveg",
+      "norm": "svega",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "svega",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "svjecki",
+      "norm": "svjetski",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "svjetski",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "svo",
+      "norm": "sve",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "sve",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "takoder",
+      "norm": "također",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "također",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tisucu",
+      "norm": "tisuću",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "tisuću",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tocaka",
+      "norm": "točaka",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "točaka",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "tviteru",
+      "norm": "twitteru",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "twitteru",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "uredjaji",
+      "norm": "uređaji",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "uređaji",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "uspjesno",
+      "norm": "uspješno",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "uspješno",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "uć",
+      "norm": "ući",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ući",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "učit",
+      "norm": "učiti",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "učiti",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "veca",
+      "norm": "veća",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "veća",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "veceru",
+      "norm": "večeru",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "večeru",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "vratit",
+      "norm": "vratiti",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 0.6667,
+      "candidates": [
+        {
+          "norm": "vratiti",
+          "count": 2
+        },
+        {
+          "norm": "vratit",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "yo",
+      "norm": "your",
+      "count": 2,
+      "raw_total": 3,
+      "confidence": 0.6667,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "your",
+          "count": 2
+        },
+        {
+          "norm": "you",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zalosno",
+      "norm": "žalosno",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "žalosno",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zauvik",
+      "norm": "zauvijek",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "zauvijek",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zedna",
+      "norm": "žedna",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "žedna",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zene",
+      "norm": "žene",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "žene",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zenska",
+      "norm": "ženska",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ženska",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zesce",
+      "norm": "žešće",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "žešće",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zesci",
+      "norm": "žešći",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "žešći",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ziv",
+      "norm": "živ",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "živ",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "zivota",
+      "norm": "života",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "života",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "češ",
+      "norm": "ćeš",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ćeš",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "čovik",
+      "norm": "čovjek",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čovjek",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "čući",
+      "norm": "čuči",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "čuči",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "šit",
+      "norm": "shit",
+      "count": 2,
+      "raw_total": 2,
+      "confidence": 1.0,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "shit",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    }
+  ],
+  "review_pairs": [
+    {
+      "raw": "bi",
+      "top_norm": "bi",
+      "raw_total": 178,
+      "changed_count": 41,
+      "candidates": [
+        [
+          "bih",
+          35
+        ],
+        [
+          "biste",
+          3
+        ],
+        [
+          "bismo",
+          2
+        ],
+        [
+          "ste",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "bit",
+      "norm": "biti",
+      "count": 21,
+      "raw_total": 35,
+      "confidence": 0.6,
+      "change_ratio": 0.6,
+      "candidates": [
+        {
+          "norm": "biti",
+          "count": 21
+        },
+        {
+          "norm": "bit",
+          "count": 14
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "reci",
+      "norm": "reći",
+      "count": 5,
+      "raw_total": 9,
+      "confidence": 0.5556,
+      "change_ratio": 0.5556,
+      "candidates": [
+        {
+          "norm": "reći",
+          "count": 5
+        },
+        {
+          "norm": "reci",
+          "count": 4
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "ista",
+      "top_norm": "ista",
+      "raw_total": 9,
+      "changed_count": 4,
+      "candidates": [
+        [
+          "išta",
+          4
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "od",
+      "top_norm": "od",
+      "raw_total": 284,
+      "changed_count": 4,
+      "candidates": [
+        [
+          "kad",
+          2
+        ],
+        [
+          "sad",
+          1
+        ],
+        [
+          "kud",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "sam",
+      "top_norm": "sam",
+      "raw_total": 318,
+      "changed_count": 4,
+      "candidates": [
+        [
+          "samo",
+          4
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "biti",
+      "top_norm": "biti",
+      "raw_total": 73,
+      "changed_count": 3,
+      "candidates": [
+        [
+          "bit",
+          3
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "jest",
+      "top_norm": "jest",
+      "raw_total": 9,
+      "changed_count": 3,
+      "candidates": [
+        [
+          "jesti",
+          3
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pol",
+      "top_norm": "pol",
+      "raw_total": 10,
+      "changed_count": 3,
+      "candidates": [
+        [
+          "pola",
+          2
+        ],
+        [
+          "pol.",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "u",
+      "top_norm": "u",
+      "raw_total": 1003,
+      "changed_count": 3,
+      "candidates": [
+        [
+          "i",
+          1
+        ],
+        [
+          "su",
+          1
+        ],
+        [
+          "you",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "vidjet",
+      "norm": "vidjeti",
+      "count": 3,
+      "raw_total": 5,
+      "confidence": 0.6,
+      "change_ratio": 0.6,
+      "candidates": [
+        {
+          "norm": "vidjeti",
+          "count": 3
+        },
+        {
+          "norm": "vidjet",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "dobit",
+      "top_norm": "dobit",
+      "raw_total": 5,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "dobiti",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "god",
+      "top_norm": "god",
+      "raw_total": 18,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "god.",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "gospon",
+      "top_norm": "gospon",
+      "raw_total": 3,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "gospom",
+          1
+        ],
+        [
+          "gospodin",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "jer",
+      "top_norm": "jer",
+      "raw_total": 114,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "je",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "jeste",
+      "top_norm": "jeste",
+      "raw_total": 11,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "jest",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "k",
+      "top_norm": "k",
+      "raw_total": 7,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "k.",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "morat",
+      "top_norm": "morat",
+      "raw_total": 9,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "morati",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "ne",
+      "top_norm": "ne",
+      "raw_total": 444,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "na",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "ni",
+      "top_norm": "ni",
+      "raw_total": 69,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "jemput",
+          1
+        ],
+        [
+          "jednu",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pop",
+      "top_norm": "pop",
+      "raw_total": 4,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "upne",
+          1
+        ],
+        [
+          "up",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "rijeci",
+      "top_norm": "rijeci",
+      "raw_total": 7,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "riječi",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "sex",
+      "top_norm": "sex",
+      "raw_total": 6,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "seks",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "si",
+      "top_norm": "si",
+      "raw_total": 99,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "su",
+          1
+        ],
+        [
+          "se",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "uzet",
+      "norm": "uzeti",
+      "count": 2,
+      "raw_total": 4,
+      "confidence": 0.5,
+      "change_ratio": 0.5,
+      "candidates": [
+        {
+          "norm": "uzeti",
+          "count": 2
+        },
+        {
+          "norm": "uzet",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "van",
+      "top_norm": "van",
+      "raw_total": 13,
+      "changed_count": 2,
+      "candidates": [
+        [
+          "vam",
+          2
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "a",
+      "top_norm": "a",
+      "raw_total": 354,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ha",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "bilo",
+      "top_norm": "bilo",
+      "raw_total": 58,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "bijelo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "biloj",
+      "top_norm": "biloj",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "bijeloj",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "bude",
+      "top_norm": "bude",
+      "raw_total": 30,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "budu",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "cause",
+      "top_norm": "cause",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "because",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "cipela",
+      "top_norm": "cipela",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "cipele",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "d",
+      "top_norm": "d",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "the",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "dan",
+      "top_norm": "dan",
+      "raw_total": 58,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "dani",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "danny",
+      "top_norm": "danny",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "dannyja",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "de",
+      "top_norm": "de",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "daj",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "debeli",
+      "top_norm": "debeli",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "debeo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "dobra",
+      "top_norm": "dobra",
+      "raw_total": 11,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "dobar",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "dobro",
+      "top_norm": "dobro",
+      "raw_total": 52,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "došao",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "dvoje",
+      "top_norm": "dvoje",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "dvije",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "etto",
+      "top_norm": "etto",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "eto",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "fotto",
+      "top_norm": "fotto",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "foto",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "fpzg",
+      "top_norm": "fpzg",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "fpzg-a",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "gej",
+      "top_norm": "gej",
+      "raw_total": 5,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "gay",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "godin",
+      "top_norm": "godin",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "godina",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "godina",
+      "top_norm": "godina",
+      "raw_total": 36,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "godine",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "gori",
+      "top_norm": "gori",
+      "raw_total": 4,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "gore",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "govorit",
+      "top_norm": "govorit",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "govoriti",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "govoriti",
+      "top_norm": "govoriti",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "govorit",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "htv",
+      "top_norm": "htv",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "htv-u",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "igra",
+      "top_norm": "igra",
+      "raw_total": 6,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "igrao",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "imao",
+      "top_norm": "imao",
+      "raw_total": 12,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "imamo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "in",
+      "top_norm": "in",
+      "raw_total": 23,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "app",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "info",
+      "top_norm": "info",
+      "raw_total": 4,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "informaciju",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "iz",
+      "top_norm": "iz",
+      "raw_total": 125,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "is",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "j",
+      "top_norm": "j",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "je",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "jedno",
+      "top_norm": "jedno",
+      "raw_total": 20,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "jedne",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "jesti",
+      "top_norm": "jesti",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "jest",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "kick",
+      "top_norm": "kick",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ass",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "kojeg",
+      "top_norm": "kojeg",
+      "raw_total": 10,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "koji",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "kojim",
+      "top_norm": "kojim",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "kojima",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "krivu",
+      "top_norm": "krivu",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "krivo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "kuca",
+      "top_norm": "kuca",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "kuća",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "kunu",
+      "top_norm": "kunu",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "dvije",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "ma",
+      "top_norm": "ma",
+      "raw_total": 24,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "na",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "make",
+      "top_norm": "make",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "up-ove",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "moj",
+      "top_norm": "moj",
+      "raw_total": 29,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "mojoj",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "moji",
+      "top_norm": "moji",
+      "raw_total": 4,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "mojih",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "morati",
+      "top_norm": "morati",
+      "raw_total": 8,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "morat",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "na",
+      "top_norm": "na",
+      "raw_total": 766,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pa",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "nas",
+      "top_norm": "nas",
+      "raw_total": 47,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "naš",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "nasa",
+      "top_norm": "nasa",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "nasa-e",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "naša",
+      "top_norm": "naša",
+      "raw_total": 6,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "našao",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "nego",
+      "top_norm": "nego",
+      "raw_total": 61,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "li",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "nekom",
+      "top_norm": "nekom",
+      "raw_total": 10,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "nekome",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "nisu",
+      "top_norm": "nisu",
+      "raw_total": 39,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "nišu",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "nou",
+      "top_norm": "nou",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "no",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "o",
+      "top_norm": "o",
+      "raw_total": 151,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "od",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "oa",
+      "top_norm": "oa",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pa",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "ode",
+      "top_norm": "ode",
+      "raw_total": 9,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ovdje",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "odjelu",
+      "top_norm": "odjelu",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "odijelu",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "old",
+      "top_norm": "old",
+      "raw_total": 6,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "timera",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "os",
+      "top_norm": "os",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "te",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "ovi",
+      "top_norm": "ovi",
+      "raw_total": 12,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ovaj",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "ovu",
+      "top_norm": "ovu",
+      "raw_total": 9,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ove",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pari",
+      "top_norm": "pari",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "parova",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pi",
+      "top_norm": "pi",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "po",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pismo",
+      "top_norm": "pismo",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pjesmo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pivu",
+      "top_norm": "pivu",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pivo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pjesama",
+      "top_norm": "pjesama",
+      "raw_total": 4,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pjesma",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "po",
+      "top_norm": "po",
+      "raw_total": 90,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pol",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "podne",
+      "top_norm": "podne",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "podneva",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pomoć",
+      "top_norm": "pomoć",
+      "raw_total": 7,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pomoći",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "posjetio",
+      "top_norm": "posjetio",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "podsjetio",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "posla",
+      "top_norm": "posla",
+      "raw_total": 10,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "pošla",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "pred",
+      "top_norm": "pred",
+      "raw_total": 17,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "večernjim",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "provodit",
+      "top_norm": "provodit",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "provoditi",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "rast",
+      "top_norm": "rast",
+      "raw_total": 4,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "rasti",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "rijeka",
+      "top_norm": "rijeka",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "rijeke",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "s",
+      "top_norm": "s",
+      "raw_total": 244,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "gorega",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "sa",
+      "top_norm": "sa",
+      "raw_total": 167,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "da",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "se",
+      "top_norm": "se",
+      "raw_total": 731,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ne",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "skype",
+      "top_norm": "skype",
+      "raw_total": 6,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "skypeu",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "slobodna",
+      "top_norm": "slobodna",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "slobodana",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "smo",
+      "top_norm": "smo",
+      "raw_total": 83,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "samo",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "sresti",
+      "top_norm": "sresti",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "srest",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "svako",
+      "top_norm": "svako",
+      "raw_total": 5,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "svatko",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "sveta",
+      "top_norm": "sveta",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "svijeta",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "tl",
+      "top_norm": "tl",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "tl-u",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "too",
+      "top_norm": "too",
+      "raw_total": 8,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "to",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "upast",
+      "top_norm": "upast",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "upasti",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "uspije",
+      "top_norm": "uspije",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "uspjeh",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "vanka",
+      "top_norm": "vanka",
+      "raw_total": 3,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "vani",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "vas",
+      "top_norm": "vas",
+      "raw_total": 28,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "vaš",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "vasi",
+      "top_norm": "vasi",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "vaši",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "već",
+      "top_norm": "već",
+      "raw_total": 51,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "većim",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "vidi",
+      "top_norm": "vidi",
+      "raw_total": 7,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "vodi",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "vratiti",
+      "top_norm": "vratiti",
+      "raw_total": 5,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "vratit",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "weird",
+      "top_norm": "weird",
+      "raw_total": 5,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "ass",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "x",
+      "top_norm": "x",
+      "raw_total": 8,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "file",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "your",
+      "top_norm": "your",
+      "raw_total": 15,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "self",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "yt",
+      "top_norm": "yt",
+      "raw_total": 2,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "yt-u",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    },
+    {
+      "raw": "za",
+      "top_norm": "za",
+      "raw_total": 434,
+      "changed_count": 1,
+      "candidates": [
+        [
+          "uvijek",
+          1
+        ]
+      ],
+      "note": "mostly preserved in train"
+    }
+  ],
+  "ambiguous_pairs": [
+    {
+      "raw": "triba",
+      "norm": "treba",
+      "count": 2,
+      "raw_total": 4,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "treba",
+          "count": 2
+        },
+        {
+          "norm": "trebao",
+          "count": 2
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kog",
+      "norm": "koga",
+      "count": 1,
+      "raw_total": 2,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "koga",
+          "count": 1
+        },
+        {
+          "norm": "kojeg",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "kom",
+      "norm": "kom.",
+      "count": 1,
+      "raw_total": 2,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "kom.",
+          "count": 1
+        },
+        {
+          "norm": "kojem",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "neš",
+      "norm": "nećeš",
+      "count": 1,
+      "raw_total": 2,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "nećeš",
+          "count": 1
+        },
+        {
+          "norm": "nešto",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "nist",
+      "norm": "ništa",
+      "count": 1,
+      "raw_total": 2,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "ništa",
+          "count": 1
+        },
+        {
+          "norm": "koristi",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "piva",
+      "norm": "pjeva",
+      "count": 1,
+      "raw_total": 2,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pjeva",
+          "count": 1
+        },
+        {
+          "norm": "pjevao",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    },
+    {
+      "raw": "poala",
+      "norm": "pala",
+      "count": 1,
+      "raw_total": 2,
+      "confidence": 0.5,
+      "change_ratio": 1.0,
+      "candidates": [
+        {
+          "norm": "pala",
+          "count": 1
+        },
+        {
+          "norm": "palo",
+          "count": 1
+        }
+      ],
+      "context_sensitive": false
+    }
+  ],
+  "paper_seed_pairs": [
+    {
+      "raw": "sto",
+      "norm": "što"
+    },
+    {
+      "raw": "sta",
+      "norm": "što"
+    },
+    {
+      "raw": "šta",
+      "norm": "što"
+    },
+    {
+      "raw": "cu",
+      "norm": "ću"
+    },
+    {
+      "raw": "ce",
+      "norm": "će"
+    },
+    {
+      "raw": "jos",
+      "norm": "još"
+    },
+    {
+      "raw": "vise",
+      "norm": "više"
+    },
+    {
+      "raw": "al",
+      "norm": "ali"
+    },
+    {
+      "raw": "ak",
+      "norm": "ako"
+    },
+    {
+      "raw": "di",
+      "norm": "gdje"
+    },
+    {
+      "raw": "kak",
+      "norm": "kako"
+    },
+    {
+      "raw": "tak",
+      "norm": "tako"
+    },
+    {
+      "raw": "san",
+      "norm": "sam"
+    },
+    {
+      "raw": "uvik",
+      "norm": "uvijek"
+    },
+    {
+      "raw": "gledat",
+      "norm": "gledati"
+    },
+    {
+      "raw": "moš",
+      "norm": "možeš"
+    },
+    {
+      "raw": "nes",
+      "norm": "nešto"
+    },
+    {
+      "raw": "neš",
+      "norm": "nešto"
+    },
+    {
+      "raw": "isprid",
+      "norm": "ispred"
+    },
+    {
+      "raw": "cili",
+      "norm": "cijeli"
+    },
+    {
+      "raw": "posudit",
+      "norm": "posuditi"
+    },
+    {
+      "raw": "neko",
+      "norm": "netko"
+    },
+    {
+      "raw": "kauc",
+      "norm": "kauč"
+    },
+    {
+      "raw": "noz",
+      "norm": "nož"
+    },
+    {
+      "raw": "budzet",
+      "norm": "budžet"
+    },
+    {
+      "raw": "tviteras",
+      "norm": "twitteraš"
+    },
+    {
+      "raw": "fešn",
+      "norm": "fashion"
+    },
+    {
+      "raw": "fejsbuk",
+      "norm": "facebook"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+raw,norm,count,raw_total,pattern
+ni,niet,83,86,other_substitution
+aant,aan het,38,38,whitespace_change
+da,dat,34,35,other_substitution
+mn,mijn,34,34,other_substitution
+goe,goed,31,32,other_substitution
+ff,even,31,33,other_substitution
+mss,misschien,30,32,expansion_or_abbreviation_restore
+gwn,gewoon,27,27,expansion_or_abbreviation_restore
+ma,maar,21,23,other_substitution
+nie,niet,20,21,other_substitution
+effe,even,19,21,other_substitution
+ne,een,18,19,other_substitution
+nen,een,17,18,other_substitution
+kheb,ik heb,17,25,whitespace_change
+moete,moeten,15,18,other_substitution
+ist,is het,15,16,whitespace_change
+dn,dan,15,19,other_substitution
+'n,een,14,14,other_substitution
+drinkn,drinken,14,14,other_substitution
+'t,het,12,16,other_substitution
+wa,wat,12,13,other_substitution
+kga,ik ga,12,22,whitespace_change
+ng,nog,12,12,other_substitution
+kben,ik ben,12,20,whitespace_change
+m'n,mijn,12,12,other_substitution
+we,We,12,35,case_change
+wss,waarschijnlijk,11,12,expansion_or_abbreviation_restore
+hebbe,hebben,11,11,other_substitution
+wete,weten,11,13,other_substitution
+mja,Maar ja,11,15,whitespace_change
+t,het,11,11,other_substitution
+mr,maar,10,11,other_substitution
+prive,privé,10,10,other_substitution
+aub,alstublieft,10,11,expansion_or_abbreviation_restore
+idd,inderdaad,10,17,expansion_or_abbreviation_restore
+gij,jij,10,11,other_substitution
+vanavnd,vanavond,10,11,other_substitution
+vd,van de,10,10,whitespace_change
+kzal,Ik zal,9,17,whitespace_change
+kome,komen,9,9,other_substitution
+kga,Ik ga,9,22,whitespace_change
+vr,voor,9,9,other_substitution
+nt,niet,8,8,other_substitution
+kheb,Ik heb,8,25,whitespace_change
+vn,van,8,8,other_substitution
+gn,geen,8,20,other_substitution
+nr,naar,8,8,other_substitution
+mense,mensen,8,9,other_substitution
+kzal,ik zal,8,17,whitespace_change
+ik,Ik,8,121,case_change
+kben,Ik ben,8,20,whitespace_change
+niej,niet,8,8,other_substitution
+Kben,Ik ben,8,13,whitespace_change
+gn,gaan,7,20,other_substitution
+trg,terug,7,7,other_substitution
+zitte,zitten,7,9,other_substitution
+seg,Zeg,7,8,other_substitution
+iet,iets,7,7,other_substitution
+buite,buiten,7,7,other_substitution
+k,ik,7,7,other_substitution
+kzou,ik zou,7,10,whitespace_change
+maar,Maar,7,48,case_change
+sebiet,straks,7,9,other_substitution
+denkek,denk ik,7,7,whitespace_change
+iig,in ieder geval,7,7,whitespace_change
+enen,eens,7,7,other_substitution
+idd,Inderdaad,6,17,expansion_or_abbreviation_restore
+jah,Ja,6,8,other_substitution
+kwas,ik was,6,7,whitespace_change
+ant,aan het,6,6,whitespace_change
+eeft,heeft,6,6,other_substitution
+vo,voor,6,8,other_substitution
+worde,worden,6,6,other_substitution
+tzal,het zal,6,11,whitespace_change
+morge,morgen,6,6,other_substitution
+em,hem,6,7,other_substitution
+nja,Ja,6,7,other_substitution
+jaa,Ja,6,9,other_substitution
+Kheb,Ik heb,6,6,whitespace_change
+ke,keer,6,6,other_substitution
+vnvnd,vanavond,6,6,expansion_or_abbreviation_restore
+n,een,6,6,other_substitution
+én,en,6,6,other_substitution
+Kga,Ik ga,5,8,whitespace_change
+ier,hier,5,5,other_substitution
+tege,tegen,5,5,other_substitution
+vnv,vanavond,5,5,expansion_or_abbreviation_restore
+slape,slapen,5,5,other_substitution
+ge,jij,5,11,other_substitution
+oke,oké,5,5,other_substitution
+blijve,blijven,5,5,other_substitution
+dak,dat ik,5,6,whitespace_change
+daje,dat je,5,6,whitespace_change
+es,eens,5,5,other_substitution
+knuf,knuffel,5,6,expansion_or_abbreviation_restore
+ge,je,5,11,other_substitution
+dr,er,5,9,other_substitution
+tov,ten opzichte van,5,5,whitespace_change
+tzal,Het zal,5,11,whitespace_change
+ipv,in plaats van,5,5,whitespace_change
+andrs,anders,5,5,other_substitution
+Neeje,Nee,5,5,other_substitution
+Kben,ik ben,5,13,whitespace_change
+Kzal,Ik zal,5,7,whitespace_change
+Hebbe,hebben,5,6,other_substitution
+milj,miljoen,5,5,expansion_or_abbreviation_restore
+kmoe,Ik moet,4,7,whitespace_change
+'k,ik,4,6,other_substitution
+vant,van het,4,5,whitespace_change
+aan't,aan het,4,4,whitespace_change
+jy,jij,4,4,other_substitution
+kank,kan ik,4,4,whitespace_change
+kzen,ik ben,4,6,whitespace_change
+volge,volgen,4,4,other_substitution
+zalk,zal ik,4,4,whitespace_change
+enz,enzo,4,4,other_substitution
+mja,maar ja,4,15,whitespace_change
+men,mijn,4,4,other_substitution
+en,En,4,105,case_change
+kweet,ik weet,4,5,whitespace_change
+zn,zijn,4,4,other_substitution
+niemeer,niet meer,4,4,whitespace_change
+wrm,waarom,4,7,expansion_or_abbreviation_restore
+et,het,4,5,other_substitution
+amai,Amai,4,5,case_change
+ht,het,4,4,other_substitution
+hebk,heb ik,4,4,whitespace_change
+tis,het is,4,7,whitespace_change
+wrs,waarschijnlijk,4,4,expansion_or_abbreviation_restore
+twas,het was,4,5,whitespace_change
+bn,ben,4,6,other_substitution
+Oke,Oké,4,6,other_substitution
+Jah,Ja,4,5,other_substitution
+u,uur,4,24,other_substitution
+Vnvnd,Vanavond,4,5,expansion_or_abbreviation_restore
+zulln,zullen,4,4,other_substitution
+zittn,zitten,4,4,other_substitution
+gn,Geen,4,20,other_substitution
+lkkr,lekker,4,4,other_substitution
+tog,toch,4,4,other_substitution
+ivm,in verband met,4,4,whitespace_change
+my,mijn,4,7,other_substitution
+v,van,4,6,other_substitution
+kwil,Ik wil,3,5,whitespace_change
+ben,Ben,3,19,case_change
+is,eens,3,79,other_substitution
+wrm,Waarom,3,7,expansion_or_abbreviation_restore
+drinke,drinken,3,3,other_substitution
+bwa,Bwa,3,4,case_change
+morgn,morgen,3,3,other_substitution
+kzou,Ik zou,3,10,whitespace_change
+int,in het,3,4,whitespace_change
+den,de,3,4,other_substitution
+mor,maar,3,3,other_substitution
+das,dat is,3,5,whitespace_change
+wtf,Wtf,3,4,case_change
+khad,ik had,3,5,whitespace_change
+me,met,3,32,other_substitution
+mene,mijn,3,3,other_substitution
+lere,leren,3,3,other_substitution
+moetn,moeten,3,4,other_substitution
+strax,straks,3,3,other_substitution
+presies,precies,3,3,other_substitution
+moe,moet,3,4,other_substitution
+der,er,3,4,other_substitution
+kmoet,ik moet,3,4,whitespace_change
+vrage,vragen,3,3,other_substitution
+omda,omdat,3,4,other_substitution
+kdacht,ik dacht,3,3,whitespace_change
+pakke,pakken,3,3,other_substitution
+daj,dat je,3,4,whitespace_change
+hy,hij,3,3,other_substitution
+ze,Ze,3,42,case_change
+anders,Anders,3,8,case_change
+hiere,hier,3,3,other_substitution
+magk,mag ik,3,3,whitespace_change
+zegge,zeggen,3,3,other_substitution
+da's,dat is,3,3,whitespace_change
+na,naar,3,8,other_substitution
+kijke,kijken,3,3,other_substitution
+wij,Wij,3,11,case_change
+srry,sorry,3,3,other_substitution
+gastn,gasten,3,3,other_substitution
+jaa,ja,3,9,other_substitution
+nimeer,niet meer,3,3,whitespace_change
+tss,tussen,3,4,expansion_or_abbreviation_restore
+alsk,als ik,3,5,whitespace_change
+kmoe,ik moet,3,7,whitespace_change
+zoeke,zoeken,3,3,other_substitution
+moete,moet je,3,18,whitespace_change
+as,als,3,3,other_substitution
+oek,ook,3,3,other_substitution
+kado,cadeau,3,3,other_substitution
+veel,Veel,3,21,case_change
+'t,Het,3,16,other_substitution
+Idd,Inderdaad,3,3,expansion_or_abbreviation_restore
+Jaaaaa,Ja,3,3,repeated_char_reduction
+lekkah,lekker,3,3,other_substitution
+'m,hem,3,4,other_substitution
+Da,Dat,3,3,other_substitution
+Ok,Oké,3,3,other_substitution
+min,minuten,3,3,expansion_or_abbreviation_restore
+Wa,Wat,3,3,other_substitution
+ebt,hebt,3,3,other_substitution
+oe,hoe,3,4,other_substitution
+rsca,Anderlecht,3,3,expansion_or_abbreviation_restore
+als,Als,3,22,case_change
+komn,komen,3,3,other_substitution
+kxal,Ik zal,3,5,whitespace_change
+enz.,enzo,3,3,other_substitution
+un,een,3,4,other_substitution
+z'n,zijn,3,4,other_substitution
+i.p.v.,in plaats van,3,3,whitespace_change
+beswll,best wel,3,3,whitespace_change
+oooh,Oh,3,4,repeated_char_reduction
+ut,het,3,3,other_substitution
+jj,jij,3,4,other_substitution
+mbt,met betrekking tot,3,3,whitespace_change
+nav,naar aanleiding van,3,4,whitespace_change
+oa,onder andere,3,3,whitespace_change
+nogh,nog,3,3,other_substitution
+3x,3 keer,3,3,digit_related_change
+is,zijn,3,79,other_substitution
+dr,door,3,9,other_substitution
+tzijn,het zijn,2,4,whitespace_change
+kad,Ik had,2,2,whitespace_change
+neme,nemen,2,2,other_substitution
+dermee,ermee,2,3,other_substitution
+neeje,Nee,2,2,other_substitution
+juste,juist,2,3,other_substitution
+laminuta,Laminuta,2,2,case_change
+nuu,nu,2,2,other_substitution
+favo,favoriete,2,2,expansion_or_abbreviation_restore
+ffkes,even,2,2,other_substitution
+trug,terug,2,2,other_substitution
+jah,ja,2,8,other_substitution
+neje,Nee,2,2,other_substitution
+hebbn,hebben,2,2,other_substitution
+veur,voor,2,2,other_substitution
+zeggn,zeggen,2,2,other_substitution
+wnt,Want,2,3,other_substitution
+pcies,precies,2,2,other_substitution
+ni,Niet,2,86,other_substitution
+kem,Kem,2,5,case_change
+kzout,Ik zou het,2,2,whitespace_change
+probl,probleem,2,2,expansion_or_abbreviation_restore
+vertelle,vertellen,2,2,other_substitution
+tis,Het is,2,7,whitespace_change
+kzen,Ik ben,2,6,whitespace_change
+iemand,Iemand,2,9,case_change
+want,Want,2,7,case_change
+dg,dag,2,3,other_substitution
+srr,sorry,2,2,other_substitution
+wachte,wachten,2,2,other_substitution
+heb,Heb,2,13,case_change
+lache,lachen,2,2,other_substitution
+jwl,Jawel,2,2,other_substitution
+kwou,ik wou,2,2,whitespace_change
+kvoel,ik voel,2,2,whitespace_change
+kzit,ik zit,2,3,whitespace_change
+mee,met,2,18,other_substitution
+gistere,gisteren,2,2,other_substitution
+verschijne,verschijnen,2,2,other_substitution
+gan,ga,2,4,other_substitution
+alsk,Als ik,2,5,whitespace_change
+zowiezo,sowieso,2,2,other_substitution
+guan,gaan,2,2,other_substitution
+ow,Ow,2,2,case_change
+ligge,liggen,2,2,other_substitution
+jupiler,Jupiler,2,2,case_change
+studere,studeren,2,2,other_substitution
+kik,ik,2,6,other_substitution
+tzijn,Het zijn,2,4,whitespace_change
+mensn,mensen,2,2,other_substitution
+kmoest,ik moest,2,2,whitespace_change
+weeral,alweer,2,2,other_substitution
+krijge,krijgen,2,2,other_substitution
+ma,Maar,2,23,other_substitution
+sbiet,straks,2,2,other_substitution
+omg,Omg,2,2,case_change
+effe,Even,2,21,other_substitution
+triske,Triske,2,2,case_change
+gegeve,gegeven,2,2,other_substitution
+jessii,Jessii,2,2,case_change
+neh,nee,2,2,other_substitution
+my,mij,2,7,other_substitution
+grrr,Grrr,2,2,case_change
+kunne,kunnen,2,2,other_substitution
+kgon,Ik ga,2,2,whitespace_change
+ale,Ale,2,2,case_change
+cafe,café,2,2,other_substitution
+moge,mogen,2,2,other_substitution
+fzo,ofzo,2,2,other_substitution
+ach,Ach,2,2,case_change
+alty,altijd,2,2,other_substitution
+kwil,ik wil,2,5,whitespace_change
+vriende,vrienden,2,2,other_substitution
+komde,kom je,2,2,whitespace_change
+in't,in het,2,2,whitespace_change
+zo,Zo,2,30,case_change

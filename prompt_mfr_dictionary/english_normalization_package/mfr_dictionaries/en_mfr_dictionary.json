@@ -1,0 +1,8035 @@
+{
+  "language": "en",
+  "description": "English train-derived MFR dictionary for MultiLexNorm-style lexical normalization. Use high_confidence_pairs for automatic replacement; send review/ambiguous/context-sensitive pairs to target-token prompt/model fallback.",
+  "source": "train-00000-of-00001.parquet",
+  "train_stats": {
+    "sentences": 2360,
+    "tokens": 35216,
+    "changed_tokens": 2666,
+    "changed_ratio": 0.075704,
+    "distinct_changed_raw": 922
+  },
+  "validation_stats": {
+    "sentences": 590,
+    "tokens": 9169,
+    "changed_tokens": 633,
+    "changed_ratio": 0.069037
+  },
+  "pattern_counts_train_changed_tokens": {
+    "other_substitution": 933,
+    "expansion_or_abbreviation_restore": 928,
+    "apostrophe_or_contraction_change": 417,
+    "whitespace_change": 305,
+    "repeated_char_reduction": 44,
+    "digit_related_change": 33,
+    "shortening_or_deletion": 6
+  },
+  "thresholds": {
+    "high_confidence_pairs": "top_count>=3, top_norm_confidence>=0.85, top_norm/raw_total>=0.55, protected tokens excluded; selected stable short forms allowed",
+    "balanced_pairs_for_analysis": "high-confidence plus count>=2, top_norm_confidence>=0.75, top_norm/raw_total>=0.25; analysis/ablation only"
+  },
+  "high_confidence_pairs": {
+    "aint": "ain't",
+    "alot": "a lot",
+    "arent": "aren't",
+    "bbm": "blackberry messenger",
+    "bc": "because",
+    "bck": "back",
+    "bday": "birthday",
+    "bf": "boyfriend",
+    "bout": "about",
+    "bro": "brother",
+    "bruh": "brother",
+    "cant": "can't",
+    "chillin": "chilling",
+    "colour": "color",
+    "congrats": "congratulations",
+    "couldnt": "couldn't",
+    "coz": "because",
+    "cus": "because",
+    "cuz": "because",
+    "d": "the",
+    "da": "the",
+    "dat": "that",
+    "dats": "that's",
+    "dem": "them",
+    "didnt": "didn't",
+    "dis": "this",
+    "dms": "direct messages",
+    "dnt": "don't",
+    "doesnt": "doesn't",
+    "doin": "doing",
+    "dont": "don't",
+    "dressin": "dressing",
+    "favourite": "favorite",
+    "favs": "favorites",
+    "feelin": "feeling",
+    "finna": "going to",
+    "followback": "follow back",
+    "fone": "phone",
+    "fuckin": "fucking",
+    "fuk": "fuck",
+    "fxck": "fuck",
+    "gettin": "getting",
+    "goin": "going",
+    "gon": "gonna",
+    "gona": "gonna",
+    "gonna": "going to",
+    "gurl": "girl",
+    "havent": "haven't",
+    "hella": "hell of a lot of",
+    "hes": "he's",
+    "holdin": "holding",
+    "hve": "have",
+    "ig": "instagram",
+    "ima": "i'm going to",
+    "imma": "i'm going to",
+    "isnt": "isn't",
+    "ive": "i've",
+    "jk": "just kidding",
+    "jst": "just",
+    "jus": "just",
+    "juss": "just",
+    "justunfollow": "just unfollow",
+    "kno": "know",
+    "knw": "know",
+    "labour": "labor",
+    "layin": "laying",
+    "learnt": "learned",
+    "lik": "like",
+    "lil": "little",
+    "longway": "long way",
+    "lookin": "looking",
+    "luv": "love",
+    "ma": "my",
+    "mfs": "mother fuckers",
+    "momma": "mama",
+    "nd": "and",
+    "nigga": "nigger",
+    "niggas": "niggers",
+    "nighas": "niggers",
+    "nothin": "nothing",
+    "nvm": "never mind",
+    "nxt": "next",
+    "peewee": "pee wee",
+    "pic": "picture",
+    "pics": "pictures",
+    "playin": "playing",
+    "pls": "please",
+    "plz": "please",
+    "ppl": "people",
+    "rockin": "rocking",
+    "sayin": "saying",
+    "smth": "something",
+    "soff": "soft",
+    "soo": "so",
+    "soooo": "so",
+    "srsly": "seriously",
+    "talkin": "talking",
+    "thats": "that's",
+    "theres": "there's",
+    "theyre": "they're",
+    "thinkin": "thinking",
+    "tho": "though",
+    "thru": "through",
+    "tht": "that",
+    "tryna": "trying to",
+    "tweetin": "tweeting",
+    "txt": "text",
+    "urself": "yourself",
+    "vid": "video",
+    "wanna": "want to",
+    "wasnt": "wasn't",
+    "wat": "what",
+    "watchin": "watching",
+    "wen": "when",
+    "whats": "what's",
+    "whos": "who's",
+    "wht": "what",
+    "whut": "what",
+    "wid": "with",
+    "wit": "with",
+    "woulda": "would have",
+    "wouldnt": "wouldn't",
+    "wut": "what",
+    "yall": "y'all",
+    "yea": "yeah",
+    "youu": "you",
+    "yu": "you"
+  },
+  "balanced_pairs_for_analysis": {
+    "abt": "about",
+    "af": "as fuck",
+    "aint": "ain't",
+    "allways": "always",
+    "alot": "a lot",
+    "arent": "aren't",
+    "asap": "as soon as possible",
+    "askin": "asking",
+    "awks": "awkwards",
+    "ayebody": "anybody",
+    "babe": "baby",
+    "badass": "bad ass",
+    "bbm": "blackberry messenger",
+    "bc": "because",
+    "bck": "back",
+    "bcz": "because",
+    "bday": "birthday",
+    "bein": "being",
+    "bestfriends": "best friends",
+    "bf": "boyfriend",
+    "bout": "about",
+    "bouta": "about to",
+    "boutta": "about to",
+    "brah": "brother",
+    "bro": "brother",
+    "bruh": "brother",
+    "bt": "but",
+    "bxtch": "bitch",
+    "cant": "can't",
+    "cause": "because",
+    "childrens": "children",
+    "chillin": "chilling",
+    "choco": "chocolate",
+    "colour": "color",
+    "comin": "coming",
+    "congrats": "congratulations",
+    "convo": "conversation",
+    "couldnt": "couldn't",
+    "coz": "because",
+    "cum": "come",
+    "cus": "because",
+    "cuz": "because",
+    "d": "the",
+    "da": "the",
+    "dam": "damn",
+    "dat": "that",
+    "dats": "that's",
+    "dd": "did",
+    "decor": "decoration",
+    "dem": "them",
+    "didnt": "didn't",
+    "dieing": "dying",
+    "dis": "this",
+    "dm": "direct message",
+    "dms": "direct messages",
+    "dnt": "don't",
+    "doesnt": "doesn't",
+    "doin": "doing",
+    "dont": "don't",
+    "dosent": "doesn't",
+    "dressin": "dressing",
+    "droppin": "dropping",
+    "drugz": "drugs",
+    "dumbass": "dumb ass",
+    "dun": "don't",
+    "em": "them",
+    "fak": "fuck",
+    "fallin": "falling",
+    "fangirl": "fan girl",
+    "favourite": "favorite",
+    "favs": "favorites",
+    "fb": "facebook",
+    "fck": "fuck",
+    "feelin": "feeling",
+    "finna": "going to",
+    "follback": "follow back",
+    "followback": "follow back",
+    "fone": "phone",
+    "forreal": "for real",
+    "fu": "fuck",
+    "fuckin": "fucking",
+    "fuckn": "fucking",
+    "fuk": "fuck",
+    "fux": "fuck",
+    "fxck": "fuck",
+    "gettin": "getting",
+    "goin": "going",
+    "gon": "gonna",
+    "gona": "gonna",
+    "gonna": "going to",
+    "goodmorning": "good morning",
+    "gud": "good",
+    "gurl": "girl",
+    "hatin": "hating",
+    "havent": "haven't",
+    "hella": "hell of a lot of",
+    "hes": "he's",
+    "holdin": "holding",
+    "hve": "have",
+    "hw": "homework",
+    "ig": "instagram",
+    "ight": "alright",
+    "ik": "i know",
+    "ill": "i'll",
+    "ima": "i'm going to",
+    "imma": "i'm going to",
+    "infact": "in fact",
+    "isnt": "isn't",
+    "ive": "i've",
+    "jk": "just kidding",
+    "jst": "just",
+    "jus": "just",
+    "juss": "just",
+    "justunfollow": "just unfollow",
+    "kno": "know",
+    "knw": "know",
+    "kys": "kill youself",
+    "labour": "labor",
+    "lastnight": "last night",
+    "layin": "laying",
+    "learnt": "learned",
+    "leavin": "leaving",
+    "lic": "license",
+    "lik": "like",
+    "lil": "little",
+    "livin": "living",
+    "longway": "long way",
+    "lookin": "looking",
+    "luv": "love",
+    "lyk": "like",
+    "ma": "my",
+    "mee": "me",
+    "mep": "map",
+    "mfs": "mother fuckers",
+    "mins": "minutes",
+    "mlb": "major league baseball",
+    "momma": "mama",
+    "nd": "and",
+    "neighbour": "neighbor",
+    "nigga": "nigger",
+    "niggas": "niggers",
+    "nighas": "niggers",
+    "nomore": "no more",
+    "nothin": "nothing",
+    "nt": "not",
+    "nvm": "never mind",
+    "nxt": "next",
+    "nyt": "new york times",
+    "ol": "old",
+    "p": "peace",
+    "peewee": "pee wee",
+    "perf": "perfect",
+    "pic": "picture",
+    "pics": "pictures",
+    "pik": "pick",
+    "playin": "playing",
+    "pls": "please",
+    "plz": "please",
+    "poppin": "popping",
+    "ppl": "people",
+    "programme": "program",
+    "rn": "right now",
+    "rockin": "rocking",
+    "rumours": "rumors",
+    "runnin": "running",
+    "savin": "saving",
+    "sayin": "saying",
+    "shld": "should",
+    "sittin": "sitting",
+    "smokin": "smoking",
+    "smth": "something",
+    "soff": "soft",
+    "soo": "so",
+    "soooo": "so",
+    "spirite": "spirit",
+    "srsly": "seriously",
+    "sumn": "something",
+    "swimmin": "swimming",
+    "takin": "taking",
+    "talkin": "talking",
+    "tf": "the fuck",
+    "tha": "the",
+    "thats": "that's",
+    "theatre": "theater",
+    "theres": "there's",
+    "theyre": "they're",
+    "thinkin": "thinking",
+    "tho": "though",
+    "thru": "through",
+    "tht": "that",
+    "thts": "that's",
+    "tix": "ticket",
+    "tl": "timeline",
+    "tmrw": "tomorrow",
+    "tommorow": "tomorrow",
+    "tryin": "trying",
+    "tryna": "trying to",
+    "tweetin": "tweeting",
+    "txt": "text",
+    "txted": "texted",
+    "urself": "yourself",
+    "vid": "video",
+    "vids": "videos",
+    "wanna": "want to",
+    "wasnt": "wasn't",
+    "wat": "what",
+    "watchin": "watching",
+    "wen": "when",
+    "whatchu": "what you",
+    "whats": "what's",
+    "whippin": "whipping",
+    "whn": "when",
+    "whos": "who's",
+    "wht": "what",
+    "whut": "what",
+    "wid": "with",
+    "wit": "with",
+    "wont": "won't",
+    "woulda": "would have",
+    "wouldnt": "wouldn't",
+    "wrk": "work",
+    "wth": "with",
+    "wut": "what",
+    "ya": "you",
+    "yall": "y'all",
+    "yea": "yeah",
+    "yesss": "yes",
+    "youre": "you're",
+    "youu": "you",
+    "youuu": "you",
+    "yr": "you're",
+    "yu": "you"
+  },
+  "review_pairs": {
+    "wif": {
+      "top_norm": "with",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "with": 1
+      }
+    },
+    "marvellous": {
+      "top_norm": "marvelous",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "marvelous": 1
+      }
+    },
+    "obvi": {
+      "top_norm": "obviously",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "obviously": 1
+      }
+    },
+    "ony": {
+      "top_norm": "only",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "only": 1
+      }
+    },
+    "usa": {
+      "top_norm": "use",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "use": 1
+      }
+    },
+    "custa": {
+      "top_norm": "custand",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "custand": 1
+      }
+    },
+    "thanku": {
+      "top_norm": "thank you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thank you": 1
+      }
+    },
+    "2": {
+      "top_norm": "to",
+      "top_count": 11,
+      "raw_total": 45,
+      "changed_total": 11,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2444,
+      "candidates": {
+        "to": 11
+      }
+    },
+    "c": {
+      "top_norm": "see",
+      "top_count": 1,
+      "raw_total": 20,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.05,
+      "candidates": {
+        "see": 1
+      }
+    },
+    "sekret": {
+      "top_norm": "secret",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "secret": 1
+      }
+    },
+    "mesage": {
+      "top_norm": "message",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "message": 1
+      }
+    },
+    "auchhh": {
+      "top_norm": "ouch",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "ouch": 1
+      }
+    },
+    "shoo": {
+      "top_norm": "so",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "so": 1
+      }
+    },
+    "fuhh": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "thattt": {
+      "top_norm": "that",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "that": 1
+      }
+    },
+    "b4": {
+      "top_norm": "before",
+      "top_count": 4,
+      "raw_total": 4,
+      "changed_total": 4,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "before": 4
+      }
+    },
+    "oll": {
+      "top_norm": "old",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "old": 1
+      }
+    },
+    "dogg": {
+      "top_norm": "dog",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "dog": 1
+      }
+    },
+    "good'o": {
+      "top_norm": "good",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good": 1
+      }
+    },
+    "whiteboy": {
+      "top_norm": "white boy",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "white boy": 1
+      }
+    },
+    "pullin": {
+      "top_norm": "pulling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "pulling": 1
+      }
+    },
+    "woah": {
+      "top_norm": "wow",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "wow": 1
+      }
+    },
+    "goodluck": {
+      "top_norm": "good luck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good luck": 1
+      }
+    },
+    "rehersal": {
+      "top_norm": "rehearsal",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "rehearsal": 1
+      }
+    },
+    "textin": {
+      "top_norm": "texting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "texting": 1
+      }
+    },
+    "dafuq": {
+      "top_norm": "the fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "the fuck": 1
+      }
+    },
+    "niggah": {
+      "top_norm": "nigger",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "nigger": 1
+      }
+    },
+    "bfs": {
+      "top_norm": "best friends",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "best friends": 1
+      }
+    },
+    "showin": {
+      "top_norm": "showing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "showing": 1
+      }
+    },
+    "needto": {
+      "top_norm": "need to",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "need to": 1
+      }
+    },
+    "neva": {
+      "top_norm": "never",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "never": 1
+      }
+    },
+    "posible": {
+      "top_norm": "possible",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "possible": 1
+      }
+    },
+    "throwg": {
+      "top_norm": "throw",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "throw": 1
+      }
+    },
+    "ppls": {
+      "top_norm": "people's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "people's": 1
+      }
+    },
+    "sum1": {
+      "top_norm": "someone",
+      "top_count": 2,
+      "raw_total": 2,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "someone": 2
+      }
+    },
+    "camps": {
+      "top_norm": "campus",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "campus": 1
+      }
+    },
+    "w8": {
+      "top_norm": "wait",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wait": 1
+      }
+    },
+    "locc": {
+      "top_norm": "lock",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "lock": 1
+      }
+    },
+    "rt": {
+      "top_norm": "retweet",
+      "top_count": 27,
+      "raw_total": 776,
+      "changed_total": 27,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0348,
+      "candidates": {
+        "retweet": 27
+      }
+    },
+    "shuld": {
+      "top_norm": "should",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "should": 1
+      }
+    },
+    "its": {
+      "top_norm": "it's",
+      "top_count": 6,
+      "raw_total": 28,
+      "changed_total": 6,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2143,
+      "candidates": {
+        "it's": 6
+      }
+    },
+    "midd": {
+      "top_norm": "middle",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "middle": 1
+      }
+    },
+    "wats": {
+      "top_norm": "what's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what's": 1
+      }
+    },
+    "primiere": {
+      "top_norm": "premiere",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "premiere": 1
+      }
+    },
+    "thankin": {
+      "top_norm": "thanking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thanking": 1
+      }
+    },
+    "gd": {
+      "top_norm": "good",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good": 1
+      }
+    },
+    "fack": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "warmin": {
+      "top_norm": "warming",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "warming": 1
+      }
+    },
+    "ppe": {
+      "top_norm": "people",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "people": 1
+      }
+    },
+    "humen": {
+      "top_norm": "human",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "human": 1
+      }
+    },
+    "fina": {
+      "top_norm": "going to",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "going to": 1
+      }
+    },
+    "anit": {
+      "top_norm": "ain't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "ain't": 1
+      }
+    },
+    "evry1s": {
+      "top_norm": "everyone's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "everyone's": 1
+      }
+    },
+    "2moz": {
+      "top_norm": "tomorrow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tomorrow": 1
+      }
+    },
+    "mis": {
+      "top_norm": "miss",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "miss": 1
+      }
+    },
+    "ayu": {
+      "top_norm": "you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "you": 1
+      }
+    },
+    "messin": {
+      "top_norm": "messing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "messing": 1
+      }
+    },
+    "no1s": {
+      "top_norm": "no one's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "no one's": 1
+      }
+    },
+    "gonnae": {
+      "top_norm": "gonna",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gonna": 1
+      }
+    },
+    "somtime": {
+      "top_norm": "sometimes",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sometimes": 1
+      }
+    },
+    "discus": {
+      "top_norm": "discuss",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "discuss": 1
+      }
+    },
+    "sec": {
+      "top_norm": "second",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "second": 1
+      }
+    },
+    "sis": {
+      "top_norm": "sister",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sister": 1
+      }
+    },
+    "watz": {
+      "top_norm": "what's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what's": 1
+      }
+    },
+    "tele": {
+      "top_norm": "television",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "television": 1
+      }
+    },
+    "cutee": {
+      "top_norm": "cute",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "cute": 1
+      }
+    },
+    "screen": {
+      "top_norm": "screenshot",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "screenshot": 1
+      }
+    },
+    "shot": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "": 1
+      }
+    },
+    "emosh": {
+      "top_norm": "emotional",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "emotional": 1
+      }
+    },
+    "fucc": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "frnd": {
+      "top_norm": "friend",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "friend": 1
+      }
+    },
+    "collcted": {
+      "top_norm": "collected",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "collected": 1
+      }
+    },
+    "wnts": {
+      "top_norm": "wants",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wants": 1
+      }
+    },
+    "hrs": {
+      "top_norm": "hours",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hours": 1
+      }
+    },
+    "hype": {
+      "top_norm": "happy",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "happy": 1
+      }
+    },
+    "spyder": {
+      "top_norm": "spider",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "spider": 1
+      }
+    },
+    "boi": {
+      "top_norm": "boy",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "boy": 1
+      }
+    },
+    "gmorning": {
+      "top_norm": "good morning",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good morning": 1
+      }
+    },
+    "cusine": {
+      "top_norm": "cuisine",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "cuisine": 1
+      }
+    },
+    "unkown": {
+      "top_norm": "unknown",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "unknown": 1
+      }
+    },
+    "rumour": {
+      "top_norm": "rumor",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "rumor": 1
+      }
+    },
+    "yesshhh": {
+      "top_norm": "yes",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yes": 1
+      }
+    },
+    "thr": {
+      "top_norm": "there",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "there": 1
+      }
+    },
+    "shoutout": {
+      "top_norm": "shout out",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "shout out": 1
+      }
+    },
+    "prolly": {
+      "top_norm": "probably",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "probably": 1
+      }
+    },
+    "godbless": {
+      "top_norm": "god bless",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "god bless": 1
+      }
+    },
+    "webside": {
+      "top_norm": "website",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "website": 1
+      }
+    },
+    "stge": {
+      "top_norm": "stage",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "stage": 1
+      }
+    },
+    "bestfriend": {
+      "top_norm": "best friend",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "best friend": 1
+      }
+    },
+    "fuks": {
+      "top_norm": "fucks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fucks": 1
+      }
+    },
+    "kidd": {
+      "top_norm": "kid",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kid": 1
+      }
+    },
+    "counselling": {
+      "top_norm": "counseling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "counseling": 1
+      }
+    },
+    "centres": {
+      "top_norm": "centers",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "centers": 1
+      }
+    },
+    "fanclub": {
+      "top_norm": "fan club",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "fan club": 1
+      }
+    },
+    "outttttt": {
+      "top_norm": "out",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "out": 1
+      }
+    },
+    "fw": {
+      "top_norm": "forward",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "forward": 1
+      }
+    },
+    "stainin": {
+      "top_norm": "staining",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "staining": 1
+      }
+    },
+    "qld": {
+      "top_norm": "queensland",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "queensland": 1
+      }
+    },
+    "bitvhes": {
+      "top_norm": "bitches",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bitches": 1
+      }
+    },
+    "bitvh": {
+      "top_norm": "bitch",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bitch": 1
+      }
+    },
+    "acc": {
+      "top_norm": "accident",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "accident": 1
+      }
+    },
+    "juz": {
+      "top_norm": "just",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "just": 1
+      }
+    },
+    "hardeeeer": {
+      "top_norm": "harder",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "harder": 1
+      }
+    },
+    "finah": {
+      "top_norm": "going to",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "going to": 1
+      }
+    },
+    "gne": {
+      "top_norm": "gonna",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gonna": 1
+      }
+    },
+    "nite": {
+      "top_norm": "night",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "night": 1
+      }
+    },
+    "whoopin": {
+      "top_norm": "whooping",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "whooping": 1
+      }
+    },
+    "4": {
+      "top_norm": "for",
+      "top_count": 6,
+      "raw_total": 22,
+      "changed_total": 6,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2727,
+      "candidates": {
+        "for": 6
+      }
+    },
+    "taryn": {
+      "top_norm": "trying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "trying": 1
+      }
+    },
+    "srry": {
+      "top_norm": "sorry",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sorry": 1
+      }
+    },
+    "gents": {
+      "top_norm": "gentlemen",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gentlemen": 1
+      }
+    },
+    "everyones": {
+      "top_norm": "everyone's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "everyone's": 1
+      }
+    },
+    "could've": {
+      "top_norm": "could have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "could have": 1
+      }
+    },
+    "betetr": {
+      "top_norm": "better",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "better": 1
+      }
+    },
+    "drinkin": {
+      "top_norm": "drinking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "drinking": 1
+      }
+    },
+    "representin": {
+      "top_norm": "representing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "representing": 1
+      }
+    },
+    "trippin": {
+      "top_norm": "tripping",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tripping": 1
+      }
+    },
+    "screamin": {
+      "top_norm": "screaming",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "screaming": 1
+      }
+    },
+    "chilln": {
+      "top_norm": "chilling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "chilling": 1
+      }
+    },
+    "havnt": {
+      "top_norm": "haven't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "haven't": 1
+      }
+    },
+    "awnser": {
+      "top_norm": "answer",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "answer": 1
+      }
+    },
+    "woyld": {
+      "top_norm": "would",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "would": 1
+      }
+    },
+    "fucka": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "brooo": {
+      "top_norm": "brother",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "brother": 1
+      }
+    },
+    "folllow": {
+      "top_norm": "follow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "follow": 1
+      }
+    },
+    "thwre": {
+      "top_norm": "there",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "there": 1
+      }
+    },
+    "butthurt": {
+      "top_norm": "butt hurt",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "butt hurt": 1
+      }
+    },
+    "realise": {
+      "top_norm": "realize",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "realize": 1
+      }
+    },
+    "qtr": {
+      "top_norm": "quarter",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "quarter": 1
+      }
+    },
+    "sameee": {
+      "top_norm": "same",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "same": 1
+      }
+    },
+    "heree": {
+      "top_norm": "here",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "here": 1
+      }
+    },
+    "wahat": {
+      "top_norm": "what",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what": 1
+      }
+    },
+    "yeaa": {
+      "top_norm": "yes",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yes": 1
+      }
+    },
+    "no": {
+      "top_norm": "know",
+      "top_count": 1,
+      "raw_total": 74,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0135,
+      "candidates": {
+        "know": 1
+      }
+    },
+    "cying": {
+      "top_norm": "crying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "crying": 1
+      }
+    },
+    "becum": {
+      "top_norm": "become",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "become": 1
+      }
+    },
+    "soml": {
+      "top_norm": "someone",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "someone": 1
+      }
+    },
+    "gf": {
+      "top_norm": "girlfriend",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "girlfriend": 1
+      }
+    },
+    "stoopp": {
+      "top_norm": "stop",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "stop": 1
+      }
+    },
+    "na": {
+      "top_norm": "no",
+      "top_count": 3,
+      "raw_total": 28,
+      "changed_total": 3,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1071,
+      "candidates": {
+        "no": 3
+      }
+    },
+    "flexin": {
+      "top_norm": "flexing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "flexing": 1
+      }
+    },
+    "tue": {
+      "top_norm": "tuesday",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tuesday": 1
+      }
+    },
+    "wer": {
+      "top_norm": "where",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "where": 1
+      }
+    },
+    "yessssiiiirrrrr": {
+      "top_norm": "yes sir",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yes sir": 1
+      }
+    },
+    "cuzz": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "summertime": {
+      "top_norm": "summer time",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "summer time": 1
+      }
+    },
+    "cnt": {
+      "top_norm": "can't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "can't": 1
+      }
+    },
+    "shldnt": {
+      "top_norm": "shouldn't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shouldn't": 1
+      }
+    },
+    "fuckbag": {
+      "top_norm": "fucking bag",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fucking bag": 1
+      }
+    },
+    "haterz": {
+      "top_norm": "haters",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "haters": 1
+      }
+    },
+    "ikno": {
+      "top_norm": "i know",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "i know": 1
+      }
+    },
+    "rite": {
+      "top_norm": "right",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "right": 1
+      }
+    },
+    "bball": {
+      "top_norm": "basketball",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "basketball": 1
+      }
+    },
+    "gentille": {
+      "top_norm": "gentle",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gentle": 1
+      }
+    },
+    "soundin": {
+      "top_norm": "sounding",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sounding": 1
+      }
+    },
+    "ddnt": {
+      "top_norm": "didn't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "didn't": 1
+      }
+    },
+    "everythings": {
+      "top_norm": "everything's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "everything's": 1
+      }
+    },
+    "g": {
+      "top_norm": "girl",
+      "top_count": 1,
+      "raw_total": 12,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0833,
+      "candidates": {
+        "girl": 1
+      }
+    },
+    "deez": {
+      "top_norm": "these",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "these": 1
+      }
+    },
+    "jazzys": {
+      "top_norm": "jazzy's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "jazzy's": 1
+      }
+    },
+    "prev": {
+      "top_norm": "previous",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "previous": 1
+      }
+    },
+    "k": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 7,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1429,
+      "candidates": {
+        "": 1
+      }
+    },
+    "str8": {
+      "top_norm": "straight",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "straight": 1
+      }
+    },
+    "be": {
+      "top_norm": "but",
+      "top_count": 1,
+      "raw_total": 132,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0076,
+      "candidates": {
+        "but": 1
+      }
+    },
+    "givin": {
+      "top_norm": "giving",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "giving": 1
+      }
+    },
+    "headd": {
+      "top_norm": "headed",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "headed": 1
+      }
+    },
+    "jokin": {
+      "top_norm": "joking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "joking": 1
+      }
+    },
+    "everynight": {
+      "top_norm": "every night",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "every night": 1
+      }
+    },
+    "dispicable": {
+      "top_norm": "despicable",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "despicable": 1
+      }
+    },
+    "slipin": {
+      "top_norm": "sliping",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sliping": 1
+      }
+    },
+    "slindin": {
+      "top_norm": "slinding",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "slinding": 1
+      }
+    },
+    "fr": {
+      "top_norm": "from",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "from": 1
+      }
+    },
+    "yh": {
+      "top_norm": "yeah",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "yeah": 1
+      }
+    },
+    "pict": {
+      "top_norm": "picture",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "picture": 1
+      }
+    },
+    "thng": {
+      "top_norm": "thing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thing": 1
+      }
+    },
+    "yui": {
+      "top_norm": "you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "you": 1
+      }
+    },
+    "weiiiiird": {
+      "top_norm": "weird",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "weird": 1
+      }
+    },
+    "fisrt": {
+      "top_norm": "first",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "first": 1
+      }
+    },
+    "alwayz": {
+      "top_norm": "always",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "always": 1
+      }
+    },
+    "yiu": {
+      "top_norm": "you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "you": 1
+      }
+    },
+    "pleaseee": {
+      "top_norm": "please",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "please": 1
+      }
+    },
+    "geez": {
+      "top_norm": "jesus",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "jesus": 1
+      }
+    },
+    "effing": {
+      "top_norm": "fucking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fucking": 1
+      }
+    },
+    "cussin": {
+      "top_norm": "cussing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "cussing": 1
+      }
+    },
+    "luff": {
+      "top_norm": "love",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "love": 1
+      }
+    },
+    "marri": {
+      "top_norm": "marry",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "marry": 1
+      }
+    },
+    "southamerica": {
+      "top_norm": "south america",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "south america": 1
+      }
+    },
+    "mantabs": {
+      "top_norm": "man tabs",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "man tabs": 1
+      }
+    },
+    "slayy": {
+      "top_norm": "kill",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kill": 1
+      }
+    },
+    "mommas": {
+      "top_norm": "mamas",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "mamas": 1
+      }
+    },
+    "ultraviolence": {
+      "top_norm": "ultra violence",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "ultra violence": 1
+      }
+    },
+    "arse": {
+      "top_norm": "ass",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "ass": 1
+      }
+    },
+    "bcs": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "fuq": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "appt": {
+      "top_norm": "appointment",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "appointment": 1
+      }
+    },
+    "gagos": {
+      "top_norm": "asshole",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "asshole": 1
+      }
+    },
+    "wes": {
+      "top_norm": "was",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "was": 1
+      }
+    },
+    "gorgeousss": {
+      "top_norm": "gorgeous",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gorgeous": 1
+      }
+    },
+    "waddup": {
+      "top_norm": "what's up",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what's up": 1
+      }
+    },
+    "i": {
+      "top_norm": "in",
+      "top_count": 2,
+      "raw_total": 512,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0039,
+      "candidates": {
+        "in": 2
+      }
+    },
+    "yer": {
+      "top_norm": "you're",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "you're": 1
+      }
+    },
+    "q": {
+      "top_norm": "question",
+      "top_count": 1,
+      "raw_total": 8,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.125,
+      "candidates": {
+        "question": 1
+      }
+    },
+    "lovley": {
+      "top_norm": "lovely",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "lovely": 1
+      }
+    },
+    "colaboration": {
+      "top_norm": "collaborations",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "collaborations": 1
+      }
+    },
+    "anniv": {
+      "top_norm": "anniversary",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "anniversary": 1
+      }
+    },
+    "goood": {
+      "top_norm": "good",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good": 1
+      }
+    },
+    "feckkk": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "diffffff": {
+      "top_norm": "different",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "different": 1
+      }
+    },
+    "s": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 9,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1111,
+      "candidates": {
+        "": 1
+      }
+    },
+    "putos": {
+      "top_norm": "photos",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "photos": 1
+      }
+    },
+    "drivin": {
+      "top_norm": "driving",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "driving": 1
+      }
+    },
+    "pickin": {
+      "top_norm": "picking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "picking": 1
+      }
+    },
+    "upp": {
+      "top_norm": "up",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "up": 1
+      }
+    },
+    "folbackk": {
+      "top_norm": "follow back",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "follow back": 1
+      }
+    },
+    "rip": {
+      "top_norm": "rest in peace",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "rest in peace": 1
+      }
+    },
+    "nextday": {
+      "top_norm": "next day",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "next day": 1
+      }
+    },
+    "fwit": {
+      "top_norm": "fuck with",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck with": 1
+      }
+    },
+    "adress": {
+      "top_norm": "address",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "address": 1
+      }
+    },
+    "xf": {
+      "top_norm": "x factor",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "x factor": 1
+      }
+    },
+    "yisus": {
+      "top_norm": "jesus",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "jesus": 1
+      }
+    },
+    "craist": {
+      "top_norm": "christ",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "christ": 1
+      }
+    },
+    "beff": {
+      "top_norm": "best ever friend forever",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "best ever friend forever": 1
+      }
+    },
+    "beefff": {
+      "top_norm": "best ever friend forever",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "best ever friend forever": 1
+      }
+    },
+    "dass": {
+      "top_norm": "that's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "that's": 1
+      }
+    },
+    "microsofts": {
+      "top_norm": "microsoft's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "microsoft's": 1
+      }
+    },
+    "betwn": {
+      "top_norm": "between",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "between": 1
+      }
+    },
+    "dayum": {
+      "top_norm": "damn",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "damn": 1
+      }
+    },
+    "bish": {
+      "top_norm": "bitch",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bitch": 1
+      }
+    },
+    "whet": {
+      "top_norm": "what",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what": 1
+      }
+    },
+    "looove": {
+      "top_norm": "love",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "love": 1
+      }
+    },
+    "kiddn": {
+      "top_norm": "kidding",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kidding": 1
+      }
+    },
+    "ve": {
+      "top_norm": "have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "have": 1
+      }
+    },
+    "appstore": {
+      "top_norm": "app store",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "app store": 1
+      }
+    },
+    "photobooth": {
+      "top_norm": "photo booth",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "photo booth": 1
+      }
+    },
+    "plc": {
+      "top_norm": "picture",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "picture": 1
+      }
+    },
+    "yess": {
+      "top_norm": "yes",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yes": 1
+      }
+    },
+    "homee": {
+      "top_norm": "home",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "home": 1
+      }
+    },
+    "feets": {
+      "top_norm": "feet",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "feet": 1
+      }
+    },
+    "sep": {
+      "top_norm": "september",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "september": 1
+      }
+    },
+    "meself": {
+      "top_norm": "myself",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "myself": 1
+      }
+    },
+    "moslem": {
+      "top_norm": "muslim",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "muslim": 1
+      }
+    },
+    "moodboster": {
+      "top_norm": "mood boster",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "mood boster": 1
+      }
+    },
+    "hey": {
+      "top_norm": "they",
+      "top_count": 1,
+      "raw_total": 10,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1,
+      "candidates": {
+        "they": 1
+      }
+    },
+    "shyt": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "hoes": {
+      "top_norm": "whores",
+      "top_count": 1,
+      "raw_total": 5,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.2,
+      "candidates": {
+        "whores": 1
+      }
+    },
+    "hoe": {
+      "top_norm": "whore",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "whore": 1
+      }
+    },
+    "mum": {
+      "top_norm": "mom",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "mom": 1
+      }
+    },
+    "neighbours": {
+      "top_norm": "neighbors",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "neighbors": 1
+      }
+    },
+    "shakin": {
+      "top_norm": "shaking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shaking": 1
+      }
+    },
+    "bakin": {
+      "top_norm": "baking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "baking": 1
+      }
+    },
+    "movin": {
+      "top_norm": "moving",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "moving": 1
+      }
+    },
+    "fansites": {
+      "top_norm": "fan sites",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fan sites": 1
+      }
+    },
+    "lightsticks": {
+      "top_norm": "light sticks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "light sticks": 1
+      }
+    },
+    "ty": {
+      "top_norm": "thank you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thank you": 1
+      }
+    },
+    "dwnld": {
+      "top_norm": "download",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "download": 1
+      }
+    },
+    "bidge": {
+      "top_norm": "bridge",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bridge": 1
+      }
+    },
+    "yurself": {
+      "top_norm": "yourself",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yourself": 1
+      }
+    },
+    "rtwt": {
+      "top_norm": "retweet",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "retweet": 1
+      }
+    },
+    "pleasee": {
+      "top_norm": "please",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "please": 1
+      }
+    },
+    "dayy": {
+      "top_norm": "day",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "day": 1
+      }
+    },
+    "ish": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "songz": {
+      "top_norm": "songs",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "songs": 1
+      }
+    },
+    "roflmao": {
+      "top_norm": "rolling on floor laughing my ass off",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "rolling on floor laughing my ass off": 1
+      }
+    },
+    "insomina": {
+      "top_norm": "insomnia",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "insomnia": 1
+      }
+    },
+    "shuit": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "hsit": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "shitihsthiaht": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "shitb": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "hitt": {
+      "top_norm": "hit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hit": 1
+      }
+    },
+    "tooo": {
+      "top_norm": "too",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "too": 1
+      }
+    },
+    "tunee": {
+      "top_norm": "tune",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tune": 1
+      }
+    },
+    "wrng": {
+      "top_norm": "wrong",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wrong": 1
+      }
+    },
+    "diss": {
+      "top_norm": "disrespect",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "disrespect": 1
+      }
+    },
+    "brazillian": {
+      "top_norm": "brazilian",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "brazilian": 1
+      }
+    },
+    "watcha": {
+      "top_norm": "what you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what you": 1
+      }
+    },
+    "rightnow": {
+      "top_norm": "right now",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "right now": 1
+      }
+    },
+    "rlly": {
+      "top_norm": "really",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "really": 1
+      }
+    },
+    "laughinf": {
+      "top_norm": "laughing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "laughing": 1
+      }
+    },
+    "sesh": {
+      "top_norm": "session",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "session": 1
+      }
+    },
+    "culd": {
+      "top_norm": "could",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "could": 1
+      }
+    },
+    "loce": {
+      "top_norm": "love",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "love": 1
+      }
+    },
+    "hitlist": {
+      "top_norm": "hit list",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hit list": 1
+      }
+    },
+    "gm": {
+      "top_norm": "good morning",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "good morning": 1
+      }
+    },
+    "blk": {
+      "top_norm": "bulk",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bulk": 1
+      }
+    },
+    "mane": {
+      "top_norm": "man",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "man": 1
+      }
+    },
+    "goodd": {
+      "top_norm": "good",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good": 1
+      }
+    },
+    "ang": {
+      "top_norm": "and",
+      "top_count": 1,
+      "raw_total": 7,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1429,
+      "candidates": {
+        "and": 1
+      }
+    },
+    "cattitude": {
+      "top_norm": "attitude",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "attitude": 1
+      }
+    },
+    "yas": {
+      "top_norm": "yes",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yes": 1
+      }
+    },
+    "dood": {
+      "top_norm": "dude",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dude": 1
+      }
+    },
+    "ville": {
+      "top_norm": "village",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "village": 1
+      }
+    },
+    "guna": {
+      "top_norm": "gonna",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gonna": 1
+      }
+    },
+    "sped": {
+      "top_norm": "speed",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "speed": 1
+      }
+    },
+    "causin": {
+      "top_norm": "causing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "causing": 1
+      }
+    },
+    "hackd": {
+      "top_norm": "hacked",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hacked": 1
+      }
+    },
+    "wuddup": {
+      "top_norm": "what's up",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what's up": 1
+      }
+    },
+    "stressin": {
+      "top_norm": "stressing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "stressing": 1
+      }
+    },
+    "psh": {
+      "top_norm": "push",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "push": 1
+      }
+    },
+    "shutup": {
+      "top_norm": "shut up",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shut up": 1
+      }
+    },
+    "wld": {
+      "top_norm": "would",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "would": 1
+      }
+    },
+    "standin": {
+      "top_norm": "standing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "standing": 1
+      }
+    },
+    "writin": {
+      "top_norm": "writing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "writing": 1
+      }
+    },
+    "infront": {
+      "top_norm": "in front",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "in front": 1
+      }
+    },
+    "buht": {
+      "top_norm": "but",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "but": 1
+      }
+    },
+    "intip": {
+      "top_norm": "in tip",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "in tip": 1
+      }
+    },
+    "kanibal": {
+      "top_norm": "canibal",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "canibal": 1
+      }
+    },
+    "appiled": {
+      "top_norm": "appealed",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "appealed": 1
+      }
+    },
+    "tooooooo": {
+      "top_norm": "too",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "too": 1
+      }
+    },
+    "thiiisss": {
+      "top_norm": "this",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "this": 1
+      }
+    },
+    "boooyyyy": {
+      "top_norm": "boy",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "boy": 1
+      }
+    },
+    "deemm": {
+      "top_norm": "damn",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "damn": 1
+      }
+    },
+    "niggaas": {
+      "top_norm": "nigger",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "nigger": 1
+      }
+    },
+    "enuhh": {
+      "top_norm": "enough",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "enough": 1
+      }
+    },
+    "hk": {
+      "top_norm": "hong kong",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hong kong": 1
+      }
+    },
+    "wil": {
+      "top_norm": "will",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "will": 1
+      }
+    },
+    "shid": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "fyck": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "ut": {
+      "top_norm": "you too",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "you too": 1
+      }
+    },
+    "telly": {
+      "top_norm": "television",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "television": 1
+      }
+    },
+    "bru": {
+      "top_norm": "brother",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "brother": 1
+      }
+    },
+    "cancelled": {
+      "top_norm": "canceled",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "canceled": 1
+      }
+    },
+    "ef": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "wae": {
+      "top_norm": "why",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "why": 1
+      }
+    },
+    "slippin": {
+      "top_norm": "sleeping",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sleeping": 1
+      }
+    },
+    "satin": {
+      "top_norm": "saying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "saying": 1
+      }
+    },
+    "pleaseeeee": {
+      "top_norm": "please",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "please": 1
+      }
+    },
+    "ft": {
+      "top_norm": "featuring",
+      "top_count": 1,
+      "raw_total": 13,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0769,
+      "candidates": {
+        "featuring": 1
+      }
+    },
+    "whap": {
+      "top_norm": "what's up",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what's up": 1
+      }
+    },
+    "rp": {
+      "top_norm": "real people",
+      "top_count": 1,
+      "raw_total": 26,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0385,
+      "candidates": {
+        "real people": 1
+      }
+    },
+    "layiii": {
+      "top_norm": "layi",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "layi": 1
+      }
+    },
+    "fay": {
+      "top_norm": "days",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "days": 1
+      }
+    },
+    "futur": {
+      "top_norm": "future",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "future": 1
+      }
+    },
+    "whithout": {
+      "top_norm": "without",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "without": 1
+      }
+    },
+    "talor": {
+      "top_norm": "taylor",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "taylor": 1
+      }
+    },
+    "prob": {
+      "top_norm": "probably",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "probably": 1
+      }
+    },
+    "pitc": {
+      "top_norm": "pitcher",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "pitcher": 1
+      }
+    },
+    "scratchin": {
+      "top_norm": "scratching",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "scratching": 1
+      }
+    },
+    "hoein": {
+      "top_norm": "hoeing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hoeing": 1
+      }
+    },
+    "bros": {
+      "top_norm": "brothers",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "brothers": 1
+      }
+    },
+    "signin": {
+      "top_norm": "signing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "signing": 1
+      }
+    },
+    "ohhh": {
+      "top_norm": "oh",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "oh": 1
+      }
+    },
+    "shmit": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "ghad": {
+      "top_norm": "glad",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "glad": 1
+      }
+    },
+    "makin": {
+      "top_norm": "making",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "making": 1
+      }
+    },
+    "youo": {
+      "top_norm": "you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "you": 1
+      }
+    },
+    "mornin": {
+      "top_norm": "morning",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "morning": 1
+      }
+    },
+    "sugah": {
+      "top_norm": "sugar",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sugar": 1
+      }
+    },
+    "waow": {
+      "top_norm": "wow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wow": 1
+      }
+    },
+    "peoples": {
+      "top_norm": "people's",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "people's": 1
+      }
+    },
+    "problema": {
+      "top_norm": "problem",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "problem": 1
+      }
+    },
+    "tmr": {
+      "top_norm": "tomorrow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tomorrow": 1
+      }
+    },
+    "dwm": {
+      "top_norm": "down",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "down": 1
+      }
+    },
+    "balmy": {
+      "top_norm": "balcony",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "balcony": 1
+      }
+    },
+    "tomar": {
+      "top_norm": "tomorrow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tomorrow": 1
+      }
+    },
+    "ii": {
+      "top_norm": "it",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "it": 1
+      }
+    },
+    "workk": {
+      "top_norm": "work",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "work": 1
+      }
+    },
+    "emo": {
+      "top_norm": "emotions",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "emotions": 1
+      }
+    },
+    "friggin": {
+      "top_norm": "frigging",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "frigging": 1
+      }
+    },
+    "youve": {
+      "top_norm": "you've",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "you've": 1
+      }
+    },
+    "order": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 6,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1667,
+      "candidates": {
+        "": 1
+      }
+    },
+    "seein": {
+      "top_norm": "seeing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "seeing": 1
+      }
+    },
+    "wh": {
+      "top_norm": "what",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what": 1
+      }
+    },
+    "bby": {
+      "top_norm": "baby",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "baby": 1
+      }
+    },
+    "dealin": {
+      "top_norm": "dealing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dealing": 1
+      }
+    },
+    "thay": {
+      "top_norm": "that",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "that": 1
+      }
+    },
+    "aready": {
+      "top_norm": "already",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "already": 1
+      }
+    },
+    "bea": {
+      "top_norm": "tea",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tea": 1
+      }
+    },
+    "hs": {
+      "top_norm": "has",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "has": 1
+      }
+    },
+    "yy": {
+      "top_norm": "why",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "why": 1
+      }
+    },
+    "h00y": {
+      "top_norm": "hoot",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hoot": 1
+      }
+    },
+    "fayo": {
+      "top_norm": "for you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "for you": 1
+      }
+    },
+    "salud": {
+      "top_norm": "salute",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "salute": 1
+      }
+    },
+    "dum": {
+      "top_norm": "dumb",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dumb": 1
+      }
+    },
+    "australi": {
+      "top_norm": "australia",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "australia": 1
+      }
+    },
+    "asf": {
+      "top_norm": "as fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "as fuck": 1
+      }
+    },
+    "schleep": {
+      "top_norm": "sleep",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sleep": 1
+      }
+    },
+    "kdrama": {
+      "top_norm": "drama",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "drama": 1
+      }
+    },
+    "thas": {
+      "top_norm": "that's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "that's": 1
+      }
+    },
+    "walkoff": {
+      "top_norm": "walk off",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "walk off": 1
+      }
+    },
+    "flippin": {
+      "top_norm": "flipping",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "flipping": 1
+      }
+    },
+    "ytd": {
+      "top_norm": "yesterday",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "yesterday": 1
+      }
+    },
+    "yuh": {
+      "top_norm": "you",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "you": 1
+      }
+    },
+    "actin": {
+      "top_norm": "acting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "acting": 1
+      }
+    },
+    "shap": {
+      "top_norm": "shape",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shape": 1
+      }
+    },
+    "preggo": {
+      "top_norm": "pregnant",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "pregnant": 1
+      }
+    },
+    "crk": {
+      "top_norm": "crack",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "crack": 1
+      }
+    },
+    "rd": {
+      "top_norm": "road",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "road": 1
+      }
+    },
+    "ave": {
+      "top_norm": "avenue",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "avenue": 1
+      }
+    },
+    "bitchez": {
+      "top_norm": "bitches",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bitches": 1
+      }
+    },
+    "somethin": {
+      "top_norm": "something",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "something": 1
+      }
+    },
+    "yowapedal": {
+      "top_norm": "your pedal",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "your pedal": 1
+      }
+    },
+    "yaoipedal": {
+      "top_norm": "your pedal",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "your pedal": 1
+      }
+    },
+    "fuack": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "biryhday": {
+      "top_norm": "birthday",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "birthday": 1
+      }
+    },
+    "rizky": {
+      "top_norm": "risky",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "risky": 1
+      }
+    },
+    "loveyou": {
+      "top_norm": "love you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "love you": 1
+      }
+    },
+    "gim": {
+      "top_norm": "give me",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "give me": 1
+      }
+    },
+    "wrked": {
+      "top_norm": "worked",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "worked": 1
+      }
+    },
+    "laughin": {
+      "top_norm": "laughing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "laughing": 1
+      }
+    },
+    "shoulda": {
+      "top_norm": "should have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "should have": 1
+      }
+    },
+    "reveale": {
+      "top_norm": "revealed",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "revealed": 1
+      }
+    },
+    "diggg": {
+      "top_norm": "digging",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "digging": 1
+      }
+    },
+    "gemorning": {
+      "top_norm": "good morning",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "good morning": 1
+      }
+    },
+    "mdm": {
+      "top_norm": "madam",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "madam": 1
+      }
+    },
+    "beatin": {
+      "top_norm": "beating",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "beating": 1
+      }
+    },
+    "betta": {
+      "top_norm": "better",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "better": 1
+      }
+    },
+    "fnk": {
+      "top_norm": "find",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "find": 1
+      }
+    },
+    "brodcast": {
+      "top_norm": "broadcast",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "broadcast": 1
+      }
+    },
+    "whatz": {
+      "top_norm": "what is",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what is": 1
+      }
+    },
+    "deffo": {
+      "top_norm": "definitely",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "definitely": 1
+      }
+    },
+    "knooow": {
+      "top_norm": "know",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "know": 1
+      }
+    },
+    "wea": {
+      "top_norm": "where are",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "where are": 1
+      }
+    },
+    "thoee": {
+      "top_norm": "though",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "though": 1
+      }
+    },
+    "theyr": {
+      "top_norm": "there",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "there": 1
+      }
+    },
+    "e": {
+      "top_norm": "is",
+      "top_count": 1,
+      "raw_total": 10,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1,
+      "candidates": {
+        "is": 1
+      }
+    },
+    "fucjing": {
+      "top_norm": "fucking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fucking": 1
+      }
+    },
+    "bota": {
+      "top_norm": "bought a",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bought a": 1
+      }
+    },
+    "wrre": {
+      "top_norm": "were",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "were": 1
+      }
+    },
+    "talkn": {
+      "top_norm": "talking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "talking": 1
+      }
+    },
+    "yellin": {
+      "top_norm": "yelling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yelling": 1
+      }
+    },
+    "fett": {
+      "top_norm": "fit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fit": 1
+      }
+    },
+    "rightt": {
+      "top_norm": "right",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "right": 1
+      }
+    },
+    "fckn": {
+      "top_norm": "fucking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fucking": 1
+      }
+    },
+    "thnx": {
+      "top_norm": "thanks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thanks": 1
+      }
+    },
+    "goodevening": {
+      "top_norm": "good evening",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "good evening": 1
+      }
+    },
+    "spongbob": {
+      "top_norm": "spongebob",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "spongebob": 1
+      }
+    },
+    "yor": {
+      "top_norm": "your",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "your": 1
+      }
+    },
+    "fakin": {
+      "top_norm": "fucking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fucking": 1
+      }
+    },
+    "mah": {
+      "top_norm": "my",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "my": 1
+      }
+    },
+    "righ": {
+      "top_norm": "right",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "right": 1
+      }
+    },
+    "promotio": {
+      "top_norm": "promotion",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "promotion": 1
+      }
+    },
+    "seperate": {
+      "top_norm": "separate",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "separate": 1
+      }
+    },
+    "paty": {
+      "top_norm": "party",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "party": 1
+      }
+    },
+    "nuh": {
+      "top_norm": "now",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "now": 1
+      }
+    },
+    "wos": {
+      "top_norm": "was",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "was": 1
+      }
+    },
+    "til": {
+      "top_norm": "till",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "till": 1
+      }
+    },
+    "ballin": {
+      "top_norm": "balling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "balling": 1
+      }
+    },
+    "esp": {
+      "top_norm": "especially",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "especially": 1
+      }
+    },
+    "complaing": {
+      "top_norm": "complaining",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "complaining": 1
+      }
+    },
+    "myselff": {
+      "top_norm": "myself",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "myself": 1
+      }
+    },
+    "nun": {
+      "top_norm": "nothing",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "nothing": 1
+      }
+    },
+    "head": {
+      "top_norm": "headache",
+      "top_count": 1,
+      "raw_total": 15,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0667,
+      "candidates": {
+        "headache": 1
+      }
+    },
+    "ache": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "": 1
+      }
+    },
+    "tomorro": {
+      "top_norm": "tomorrow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tomorrow": 1
+      }
+    },
+    "ohgosh": {
+      "top_norm": "oh gosh",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "oh gosh": 1
+      }
+    },
+    "cuteeee": {
+      "top_norm": "cute",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "cute": 1
+      }
+    },
+    "were": {
+      "top_norm": "wear",
+      "top_count": 1,
+      "raw_total": 22,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.0455,
+      "candidates": {
+        "wear": 1
+      }
+    },
+    "congratz": {
+      "top_norm": "congratulations",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "congratulations": 1
+      }
+    },
+    "every": {
+      "top_norm": "ever",
+      "top_count": 1,
+      "raw_total": 9,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1111,
+      "candidates": {
+        "ever": 1
+      }
+    },
+    "bcos": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "niqqa": {
+      "top_norm": "nigger",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "nigger": 1
+      }
+    },
+    "fk": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "sweetface": {
+      "top_norm": "sweet face",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sweet face": 1
+      }
+    },
+    "hott": {
+      "top_norm": "hot",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hot": 1
+      }
+    },
+    "thang": {
+      "top_norm": "thing",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "thing": 1
+      }
+    },
+    "ihavnt": {
+      "top_norm": "i haven't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "i haven't": 1
+      }
+    },
+    "whataburger": {
+      "top_norm": "what a burger",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what a burger": 1
+      }
+    },
+    "gguide": {
+      "top_norm": "guide",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "guide": 1
+      }
+    },
+    "cos": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "sorrrrrrrrrrrrry": {
+      "top_norm": "sorry",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sorry": 1
+      }
+    },
+    "arthur": {
+      "top_norm": "author",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "author": 1
+      }
+    },
+    "should've": {
+      "top_norm": "should have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "should have": 1
+      }
+    },
+    "coolin": {
+      "top_norm": "cooling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "cooling": 1
+      }
+    },
+    "feeli": {
+      "top_norm": "feeling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "feeling": 1
+      }
+    },
+    "gov": {
+      "top_norm": "government",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "government": 1
+      }
+    },
+    "ryt": {
+      "top_norm": "right",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "right": 1
+      }
+    },
+    "humour": {
+      "top_norm": "humor",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "humor": 1
+      }
+    },
+    "callin": {
+      "top_norm": "calling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "calling": 1
+      }
+    },
+    "hav": {
+      "top_norm": "have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "have": 1
+      }
+    },
+    "thys": {
+      "top_norm": "there's",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "there's": 1
+      }
+    },
+    "ryte": {
+      "top_norm": "right",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "right": 1
+      }
+    },
+    "giva": {
+      "top_norm": "give a",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "give a": 1
+      }
+    },
+    "2day": {
+      "top_norm": "today",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "today": 1
+      }
+    },
+    "tryn": {
+      "top_norm": "trying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "trying": 1
+      }
+    },
+    "ahold": {
+      "top_norm": "a hold",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "a hold": 1
+      }
+    },
+    "pepul": {
+      "top_norm": "people",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "people": 1
+      }
+    },
+    "il": {
+      "top_norm": "i'll",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "i'll": 1
+      }
+    },
+    "downgrding": {
+      "top_norm": "downgrading",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "downgrading": 1
+      }
+    },
+    "highschool": {
+      "top_norm": "high school",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "high school": 1
+      }
+    },
+    "kinna": {
+      "top_norm": "kinda",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kinda": 1
+      }
+    },
+    "jukeboxx": {
+      "top_norm": "jukebox",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "jukebox": 1
+      }
+    },
+    "unis": {
+      "top_norm": "universities",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "universities": 1
+      }
+    },
+    "missyou": {
+      "top_norm": "miss you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "miss you": 1
+      }
+    },
+    "comeing": {
+      "top_norm": "coming",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "coming": 1
+      }
+    },
+    "cmon": {
+      "top_norm": "come on",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "come on": 1
+      }
+    },
+    "tiard": {
+      "top_norm": "tired",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tired": 1
+      }
+    },
+    "harrystyles": {
+      "top_norm": "harry styles",
+      "top_count": 1,
+      "raw_total": 7,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1429,
+      "candidates": {
+        "harry styles": 1
+      }
+    },
+    "sorrry": {
+      "top_norm": "sorry",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sorry": 1
+      }
+    },
+    "bullsh": {
+      "top_norm": "bullshit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bullshit": 1
+      }
+    },
+    "chewin": {
+      "top_norm": "chewing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "chewing": 1
+      }
+    },
+    "birdi": {
+      "top_norm": "birdie",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "birdie": 1
+      }
+    },
+    "calc": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "": 1
+      }
+    },
+    "airrr": {
+      "top_norm": "air",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "air": 1
+      }
+    },
+    "guydirectioners": {
+      "top_norm": "guy directioners",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "guy directioners": 1
+      }
+    },
+    "sympathise": {
+      "top_norm": "sympathize",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sympathize": 1
+      }
+    },
+    "biiiig": {
+      "top_norm": "big",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "big": 1
+      }
+    },
+    "2mrw": {
+      "top_norm": "tomorrow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tomorrow": 1
+      }
+    },
+    "stoopid": {
+      "top_norm": "stupid",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "stupid": 1
+      }
+    },
+    "iont": {
+      "top_norm": "i don't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "i don't": 1
+      }
+    },
+    "thankies": {
+      "top_norm": "thanks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thanks": 1
+      }
+    },
+    "relatd": {
+      "top_norm": "related",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "related": 1
+      }
+    },
+    "defo": {
+      "top_norm": "definitely",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "definitely": 1
+      }
+    },
+    "craic": {
+      "top_norm": "crack",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "crack": 1
+      }
+    },
+    "dreamin": {
+      "top_norm": "dreaming",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dreaming": 1
+      }
+    },
+    "bsck": {
+      "top_norm": "back",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "back": 1
+      }
+    },
+    "ridin": {
+      "top_norm": "riding",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "riding": 1
+      }
+    },
+    "yeshh": {
+      "top_norm": "yes",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "yes": 1
+      }
+    },
+    "bitxh": {
+      "top_norm": "bitch",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bitch": 1
+      }
+    },
+    "thankiu": {
+      "top_norm": "thank you",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thank you": 1
+      }
+    },
+    "some1": {
+      "top_norm": "someone",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "someone": 1
+      }
+    },
+    "tonite": {
+      "top_norm": "tonight",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tonight": 1
+      }
+    },
+    "tellin": {
+      "top_norm": "telling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "telling": 1
+      }
+    },
+    "afg": {
+      "top_norm": "afghanistan",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "afghanistan": 1
+      }
+    },
+    "ofc": {
+      "top_norm": "of course",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "of course": 1
+      }
+    },
+    "starin": {
+      "top_norm": "staring",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "staring": 1
+      }
+    },
+    "kissn": {
+      "top_norm": "kissing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kissing": 1
+      }
+    },
+    "happpy": {
+      "top_norm": "happy",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "happy": 1
+      }
+    },
+    "lettin": {
+      "top_norm": "letting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "letting": 1
+      }
+    },
+    "apperntly": {
+      "top_norm": "apparently",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "apparently": 1
+      }
+    },
+    "huggin": {
+      "top_norm": "hugging",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hugging": 1
+      }
+    },
+    "spittin": {
+      "top_norm": "spitting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "spitting": 1
+      }
+    },
+    "byee": {
+      "top_norm": "bye",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bye": 1
+      }
+    },
+    "shittin": {
+      "top_norm": "shitting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shitting": 1
+      }
+    },
+    "lyke": {
+      "top_norm": "like",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "like": 1
+      }
+    },
+    "cuss": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "hittin": {
+      "top_norm": "hitting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hitting": 1
+      }
+    },
+    "thryyre": {
+      "top_norm": "they're",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "they're": 1
+      }
+    },
+    "headin": {
+      "top_norm": "heading",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "heading": 1
+      }
+    },
+    "eachother": {
+      "top_norm": "each other",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "each other": 1
+      }
+    },
+    "homo": {
+      "top_norm": "homosexual",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "homosexual": 1
+      }
+    },
+    "wnt": {
+      "top_norm": "want",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "want": 1
+      }
+    },
+    "thz": {
+      "top_norm": "thanks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thanks": 1
+      }
+    },
+    "thanx": {
+      "top_norm": "thanks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thanks": 1
+      }
+    },
+    "acttually": {
+      "top_norm": "actually",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "actually": 1
+      }
+    },
+    "pratice": {
+      "top_norm": "practice",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "practice": 1
+      }
+    },
+    "los": {
+      "top_norm": "las",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "las": 1
+      }
+    },
+    "didn": {
+      "top_norm": "didn't",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "didn't": 1
+      }
+    },
+    "anywayy": {
+      "top_norm": "anyway",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "anyway": 1
+      }
+    },
+    "sware": {
+      "top_norm": "swear",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "swear": 1
+      }
+    },
+    "wann": {
+      "top_norm": "wanna",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wanna": 1
+      }
+    },
+    "atm": {
+      "top_norm": "at the moment",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "at the moment": 1
+      }
+    },
+    "whattt": {
+      "top_norm": "what",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "what": 1
+      }
+    },
+    "performa": {
+      "top_norm": "performance",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "performance": 1
+      }
+    },
+    "kin": {
+      "top_norm": "kind of",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kind of": 1
+      }
+    },
+    "fulfil": {
+      "top_norm": "fulfill",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fulfill": 1
+      }
+    },
+    "dimsum": {
+      "top_norm": "dim sum",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dim sum": 1
+      }
+    },
+    "yass": {
+      "top_norm": "yes",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "yes": 1
+      }
+    },
+    "f": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 7,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.1429,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "giveaway": {
+      "top_norm": "give away",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "give away": 1
+      }
+    },
+    "dixk": {
+      "top_norm": "dick",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dick": 1
+      }
+    },
+    "studyin": {
+      "top_norm": "studying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "studying": 1
+      }
+    },
+    "turnt": {
+      "top_norm": "turned",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "turned": 1
+      }
+    },
+    "swayin": {
+      "top_norm": "swaying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "swaying": 1
+      }
+    },
+    "fadin": {
+      "top_norm": "fading",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fading": 1
+      }
+    },
+    "sitten": {
+      "top_norm": "sitting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "sitting": 1
+      }
+    },
+    "cryin": {
+      "top_norm": "crying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "crying": 1
+      }
+    },
+    "btchs": {
+      "top_norm": "bitches",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bitches": 1
+      }
+    },
+    "sum": {
+      "top_norm": "some",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "some": 1
+      }
+    },
+    "judgin": {
+      "top_norm": "judging",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "judging": 1
+      }
+    },
+    "wellllll": {
+      "top_norm": "well",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "well": 1
+      }
+    },
+    "tu": {
+      "top_norm": "to you",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "to you": 1
+      }
+    },
+    "wrry": {
+      "top_norm": "worry",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "worry": 1
+      }
+    },
+    "thingys": {
+      "top_norm": "thing is",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thing is": 1
+      }
+    },
+    "soooooo": {
+      "top_norm": "so",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "so": 1
+      }
+    },
+    "kiddie": {
+      "top_norm": "kidding",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "kidding": 1
+      }
+    },
+    "tmw": {
+      "top_norm": "tomorrow",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tomorrow": 1
+      }
+    },
+    "wantin": {
+      "top_norm": "wanting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wanting": 1
+      }
+    },
+    "fukk": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "becuz": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "niga": {
+      "top_norm": "nigger",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "nigger": 1
+      }
+    },
+    "ta": {
+      "top_norm": "to",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "to": 1
+      }
+    },
+    "bumpin": {
+      "top_norm": "bumping",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bumping": 1
+      }
+    },
+    "yur": {
+      "top_norm": "your",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "your": 1
+      }
+    },
+    "ting": {
+      "top_norm": "thing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thing": 1
+      }
+    },
+    "stp": {
+      "top_norm": "stop",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "stop": 1
+      }
+    },
+    "hurtin": {
+      "top_norm": "hurting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "hurting": 1
+      }
+    },
+    "hafto": {
+      "top_norm": "have to",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "have to": 1
+      }
+    },
+    "govt": {
+      "top_norm": "government",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "government": 1
+      }
+    },
+    "waaay": {
+      "top_norm": "way",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "way": 1
+      }
+    },
+    "battlestar": {
+      "top_norm": "battle star",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "battle star": 1
+      }
+    },
+    "oooooneee": {
+      "top_norm": "one",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "one": 1
+      }
+    },
+    "dollarr": {
+      "top_norm": "dollar",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dollar": 1
+      }
+    },
+    "shxt": {
+      "top_norm": "shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "shit": 1
+      }
+    },
+    "thanksfor": {
+      "top_norm": "thanks for",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thanks for": 1
+      }
+    },
+    "abit": {
+      "top_norm": "a bit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "a bit": 1
+      }
+    },
+    "eugh": {
+      "top_norm": "enough",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "enough": 1
+      }
+    },
+    "gunna": {
+      "top_norm": "gonna",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "gonna": 1
+      }
+    },
+    "wdlands": {
+      "top_norm": "woodlands",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "woodlands": 1
+      }
+    },
+    "perfoming": {
+      "top_norm": "performing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "performing": 1
+      }
+    },
+    "hv": {
+      "top_norm": "have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "have": 1
+      }
+    },
+    "your": {
+      "top_norm": "you're",
+      "top_count": 2,
+      "raw_total": 80,
+      "changed_total": 2,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.025,
+      "candidates": {
+        "you're": 2
+      }
+    },
+    "chics": {
+      "top_norm": "chicks",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "chicks": 1
+      }
+    },
+    "fightin": {
+      "top_norm": "fighting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fighting": 1
+      }
+    },
+    "aaand": {
+      "top_norm": "and",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "and": 1
+      }
+    },
+    "catalogue": {
+      "top_norm": "catalog",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "catalog": 1
+      }
+    },
+    "ona": {
+      "top_norm": "on a",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "on a": 1
+      }
+    },
+    "riverwalk": {
+      "top_norm": "river walk",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "river walk": 1
+      }
+    },
+    "isit": {
+      "top_norm": "is it",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "is it": 1
+      }
+    },
+    "thu": {
+      "top_norm": "thursday",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "thursday": 1
+      }
+    },
+    "dyn": {
+      "top_norm": "dying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "dying": 1
+      }
+    },
+    "freinds": {
+      "top_norm": "friends",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "friends": 1
+      }
+    },
+    "foolin": {
+      "top_norm": "fooling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fooling": 1
+      }
+    },
+    "somthin": {
+      "top_norm": "something",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "something": 1
+      }
+    },
+    "wallin": {
+      "top_norm": "walling",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "walling": 1
+      }
+    },
+    "youll": {
+      "top_norm": "you'll",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "you'll": 1
+      }
+    },
+    "funnyshit": {
+      "top_norm": "funny shit",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "funny shit": 1
+      }
+    },
+    "bje": {
+      "top_norm": "bye",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "bye": 1
+      }
+    },
+    "cuddlez": {
+      "top_norm": "cuddles",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "cuddles": 1
+      }
+    },
+    "approching": {
+      "top_norm": "approaching",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "approaching": 1
+      }
+    },
+    "mfss": {
+      "top_norm": "mother fuckers",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "mother fuckers": 1
+      }
+    },
+    "everythang": {
+      "top_norm": "everything",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "everything": 1
+      }
+    },
+    "fuckz": {
+      "top_norm": "fuck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuck": 1
+      }
+    },
+    "bcause": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "sumone": {
+      "top_norm": "someone",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "someone": 1
+      }
+    },
+    "merch": {
+      "top_norm": "merchandise",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "merchandise": 1
+      }
+    },
+    "whyy": {
+      "top_norm": "why",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "why": 1
+      }
+    },
+    "comes": {
+      "top_norm": "",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "": 1
+      }
+    },
+    "teering": {
+      "top_norm": "tearing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "tearing": 1
+      }
+    },
+    "alergies": {
+      "top_norm": "allergies",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "allergies": 1
+      }
+    },
+    "insta": {
+      "top_norm": "instagram",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.3333,
+      "candidates": {
+        "instagram": 1
+      }
+    },
+    "bruuh": {
+      "top_norm": "brother",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "brother": 1
+      }
+    },
+    "lefft": {
+      "top_norm": "left",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "left": 1
+      }
+    },
+    "theyve": {
+      "top_norm": "they've",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "they've": 1
+      }
+    },
+    "inlove": {
+      "top_norm": "in love",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "in love": 1
+      }
+    },
+    "nightbot": {
+      "top_norm": "night bot",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "night bot": 1
+      }
+    },
+    "pple": {
+      "top_norm": "people",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "people": 1
+      }
+    },
+    "jn": {
+      "top_norm": "in",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "in": 1
+      }
+    },
+    "sonn": {
+      "top_norm": "son",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "son": 1
+      }
+    },
+    "ifucking": {
+      "top_norm": "i fucking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "i fucking": 1
+      }
+    },
+    "wayy": {
+      "top_norm": "way",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "way": 1
+      }
+    },
+    "reporte": {
+      "top_norm": "reporter",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "reporter": 1
+      }
+    },
+    "favo": {
+      "top_norm": "favorite",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "favorite": 1
+      }
+    },
+    "id": {
+      "top_norm": "i'd",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.25,
+      "candidates": {
+        "i'd": 1
+      }
+    },
+    "tlkn": {
+      "top_norm": "talking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "talking": 1
+      }
+    },
+    "bkuz": {
+      "top_norm": "because",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "because": 1
+      }
+    },
+    "wrd": {
+      "top_norm": "word",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "word": 1
+      }
+    },
+    "weeknd": {
+      "top_norm": "weekend",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "weekend": 1
+      }
+    },
+    "muh": {
+      "top_norm": "mother",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "mother": 1
+      }
+    },
+    "fuckas": {
+      "top_norm": "fuckers",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "fuckers": 1
+      }
+    },
+    "freakin": {
+      "top_norm": "freaking",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "freaking": 1
+      }
+    },
+    "luk": {
+      "top_norm": "luck",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "luck": 1
+      }
+    },
+    "22yr": {
+      "top_norm": "22 year",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "22 year": 1
+      }
+    },
+    "wud": {
+      "top_norm": "would",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "would": 1
+      }
+    },
+    "outta": {
+      "top_norm": "out of",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "out of": 1
+      }
+    },
+    "repubs": {
+      "top_norm": "republicans",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "republicans": 1
+      }
+    },
+    "bloomin": {
+      "top_norm": "blooming",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "blooming": 1
+      }
+    },
+    "starvin": {
+      "top_norm": "starving",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "starving": 1
+      }
+    },
+    "stillll": {
+      "top_norm": "still",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "still": 1
+      }
+    },
+    "faceeee": {
+      "top_norm": "face",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "face": 1
+      }
+    },
+    "conversate": {
+      "top_norm": "converse",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "converse": 1
+      }
+    },
+    "loooot": {
+      "top_norm": "lot",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "lot": 1
+      }
+    },
+    "wk": {
+      "top_norm": "week",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "week": 1
+      }
+    },
+    "kudve": {
+      "top_norm": "could have",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "could have": 1
+      }
+    },
+    "hiz": {
+      "top_norm": "his",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "his": 1
+      }
+    },
+    "similiar": {
+      "top_norm": "similar",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "similar": 1
+      }
+    },
+    "txtin": {
+      "top_norm": "texting",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "texting": 1
+      }
+    },
+    "happyy": {
+      "top_norm": "happy",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "happy": 1
+      }
+    },
+    "birthdayyy": {
+      "top_norm": "birthday",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "birthday": 1
+      }
+    },
+    "payin": {
+      "top_norm": "paying",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "paying": 1
+      }
+    },
+    "ainy": {
+      "top_norm": "are not going to",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "are not going to": 1
+      }
+    },
+    "rmx": {
+      "top_norm": "remix",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 0.5,
+      "candidates": {
+        "remix": 1
+      }
+    },
+    "wearin": {
+      "top_norm": "wearing",
+      "top_count": 1,
+      "raw_total": 1,
+      "changed_total": 1,
+      "changed_confidence": 1.0,
+      "raw_confidence": 1.0,
+      "candidates": {
+        "wearing": 1
+      }
+    }
+  },
+  "ambiguous_pairs": {
+    "u": {
+      "top_norm": "you",
+      "top_count": 266,
+      "raw_total": 273,
+      "changed_total": 271,
+      "candidates": {
+        "you": 266,
+        "your": 3,
+        "you're": 2
+      }
+    },
+    "im": {
+      "top_norm": "i'm",
+      "top_count": 147,
+      "raw_total": 148,
+      "changed_total": 148,
+      "candidates": {
+        "i'm": 147,
+        "i": 1
+      }
+    },
+    "n": {
+      "top_norm": "and",
+      "top_count": 39,
+      "raw_total": 47,
+      "changed_total": 41,
+      "candidates": {
+        "and": 39,
+        "at": 1,
+        "in": 1
+      }
+    },
+    "nah": {
+      "top_norm": "no",
+      "top_count": 3,
+      "raw_total": 8,
+      "changed_total": 5,
+      "candidates": {
+        "no": 3,
+        "now": 2
+      }
+    },
+    "fav": {
+      "top_norm": "favorite",
+      "top_count": 12,
+      "raw_total": 17,
+      "changed_total": 15,
+      "candidates": {
+        "favorite": 12,
+        "favor": 2,
+        "favorites": 1
+      }
+    },
+    "ur": {
+      "top_norm": "your",
+      "top_count": 25,
+      "raw_total": 35,
+      "changed_total": 35,
+      "candidates": {
+        "your": 25,
+        "you're": 9,
+        "you": 1
+      }
+    },
+    "b": {
+      "top_norm": "be",
+      "top_count": 14,
+      "raw_total": 35,
+      "changed_total": 15,
+      "candidates": {
+        "be": 14,
+        "boy": 1
+      }
+    },
+    "yo": {
+      "top_norm": "you",
+      "top_count": 9,
+      "raw_total": 15,
+      "changed_total": 14,
+      "candidates": {
+        "you": 9,
+        "your": 5
+      }
+    },
+    "r": {
+      "top_norm": "are",
+      "top_count": 19,
+      "raw_total": 32,
+      "changed_total": 21,
+      "candidates": {
+        "are": 19,
+        "rest": 2
+      }
+    },
+    "thx": {
+      "top_norm": "thanks",
+      "top_count": 4,
+      "raw_total": 5,
+      "changed_total": 5,
+      "candidates": {
+        "thanks": 4,
+        "thank": 1
+      }
+    },
+    "naw": {
+      "top_norm": "now",
+      "top_count": 7,
+      "raw_total": 8,
+      "changed_total": 8,
+      "candidates": {
+        "now": 7,
+        "not": 1
+      }
+    },
+    "dey": {
+      "top_norm": "they",
+      "top_count": 2,
+      "raw_total": 4,
+      "changed_total": 3,
+      "candidates": {
+        "they": 2,
+        "their": 1
+      }
+    },
+    "l": {
+      "top_norm": "laughing",
+      "top_count": 1,
+      "raw_total": 8,
+      "changed_total": 2,
+      "candidates": {
+        "laughing": 1,
+        "": 1
+      }
+    },
+    "m": {
+      "top_norm": "am",
+      "top_count": 2,
+      "raw_total": 7,
+      "changed_total": 3,
+      "candidates": {
+        "am": 2,
+        "my": 1
+      }
+    },
+    "a": {
+      "top_norm": "ass",
+      "top_count": 1,
+      "raw_total": 387,
+      "changed_total": 3,
+      "candidates": {
+        "ass": 1,
+        "always": 1,
+        "": 1
+      }
+    },
+    "o": {
+      "top_norm": "off",
+      "top_count": 1,
+      "raw_total": 15,
+      "changed_total": 2,
+      "candidates": {
+        "off": 1,
+        "so": 1
+      }
+    },
+    "y": {
+      "top_norm": "why",
+      "top_count": 4,
+      "raw_total": 16,
+      "changed_total": 6,
+      "candidates": {
+        "why": 4,
+        "": 1,
+        "your": 1
+      }
+    },
+    "mf": {
+      "top_norm": "mother fucker",
+      "top_count": 2,
+      "raw_total": 3,
+      "changed_total": 3,
+      "candidates": {
+        "mother fucker": 2,
+        "mother fuckers": 1
+      }
+    },
+    "mi": {
+      "top_norm": "me",
+      "top_count": 2,
+      "raw_total": 8,
+      "changed_total": 4,
+      "candidates": {
+        "me": 2,
+        "my": 2
+      }
+    },
+    "todays": {
+      "top_norm": "today's",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 2,
+      "candidates": {
+        "today's": 1,
+        "today": 1
+      }
+    },
+    "w": {
+      "top_norm": "with",
+      "top_count": 8,
+      "raw_total": 18,
+      "changed_total": 9,
+      "candidates": {
+        "with": 8,
+        "": 1
+      }
+    },
+    "t": {
+      "top_norm": "",
+      "top_count": 2,
+      "raw_total": 23,
+      "changed_total": 3,
+      "candidates": {
+        "": 2,
+        "to": 1
+      }
+    },
+    "nw": {
+      "top_norm": "no worries",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 2,
+      "candidates": {
+        "no worries": 1,
+        "now": 1
+      }
+    },
+    "probs": {
+      "top_norm": "probably",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 2,
+      "candidates": {
+        "probably": 1,
+        "problems": 1
+      }
+    },
+    "min": {
+      "top_norm": "minutes",
+      "top_count": 1,
+      "raw_total": 3,
+      "changed_total": 2,
+      "candidates": {
+        "minutes": 1,
+        "minute": 1
+      }
+    },
+    "en": {
+      "top_norm": "in",
+      "top_count": 1,
+      "raw_total": 4,
+      "changed_total": 2,
+      "candidates": {
+        "in": 1,
+        "and": 1
+      }
+    },
+    "pre": {
+      "top_norm": "preorder",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 2,
+      "candidates": {
+        "preorder": 1,
+        "precalc": 1
+      }
+    },
+    "favour": {
+      "top_norm": "favorite",
+      "top_count": 1,
+      "raw_total": 2,
+      "changed_total": 2,
+      "candidates": {
+        "favorite": 1,
+        "favor": 1
+      }
+    }
+  },
+  "context_sensitive_tokens": [
+    "2",
+    "4",
+    "8",
+    "af",
+    "am",
+    "as",
+    "b",
+    "bc",
+    "c",
+    "cause",
+    "d",
+    "da",
+    "dm",
+    "em",
+    "fav",
+    "hell",
+    "i",
+    "id",
+    "ill",
+    "im",
+    "its",
+    "k",
+    "n",
+    "o",
+    "r",
+    "rn",
+    "rt",
+    "shell",
+    "tf",
+    "tha",
+    "u",
+    "ur",
+    "us",
+    "w",
+    "well",
+    "were",
+    "x",
+    "xx",
+    "y",
+    "ya",
+    "yo"
+  ],
+  "paper_seed_pairs": {
+    "u": "you",
+    "r": "are",
+    "ur": "your / you're",
+    "pls": "please",
+    "plz": "please",
+    "ppl": "people",
+    "dont": "don't",
+    "cant": "can't",
+    "im": "i'm",
+    "ive": "i've",
+    "gonna": "going to",
+    "wanna": "want to",
+    "tryna": "trying to",
+    "cuz": "because",
+    "bc": "because",
+    "tho": "though",
+    "lil": "little",
+    "yall": "y'all",
+    "fav": "favorite"
+  },
+  "notes": [
+    "Pure numeric tokens such as 2 and 4 are common English shorthand in this dataset, but direct replacement is not enabled by default because many numeric tokens are protected entities, dates, counts, or times.",
+    "Offensive colloquial forms may appear in the data-derived dictionary if they are stable gold mappings. Treat them only as dataset annotation artifacts, not as style recommendations.",
+    "RT/rt occurs often but is frequently preserved; send it to prompt/model unless strong context supports retweet."
+  ]
+}

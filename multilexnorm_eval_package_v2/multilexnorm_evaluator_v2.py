@@ -261,9 +261,11 @@ def compute_token_counts(raw: Sequence[Sequence[str]], gold: Sequence[Sequence[s
 
 
 def err_from_counts(counts: TokenCounts) -> float:
-    # Equivalent to (accuracy_system - accuracy_lai) / (1 - accuracy_lai)
-    denom = counts.tp + counts.fn
-    return 0.0 if denom == 0 else round6((counts.tp - counts.fp) / denom)
+    # NOTE: (tp - fp) / (tp + fn) 의 경우에는 계산상 틀린것 같진 않은데, 
+    # LLM이 "고쳤는데 틀린 경우에" 카운팅이 2번 되는 문제가 생기는듯 합니다. 
+
+    denom = counts.total_tokens - counts.lai_correct_tokens
+    return 0.0 if denom == 0 else round6((counts.correct_tokens - counts.lai_correct_tokens) / denom)
 
 
 def detection_metrics_from_counts(counts: TokenCounts) -> dict[str, float | int]:

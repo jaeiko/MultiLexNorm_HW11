@@ -27,7 +27,7 @@ pip install -r requirements.txt
 - 링크: https://drive.google.com/drive/folders/1P_l0hmy8j-UQe9RCfQCuh0CiyIAiRr3V
 
 ```
-상위폴더/
+11_CodeFile.zip/
 ├── MultiLexNorm_HW11/      
 └── checkpoint-7347/        ← 여기에 배치 (paths_config.XLMR_MODEL_PATH 기준)
 ```

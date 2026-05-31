@@ -1,0 +1,62 @@
+{
+  "model_name": "Smart_Guarded_MFR_v1_guard_v1",
+  "description": "Train-based language-aware MFR with Smart Guard v1 language-specific confidence/change-rate/margin guards.",
+  "guard_config": {
+    "default": {
+      "mode": "base"
+    },
+    "by_lang": {
+      "vi": {
+        "mode": "margin_guard",
+        "margin": 0.2
+      },
+      "iden": {
+        "mode": "confidence_guard",
+        "confidence": 0.8
+      },
+      "en": {
+        "mode": "margin_guard",
+        "margin": 0.2
+      },
+      "id": {
+        "mode": "change_guard",
+        "change_rate": 0.75
+      },
+      "sl": {
+        "mode": "margin_guard",
+        "margin": 0.2
+      },
+      "sr": {
+        "mode": "change_guard",
+        "change_rate": 0.75
+      },
+      "th": {
+        "mode": "margin_guard",
+        "margin": 0.2
+      },
+      "hr": {
+        "mode": "base"
+      },
+      "nl": {
+        "mode": "change_guard",
+        "change_rate": 0.75
+      },
+      "de": {
+        "mode": "change_guard",
+        "change_rate": 0.75
+      },
+      "ja": {
+        "mode": "margin_guard",
+        "margin": 0.2
+      },
+      "ko": {
+        "mode": "change_guard",
+        "change_rate": 0.75
+      }
+    }
+  },
+  "dictionary_source": "train-only",
+  "validation_overall_err": 0.4611603433951814,
+  "validation_macro_err": 0.4059916722208858,
+  "created_at": "2026-05-31"
+}

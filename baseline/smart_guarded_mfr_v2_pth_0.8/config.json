@@ -1,0 +1,12 @@
+{
+  "model_name": "Smart_Guarded_MFR_v2_pth_0.8",
+  "description": "Train-based language-aware MFR with Smart Guard v2 for protected tokens.",
+  "protected_threshold": 0.8,
+  "normal_threshold": 0.0,
+  "japanese_punct_threshold": 0.95,
+  "digit_suffix_threshold": 0.5,
+  "time_threshold": 0.5,
+  "created_at": "2026-05-13T10:08:04.112702",
+  "validation_overall_err": 0.4918997507615618,
+  "validation_macro_err": 0.43814178202153914
+}

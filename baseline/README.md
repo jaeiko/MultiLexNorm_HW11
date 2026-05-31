@@ -1,73 +1,54 @@
-# MultiLexNorm 2026 Demo
-This repository provides a demo for the MultiLexNorm shared task.
-It demonstrates how to download the dataset, run a simple baseline model (MFR), and evaluate normalization results.
+# MultiLexNorm2026 Baseline
 
+이 폴더는 MultiLexNorm2026 과제에서 사용된 baseline 모델 패키지를 포함합니다.
+각 하위 폴더는 validation 결과와 예측 코드를 함께 제공합니다.
 
-- [**Full code is available here**](notebooks/demo.ipynb).
-- The datasets will be available at [development phase](https://huggingface.co/datasets/weerayut/multilexnorm2026-dev-pub) and [final phase](https://huggingface.co/datasets/weerayut/multilexnorm2026-dev-pub).
-- Example MFR submission outputs: `outputs/submission_dev.zip` and `outputs/submission_full.zip`
+## 구성
 
-## Project layout
+- `smart_guarded_mfr_v1_guard_v1/`
+  - MFR 기반 언어 인식 모델
+  - Smart Guard v1 규칙 기반 보호기
+  - validation 결과: Overall ERR 46.12, Accuracy 94.09
 
-```text
-notebooks/               Colab/demo notebooks
-tools/analysis/          Reusable analysis scripts
-reports/                 Curated experiment summaries and outputs
-prompt_mfr_dictionary/   Prompt and MFR dictionary packages
-bin/                     Local one-off scripts, ignored by git
-탐지모델/                 Detection-model experiments and configs
-```
+- `smart_guarded_mfr_v2_pth_0.8/`
+  - MFR 기반 언어 인식 모델
+  - Smart Guard v2 보호기 (protected_threshold = 0.8)
+  - validation 결과: Overall ERR 49.19, Accuracy 94.15
 
-## Set up the environment
-```bash
-# Create an environment and install packages
-python -m venv .venv
-source .venv/bin/activate
+## 하위 폴더 내용
 
-pip install -r requirements.txt
-```
+각 하위 폴더에는 아래 파일이 포함됩니다.
 
-## Load data
+- `mfr_stats.pkl.gz`: MFR 사전 및 통계
+- `smart_guard_mfr_v*.py`: 예측 함수
+- `config.json`: 모델/보호기 하이퍼파라미터
+- `validation_predictions.json`: 검증 예측 결과
+- `validation_overall.json`: 종합 검증 지표
+- `validation_language_metrics.csv`: 언어별 검증 지표
+
+## 사용 방법
+
+1. 원하는 하위 폴더로 이동합니다.
+2. Python 환경을 활성화합니다.
+3. `mfr_stats.pkl.gz`를 로드하고 예측 함수를 호출합니다.
+
+예시:
 
 ```python
-from datasets import load_dataset
+import gzip
+import pickle
+from smart_guard_mfr_v1 import predict_smart_guarded_mfr_v1
 
-pub_data = load_dataset("weerayut/multilexnorm2026-pub")
+with gzip.open("mfr_stats.pkl.gz", "rb") as f:
+    obj = pickle.load(f)
 
-# Select a language
-lang = "en"
-en_train = pub_data["train"].filter(lambda x: x["lang"] == lang)
-en_val = pub_data["validation"].filter(lambda x: x["lang"] == lang)
+mfr = obj["mfr"]
+stats = obj["stats"]
+
+predictions = predict_smart_guarded_mfr_v1(test_samples, mfr, stats)
 ```
 
+## 주의
 
-## Inference
-```python
-import pandas as pd
-from utils import counting, mfr
-
-# Smoke test the baseline
-counts = counting(en_train)
-mfr(['bcause', 'u', 'r', 'funny'], counts)
-
-# Inference
-ds = pd.DataFrame(en_val)
-ds['pred'] = ds['raw'].apply(lambda x: mfr(x, counts))
-```
-
-## Evaluation
-```python
-from utils import evaluate
-
-evaluate(
-    raw=ds['raw'].tolist(),    # list[list[str]]
-    gold=ds['norm'].tolist(),  # list[list[str]]
-    pred=ds['pred'].tolist()   # list[list[str]]
-)
-```
-Output:
-```txt
-Baseline acc.(LAI): 93.10
-Accuracy:           97.37
-ERR:                61.93
-```
+- 이 README는 `baseline` 하위에 포함된 baseline 모델 패키지 정보를 요약한 것입니다.
+- 실제 데이터 로딩 및 전체 파이프라인은 루트 프로젝트의 다른 스크립트에서 관리될 수 있습니다.

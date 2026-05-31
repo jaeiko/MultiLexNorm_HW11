@@ -1,0 +1,11 @@
+{
+  "model_name": "Smart_Guarded_MFR_v1_guard_v1",
+  "accuracy": 0.9409301546535649,
+  "lai_accuracy": 0.8847954569019836,
+  "overall_err": 0.4611603433951814,
+  "macro_err": 0.4059916722208858,
+  "total_tokens": 125377,
+  "tp": 7457,
+  "fp": 796,
+  "fn": 6987
+}

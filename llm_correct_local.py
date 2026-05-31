@@ -23,6 +23,27 @@ paths_config.setup_imports()
 from prompt_mfr_adapter import PromptMFRResources
 from common_prompt import extract_first_json_object
 
+# Set True in main() when using a hosted OpenAI endpoint instead of local Ollama.
+OPENAI_MODE = False
+
+
+def load_env_key(name: str) -> str | None:
+    """Reads a key from process env, falling back to a .env file at project root."""
+    import os
+    val = os.environ.get(name)
+    if val:
+        return val.strip()
+    env_path = paths_config.ROOT_DIR / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if not line or line.startswith('#') or '=' not in line:
+                continue
+            k, _, v = line.partition('=')
+            if k.strip() == name:
+                return v.strip().strip('"').strip("'")
+    return None
+
 
 def call_ollama(
     client: Any,
@@ -56,14 +77,19 @@ def call_ollama(
                     {'role': 'system', 'content': system},
                     {'role': 'user', 'content': user},
                 ],
-                'temperature': 0,
-                'seed': 42,
             }
-            if use_json_format:
-                kwargs['response_format'] = {'type': 'json_object'}
-            if disable_thinking:
-                kwargs['extra_body'] = {'think': False}
-                
+            if OPENAI_MODE:
+                # Hosted OpenAI (e.g. gpt-5-mini): no ollama-only think flag, no custom
+                if use_json_format:
+                    kwargs['response_format'] = {'type': 'json_object'}
+            else:
+                kwargs['temperature'] = 0
+                kwargs['seed'] = 42
+                if use_json_format:
+                    kwargs['response_format'] = {'type': 'json_object'}
+                if disable_thinking:
+                    kwargs['extra_body'] = {'think': False}
+
             resp = client.chat.completions.create(**kwargs)
             return str(resp.choices[0].message.content)
         except Exception as e:
@@ -92,16 +118,21 @@ def process_one(args: Tuple[Any, str, str, str, Dict[str, Any], bool]) -> Tuple[
 def main() -> int:
     """Executes the LLM Correction Stage via command line."""
     ap = argparse.ArgumentParser(description="LLM Correction Stage via local Ollama endpoint.")
-    ap.add_argument('--model', required=True, help='Ollama model identifier name')
+    ap.add_argument('--model', required=True, help='Model identifier name')
     ap.add_argument('--base-url', default='http://localhost:11434/v1')
     ap.add_argument('--workers', type=int, default=2, help='Concurrent worker threads count')
     ap.add_argument('--no-json-format', action='store_true', help='Omit json response enforcement')
     ap.add_argument('--fewshot', action='store_true', help='Enable dynamic similarity-based few-shot retrieval')
     ap.add_argument('--pos-k', type=int, default=5, help='Count of positive few-shot items')
     ap.add_argument('--neg-k', type=int, default=5, help='Count of negative few-shot items')
+    ap.add_argument('--openai', action='store_true', help='Use hosted OpenAI endpoint (reads OPENAI_KEY from env/.env)')
+    ap.add_argument('--output', default=None, help='Override output JSONL filename under outputs/ (default: paths_config.LLM_OUTPUT_PATH)')
     args = ap.parse_args()
 
-    print(f"[LLM correction LOCAL] model={args.model} workers={args.workers}")
+    global OPENAI_MODE
+    OPENAI_MODE = args.openai
+
+    print(f"[LLM correction] model={args.model} workers={args.workers} openai={OPENAI_MODE}")
     t0 = time.time()
 
     try:
@@ -109,8 +140,16 @@ def main() -> int:
     except ImportError:
         print("ERROR: openai library is missing in this environment.")
         return 1
-        
-    client = OpenAI(base_url=args.base_url, api_key='ollama')
+
+    if OPENAI_MODE:
+        api_key = load_env_key("OPENAI_KEY")
+        if not api_key:
+            print("ERROR: OPENAI_KEY not found in env or .env file.")
+            return 1
+        base_url = None if args.base_url.startswith('http://localhost') else args.base_url
+        client = OpenAI(api_key=api_key) if base_url is None else OpenAI(base_url=base_url, api_key=api_key)
+    else:
+        client = OpenAI(base_url=args.base_url, api_key='ollama')
 
     # Load prompt resources using paths_config
     resources = PromptMFRResources(str(paths_config.PROMPT_MFR_DICT_DIR))
@@ -136,7 +175,7 @@ def main() -> int:
     hard = [json.loads(line) for line in hc_path.read_text(encoding='utf-8').splitlines() if line.strip()]
     print(f"  Total hard cases to process: {len(hard)}")
 
-    out_path = paths_config.LLM_OUTPUT_PATH
+    out_path = (paths_config.ROOT_DIR / "outputs" / args.output) if args.output else paths_config.LLM_OUTPUT_PATH
     out_path.parent.mkdir(parents=True, exist_ok=True)
     done_keys: Set[Tuple[int, int]] = set()
     if out_path.exists():

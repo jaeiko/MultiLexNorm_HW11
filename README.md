@@ -112,6 +112,18 @@ pip install -r requirements.txt
 | `outputs/` | 파이프라인 산출물 |
 | `bin/` | 아카이브 (구 실험·데이터·문서) |
 
+### `outputs/` 캐시 파일
+| 파일 | 내용 |
+|------|------|
+| `hard_cases_val.jsonl` | Stage 1 출력 — LLM에 보낼 hard case 토큰 목록 (검증셋) |
+| `ngram_mfr_val.json` | Stage 1 출력 — N-gram+MFR 합본 예측 (LLM 직전) |
+| `llm_corrections_val.jsonl` | Stage 2 출력 — Gemma4 LLM 교정 결과 (메인, 재실행 시 resume 캐시) |
+| `llm_corrections_val_qwen.jsonl` | LLM 모델 비교용 — Qwen2.5-7B 교정 결과 (Table 4) |
+| `llm_corrections_val_gpt5mini.jsonl` | LLM 모델 비교용 — GPT-5-mini 교정 결과 (Table 4) |
+| `trigram_stats.pkl.gz` | N-gram 통계 (`build_trigram_stats.py` 산출) |
+| `submissions_val/` | Stage 3 최종 산출물 — `predictions.{json,zip}` |
+| `submission_dev/` | dev 셋 실험 산출물 모음 |
+
 ---
 
 ## 파이프라인 실행 방법

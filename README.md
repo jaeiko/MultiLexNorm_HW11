@@ -11,6 +11,39 @@ N-gram  →  MFR  →  XLM-R  →  LLM
 
 ---
 
+## 사전 준비 (Setup)
+
+### 1. Python 환경
+```bash
+python -m venv venv
+source venv/Scripts/activate   
+pip install -r requirements.txt
+```
+
+### 2. XLM-R 모델 다운로드
+용량이 커서 저장소에 포함되지 않습니다. 아래 링크에서 `checkpoint-7347` 폴더를 받아
+**이 저장소 폴더와 같은 위치(상위 디렉터리)** 에 둡니다.
+
+- 링크: https://drive.google.com/drive/folders/1P_l0hmy8j-UQe9RCfQCuh0CiyIAiRr3V
+
+```
+상위폴더/
+├── MultiLexNorm_HW11/      
+└── checkpoint-7347/        ← 여기에 배치 (paths_config.XLMR_MODEL_PATH 기준)
+```
+
+### 3. LLM 백엔드
+- **로컬 (기본, Gemma4)**: Ollama 이용해 실행했습니다
+  ```bash
+  ollama pull gemma4
+  ```
+- **클라우드 (선택, GPT-5-mini)**: 루트에 `.env` 생성 후 키 기입
+  ```
+  OPENAI_KEY=
+  ```
+
+---
+
 ## 파이프라인 실행 흐름
 
 3개 스크립트를 순서대로 실행합니다.

@@ -28,12 +28,12 @@ COMMON_PROMPT_DIR: Path = PROMPT_MFR_DICT_DIR / "common_prompt_v2_package" / "pr
 XLMR_MODEL_PATH: Path = ROOT_DIR.parent / "checkpoint-7347"
 
 # Pipeline I/O paths (edit per experiment — referenced by mine/llm/build)
-# Current experiment: dev p1 (tri+mfr+xlmr+llm) — CodaBench submission target
-MINE_INPUT_PATH: Path = ROOT_DIR / "outputs" / "submission_dev" / "predictions.json"
-HARD_CASES_PATH: Path = ROOT_DIR / "outputs" / "hard_cases_dev_p1.jsonl"
-BASELINE_PATH: Path = ROOT_DIR / "outputs" / "baseline_dev_p1.json"
-LLM_OUTPUT_PATH: Path = ROOT_DIR / "outputs" / "llm_corrections_dev.jsonl"
-SUBMISSION_DIR: Path = ROOT_DIR / "outputs" / "submissions_dev_p1"
+# Default: validation set, final pipeline p1 (N-gram + MFR + XLM-R + LLM)
+MINE_INPUT_PATH: Path = DATASET_DIR / "validation-00000-of-00001.parquet"
+HARD_CASES_PATH: Path = ROOT_DIR / "outputs" / "hard_cases_val.jsonl"
+NGRAM_MFR_PATH: Path = ROOT_DIR / "outputs" / "ngram_mfr_val.json"
+LLM_OUTPUT_PATH: Path = ROOT_DIR / "outputs" / "llm_corrections_val.jsonl"
+SUBMISSION_DIR: Path = ROOT_DIR / "outputs" / "submissions_val"
 
 
 def setup_imports() -> None:

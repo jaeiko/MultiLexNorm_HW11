@@ -2,153 +2,158 @@
 
 homework 11th team submission codefile
 
-N-gram -> MFR -> XLM-R -> LLM
+다국어 비표준 어휘(줄임말·구어체·오탈자·방언 등)를 표준형으로 변환하는 **다국어 어휘 정규화(Lexical Normalization)** 인공지능개론 과제 코드입니다.
+통계 사전(N-gram·MFR), 탐지기(XLM-R), 로컬/클라우드 LLM을 결합한 파이프라인으로 동작합니다.
 
----------
-
-## Pipeline Architecture
-
-4개 모듈이 **베이스라인 보정 → 하드케이스 탐지 → LLM 교정 → 오버레이 빌드** 순으로 작동합니다.
-
-```mermaid
-graph TD
-    A[입력 raw 토큰] --> B["N-gram 보정 (1순위)"]
-    B --> C["MFR 사전 보정 (fallback)"]
-    C --> D["XLM-R 토큰 탐지<br/>(baseline가 못 건드린 noisy 토큰 = Hard Cases)"]
-    D --> E["로컬 LLM 퓨샷 교정<br/>(Hard Cases만)"]
-    E --> F["오버레이 → predictions.zip"]
 ```
-
-우선순위는 **N-gram → MFR → 원본 유지**(token이 N-gram에서 바뀌면 그대로, 아니면 MFR, 둘 다 안 바뀌면 raw). LLM은 baseline이 손대지 않았으면서 동시에 XLM-R이 noisy로 표시한 토큰(Hard Cases)에 대해서만 호출되어 비용·시간을 절약합니다.
-
-### 모듈별 설명
-
-| 모듈 | 파일 | 역할 |
-|---|---|---|
-| **N-gram** | `trigram_predictor.py` | 문맥 통계로 1순위 보정. trigram → bigram(좌/우) back-off chain. |
-| **MFR 사전** | `smart_guard_mfr_v2.py` | 토큰별 최빈 정규화(Most Frequent Replacement) lookup + 보호 가드. |
-| **XLM-R 탐지** | `detection.py` | 토큰 단위 noise 분류기. baseline가 놓친 Hard Cases 마이닝. |
-| **LLM 교정** | `llm_correct_local.py`, `normalization_fewshot.py`, `prompt_mfr_adapter.py` | Hard Cases에 동적 퓨샷 프롬프트로 최종 교정. |
-
-### 현재 채택 설정
-
-- **N-gram**: `variant=tri_bi_both`, `conf_min=0.70`, `protect=non_protect` 
-(ablation으로 선정 — `ablation_trigram.py`로 재현)
-- **XLM-R**: [여기 깃허브나 드라이브경로 올려야함] threshold 0.5
-- **LLM**: `gemma4:latest` (Gemma4 : E4B, Q4_K_M), `--fewshot --pos-k 3 --neg-k 0`, temperature=0 / seed=42, workers=2
+N-gram  →  MFR  →  XLM-R  →  LLM
+```
 
 ---
 
-## 🚀 실행 가이드 (3-스크립트 파이프라인)
+## 파이프라인 실행 흐름
+
+3개 스크립트를 순서대로 실행합니다.
+
+```
+[Stage 1] mine_hard_cases_dev.py
+    입력 문장 → N-gram·MFR 예측 계산 + XLM-R로 hard case 선별
+    출력: hard_cases(.jsonl), ngram_mfr(.json)  ← LLM 직전 N-gram+MFR 합본 예측
+        │
+        ▼
+[Stage 2] llm_correct_local.py
+    hard case 토큰에 대해서만 LLM 정규화 호출 (dynamic few-shot)
+    출력: llm_corrections(.jsonl)
+        │
+        ▼
+[Stage 3] build_dev_submissions.py
+    ngram_mfr 예측 위에 LLM 교정을 overlay → CodaBench 제출용 zip
+    출력: submissions/predictions.{json,zip}
+```
+
+- **예측 우선순위**: N-gram → MFR → 원본 유지 (N-gram이 바꾸면 그 값, 아니면 MFR, 둘 다 아니면 raw)
+- **LLM 게이팅**: N-gram·MFR이 손대지 않았고 XLM-R이 noise로 표시한 토큰(hard case)에만 LLM 호출 → 비용·시간 절약
+
+---
+
+## 폴더 / 파일 설명
+
+### 실행 스크립트 (3-stage)
+| 파일 | 단계 | 역할 |
+|------|------|------|
+| `mine_hard_cases_dev.py` | Stage 1 | N-gram·MFR 예측 계산 + XLM-R hard case 마이닝 |
+| `llm_correct_local.py` | Stage 2 | LLM 정규화 교정 (Ollama / OpenAI) |
+| `build_dev_submissions.py` | Stage 3 | overlay + 제출 zip 빌드 |
+
+### 모듈 (스크립트가 import)
+| 파일 | 역할 |
+|------|------|
+| `trigram_predictor.py` | N-gram 예측기 (trigram → bigram back-off) |
+| `smart_guard_mfr_v2.py` | MFR 최빈 정규화 + 보호 토큰 가드 |
+| `detection.py` | XLM-R 토큰 noise 탐지기 (`AnomalyDetector`) |
+| `prompt_mfr_adapter.py` | MFR 사전 ↔ LLM 프롬프트 어댑터 |
+| `normalization_fewshot.py` | 편집거리 기반 동적 few-shot 검색기 |
+| `paths_config.py` | 모든 입출력 경로를 모은 중앙 설정 |
+| `evaluation.py` | 공식 평가기 연동 브릿지 |
+
+### 보조 도구
+| 파일 | 역할 |
+|------|------|
+| `build_trigram_stats.py` | train → `outputs/trigram_stats.pkl.gz` 빌드 |
+| `ablation_trigram.py` | N-gram 설정 grid ablation 러너 |
+
+### 리소스 / 데이터
+| 항목 | 내용 |
+|------|------|
+| `mfr_stats.pkl.gz` | MFR 통계 사전 (predict용 lookup table) |
+| `outputs/trigram_stats.pkl.gz` | N-gram 통계 |
+| `multilexnorm2026-dataset/` | train / validation / test parquet |
+| `prompt_mfr_dictionary/` | 언어별 MFR 사전 + LLM 프롬프트 리소스 |
+| `.env` | `OPENAI_KEY=...` (OpenAI 모델 사용 시) |
+
+### 폴더
+| 폴더 | 내용 |
+|------|------|
+| `baseline/` | LAI · MFR · ByT5 베이스라인 |
+| `multilexnorm_eval_package_v2/` | 공식 ERR 평가기 (eval_groups 다중 뷰) |
+| `outputs/` | 파이프라인 산출물 |
+| `bin/` | 아카이브 (구 실험·데이터·문서) |
+
+---
+
+## 파이프라인 실행 방법
 
 > [!IMPORTANT]
-> LLM 단계는 로컬 **Ollama 데몬**(또는 OpenAI 호환 LLM 서버)이 실행 중이어야 합니다.
+> Stage 2는 로컬 **Ollama 데몬** 또는 OpenAI API 키(`.env`)가 필요합니다.
 
-입출력 경로는 CLI 인자가 아니라 **`paths_config.py` 상단 상수**로 지정합니다. 실험을 바꿀 때는 아래 상수만 편집하고 돌립니다. 
+입출력 경로는 **`paths_config.py` 상단 상수**로 지정합니다.
+실험을 바꿀 때는 이 상수들만 편집하고 스크립트를 돌립니다.
 
 ```python
 # paths_config.py
-MINE_INPUT_PATH  = ... # mine 입력 (.parquet 또는 .json)
-HARD_CASES_PATH  = ... # Stage 1 → 2 hard cases jsonl
-BASELINE_PATH    = ... # Stage 1 → 3 baseline json
-LLM_OUTPUT_PATH  = ... # Stage 2 LLM 교정 결과 jsonl (= Stage 3 입력)
-SUBMISSION_DIR   = ... # Stage 3 최종 출력 디렉터리
+MINE_INPUT_PATH  = ...  # mine 입력 (.parquet 또는 .json)
+HARD_CASES_PATH  = ...  # Stage 1 → 2
+NGRAM_MFR_PATH   = ...  # Stage 1 → 3 (N-gram+MFR 합본 예측)
+LLM_OUTPUT_PATH  = ...  # Stage 2 → 3
+SUBMISSION_DIR   = ...  # Stage 3 최종 출력
 ```
 
-### Stage 1 — 하드케이스 마이닝 (`mine_hard_cases_dev.py`)
-Trigram·MFR 베이스라인을 계산하고 XLM-R로 Hard Cases를 선별합니다.
+### 1. 경로 설정
+`paths_config.py`에서 위 5개 상수를 이번 실험에 맞게 수정한다.
+
+### 2. Stage 1 — 마이닝
 ```bash
-python mine_hard_cases_dev.py            # tri+mfr (기본)
-python mine_hard_cases_dev.py --no-trigram   # mfr만
-python mine_hard_cases_dev.py --no-mfr       # tri만
+python mine_hard_cases_dev.py            # N-gram + MFR (기본)
+python mine_hard_cases_dev.py --no-trigram   # MFR만
+python mine_hard_cases_dev.py --no-mfr       # N-gram만
 python mine_hard_cases_dev.py --mfr-first    # MFR 우선순위
 ```
-- 입력: `MINE_INPUT_PATH`
-- 출력: `HARD_CASES_PATH`, `BASELINE_PATH`
 
-### Stage 2 — LLM 교정 (`llm_correct_local.py`)
+### 3. Stage 2 — LLM 교정
 ```bash
-python llm_correct_local.py --model gemma4:latest --fewshot --pos-k 3 --neg-k 0
-```
-- 입력: `HARD_CASES_PATH`
-- 출력: `LLM_OUTPUT_PATH`
-- 주요 인자: `--workers`(기본 2), `--pos-k`/`--neg-k`(퓨샷 개수), `--no-json-format`
+# 로컬 Ollama
+python llm_correct_local.py --model gemma4:latest --fewshot --pos-k 3 --neg-k 0 --workers 2
 
-### Stage 3 — 오버레이 및 빌드 (`build_dev_submissions.py`)
-baseline 위에 LLM 교정을 오버레이하고 CodaBench용 zip을 만듭니다.
+# OpenAI (.env의 OPENAI_KEY 사용, 별도 출력파일로)
+python llm_correct_local.py --model gpt-5-mini-2025-08-07 --openai \
+    --output llm_corrections_gpt5mini.jsonl --fewshot --pos-k 3 --neg-k 0 --workers 8
+```
+- 중단 후 같은 명령으로 재실행하면 처리분을 건너뛰고 **이어서 진행**(resume)한다.
+
+### 4. Stage 3 — 빌드
 ```bash
-python build_dev_submissions.py          # baseline + LLM
-python build_dev_submissions.py --no-llm # baseline만 (LLM 생략)
+python build_dev_submissions.py          # baseline + LLM overlay
+python build_dev_submissions.py --no-llm # baseline만
 ```
-- 입력: `BASELINE_PATH`, `HARD_CASES_PATH`, `LLM_OUTPUT_PATH`
-- 출력: `SUBMISSION_DIR/predictions.{json,zip}`
+→ `SUBMISSION_DIR/predictions.{json,zip}` 생성.
 
----
-
-## 🔧 보조 스크립트
-
-| 스크립트 | 용도 |
-|---|---|
-| `build_trigram_stats.py` | train parquet → `outputs/trigram_stats.pkl.gz` (trigram/biL/biR 통계 빌드) |
-| `ablation_trigram.py` | N-gram (variant × conf_min × protect) 그리드 ablation. tri-only / full 모드. → CSV |
-| `run_mfr_xlmr_experiment.py` | MFR + XLM-R 결합 실험 |
-| `baseline/evaluate_all.py` | LAI / MFR / ByT5 베이스라인 메트릭 대시보드 |
-
-평가는 `multilexnorm_eval_package_v2`(다중 뷰: `--eval_groups all official12 missing5`)로 수행합니다.
-
+### 5. 평가 (공식 ERR)
 ```bash
 python multilexnorm_eval_package_v2/multilexnorm_evaluator_v2.py evaluate \
   --gold_parquet multilexnorm2026-dataset/validation-00000-of-00001.parquet \
   --pred_path outputs/<submission>/predictions.json \
-  --model_name <name> --dataset_name val12lang \
+  --model_name <name> --dataset_name val \
   --eval_groups all official12 missing5 \
   --out_dir multilexnorm_eval_package_v2/outputs/results
 ```
 
 ---
 
-## 📂 폴더 구조
+## N-gram Ablation 사용법
 
-```text
-MultiLexNorm_HW11/
-├── multilexnorm2026-dataset/        # train/val/test parquet (train 17개 언어, val 12개 언어)
-│   └── mini_validation/
-├── baseline/                        # LAI · MFR · ByT5 베이스라인 + evaluate_all.py
-├── multilexnorm_eval_package_v2/    # 평가기 (eval_groups 다중 뷰)
-├── prompt_mfr_dictionary/           # 언어별 MFR 사전 + LLM 프롬프트 리소스
-├── outputs/                         # 파이프라인 산출물 + trigram_stats.pkl.gz
-├── bin/                             # 아카이브 (구 17lang 데이터·실험·평가기 v1·보고서 자료)
-│
-├── paths_config.py                  # [중앙 경로] 모든 I/O 경로 상수
-├── trigram_predictor.py             # N-gram 예측기 (trigram → bigram back-off)
-├── build_trigram_stats.py           # N-gram 통계 빌더
-├── smart_guard_mfr_v2.py            # MFR 사전 보정 + 보호 가드
-├── prompt_mfr_adapter.py            # MFR 사전 ↔ LLM 프롬프트 어댑터
-├── detection.py                     # XLM-R 토큰 noise 탐지기
-├── normalization_fewshot.py         # 동적 퓨샷 검색기
-├── mine_hard_cases_dev.py           # [Stage 1] 하드케이스 마이닝
-├── llm_correct_local.py             # [Stage 2] 로컬 LLM 교정
-├── build_dev_submissions.py         # [Stage 3] 오버레이 + zip 빌드
-├── ablation_trigram.py              # N-gram ablation 그리드 러너
-├── run_mfr_xlmr_experiment.py       # MFR+XLM-R 실험
-├── evaluation.py                    # 공식 평가기 연동 브릿지
-├── mfr_stats.pkl.gz                 # MFR 통계 (predict용 lookup table)
-└── requirements.txt
+N-gram 예측기의 `variant × conf_min × protect` 조합을 한 번에 평가합니다.
+`tri-only`(N-gram 단독)와 `full`(전체 파이프라인) 두 관점을 모두 산출합니다.
+
+```bash
+python ablation_trigram.py --mode both          # tri-only + full
+python ablation_trigram.py --mode tri-only      # N-gram 단독만
+python ablation_trigram.py --mode full          # 전체 파이프라인만
 ```
 
----
+- 출력: `outputs/ablation_trigram_results.csv` (조합별 ERR)
+- 탐색 범위: variant 4종(`pure`/`tri_biL`/`tri_biR`/`tri_bi_both`), conf_min 0.50~1.00, protect(`non_protect`/`protect`)
+- `full` 모드는 기존 LLM 캐시(`outputs/llm_corrections_val.jsonl`)를 재사용한다.
 
-## 📊 데이터셋 메모
-
-- `multilexnorm2026-dataset/`는 단일 데이터셋(`train`/`validation`/`test` parquet).
-- train 39,178행(17개 언어), validation 8,408행(12개 언어: de/en/hr/id/iden/ja/ko/nl/sl/sr/th/vi).
-- val에 없는 5개 언어(da/es/it/tr/trde)는 평가 시 `missing5`/`official12` 분리 뷰로 따로 확인.
-- 통계 파일(`mfr_stats.pkl.gz`, `trigram_stats.pkl.gz`)은 train 전체(640,984 토큰)를 반영.
+**현재 채택 설정**: `variant=tri_bi_both`, `conf_min=0.70`, `protect=non_protect` (ablation으로 선정)
 
 ---
-
-## 🧱 핵심 설계 원칙
-
-1. **경로 일원화 (`paths_config.py`)** — 모든 입출력 경로를 한 곳의 상수로 관리. 실험 전환은 상수 편집만으로 처리.
-2. **공식 메트릭 일치 (`evaluation.py` + `multilexnorm_eval_package_v2`)** — 내부 평가(precision/recall/f1/err)가 공식 평가기와 동일하도록 연동.
-3. **비용 효율 LLM 호출** — XLM-R이 탐지한 Hard Cases에만 LLM을 호출하여 추론 비용·시간 최소화.

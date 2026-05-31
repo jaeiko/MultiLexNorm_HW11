@@ -32,10 +32,10 @@ def build_submission(use_llm: bool = True) -> int:
     print(f"[build_dev_submissions] mode={'baseline+llm' if use_llm else 'baseline-only'}")
     t0 = time.time()
 
-    # 1. Load baseline prediction outputs (from Stage 1)
-    baseline_path: Path = paths_config.BASELINE_PATH
+    # 1. Load N-gram + MFR pre-LLM predictions (from Stage 1)
+    baseline_path: Path = paths_config.NGRAM_MFR_PATH
     if not baseline_path.exists():
-        print(f"  ERROR: Baseline prediction not found at {baseline_path}. Execute mine_hard_cases_dev.py first.")
+        print(f"  ERROR: N-gram+MFR prediction not found at {baseline_path}. Execute mine_hard_cases_dev.py first.")
         return 1
     with open(baseline_path, 'r', encoding='utf-8') as f:
         baseline: List[Dict[str, Any]] = json.load(f)

@@ -213,8 +213,8 @@ def mine_hard_cases(args: argparse.Namespace) -> int:
         for record in hard_records:
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    # 7. Save Stage 3 input files (entire baseline predictions)
-    baseline_path: Path = paths_config.BASELINE_PATH
+    # 7. Save Stage 3 input files (full N-gram + MFR pre-LLM predictions)
+    baseline_path: Path = paths_config.NGRAM_MFR_PATH
     baseline_out = [
         {
             'raw': raw_per_row[ri],
